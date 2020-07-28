@@ -26,13 +26,20 @@ const Layout = ({ children }) => {
     return(
         <div>
             <NavBar>
-				<Flex style={{ height: '100%' }} align={'center'} justify={'center'}>
+				<Flex style={{ height: '100%', width: '100%' }} align={'center'} justify={'center'}>
+					<div style={{color: '#fff', position: 'absolute', left: '2rem'}}>Menu</div>
 					<Flex align={'center'} justify={'space-around'} direction={'column'}>
 						<PDLogo style={{ backgroundImage: 'url(./logos/pd_logo.png)'}} />
 						<Box1 marginTop={5}>
 							<LogoCaption>Parish Digital</LogoCaption>
 						</Box1>
 					</Flex>
+					<NavMenu>
+						<ul>
+							<li>About</li>
+							<li>Contact</li>
+						</ul>
+					</NavMenu>
 				</Flex>
             </NavBar>
             {children}
@@ -59,4 +66,12 @@ const PDLogo = styled.div`
 const LogoCaption = styled.p`
 	color: #fff;
 	font-size: 1.2rem;
+`
+
+const NavMenu = styled.nav`
+	position: absolute;
+	right: 2rem;
+	height: 100%;
+	width: 20rem;
+	background: blue;
 `
