@@ -1,1 +1,1 @@
-The new redesign for ParishDigital.com
+The new design overhual for ParishDigital.com
