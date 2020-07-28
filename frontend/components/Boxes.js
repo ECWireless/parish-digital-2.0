@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import respondTo from './Breakpoints'
 
-export const Box = styled.div`
+export const Box1 = styled.div`
     ${props =>
         css`
             height: ${props.height};
