@@ -88,4 +88,12 @@ export const Flex = styled.div`
         flex-direction: ${props.direction};
         height: ${props.height};
     `}
+
+    ${props => props.respond && css`
+        flex-direction: column;
+
+        ${respondTo.md`
+            flex-direction: row;
+        `}
+    `}
 `

@@ -4,7 +4,7 @@ import Head from 'next/head'
 const index = () => {
     return (
         <div>
-            <h1>Home Page</h1>
+            <h1 style={{ height: '80rem' }}>Home Page</h1>
         </div>
     )
 }

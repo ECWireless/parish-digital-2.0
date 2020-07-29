@@ -91,22 +91,26 @@ export const Box3 = styled.div`
             width: ${props.width * .6}px;
             margin-top: ${props.marginTop * .7}px;
             margin-left: ${props.marginLeft * .7}px;
+            margin-right: ${props.marginRight * .7}px;
 
             ${respondTo.xs`
                 width: ${props.width * .7}px;
                 margin-top: ${props.marginTop * .8}px;
                 margin-left: ${props.marginLeft * .8}px;
+                margin-right: ${props.marginRight * .8}px;
             `}
             
             ${respondTo.sm`
                 width: ${props.width}px;
                 margin-top: ${props.marginTop * .9}px;
                 margin-left: ${props.marginLeft * .9}px;
+                margin-right: ${props.marginRight * .9}px;
             `}
 
             ${respondTo.md`
                 margin-top: ${props.marginTop}px;
                 margin-left: ${props.marginLeft}px;
+                margin-right: ${props.marginRight}px;
             `}
 
             ${respondTo.lg`
