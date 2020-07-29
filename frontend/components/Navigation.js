@@ -5,11 +5,11 @@ import { colors } from './Theme'
 import { Box1, Box3 } from './Boxes'
 import { Flex } from './Containers'
 
-const Navigation = () => {
+const Navigation = ({ setSidebar }) => {
     return (
         <NavBar>
             <Flex style={{ height: '100%', width: '100%' }} align={'center'} justify={'center'}>
-                <SandWhichContainer>
+                <SandWhichContainer onClick={() => setSidebar(true)}>
                     <Flex direction={'column'} justify={'space-between'}>
                         <Box3>
                             <SandwhichLine width={35} height={4} color={'white'} />
