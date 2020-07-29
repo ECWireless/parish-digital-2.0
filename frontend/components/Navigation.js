@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import respondTo from './Breakpoints'
 
-import { colors } from './theme'
+import { colors } from './Theme'
 import { Box1, Box3 } from './Boxes'
 import { Flex } from './Containers'
 
@@ -52,6 +52,10 @@ const NavBar = styled.div`
 	height: 8rem;
     background: #000;
     z-index: 100;
+
+    ${respondTo.xs`
+        height: 8rem;
+    `}
 `
 
 const PDLogo = styled.div`
@@ -132,13 +136,14 @@ const SandWhichContainer = styled.div`
     transition: all .5s ease;
 
     ${respondTo.xs`
-		top: 1rem;
+		top: 1.5rem;
 		left: 2rem;
         width: 50px;
         height: 50px;
     `}
 
     ${respondTo.sm`
+        top: 1rem;
         width: 60px;
         height: 60px;
     `}

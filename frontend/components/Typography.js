@@ -14,7 +14,18 @@ export const P1 = styled.p`
 `
 
 export const P2 = styled.p`
-    font-size: 2rem;
+    font-size: 1.6rem;
+
+    ${respondTo.sm`
+        font-size: 1.8rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 2rem;
+    `}
+
+    ${respondTo.lg`
+    `}
 
     ${props => props.center && css`
         text-align: center;

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { colors } from './theme'
+import { colors } from './Theme'
 
 export const Link = styled.a`
     transition: all .3s ease;

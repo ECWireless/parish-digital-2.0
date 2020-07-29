@@ -6,19 +6,27 @@ import { Box1, Box3 } from '../components/Boxes'
 import { Container, Flex } from '../components/Containers'
 import { Link } from '../components/Links'
 import { P2 } from '../components/Typography'
-import { colors } from './theme'
+import { colors } from './Theme'
 
 const Footer = () => {
     return (
         <FooterContainer>
             <Container>
                 <Flex align={'center'} justify={'center'} respond>
-                    <LogoContainer align={'center'} justify={'space-around'} direction={'column'}>
-                        <PDLogo style={{ backgroundImage: 'url(./logos/pd_logo.png)'}} />
-                        <Box1 marginTop={15}>
-                            <LogoCaption>Parish Digital</LogoCaption>
-                        </Box1>
-                    </LogoContainer>
+					<LeftContainer>
+						<LogoContainer>
+							<PDLogo style={{ backgroundImage: 'url(./logos/pd_logo.png)'}} />
+							<Box1 marginTop={15}>
+								<LogoCaption>Parish Digital</LogoCaption>
+							</Box1>
+						</LogoContainer>
+						<Link
+							href="https://upcity.com/local-marketing-agencies/lists/top-video-production-companies-in-the-united-states"
+							target="_blank" rel="noopener noreferrer"
+						>
+							<img src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" width="80px" height="80px" />
+						</Link>
+					</LeftContainer>
                     <Flex direction={'column'}>
                         <Link  href="mailto: hello@parishdigital.com" color={colors.white} hover={colors.yellow}>
                             <P2 center>hello@parishdigital.com</P2>
@@ -82,24 +90,32 @@ const FooterContainer = styled.div`
 `
 
 const LogoContainer = styled.div`
-	position: static;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	margin-right: 2rem;
+`
+
+const LeftContainer = styled.div`
+	position: static;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
 	margin-bottom: 6rem;
 
 	${respondTo.md`
 		margin-bottom: 0;
 		position: absolute;
 		top: 0;
-		left: 5rem;
+		left: 0;
 	`}
 `
 
 const PDLogo = styled.div`
-	height: 8rem;
-	width: 8rem;
+	height: 6rem;
+	width: 6rem;
 	background-position: center;
 	background-size: cover;
 
@@ -108,6 +124,11 @@ const PDLogo = styled.div`
 		color: ${colors.yellow};
 		transition: all .3s ease;
 	}
+
+	${respondTo.md`
+		height: 8rem;
+		width: 8rem;
+	`}
 `
 
 const LogoCaption = styled.p`
