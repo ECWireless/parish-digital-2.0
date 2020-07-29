@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import respondTo from './Breakpoints'
 
-import { colors } from './Theme'
+import { colors } from './theme'
 import { Box1, Box3 } from './Boxes'
 import { Flex } from './Containers'
 
