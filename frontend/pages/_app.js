@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import '../styles.css'
 
 // Components
+import { colors } from '../components/theme'
 import { Box1 } from '../components/Boxes'
 import { Flex } from '../components/Containers'
 
@@ -37,6 +38,9 @@ const Layout = ({ children }) => {
 					<NavMenu>
 						<ul>
 							<li>About</li>
+							<li>Service</li>
+							<li>Work</li>
+							<li>Gear</li>
 							<li>Contact</li>
 						</ul>
 					</NavMenu>
@@ -70,8 +74,22 @@ const LogoCaption = styled.p`
 
 const NavMenu = styled.nav`
 	position: absolute;
-	right: 2rem;
+	right: 4rem;
 	height: 100%;
-	width: 20rem;
-	background: blue;
+	width: 40rem;
+
+	ul {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: space-around;
+		color: #fff;
+		text-transform: uppercase;
+
+		li:hover {
+			cursor: pointer;
+			color: ${colors.yellow};
+			transition: all .3s ease;
+		}
+	}
 `
