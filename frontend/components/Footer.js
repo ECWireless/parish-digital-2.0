@@ -6,7 +6,7 @@ import { Box1, Box3 } from '../components/Boxes'
 import { Container, Flex } from '../components/Containers'
 import { Link } from '../components/Links'
 import { P2 } from '../components/Typography'
-import { colors } from '../components/Theme'
+import { colors } from './theme'
 
 const Footer = () => {
     return (
