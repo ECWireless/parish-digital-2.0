@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components'
 import respondTo from './Breakpoints'
 
-import { colors } from './Theme'
+// Components
 import { Box1, Box3 } from './Boxes'
 import { Flex } from './Containers'
+import { colors } from './Theme'
 
 const Navigation = ({ setSidebar }) => {
     return (
