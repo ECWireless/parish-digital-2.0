@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components'
 import respondTo from '../components/Breakpoints'
 
 // Components
-import { Flex } from '../components/Containers'
-import { P2 } from '../components/Typography'
-import { colors, shadows } from '../components/Theme'
+import { Flex } from './Containers'
+import { P2 } from './Typography'
+import { colors, shadows } from './Theme'
 
 const Sidebar = ({ sidebar, setSidebar }) => {
     return (
