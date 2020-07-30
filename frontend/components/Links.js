@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { colors } from './theme'
 
-export const Link = styled.a`
+export const CustomLink = styled.a`
     transition: all .3s ease;
     text-decoration: none;
 

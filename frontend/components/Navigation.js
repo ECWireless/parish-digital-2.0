@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router'
+import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import respondTo from './Breakpoints'
 
@@ -7,6 +9,8 @@ import { Flex } from './Containers'
 import { colors } from './theme'
 
 const Navigation = ({ setSidebar }) => {
+    const router = useRouter()
+    
     return (
         <NavBar>
             <Flex style={{ height: '100%', width: '100%' }} align={'center'} justify={'center'}>
@@ -23,19 +27,31 @@ const Navigation = ({ setSidebar }) => {
                         </Box3>
                     </Flex>
                 </SandWhichContainer>
-                <Flex align={'center'} justify={'space-around'} direction={'column'}>
-                    <PDLogo style={{ backgroundImage: 'url(./logos/pd_logo.png)'}} />
-                    <Box1 marginTop={5}>
-                        <LogoCaption>Parish Digital</LogoCaption>
-                    </Box1>
-                </Flex>
+                <Link href="/">
+                    <Flex align={'center'} justify={'space-around'} direction={'column'}>
+                        <PDLogo style={{ backgroundImage: 'url(./logos/pd_logo.png)'}} />
+                        <Box1 marginTop={5}>
+                            <LogoCaption>Parish Digital</LogoCaption>
+                        </Box1>
+                    </Flex>
+                </Link>
                 <NavMenu>
                     <ul>
-                        <li>About</li>
-                        <li>Service</li>
-                        <li>Work</li>
-                        <li>Gear</li>
-                        <li>Contact</li>
+                        <Link href="/about">
+                            <NavItem active={router.pathname === '/about' ? true : false}>About</NavItem>
+                        </Link>
+                        <Link href="/service">
+                            <NavItem active={router.pathname === '/servce' ? true : false}>Service</NavItem>
+                        </Link>
+                        <Link href="/work">
+                            <NavItem active={router.pathname === '/work' ? true : false}>Work</NavItem>
+                        </Link>
+                        <Link href="/gear">
+                            <NavItem active={router.pathname === '/gear' ? true : false}>Gear</NavItem>
+                        </Link>
+                        <Link href="/contact">
+                            <NavItem active={router.pathname === '/contact' ? true : false}>Contact</NavItem>
+                        </Link>
                     </ul>
                 </NavMenu>
             </Flex>
@@ -110,15 +126,21 @@ const NavMenu = styled.nav`
 			align-items: center;
 			justify-content: space-around;
 			color: #fff;
-			text-transform: uppercase;
-	
-			li:hover {
-				cursor: pointer;
-				color: ${colors.yellow};
-				transition: all .3s ease;
-			}
+            text-transform: uppercase;
 		}
 	`}
+`
+
+const NavItem = styled.div`
+    ${props => props.active && css`
+        color: ${colors.yellow};
+    `}
+
+    &:hover {
+        cursor: pointer;
+        color: ${colors.yellow};
+        transition: all .3s ease;
+    }
 `
 
 // MENU

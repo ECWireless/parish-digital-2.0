@@ -4,7 +4,7 @@ import respondTo from '../components/Breakpoints'
 // Components
 import { Box1, Box3 } from '../components/Boxes'
 import { Container, Flex } from '../components/Containers'
-import { Link } from '../components/Links'
+import { CustomLink } from '../components/Links'
 import { P2 } from '../components/Typography'
 import { colors } from './theme'
 
@@ -20,21 +20,21 @@ const Footer = () => {
 								<LogoCaption>Parish Digital</LogoCaption>
 							</Box1>
 						</LogoContainer>
-						<Link
+						<CustomLink
 							href="https://upcity.com/local-marketing-agencies/lists/top-video-production-companies-in-the-united-states"
 							target="_blank" rel="noopener noreferrer"
 						>
 							<img src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" width="80px" height="80px" />
-						</Link>
+						</CustomLink>
 					</LeftContainer>
                     <Flex direction={'column'}>
-                        <Link  href="mailto: hello@parishdigital.com" color={colors.white} hover={colors.yellow}>
+                        <CustomLink  href="mailto: hello@parishdigital.com" color={colors.white} hover={colors.yellow}>
                             <P2 center>hello@parishdigital.com</P2>
-                        </Link>
+                        </CustomLink>
                         <Box3 marginTop={10}>
-                            <Link  href="tel: 4129513331" color={colors.white} hover={colors.yellow}>
+                            <CustomLink  href="tel: 4129513331" color={colors.white} hover={colors.yellow}>
                                 <P2 center>(412) 951-3331</P2>
-                            </Link>
+                            </CustomLink>
                         </Box3>
                         <Box3 marginTop={30}>
                             <P2 color={colors.white} center>5819 Penn Ave</P2>
@@ -45,24 +45,24 @@ const Footer = () => {
                     </Flex>
                     <SocialContainer>
                         <Box3 marginRight={10}>
-                            <Link  href="https://vimeo.com/parishdigital" target="_blank" rel="noopener noreferrer">
+                            <CustomLink  href="https://vimeo.com/parishdigital" target="_blank" rel="noopener noreferrer">
                                 <SocialLogo style={{ backgroundImage: 'url(./logos/vimeo-icon.png)'}} />
-                            </Link>
+                            </CustomLink>
                         </Box3>
                         <Box3>
-                            <Link  href="https://www.linkedin.com/company/parish-digital-video/" target="_blank" rel="noopener noreferrer">
+                            <CustomLink  href="https://www.linkedin.com/company/parish-digital-video/" target="_blank" rel="noopener noreferrer">
                                 <SocialLogo style={{ backgroundImage: 'url(./logos/linkedin.png)'}} />
-                            </Link>
+                            </CustomLink>
                         </Box3>
                         <Box3 marginRight={10} marginTop={10}>
-                            <Link  href="https://www.facebook.com/Parish-Digital-Video-Productions-270923643761" target="_blank" rel="noopener noreferrer">
+                            <CustomLink  href="https://www.facebook.com/Parish-Digital-Video-Productions-270923643761" target="_blank" rel="noopener noreferrer">
                                 <SocialLogo style={{ backgroundImage: 'url(./logos/facebook.png)'}} />
-                            </Link>
+                            </CustomLink>
                         </Box3>
                         <Box3 marginTop={10}>
-                            <Link  href="https://www.youtube.com/channel/UCTqzflm7Z0JHZwmHI_MorGw" target="_blank" rel="noopener noreferrer">
+                            <CustomLink  href="https://www.youtube.com/channel/UCTqzflm7Z0JHZwmHI_MorGw" target="_blank" rel="noopener noreferrer">
                                 <SocialLogo style={{ backgroundImage: 'url(./logos/youtube.png)'}} />
-                            </Link>
+                            </CustomLink>
                         </Box3>
                     </SocialContainer>
                 </Flex>

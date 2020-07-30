@@ -9,7 +9,8 @@ import Sidebar from '../components/Sidebar'
 import Footer from '../components/Footer'
 
 export default function App({ Component, pageProps }) {
-	const [sidebar, setSidebar] = useState(true)
+	const [sidebar, setSidebar] = useState(false)
+
 	return (
 		<>
 			<Head>
