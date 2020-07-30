@@ -4,7 +4,7 @@ import respondTo from '../components/Breakpoints'
 // Components
 import { Flex } from './Containers'
 import { P2 } from './Typography'
-import { colors, shadows } from './Theme'
+import { colors, shadows } from './theme'
 
 const Sidebar = ({ sidebar, setSidebar }) => {
     return (

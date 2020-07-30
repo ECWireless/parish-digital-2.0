@@ -4,7 +4,7 @@ import respondTo from './Breakpoints'
 // Components
 import { Box1, Box3 } from './Boxes'
 import { Flex } from './Containers'
-import { colors } from './Theme'
+import { colors } from './theme'
 
 const Navigation = ({ setSidebar }) => {
     return (
