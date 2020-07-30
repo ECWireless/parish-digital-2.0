@@ -194,5 +194,6 @@ const SidebarOption = styled.div`
 
     ${props => props.active && css`
         border-right: 5px solid ${colors.blue};
+        background: #EFEFEF;
     `}
 `
