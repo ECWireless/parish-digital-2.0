@@ -14,12 +14,14 @@ const Hero = ({ heroImage, heroHeading, heroSubheading }) => {
         <WebHero>
             <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} />
             <HeroContainer>
-                <Box3>
+                <TexContainer>
                     <H1 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center uppercase>
-                        Your Partner in Video
+                        {heroHeading}
                     </H1>
                     <Box3 marginTop={20}>
-                        <H4 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center>Our focus is video for business</H4>
+                        <H4 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center>
+                            {heroSubheading}
+                        </H4>
                     </Box3>
                     <div style={{ marginTop: '4rem'}}>
                         <Flex align={'center'} justify={'center'}>
@@ -27,7 +29,7 @@ const Hero = ({ heroImage, heroHeading, heroSubheading }) => {
                             <Button1>Demo Reel</Button1>
                         </Flex>
                     </div>
-                </Box3>
+                </TexContainer>
             </HeroContainer>
         </WebHero>
     )
@@ -60,7 +62,6 @@ const WebHero =  styled.div`
 const HeroPhoto = styled.div`
     width: 100%;
     height: 100%;
-    background-image: url(./photos/hero/web-hero.jpg);
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -81,25 +82,31 @@ const HeroPhoto = styled.div`
 
 const HeroContainer = styled(Flex)`
     position: relative;
-    top: 10rem;
+    top: 0;
     height: 100%;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 
+    
+`
+
+const TexContainer = styled.div`
+    margin-top: 10rem;
+
     ${respondTo.xs`
-        top: 15rem;
+        margin-top: 15rem;
     `}
 
     ${respondTo.sm`
-        top: 18rem;
+        margin-top: 18rem;
     `}
 
     ${respondTo.md`
-        top: 25rem;
+        margin-top: 25rem;
     `}
 
     ${respondTo.lg`
-        top: 38rem;
+        margin-top: 38rem;
     `}
 `
