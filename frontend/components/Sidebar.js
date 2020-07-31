@@ -115,7 +115,7 @@ const SidebarContainer = styled.div`
 	background: ${colors.grey};
 	z-index: 1000;
 	box-shadow: ${shadows.sidebar};
-	transform: translateX(-25rem);
+	transform: translateX(-30rem);
 	transition: all .5s ease;
 
 	${props => props.open && css`

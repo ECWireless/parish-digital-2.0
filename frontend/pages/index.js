@@ -1,11 +1,10 @@
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
-import styled, { css } from 'styled-components'
-import respondTo from '../components/Breakpoints'
 import client from '../client'
 
 // Components
 import Hero from '../components/Home/Hero'
+import Description from '../components/Home/Description'
 
 const index = ({ heroImage, heroHeading, heroSubheading }) => {
     return (
@@ -15,6 +14,7 @@ const index = ({ heroImage, heroHeading, heroSubheading }) => {
                 heroHeading={heroHeading}
                 heroSubheading={heroSubheading}
             />
+            <Description />
         </>
     )
 }

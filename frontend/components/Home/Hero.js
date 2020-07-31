@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import imageUrlBuilder from '@sanity/image-url'
 import respondTo from '../Breakpoints'
 
 // Components

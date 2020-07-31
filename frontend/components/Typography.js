@@ -36,8 +36,24 @@ export const H1 = styled.h1`
 `
 
 export const H2 = styled.h2`
-    font-size: 5rem;
+    font-size: 2.8rem;
     font-weight: 700;
+
+    ${respondTo.xs`
+        font-size: 3.5rem;
+    `}
+
+    ${respondTo.sm`
+        font-size: 4rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 4.5rem;
+    `}
+
+    ${respondTo.lg`
+        font-size: 5rem;
+    `}
 
     ${props => props.center && css`
         text-align: center;
@@ -106,7 +122,23 @@ export const H4 = styled.h4`
 `
 
 export const P1 = styled.p`
-    font-size: 2.2rem;
+    font-size: 1.4rem;
+
+    ${respondTo.xs`
+        font-size: 1.6rem;
+    `}
+
+    ${respondTo.sm`
+        font-size: 1.8rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 2rem;
+    `}
+
+    ${respondTo.lg`
+        font-size: 2.2rem;
+    `}
 
     ${props => props.center && css`
         text-align: center;
@@ -153,7 +185,23 @@ export const P3 = styled.p`
 `
 
 export const P4 = styled.p`
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+
+    ${respondTo.xs`
+        font-size: 1.3rem;
+    `}
+
+    ${respondTo.sm`
+        font-size: 1.4rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 1.5rem;
+    `}
+
+    ${respondTo.lg`
+        font-size: 1.6rem;
+    `}
 
     ${props => props.center && css`
         text-align: center;

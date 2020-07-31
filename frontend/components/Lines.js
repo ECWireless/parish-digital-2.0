@@ -24,15 +24,7 @@ export const Line = styled.div`
         `}
     `};
 
-    ${props => props.color === 'yellow' && css`
-        background: #FAF30E;
-    `};
-
-    ${props => props.color === 'blue' && css`
-        background: #1062AD;
-    `};
-
-    ${props => props.color === 'white' && css`
-        background: #FFF;
+    ${props => props.color && css`
+        background: ${props.color};
     `};
 `

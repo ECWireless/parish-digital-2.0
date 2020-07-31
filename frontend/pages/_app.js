@@ -44,7 +44,7 @@ const Backdrop = styled.div`
 	height: 100vh;
 	width: 100%;
 	background: #000;
-	z-index: -5;
+	z-index: -1;
 	opacity: 0;
 	transition: all .5s ease;
 

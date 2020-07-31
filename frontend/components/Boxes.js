@@ -92,14 +92,14 @@ export const Box2 = styled.div`
 export const Box3 = styled.div`
     ${props =>
         css`
-            width: ${props.width * .6}px;
+            width: ${props.width * .4}px;
             margin-top: ${props.marginTop * .7}px;
             margin-bottom: ${props.marginBottom * .7}px;
             margin-left: ${props.marginLeft * .7}px;
             margin-right: ${props.marginRight * .7}px;
 
             ${respondTo.xs`
-                width: ${props.width * .7}px;
+                width: ${props.width * .6}px;
                 margin-top: ${props.marginTop * .8}px;
                 margin-bottom: ${props.marginBottom * .8}px;
                 margin-left: ${props.marginLeft * .8}px;
@@ -107,7 +107,7 @@ export const Box3 = styled.div`
             `}
             
             ${respondTo.sm`
-                width: ${props.width}px;
+                width: ${props.width * .8}px;
                 margin-top: ${props.marginTop * .9}px;
                 margin-bottom: ${props.marginBottom * .9}px;
                 margin-left: ${props.marginLeft * .9}px;
@@ -115,6 +115,7 @@ export const Box3 = styled.div`
             `}
 
             ${respondTo.md`
+                width: ${props.width}px;
                 margin-top: ${props.marginTop}px;
                 margin-bottom: ${props.marginBottom}px;
                 margin-left: ${props.marginLeft}px;

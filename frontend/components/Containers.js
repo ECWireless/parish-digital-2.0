@@ -7,7 +7,7 @@ export const Container = styled.div`
     margin: auto;
 
     ${respondTo.xs`
-        width: 300px;
+        width: 400px;
     `}
     
     ${respondTo.sm`
@@ -19,7 +19,7 @@ export const Container = styled.div`
     `}
 
     ${respondTo.lg`
-        width: 1000px;
+        width: 1200px;
     `}
 `
 
@@ -92,7 +92,15 @@ export const Flex = styled.div`
     ${props => props.respond && css`
         flex-direction: column;
 
-        ${respondTo.md`
+        ${respondTo.lg`
+            flex-direction: row;
+        `}
+    `}
+
+    ${props => props.respondFlip && css`
+        flex-direction: column-reverse;
+
+        ${respondTo.lg`
             flex-direction: row;
         `}
     `}
