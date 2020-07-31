@@ -1,11 +1,14 @@
 import styled, { css } from 'styled-components'
-import Head from 'next/head'
+import respondTo from '../components/Breakpoints'
+
+// Components
+import Hero from '../components/Home/Hero'
 
 const index = () => {
     return (
-        <div>
-            <h1 style={{ height: '80rem' }}>Home Page</h1>
-        </div>
+        <>
+            <Hero />
+        </>
     )
 }
 

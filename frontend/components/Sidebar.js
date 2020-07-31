@@ -120,6 +120,7 @@ const SidebarContainer = styled.div`
 
 	${props => props.open && css`
 		transform: translateX(0);
+        box-shadow: none;
 	`}
 `
 

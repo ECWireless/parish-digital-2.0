@@ -85,7 +85,7 @@ const FooterContainer = styled.div`
     z-index: 0;
 
 	${respondTo.md`
-		height: 25rem;
+		height: 30rem;
 	`}
 `
 
@@ -103,7 +103,7 @@ const LeftContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	margin-bottom: 6rem;
+	margin-bottom: 8rem;
 
 	${respondTo.md`
 		margin-bottom: 0;
@@ -153,7 +153,7 @@ const SocialContainer = styled.div`
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	margin-top: 6rem;
+	margin-top: 8rem;
 
 	${respondTo.md`
 		margin-top: 0;
