@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import imageUrlBuilder from '@sanity/image-url'
 import respondTo from '../Breakpoints'
 
 // Components
@@ -8,10 +9,10 @@ import { Flex } from '../Containers'
 import { H1, H4 } from '../Typography'
 import { colors } from '../theme'
 
-const Hero = () => {
+const Hero = ({ heroImage, heroHeading, heroSubheading }) => {
     return (
         <WebHero>
-            <HeroPhoto />
+            <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} />
             <HeroContainer>
                 <Box3>
                     <H1 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center uppercase>
