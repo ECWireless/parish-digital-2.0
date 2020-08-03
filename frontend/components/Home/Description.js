@@ -12,7 +12,7 @@ import { H2, H4, P1, P4 } from '../Typography'
 const Description = () => {
     return (
         <Container>
-            <Box1 marginTop={50} marginBottom={50}>
+            <Box3 marginTop={50} marginBottom={50}>
                 <Card1>
                     <Flex justify={'space-between'} respondFlip>
                         <Flex direction={'column'} align={'center'}>
@@ -71,7 +71,7 @@ const Description = () => {
                         </Flex>
                     </Flex>
                 </Card1>
-            </Box1>
+            </Box3>
         </Container>
     )
 }
@@ -105,11 +105,21 @@ const VideoTypes = styled.div`
 
     #hero-description-card-hover {
         position: absolute;
-        padding: 0 4rem;
+        padding: 0 1.5rem;
         opacity: 0;
         transition: all .5s ease;
         z-index: 1;
-        line-height: 30px;
+        line-height: 20px;
+
+        ${respondTo.xs`
+            line-height: 22px;
+            padding: 0 2rem;
+        `}
+
+        ${respondTo.sm`
+            line-height: 30px;
+            padding: 0 4rem;
+        `}
     }
 
     &:hover,

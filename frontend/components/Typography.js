@@ -185,22 +185,20 @@ export const P3 = styled.p`
 `
 
 export const P4 = styled.p`
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 
     ${respondTo.xs`
-        font-size: 1.3rem;
     `}
 
     ${respondTo.sm`
-        font-size: 1.4rem;
-    `}
-
-    ${respondTo.md`
         font-size: 1.5rem;
     `}
 
-    ${respondTo.lg`
+    ${respondTo.md`
         font-size: 1.6rem;
+    `}
+
+    ${respondTo.lg`
     `}
 
     ${props => props.center && css`
