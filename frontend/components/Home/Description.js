@@ -15,10 +15,13 @@ const Description = ({
     descriptionParagraph2,
     descriptionVideoType1,
     descriptionVideoType1Details,
+    descriptionVideoType1Photo,
     descriptionVideoType2,
     descriptionVideoType2Details,
+    descriptionVideoType2Photo,
     descriptionVideoType3,
     descriptionVideoType3Details,
+    descriptionVideoType3Photo,
 }) => {
     return (
         <Container>
@@ -27,7 +30,7 @@ const Description = ({
                     <Flex justify={'space-between'} respondFlip>
                         <Flex direction={'column'} align={'center'}>
                             <FirstVideoType>
-                                <TypePhoto style={{backgroundImage: 'url(./photos/hero/corporate.jpg)'}} />
+                                <TypePhoto style={{ backgroundImage: `url(${descriptionVideoType1Photo})`}} />
                                 <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
                                     {descriptionVideoType1}
                                 </H4>
@@ -37,7 +40,7 @@ const Description = ({
                             </FirstVideoType>
                             <Box1 marginTop={20}>
                                 <VideoTypes>
-                                <TypePhoto style={{backgroundImage: 'url(./photos/hero/marketing.jpg)'}} />
+                                <TypePhoto style={{ backgroundImage: `url(${descriptionVideoType2Photo})`}} />
                                     <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
                                         {descriptionVideoType2}
                                     </H4>
@@ -48,7 +51,7 @@ const Description = ({
                             </Box1>
                             <Box1 marginTop={20}>
                                 <VideoTypes>
-                                <TypePhoto style={{backgroundImage: 'url(./photos/hero/industrial.jpg)'}} />
+                                <TypePhoto style={{ backgroundImage: `url(${descriptionVideoType3Photo})`}} />
                                     <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
                                         {descriptionVideoType3}
                                     </H4>
