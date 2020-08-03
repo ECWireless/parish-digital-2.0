@@ -9,7 +9,17 @@ import { Container, Flex } from '../Containers'
 import { Line } from '../Lines'
 import { H2, H4, P1, P4 } from '../Typography'
 
-const Description = () => {
+const Description = ({
+    descriptionHeading,
+    descriptionParagraph1,
+    descriptionParagraph2,
+    descriptionVideoType1,
+    descriptionVideoType1Details,
+    descriptionVideoType2,
+    descriptionVideoType2Details,
+    descriptionVideoType3,
+    descriptionVideoType3Details,
+}) => {
     return (
         <Container>
             <Box3 marginTop={50} marginBottom={50}>
@@ -19,20 +29,20 @@ const Description = () => {
                             <FirstVideoType>
                                 <TypePhoto style={{backgroundImage: 'url(./photos/hero/corporate.jpg)'}} />
                                 <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
-                                    Corporate Video
+                                    {descriptionVideoType1}
                                 </H4>
                                 <P1 id="hero-description-card-hover" color={colors.white}>
-                                    Boost your company’s internal and external communications
+                                    {descriptionVideoType1Details}
                                 </P1>
                             </FirstVideoType>
                             <Box1 marginTop={20}>
                                 <VideoTypes>
                                 <TypePhoto style={{backgroundImage: 'url(./photos/hero/marketing.jpg)'}} />
                                     <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
-                                        Marketing Video
+                                        {descriptionVideoType2}
                                     </H4>
                                     <P1 id="hero-description-card-hover" color={colors.white}>
-                                        Engage a wider audience with high-impact video content
+                                        {descriptionVideoType2Details}
                                     </P1>
                                 </VideoTypes>
                             </Box1>
@@ -40,10 +50,10 @@ const Description = () => {
                                 <VideoTypes>
                                 <TypePhoto style={{backgroundImage: 'url(./photos/hero/industrial.jpg)'}} />
                                     <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
-                                        Industrial Video
+                                        {descriptionVideoType3}
                                     </H4>
                                     <P1 id="hero-description-card-hover" color={colors.white}>
-                                        Showcase your facilities, equipment or industrial capabilities
+                                        {descriptionVideoType3Details}
                                     </P1>
                                 </VideoTypes>
                             </Box1>
@@ -53,19 +63,19 @@ const Description = () => {
                                 <Logo />
                             </Box3>
                             <Box3 marginBottom={25}>
-                                <H2 center style={{fontWeight: 400}} uppercase>Parish Digital</H2>
+                                <H2 center style={{fontWeight: 400}} uppercase>{descriptionHeading}</H2>
                             </Box3>
                             <Box3 marginBottom={25}>
                                 <Line height={5} width={100} color={colors.yellow} />
                             </Box3>
                             <Box3 width={550} marginBottom={25}>
                                 <P4>
-                                    Parish Digital Video Production is a full-service digital media company based out of Pittsburgh, Pennsylvania. Delivering high-quality content since 2007, Parish Digital specializes in video production, editing and creative services for small businesses, large corporations and advertising agencies, both local and international.
+                                    {descriptionParagraph1}
                                 </P4>
                             </Box3>
                             <Box3 width={550}>
                                 <P4>
-                                    Our crew has produced thousands of successful video projects that have been utilized as branded content for social media, marketing and training purposes. While our creative abilities, technical expertise and years of experience allow us to produce top-notch content, it’s Parish Digital’s above-and-beyond customer service that sets us apart.
+                                    {descriptionParagraph2}
                                 </P4>
                             </Box3>
                         </Flex>
