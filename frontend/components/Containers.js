@@ -26,7 +26,7 @@ export const Container = styled.div`
 export const Col2 = styled.div`
     ${props => css`
         display: flex;
-        flex-direction: column;
+        flex-direction: ${props.respondDirection ? props.respondDirection : 'column'};
 
         ${respondTo.xs`
         `}
@@ -35,12 +35,12 @@ export const Col2 = styled.div`
         `}
 
         ${respondTo.md`
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto;
         `}
 
         ${respondTo.lg`
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
         `}
     `}
 `
