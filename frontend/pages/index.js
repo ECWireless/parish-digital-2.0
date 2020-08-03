@@ -5,6 +5,7 @@ import client from '../client'
 // Components
 import Hero from '../components/Home/Hero'
 import Description from '../components/Home/Description'
+import Features from '../components/Home/Features'
 
 const index = ({
     heroImage,
@@ -38,6 +39,7 @@ const index = ({
                 descriptionVideoType3={descriptionVideoType3}
                 descriptionVideoType3Details={descriptionVideoType3Details}
             />
+            <Features />
         </>
     )
 }
