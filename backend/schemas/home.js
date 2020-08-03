@@ -61,6 +61,14 @@ export default {
             type: 'string'
         },
         {
+            name: 'descriptionVideoType1Photo',
+            title: 'Description Video Type 1 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
             name: 'descriptionVideoType2',
             title: 'Description Video Type 2',
             type: 'string'
@@ -71,6 +79,14 @@ export default {
             type: 'string'
         },
         {
+            name: 'descriptionVideoType2Photo',
+            title: 'Description Video Type 2 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
             name: 'descriptionVideoType3',
             title: 'Description Video Type 3',
             type: 'string'
@@ -79,6 +95,14 @@ export default {
             name: 'descriptionVideoType3Details',
             title: 'Description Video Type 3 Details',
             type: 'string'
+        },
+        {
+            name: 'descriptionVideoType3Photo',
+            title: 'Description Video Type 3 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
         },
     ],
   
