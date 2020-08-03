@@ -70,8 +70,24 @@ export const H2 = styled.h2`
 `
 
 export const H3 = styled.h3`
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 600;
+
+    ${respondTo.xs`
+        font-size: 2.2rem;
+    `}
+
+    ${respondTo.sm`
+        font-size: 2.6rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 3rem;
+    `}
+
+    ${respondTo.lg`
+        font-size: 3.5rem;
+    `}
 
     ${props => props.center && css`
         text-align: center;
@@ -80,7 +96,6 @@ export const H3 = styled.h3`
     ${props => props.uppercase && css`
         text-transform: uppercase;
     `}
-
 
     ${props => css`
         color: ${props.color}
@@ -140,6 +155,10 @@ export const P1 = styled.p`
         font-size: 2.2rem;
     `}
 
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
+
     ${props => props.center && css`
         text-align: center;
     `}
@@ -163,6 +182,10 @@ export const P2 = styled.p`
     ${respondTo.lg`
     `}
 
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
+
     ${props => props.center && css`
         text-align: center;
     `}
@@ -174,6 +197,10 @@ export const P2 = styled.p`
 
 export const P3 = styled.p`
     font-size: 1.8rem;
+
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
 
     ${props => props.center && css`
         text-align: center;

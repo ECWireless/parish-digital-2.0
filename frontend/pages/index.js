@@ -23,6 +23,11 @@ const index = ({
     descriptionVideoType3,
     descriptionVideoType3Details,
     descriptionVideoType3Photo,
+    featureHeading,
+    featureSubheading,
+    featureParagraph,
+    featureButton,
+    featurePhoto,
 }) => {
     return (
         <>
@@ -45,7 +50,13 @@ const index = ({
                 descriptionVideoType3Details={descriptionVideoType3Details}
                 descriptionVideoType3Photo={urlFor(descriptionVideoType3Photo)}
             />
-            <Feature />
+            <Feature
+                featureHeading={featureHeading}
+                featureSubheading={featureSubheading}
+                featureParagraph={featureParagraph}
+                featureButton={featureButton}
+                featurePhoto={urlFor(featurePhoto)}
+            />
         </>
     )
 }
@@ -70,6 +81,11 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
     descriptionVideoType3,
     descriptionVideoType3Details,
     descriptionVideoType3Photo,
+    featureHeading,
+    featureSubheading,
+    featureParagraph,
+    featureButton,
+    featurePhoto,
 }`
 
 index.getInitialProps = async function () {

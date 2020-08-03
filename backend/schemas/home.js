@@ -104,6 +104,34 @@ export default {
                 hotspot: true
             }
         },
+        {
+            name: 'featureHeading',
+            title: 'Feature Heading',
+            type: 'string'
+        },
+        {
+            name: 'featureSubheading',
+            title: 'Feature Subheading',
+            type: 'string'
+        },
+        {
+            name: 'featureParagraph',
+            title: 'Feature Paragraph',
+            type: 'string'
+        },
+        {
+            name: 'featureButton',
+            title: 'Feature Button',
+            type: 'string'
+        },
+        {
+            name: 'featurePhoto',
+            title: 'Feature Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
     ],
   
     preview: {
