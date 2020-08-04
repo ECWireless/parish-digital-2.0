@@ -1,3 +1,4 @@
+import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
 import respondTo from '../Breakpoints'
 
@@ -14,14 +15,18 @@ const Hero = ({ heroImage, heroHeading, heroSubheading }) => {
             <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} />
             <HeroContainer>
                 <TexContainer>
-                    <H1 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center uppercase>
-                        {heroHeading}
-                    </H1>
-                    <Box3 marginTop={20}>
-                        <H4 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center>
-                            {heroSubheading}
-                        </H4>
-                    </Box3>
+                    <Fade bottom ssrFadeout>
+                        <H1 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center uppercase>
+                            {heroHeading}
+                        </H1>
+                    </Fade>
+                    <Fade delay={200} bottom ssrFadeout>
+                        <Box3 marginTop={20}>
+                            <H4 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center>
+                                {heroSubheading}
+                            </H4>
+                        </Box3>
+                    </Fade>
                     <div style={{ marginTop: '4rem'}}>
                         <Flex align={'center'} justify={'center'}>
                             <Button1>Get a Quote</Button1>

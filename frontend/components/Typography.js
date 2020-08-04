@@ -12,6 +12,7 @@ export const H1 = styled.h1`
 
     ${respondTo.sm`
         font-size: 5.5rem;
+        line-height: 40px;
     `}
 
     ${respondTo.md`
