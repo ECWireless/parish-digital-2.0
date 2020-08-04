@@ -7,19 +7,35 @@ import { Box3 } from '../Boxes'
 import { Container, Flex } from '../Containers'
 import { H3, P2, P4 } from '../Typography'
 
-const Reviews = () => {
+const Reviews = ({
+    reviewsHeading,
+    reviewsSubheading,
+    reviewsPhoto,
+    reviewsQuote1,
+    reviewsName1,
+    reviewsPosition1,
+    reviewsCompany1,
+    reviewsQuote2,
+    reviewsName2,
+    reviewsPosition2,
+    reviewsCompany2,
+    reviewsQuote3,
+    reviewsName3,
+    reviewsPosition3,
+    reviewsCompany3,
+}) => {
     return (
         <ReviewsBackground>
             <Container>
                 <Flex align={'center'} justify={'center'} direction={'column'}>
                     <Box3 marginTop={75}>
                         <H3 color={colors.white} uppercase center>
-                            What People Say
+                            {reviewsHeading}
                         </H3>
                     </Box3>
                     <Box3 marginTop={25}>
                         <P2 color={colors.white} uppercase center>
-                            Exceeding Expectations is Our Standard
+                            {reviewsSubheading}
                         </P2>
                     </Box3>
                     <Box3 marginTop={50} marginBottom={75} style={{width: '100%'}}>
@@ -27,67 +43,67 @@ const Reviews = () => {
                             <Flex align={'center'} justify={'flex-start'} direction={'column'}>
                                 <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
                                     <Box3 marginTop={25}>
-                                        <CommentBubble />
+                                        <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
                                         <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
-                                            Whether onsite filming, or in-studio creative editing, Parish Digital continually exceeds our expectations for top-notch videos.
+                                            {reviewsQuote1}
                                         </P4>
                                     </Box3>
                                 </Flex>
                                 <Flex align={'center'} justify={'flex-start'} direction={'column'}>
                                     <Box3 marginBottom={10}>
                                         <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
-                                            Eric Dzuba
+                                            {reviewsName1}
                                         </P2>
                                     </Box3>
                                     <TinyFont>
-                                        Director, Marketing & Innovation
+                                        {reviewsPosition1}
                                     </TinyFont>
                                     <TinyFont>
-                                        Carmeuse Lime & Stone
+                                        {reviewsCompany1}
                                     </TinyFont>
                                 </Flex>
                             </Flex>
                             <QuoteContainer2 align={'center'} justify={'flex-start'} direction={'column'}>
                                 <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <CommentBubble large />
+                                    <CommentBubble large style={{ backgroundImage: `url(${reviewsPhoto})`}} />
                                     <P4 style={{position: 'absolute', top: 0, left: 0, margin: '4rem'}}>
-                                        [Parish Digital] always delivers quality work, even when an unexpected project comes up. We appreciate how are easy they are to work with, and that they are flexible to our needs. They have my full recommendation.
+                                        {reviewsQuote2}
                                     </P4>
                                 </Flex>
                                 <Flex align={'center'} justify={'flex-start'} direction={'column'}>
                                     <Box3 marginBottom={10}>
                                         <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
-                                            Lindsay Ackman
+                                            {reviewsName2}
                                         </P2>
                                     </Box3>
                                     <TinyFont>
-                                        Project Manager
+                                        {reviewsPosition2}
                                     </TinyFont>
                                     <TinyFont>
-                                        LivaNova
+                                        {reviewsCompany2}
                                     </TinyFont>
                                 </Flex>
                             </QuoteContainer2>
                             <QuoteContainer3 align={'center'} justify={'flex-start'} direction={'column'}>
                                 <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
                                     <Box3 marginTop={25}>
-                                        <CommentBubble />
+                                        <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
                                         <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
-                                            Our videos are now bringing in millions of views. I would highly recommend Parish Digital to anyone looking to take their video portfolio to the next level.
+                                            {reviewsQuote3}
                                         </P4>
                                     </Box3>
                                 </Flex>
                                 <Flex align={'center'} justify={'flex-start'} direction={'column'}>
                                     <Box3 marginBottom={10}>
                                         <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
-                                            Brandon Fandel
+                                            {reviewsName3}
                                         </P2>
                                     </Box3>
                                     <TinyFont>
-                                        Digital Marketing Analyst
+                                        {reviewsPosition3}
                                     </TinyFont>
                                     <TinyFont>
-                                        Kennemetal, Inc.
+                                        {reviewsCompany3}
                                     </TinyFont>
                                 </Flex>
                             </QuoteContainer3>
@@ -125,7 +141,6 @@ const QuoteContainer3 = styled(Flex)`
 const CommentBubble = styled.div`
     width: 28rem;
     height: 24rem;
-    background-image: url('./photos/comment-bubble.png');
     background-size: contain;
     background-position: center;
 

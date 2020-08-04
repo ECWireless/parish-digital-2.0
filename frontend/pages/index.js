@@ -50,6 +50,21 @@ const index = ({
     servicesList2Item5,
     servicesList2Item6,
     servicesPhoto2,
+    reviewsHeading,
+    reviewsSubheading,
+    reviewsPhoto,
+    reviewsQuote1,
+    reviewsName1,
+    reviewsPosition1,
+    reviewsCompany1,
+    reviewsQuote2,
+    reviewsName2,
+    reviewsPosition2,
+    reviewsCompany2,
+    reviewsQuote3,
+    reviewsName3,
+    reviewsPosition3,
+    reviewsCompany3,
 }) => {
     return (
         <>
@@ -101,7 +116,23 @@ const index = ({
                 servicesList2Item6={servicesList2Item6}
                 servicesPhoto2={urlFor(servicesPhoto2)}
             />
-            <Reviews />
+            <Reviews
+                reviewsHeading={reviewsHeading}
+                reviewsSubheading={reviewsSubheading}
+                reviewsPhoto={urlFor(reviewsPhoto)}
+                reviewsQuote1={reviewsQuote1}
+                reviewsName1={reviewsName1}
+                reviewsPosition1={reviewsPosition1}
+                reviewsCompany1={reviewsCompany1}
+                reviewsQuote2={reviewsQuote2}
+                reviewsName2={reviewsName2}
+                reviewsPosition2={reviewsPosition2}
+                reviewsCompany2={reviewsCompany2}
+                reviewsQuote3={reviewsQuote3}
+                reviewsName3={reviewsName3}
+                reviewsPosition3={reviewsPosition3}
+                reviewsCompany3={reviewsCompany3}
+            />
         </>
     )
 }
@@ -151,6 +182,21 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
     servicesList2Item5,
     servicesList2Item6,
     servicesPhoto2,
+    reviewsHeading,
+    reviewsSubheading,
+    reviewsPhoto,
+    reviewsQuote1,
+    reviewsName1,
+    reviewsPosition1,
+    reviewsCompany1,
+    reviewsQuote2,
+    reviewsName2,
+    reviewsPosition2,
+    reviewsCompany2,
+    reviewsQuote3,
+    reviewsName3,
+    reviewsPosition3,
+    reviewsCompany3,
 }`
 
 index.getInitialProps = async function () {

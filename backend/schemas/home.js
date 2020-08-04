@@ -238,6 +238,84 @@ export default {
                 hotspot: true
             }
         },
+        {
+            name: 'reviewsHeading',
+            title: 'Reviews Heading',
+            type: 'string'
+        },
+        {
+            name: 'reviewsSubheading',
+            title: 'Reviews Subheading',
+            type: 'string'
+        },
+        {
+            name: 'reviewsPhoto',
+            title: 'Reviews Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'reviewsQuote1',
+            title: 'Reviews Quote 1',
+            type: 'string'
+        },
+        {
+            name: 'reviewsName1',
+            title: 'Reviews Name 1',
+            type: 'string'
+        },
+        {
+            name: 'reviewsPosition1',
+            title: 'Reviews Position 1',
+            type: 'string'
+        },
+        {
+            name: 'reviewsCompany1',
+            title: 'Reviews Company 1',
+            type: 'string'
+        },
+        {
+            name: 'reviewsQuote2',
+            title: 'Reviews Quote 2',
+            type: 'string'
+        },
+        {
+            name: 'reviewsName2',
+            title: 'Reviews Name 2',
+            type: 'string'
+        },
+        {
+            name: 'reviewsPosition2',
+            title: 'Reviews Position 2',
+            type: 'string'
+        },
+        {
+            name: 'reviewsCompany2',
+            title: 'Reviews Company 2',
+            type: 'string'
+        },
+        {
+            name: 'reviewsQuote3',
+            title: 'Reviews Quote 3',
+            type: 'string'
+        },
+        {
+            name: 'reviewsName3',
+            title: 'Reviews Name 3',
+            type: 'string'
+        },
+        {
+            name: 'reviewsPosition3',
+            title: 'Reviews Position 3',
+            type: 'string'
+        },
+        {
+            name: 'reviewsCompany3',
+            title: 'Reviews Company 3',
+            type: 'string'
+        },
     ],
   
     preview: {
