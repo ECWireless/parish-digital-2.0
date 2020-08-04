@@ -5,6 +5,7 @@ import client from '../client'
 // Components
 import Banner from '../components/About/Banner'
 import Story from '../components/About/Story'
+import Expertise from '../components/About/Expertise'
 
 const about = ({
     bannerHeading,
@@ -17,6 +18,8 @@ const about = ({
     storyParagraph3,
     storyParagraph4,
     storyPhoto,
+    expertiseHeading,
+    expertiseParagraph,
 }) => {
     return (
         <>
@@ -33,6 +36,11 @@ const about = ({
                 storyParagraph3={storyParagraph3}
                 storyParagraph4={storyParagraph4}
                 storyPhoto={urlFor(storyPhoto)}
+            />
+
+            <Expertise
+                expertiseHeading={expertiseHeading}
+                expertiseParagraph={expertiseParagraph}
             />
         </>
     )
@@ -53,6 +61,8 @@ const query = groq`*[_type == "about" && slug.current == "v1"][0]{
     storyParagraph3,
     storyParagraph4,
     storyPhoto,
+    expertiseHeading,
+    expertiseParagraph,
 }`
 
 about.getInitialProps = async function () {

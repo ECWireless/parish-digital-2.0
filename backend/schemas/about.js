@@ -73,6 +73,16 @@ export default {
                 hotspot: true
             }
         },
+        {
+            name: 'expertiseHeading',
+            title: 'Expertise Heading',
+            type: 'string'
+        },
+        {
+            name: 'expertiseParagraph',
+            title: 'Expertise Paragraph',
+            type: 'string'
+        },
     ],
   
     preview: {
