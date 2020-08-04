@@ -96,10 +96,12 @@ const PDLogo = styled.div`
 
 const LogoCaption = styled.p`
 	color: #fff;
-	font-size: 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 
 	${respondTo.xs`
-		font-size: 1.2rem;
+		font-size: 1.3rem;
     `}
 
 	&:hover {
@@ -132,6 +134,9 @@ const NavMenu = styled.nav`
 `
 
 const NavItem = styled.div`
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+
     ${props => props.active && css`
         color: ${colors.yellow};
     `}

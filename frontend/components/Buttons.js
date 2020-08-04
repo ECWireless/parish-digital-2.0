@@ -12,6 +12,9 @@ export const Button1 = styled.button`
     font-size: 1.2rem;
     letter-spacing: 2px;
     transition: all .3s ease;
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     ${respondTo.xs`
         width: 15rem;

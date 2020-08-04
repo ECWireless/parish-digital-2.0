@@ -27,7 +27,7 @@ const Features = ({
                             <DescriptionBox>
                                 <Flex direction={'column'} align={'center'} justify={'center'}>
                                     <Box3 marginTop={50}>
-                                        <P1 color={colors.white} uppercase center>
+                                        <P1 style={{letterSpacing: '5px'}} color={colors.white} uppercase center>
                                             {featureHeading}
                                         </P1>
                                     </Box3>

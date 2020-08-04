@@ -21,7 +21,7 @@ const Footer = () => {
 							</Box1>
 						</LogoContainer>
 						<CustomLink
-							href="https://upcity.com/local-marketing-agencies/lists/top-video-production-companies-in-the-united-states"
+							href="https://upcity.com/local-marketing-agencies/profiles/parish-digital-video"
 							target="_blank" rel="noopener noreferrer"
 						>
 							<img src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" width="80px" height="80px" />
