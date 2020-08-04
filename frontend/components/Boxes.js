@@ -63,12 +63,14 @@ export const Box2 = styled.div`
             margin-top: ${props.marginTop * .4}px;
             margin-bottom: ${props.marginBottom * .4}px;
             margin-left: ${props.marginLeft * .4}px;
+            padding-top: ${props.paddingTop * .4}px;
 
             ${respondTo.xs`
                 width: ${props.width * .7}px;
                 margin-top: ${props.marginTop * .45}px;
                 margin-bottom: ${props.marginBottom * .45}px;
                 margin-left: ${props.marginLeft * .45}px;
+                padding-top: ${props.paddingTop * .45}px;
             `}
             
             ${respondTo.sm`
@@ -76,12 +78,14 @@ export const Box2 = styled.div`
                 margin-top: ${props.marginTop * .7}px;
                 margin-bottom: ${props.marginBottom * .7}px;
                 margin-left: ${props.marginLeft * .7}px;
+                padding-top: ${props.paddingTop * .7}px;
             `}
 
             ${respondTo.md`
                 margin-top: ${props.marginTop}px;
                 margin-bottom: ${props.marginBottom}px;
                 margin-left: ${props.marginLeft}px;
+                padding-top: ${props.paddingTop}px;
             `}
 
             ${respondTo.lg`
