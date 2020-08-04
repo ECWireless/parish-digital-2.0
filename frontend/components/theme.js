@@ -3,7 +3,8 @@ export const colors = {
     blue: '#4E6077',
     white: '#FFF',
     black: '#000',
-    grey: '#FAFAFA'
+    grey: '#FAFAFA',
+    brown: '#2E2E2E',
 }
 
 export const shadows = {

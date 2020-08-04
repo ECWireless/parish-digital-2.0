@@ -7,6 +7,7 @@ import Hero from '../components/Home/Hero'
 import Description from '../components/Home/Description'
 import Feature from '../components/Home/Feature'
 import Services from '../components/Home/Services'
+import Reviews from '../components/Home/Reviews'
 
 const index = ({
     heroImage,
@@ -100,6 +101,7 @@ const index = ({
                 servicesList2Item6={servicesList2Item6}
                 servicesPhoto2={urlFor(servicesPhoto2)}
             />
+            <Reviews />
         </>
     )
 }
