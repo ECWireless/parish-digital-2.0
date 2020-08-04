@@ -1,3 +1,4 @@
+import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
 import respondTo from '../Breakpoints'
 
@@ -26,64 +27,72 @@ const Description = ({
     return (
         <Container>
             <Box3 marginTop={50} marginBottom={50}>
-                <Card1>
-                    <Flex justify={'space-between'} respondFlip>
-                        <Flex direction={'column'} align={'center'}>
-                            <FirstVideoType>
-                                <TypePhoto style={{ backgroundImage: `url(${descriptionVideoType1Photo})`}} />
-                                <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
-                                    {descriptionVideoType1}
-                                </H4>
-                                <P1 id="hero-description-card-hover" color={colors.white}>
-                                    {descriptionVideoType1Details}
-                                </P1>
-                            </FirstVideoType>
-                            <Box1 marginTop={20}>
-                                <VideoTypes>
-                                <TypePhoto style={{ backgroundImage: `url(${descriptionVideoType2Photo})`}} />
+                <Fade bottom ssrFadeout>
+                    <Card1>
+                        <Flex justify={'space-between'} respondFlip>
+                            <Flex direction={'column'} align={'center'}>
+                                <FirstVideoType>
+                                    <TypePhoto style={{ backgroundImage: `url(${descriptionVideoType1Photo})`}} />
                                     <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
-                                        {descriptionVideoType2}
+                                        {descriptionVideoType1}
                                     </H4>
                                     <P1 id="hero-description-card-hover" color={colors.white}>
-                                        {descriptionVideoType2Details}
+                                        {descriptionVideoType1Details}
                                     </P1>
-                                </VideoTypes>
-                            </Box1>
-                            <Box1 marginTop={20}>
-                                <VideoTypes>
-                                <TypePhoto style={{ backgroundImage: `url(${descriptionVideoType3Photo})`}} />
-                                    <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
-                                        {descriptionVideoType3}
-                                    </H4>
-                                    <P1 id="hero-description-card-hover" color={colors.white}>
-                                        {descriptionVideoType3Details}
-                                    </P1>
-                                </VideoTypes>
-                            </Box1>
+                                </FirstVideoType>
+                                <Box1 marginTop={20}>
+                                    <VideoTypes>
+                                    <TypePhoto style={{ backgroundImage: `url(${descriptionVideoType2Photo})`}} />
+                                        <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
+                                            {descriptionVideoType2}
+                                        </H4>
+                                        <P1 id="hero-description-card-hover" color={colors.white}>
+                                            {descriptionVideoType2Details}
+                                        </P1>
+                                    </VideoTypes>
+                                </Box1>
+                                <Box1 marginTop={20}>
+                                    <VideoTypes>
+                                    <TypePhoto style={{ backgroundImage: `url(${descriptionVideoType3Photo})`}} />
+                                        <H4 id="hero-description-card" style={{fontWeight: '700'}} color={colors.white} uppercase center>
+                                            {descriptionVideoType3}
+                                        </H4>
+                                        <P1 id="hero-description-card-hover" color={colors.white}>
+                                            {descriptionVideoType3Details}
+                                        </P1>
+                                    </VideoTypes>
+                                </Box1>
+                            </Flex>
+                            <Flex align={'center'} justify={'flex-start'} direction={'column'}>
+                                <Box3 marginBottom={25}>
+                                    <Logo />
+                                </Box3>
+                                <Box3 marginBottom={25}>
+                                    <H2 center style={{fontWeight: 400}} uppercase>{descriptionHeading}</H2>
+                                </Box3>
+                                <Fade ssrFadeout>
+                                    <Box3 marginBottom={25}>
+                                        <Line height={5} width={100} color={colors.yellow} />
+                                    </Box3>
+                                </Fade>
+                                <Fade delay={200} bottom ssrFadeout>
+                                    <Box3 width={550} marginBottom={25}>
+                                        <P4>
+                                            {descriptionParagraph1}
+                                        </P4>
+                                    </Box3>
+                                </Fade>
+                                <Fade delay={400} bottom ssrFadeout>
+                                    <Box3 width={550}>
+                                        <P4>
+                                            {descriptionParagraph2}
+                                        </P4>
+                                    </Box3>
+                                </Fade>
+                            </Flex>
                         </Flex>
-                        <Flex align={'center'} justify={'flex-start'} direction={'column'}>
-                            <Box3 marginBottom={25}>
-                                <Logo />
-                            </Box3>
-                            <Box3 marginBottom={25}>
-                                <H2 center style={{fontWeight: 400}} uppercase>{descriptionHeading}</H2>
-                            </Box3>
-                            <Box3 marginBottom={25}>
-                                <Line height={5} width={100} color={colors.yellow} />
-                            </Box3>
-                            <Box3 width={550} marginBottom={25}>
-                                <P4>
-                                    {descriptionParagraph1}
-                                </P4>
-                            </Box3>
-                            <Box3 width={550}>
-                                <P4>
-                                    {descriptionParagraph2}
-                                </P4>
-                            </Box3>
-                        </Flex>
-                    </Flex>
-                </Card1>
+                    </Card1>
+                </Fade>
             </Box3>
         </Container>
     )

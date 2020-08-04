@@ -1,3 +1,4 @@
+import Fade from 'react-reveal/Fade';
 import styled, { css } from 'styled-components'
 import respondTo from '../Breakpoints'
 
@@ -36,11 +37,15 @@ const Services = ({
             <Container>
                 <Box3 marginTop={75} marginBottom={75}>
                     <Flex align={'center'} justify={'space-around'}>
-                        <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+                        <Fade ssrFadeout>
+                            <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+                        </Fade>
                         <H2 uppercase center>
                             {servicesHeading}
                         </H2>
-                        <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+                        <Fade ssrFadeout>
+                            <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+                        </Fade>
                     </Flex>
                 </Box3>
             </Container>
@@ -54,20 +59,24 @@ const Services = ({
                             <H3 uppercase center>
                                 {servicesSubheading1}
                             </H3>
-                            <Box3 marginTop={25} marginBottom={25}>
-                                <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
-                            </Box3>
-                            <ServicesList>
-                                <li>{servicesList1Item1}</li>
-                                <li>{servicesList1Item2}</li>
-                                <li>{servicesList1Item3}</li>
-                                <li>{servicesList1Item4}</li>
-                                <li>{servicesList1Item5}</li>
-                                <li>{servicesList1Item6}</li>
-                                <li>{servicesList1Item7}</li>
-                                <li>{servicesList1Item8}</li>
-                                <li>{servicesList1Item9}</li>
-                            </ServicesList>
+                            <Fade ssrFadeout>
+                                <Box3 marginTop={25} marginBottom={25}>
+                                    <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
+                                </Box3>
+                            </Fade>
+                            <Fade bottom ssrFadeout>
+                                <ServicesList>
+                                    <li>{servicesList1Item1}</li>
+                                    <li>{servicesList1Item2}</li>
+                                    <li>{servicesList1Item3}</li>
+                                    <li>{servicesList1Item4}</li>
+                                    <li>{servicesList1Item5}</li>
+                                    <li>{servicesList1Item6}</li>
+                                    <li>{servicesList1Item7}</li>
+                                    <li>{servicesList1Item8}</li>
+                                    <li>{servicesList1Item9}</li>
+                                </ServicesList>
+                            </Fade>
                         </Flex>
                     </ServicesCard>
                 </Col2Right>
@@ -79,17 +88,21 @@ const Services = ({
                             <H3 uppercase center>
                                 {servicesSubheading2}
                             </H3>
-                            <Box3 marginTop={25} marginBottom={25}>
-                                <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
-                            </Box3>
-                            <ServicesList>
-                                <li>{servicesList2Item1}</li>
-                                <li>{servicesList2Item2}</li>
-                                <li>{servicesList2Item3}</li>
-                                <li>{servicesList2Item4}</li>
-                                <li>{servicesList2Item5}</li>
-                                <li>{servicesList2Item6}</li>
-                            </ServicesList>
+                            <Fade ssrFadeout>
+                                <Box3 marginTop={25} marginBottom={25}>
+                                    <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
+                                </Box3>
+                            </Fade>
+                            <Fade bottom ssrFadeout>
+                                <ServicesList>
+                                    <li>{servicesList2Item1}</li>
+                                    <li>{servicesList2Item2}</li>
+                                    <li>{servicesList2Item3}</li>
+                                    <li>{servicesList2Item4}</li>
+                                    <li>{servicesList2Item5}</li>
+                                    <li>{servicesList2Item6}</li>
+                                </ServicesList>
+                            </Fade>
                         </Flex>
                     </ServicesCard>
                 </Col2Left>

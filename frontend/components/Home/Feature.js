@@ -1,3 +1,4 @@
+import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
 import styled from 'styled-components'
 import respondTo from '../Breakpoints'
@@ -35,19 +36,25 @@ const Features = ({
                                             {featureSubheading}
                                         </H3>
                                     </Box3>
-                                    <Box3 marginTop={15}>
-                                        <Line height={5} width={100} color={colors.yellow} />
-                                    </Box3 >
-                                    <Box3 style={{ margin: '0 atuo' }} width={450} marginTop={15}>
-                                        <P4 color={colors.white}>
-                                            {featureParagraph}
-                                        </P4>
-                                    </Box3>
-                                    <Box3 marginTop={25} marginBottom={50}>
-                                        <P3 color={colors.yellow} uppercase center>
-                                            {featureButton}
-                                        </P3>
-                                    </Box3>
+                                    <Fade ssrFadeout>
+                                        <Box3 marginTop={15}>
+                                            <Line height={5} width={100} color={colors.yellow} />
+                                        </Box3>
+                                    </Fade>
+                                    <Fade bottom delay={200} ssrFadeout>
+                                        <Box3 style={{ margin: '0 atuo' }} width={450} marginTop={15}>
+                                            <P4 color={colors.white}>
+                                                {featureParagraph}
+                                            </P4>
+                                        </Box3>
+                                    </Fade>
+                                    <Fade bottom delay={400} ssrFadeout>
+                                        <Box3 marginTop={25} marginBottom={50}>
+                                            <P3 color={colors.yellow} uppercase center>
+                                                {featureButton}
+                                            </P3>
+                                        </Box3>
+                                    </Fade>
                                 </Flex>
                             </DescriptionBox>
                         </Link>

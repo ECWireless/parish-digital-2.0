@@ -1,3 +1,4 @@
+import Fade from 'react-reveal/Fade';
 import styled, { css } from 'styled-components'
 import respondTo from '../Breakpoints'
 
@@ -40,73 +41,79 @@ const Reviews = ({
                     </Box3>
                     <Box3 marginTop={50} marginBottom={75} style={{width: '100%'}}>
                         <Flex style={{width: '100%'}} align={'center'} justify={'space-around'} respond>
-                            <Flex align={'center'} justify={'flex-start'} direction={'column'}>
-                                <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <Box3 marginTop={25}>
-                                        <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
-                                        <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
-                                            {reviewsQuote1}
+                            <Fade bottom ssrFadeout>
+                                <Flex align={'center'} justify={'flex-start'} direction={'column'}>
+                                    <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
+                                        <Box3 marginTop={25}>
+                                            <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
+                                            <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
+                                                {reviewsQuote1}
+                                            </P4>
+                                        </Box3>
+                                    </Flex>
+                                    <Flex align={'center'} justify={'flex-start'} direction={'column'}>
+                                        <Box3 marginBottom={10}>
+                                            <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
+                                                {reviewsName1}
+                                            </P2>
+                                        </Box3>
+                                        <TinyFont>
+                                            {reviewsPosition1}
+                                        </TinyFont>
+                                        <TinyFont>
+                                            {reviewsCompany1}
+                                        </TinyFont>
+                                    </Flex>
+                                </Flex>
+                            </Fade>
+                            <Fade delay={200} bottom ssrFadeout>
+                                <QuoteContainer2 align={'center'} justify={'flex-start'} direction={'column'}>
+                                    <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
+                                        <CommentBubble large style={{ backgroundImage: `url(${reviewsPhoto})`}} />
+                                        <P4 style={{position: 'absolute', top: 0, left: 0, margin: '4rem'}}>
+                                            {reviewsQuote2}
                                         </P4>
-                                    </Box3>
-                                </Flex>
-                                <Flex align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <Box3 marginBottom={10}>
-                                        <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
-                                            {reviewsName1}
-                                        </P2>
-                                    </Box3>
-                                    <TinyFont>
-                                        {reviewsPosition1}
-                                    </TinyFont>
-                                    <TinyFont>
-                                        {reviewsCompany1}
-                                    </TinyFont>
-                                </Flex>
-                            </Flex>
-                            <QuoteContainer2 align={'center'} justify={'flex-start'} direction={'column'}>
-                                <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <CommentBubble large style={{ backgroundImage: `url(${reviewsPhoto})`}} />
-                                    <P4 style={{position: 'absolute', top: 0, left: 0, margin: '4rem'}}>
-                                        {reviewsQuote2}
-                                    </P4>
-                                </Flex>
-                                <Flex align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <Box3 marginBottom={10}>
-                                        <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
-                                            {reviewsName2}
-                                        </P2>
-                                    </Box3>
-                                    <TinyFont>
-                                        {reviewsPosition2}
-                                    </TinyFont>
-                                    <TinyFont>
-                                        {reviewsCompany2}
-                                    </TinyFont>
-                                </Flex>
-                            </QuoteContainer2>
-                            <QuoteContainer3 align={'center'} justify={'flex-start'} direction={'column'}>
-                                <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <Box3 marginTop={25}>
-                                        <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
-                                        <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
-                                            {reviewsQuote3}
-                                        </P4>
-                                    </Box3>
-                                </Flex>
-                                <Flex align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <Box3 marginBottom={10}>
-                                        <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
-                                            {reviewsName3}
-                                        </P2>
-                                    </Box3>
-                                    <TinyFont>
-                                        {reviewsPosition3}
-                                    </TinyFont>
-                                    <TinyFont>
-                                        {reviewsCompany3}
-                                    </TinyFont>
-                                </Flex>
-                            </QuoteContainer3>
+                                    </Flex>
+                                    <Flex align={'center'} justify={'flex-start'} direction={'column'}>
+                                        <Box3 marginBottom={10}>
+                                            <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
+                                                {reviewsName2}
+                                            </P2>
+                                        </Box3>
+                                        <TinyFont>
+                                            {reviewsPosition2}
+                                        </TinyFont>
+                                        <TinyFont>
+                                            {reviewsCompany2}
+                                        </TinyFont>
+                                    </Flex>
+                                </QuoteContainer2>
+                            </Fade>
+                            <Fade delay={400} bottom ssrFadeout>
+                                <QuoteContainer3 align={'center'} justify={'flex-start'} direction={'column'}>
+                                    <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
+                                        <Box3 marginTop={25}>
+                                            <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
+                                            <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
+                                                {reviewsQuote3}
+                                            </P4>
+                                        </Box3>
+                                    </Flex>
+                                    <Flex align={'center'} justify={'flex-start'} direction={'column'}>
+                                        <Box3 marginBottom={10}>
+                                            <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
+                                                {reviewsName3}
+                                            </P2>
+                                        </Box3>
+                                        <TinyFont>
+                                            {reviewsPosition3}
+                                        </TinyFont>
+                                        <TinyFont>
+                                            {reviewsCompany3}
+                                        </TinyFont>
+                                    </Flex>
+                                </QuoteContainer3>
+                            </Fade>
                         </Flex>
                     </Box3>
                 </Flex>
