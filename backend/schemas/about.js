@@ -35,6 +35,44 @@ export default {
                 hotspot: true
             }
         },
+        {
+            name: 'storyHeading1',
+            title: 'Story Heading 1',
+            type: 'string'
+        },
+        {
+            name: 'storyParagraph1',
+            title: 'Story Paragraph 1',
+            type: 'string'
+        },
+        {
+            name: 'storyParagraph2',
+            title: 'Story Paragraph 2',
+            type: 'string'
+        },
+        {
+            name: 'storyHeading2',
+            title: 'Story Heading 2',
+            type: 'string'
+        },
+        {
+            name: 'storyParagraph3',
+            title: 'Story Paragraph 3',
+            type: 'string'
+        },
+        {
+            name: 'storyParagraph4',
+            title: 'Story Paragraph 4',
+            type: 'string'
+        },
+        {
+            name: 'storyPhoto',
+            title: 'Story Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
     ],
   
     preview: {
