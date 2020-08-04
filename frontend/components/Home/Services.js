@@ -116,7 +116,7 @@ const Services = ({
 
 const CustomLine =  styled(Line)`
     ${props => props.width && css`
-        width: ${props.width * .1}px;
+        width: ${props.width * .08}px;
 
         ${respondTo.xs`
             width: ${props.width * .2}px;

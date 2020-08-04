@@ -4,10 +4,11 @@ import respondTo from '../components/Breakpoints'
 export const H1 = styled.h1`
     font-size: 2.8rem;
     font-weight: 700;
-    line-height: 20px;
+    line-height: 35px;
     letter-spacing: 4px;
 
     ${respondTo.xs`
+        line-height: 40px;
         font-size: 4rem;
     `}
 
@@ -41,7 +42,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
     font-size: 2.8rem;
     font-weight: 700;
-    line-height: 20px;
+    line-height: 30px;
     letter-spacing: 3px;
 
     ${respondTo.xs`
@@ -112,7 +113,7 @@ export const H3 = styled.h3`
 export const H4 = styled.h4`
     font-size: 1.6rem;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 25px;
     letter-spacing: 1px;
 
     ${respondTo.xs`
