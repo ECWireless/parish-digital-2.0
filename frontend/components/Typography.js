@@ -42,7 +42,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
     font-size: 2.8rem;
     font-weight: 700;
-    line-height: 30px;
+    line-height: 45px;
     letter-spacing: 3px;
 
     ${respondTo.xs`
@@ -210,9 +210,20 @@ export const P2 = styled.p`
 `
 
 export const P3 = styled.p`
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 20px;
     letter-spacing: .5px;
+
+    ${respondTo.sm`
+        font-size: 1.6rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 1.8rem;
+    `}
+
+    ${respondTo.lg`
+    `}
 
     ${props => props.uppercase && css`
         text-transform: uppercase;

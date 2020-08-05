@@ -96,7 +96,7 @@ export const Box2 = styled.div`
 export const Box3 = styled.div`
     ${props =>
         css`
-            width: ${props.width * .4}px;
+            width: ${props.width * .45}px;
             margin-top: ${props.marginTop * .7}px;
             margin-bottom: ${props.marginBottom * .7}px;
             margin-left: ${props.marginLeft * .7}px;
