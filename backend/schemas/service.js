@@ -126,6 +126,63 @@ export default {
             title: 'Feature 3 Link ',
             type: 'string'
         },
+
+        {
+            name: 'details1Heading',
+            title: 'Details 1 Heading',
+            type: 'string'
+        },
+        {
+            name: 'details1Paragraph1',
+            title: 'Details 1 Paragraph 1',
+            type: 'string'
+        },
+        {
+            name: 'details1Paragraph2',
+            title: 'Details 1 Paragraph 2',
+            type: 'string'
+        },
+        {
+            name: 'details1ParagraphMobile',
+            title: 'Details 1 Paragraph Mobile',
+            type: 'string'
+        },
+        {
+            name: 'details1Photo',
+            title: 'Details 1 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'details2Heading',
+            title: 'Details 2 Heading',
+            type: 'string'
+        },
+        {
+            name: 'details2Paragraph1',
+            title: 'Details 2 Paragraph 1',
+            type: 'string'
+        },
+        {
+            name: 'details2Paragraph2',
+            title: 'Details 2 Paragraph 2',
+            type: 'string'
+        },
+        {
+            name: 'details2ParagraphMobile',
+            title: 'Details 2 Paragraph Mobile',
+            type: 'string'
+        },
+        {
+            name: 'details2Photo',
+            title: 'Details 2 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
     ],
   
     preview: {

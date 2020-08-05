@@ -78,7 +78,7 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
     font-size: 2rem;
     font-weight: 700;
-    line-height: 25px;
+    line-height: 35px;
     letter-spacing: 2px;
 
     ${respondTo.xs`
@@ -113,7 +113,7 @@ export const H3 = styled.h3`
 export const H4 = styled.h4`
     font-size: 1.6rem;
     font-weight: 400;
-    line-height: 25px;
+    line-height: 30px;
     letter-spacing: 1px;
 
     ${respondTo.xs`
