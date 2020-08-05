@@ -7,6 +7,8 @@ import Banner from '../components/About/Banner'
 import Story from '../components/About/Story'
 import Expertise from '../components/About/Expertise'
 import Crew from '../components/About/Crew'
+import Network from '../components/About/Network'
+import Location from '../components/About/Location'
 
 const about = ({
     bannerHeading,
@@ -38,6 +40,11 @@ const about = ({
     crew3Paragraph1,
     crew3Paragraph2,
     crew3Photo,
+    networkHeading,
+    networkParagraph,
+    locationHeading,
+    locationParagraph1,
+    locationParagraph2,
 }) => {
     return (
         <>
@@ -78,6 +85,15 @@ const about = ({
                 crew3Paragraph2={crew3Paragraph2}
                 crew3Photo={urlFor(crew3Photo)}
             />
+            <Network
+                networkHeading={networkHeading}
+                networkParagraph={networkParagraph}
+            />
+            <Location
+                locationHeading={locationHeading}
+                locationParagraph1={locationParagraph1}
+                locationParagraph2={locationParagraph2}
+            />
         </>
     )
 }
@@ -116,6 +132,11 @@ const query = groq`*[_type == "about" && slug.current == "v1"][0]{
     crew3Paragraph1,
     crew3Paragraph2,
     crew3Photo,
+    networkHeading,
+    networkParagraph,
+    locationHeading,
+    locationParagraph1,
+    locationParagraph2,
 }`
 
 about.getInitialProps = async function () {
