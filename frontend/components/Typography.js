@@ -77,7 +77,7 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 25px;
     letter-spacing: 2px;
 

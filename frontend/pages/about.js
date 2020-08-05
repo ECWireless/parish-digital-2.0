@@ -6,6 +6,7 @@ import client from '../client'
 import Banner from '../components/About/Banner'
 import Story from '../components/About/Story'
 import Expertise from '../components/About/Expertise'
+import Crew from '../components/About/Crew'
 
 const about = ({
     bannerHeading,
@@ -20,6 +21,23 @@ const about = ({
     storyPhoto,
     expertiseHeading,
     expertiseParagraph,
+    crewHeading,
+    crewParagraph,
+    crew1Name,
+    crew1Position,
+    crew1Paragraph1,
+    crew1Paragraph2,
+    crew1Photo,
+    crew2Name,
+    crew2Position,
+    crew2Paragraph1,
+    crew2Paragraph2,
+    crew2Photo,
+    crew3Name,
+    crew3Position,
+    crew3Paragraph1,
+    crew3Paragraph2,
+    crew3Photo,
 }) => {
     return (
         <>
@@ -37,10 +55,28 @@ const about = ({
                 storyParagraph4={storyParagraph4}
                 storyPhoto={urlFor(storyPhoto)}
             />
-
             <Expertise
                 expertiseHeading={expertiseHeading}
                 expertiseParagraph={expertiseParagraph}
+            />
+            <Crew
+                crewHeading={crewHeading}
+                crewParagraph={crewParagraph}
+                crew1Name={crew1Name}
+                crew1Position={crew1Position}
+                crew1Paragraph1={crew1Paragraph1}
+                crew1Paragraph2={crew1Paragraph2}
+                crew1Photo={urlFor(crew1Photo)}
+                crew2Name={crew2Name}
+                crew2Position={crew2Position}
+                crew2Paragraph1={crew2Paragraph1}
+                crew2Paragraph2={crew2Paragraph2}
+                crew2Photo={urlFor(crew2Photo)}
+                crew3Name={crew3Name}
+                crew3Position={crew3Position}
+                crew3Paragraph1={crew3Paragraph1}
+                crew3Paragraph2={crew3Paragraph2}
+                crew3Photo={urlFor(crew3Photo)}
             />
         </>
     )
@@ -63,6 +99,23 @@ const query = groq`*[_type == "about" && slug.current == "v1"][0]{
     storyPhoto,
     expertiseHeading,
     expertiseParagraph,
+    crewHeading,
+    crewParagraph,
+    crew1Name,
+    crew1Position,
+    crew1Paragraph1,
+    crew1Paragraph2,
+    crew1Photo,
+    crew2Name,
+    crew2Position,
+    crew2Paragraph1,
+    crew2Paragraph2,
+    crew2Photo,
+    crew3Name,
+    crew3Position,
+    crew3Paragraph1,
+    crew3Paragraph2,
+    crew3Photo,
 }`
 
 about.getInitialProps = async function () {

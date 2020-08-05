@@ -83,6 +83,100 @@ export default {
             title: 'Expertise Paragraph',
             type: 'string'
         },
+        {
+            name: 'crewHeading',
+            title: 'Crew Heading',
+            type: 'string'
+        },
+        {
+            name: 'crewParagraph',
+            title: 'Crew Paragraph',
+            type: 'string'
+        },
+        {
+            name: 'crew1Name',
+            title: 'Crew 1 Name',
+            type: 'string'
+        },
+        {
+            name: 'crew1Position',
+            title: 'Crew 1 Position',
+            type: 'string'
+        },
+        {
+            name: 'crew1Paragraph1',
+            title: 'Crew 1 Paragraph 1',
+            type: 'string'
+        },
+        {
+            name: 'crew1Paragraph2',
+            title: 'Crew 1 Paragraph 2',
+            type: 'string'
+        },
+        {
+            name: 'crew1Photo',
+            title: 'Crew 1 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'crew2Name',
+            title: 'Crew 2 Name',
+            type: 'string'
+        },
+        {
+            name: 'crew2Position',
+            title: 'Crew 2 Position',
+            type: 'string'
+        },
+        {
+            name: 'crew2Paragraph1',
+            title: 'Crew 2 Paragraph 1',
+            type: 'string'
+        },
+        {
+            name: 'crew2Paragraph2',
+            title: 'Crew 2 Paragraph 2',
+            type: 'string'
+        },
+        {
+            name: 'crew2Photo',
+            title: 'Crew 2 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'crew3Name',
+            title: 'Crew 3 Name',
+            type: 'string'
+        },
+        {
+            name: 'crew3Position',
+            title: 'Crew 3 Position',
+            type: 'string'
+        },
+        {
+            name: 'crew3Paragraph1',
+            title: 'Crew 3 Paragraph 1',
+            type: 'string'
+        },
+        {
+            name: 'crew3Paragraph2',
+            title: 'Crew 3 Paragraph 2',
+            type: 'string'
+        },
+        {
+            name: 'crew3Photo',
+            title: 'Crew 3 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
     ],
   
     preview: {
