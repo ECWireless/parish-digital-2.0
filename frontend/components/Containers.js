@@ -78,6 +78,73 @@ export const Col2Right = styled.div`
     `}
 `
 
+export const Col3 = styled.div`
+    ${props => css`
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        ${respondTo.xs`
+        `}
+        
+        ${respondTo.sm`
+        `}
+
+        ${respondTo.md`
+        `}
+
+        ${respondTo.lg`
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+        `}
+    `}
+`
+
+export const Col3Left = styled.div`
+    ${props => css`
+        display: flex;
+        flex-direction: column;
+        align-items: ${props.align};
+        justify-content: ${props.justify};
+
+        ${respondTo.xs`
+        `}
+        
+        ${respondTo.sm`
+        `}
+
+        ${respondTo.md`
+            grid-column: 1 / 2;
+        `}
+
+        ${respondTo.lg`
+        `}
+    `}
+`
+
+export const Col3Middle = styled.div`
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+
+    ${props => css`
+        align-items: ${props.align};
+        justify-content: ${props.justify};
+    `}
+`
+
+export const Col3Right = styled.div`
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+
+    ${props => css`
+        align-items: ${props.align};
+        justify-content: ${props.justify};
+    `}
+`
+
 export const Flex = styled.div`
     display: flex;
 

@@ -42,6 +42,90 @@ export default {
             title: 'Description Button Text',
             type: 'string'
         },
+        {
+            name: 'feature1Icon',
+            title: 'Feature 1 Icon',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'feature1Heading',
+            title: 'Feature 1 Heading',
+            type: 'string'
+        },
+        {
+            name: 'feature1Paragraph',
+            title: 'Feature 1 Paragraph ',
+            type: 'string'
+        },
+        {
+            name: 'feature1ButtonText',
+            title: 'Feature 1 Button Text ',
+            type: 'string'
+        },
+        {
+            name: 'feature1Link',
+            title: 'Feature 1 Link ',
+            type: 'string'
+        },
+        {
+            name: 'feature2Icon',
+            title: 'Feature 2 Icon',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'feature2Heading',
+            title: 'Feature 2 Heading',
+            type: 'string'
+        },
+        {
+            name: 'feature2Paragraph',
+            title: 'Feature 2 Paragraph ',
+            type: 'string'
+        },
+        {
+            name: 'feature2ButtonText',
+            title: 'Feature 2 Button Text ',
+            type: 'string'
+        },
+        {
+            name: 'feature2Link',
+            title: 'Feature 2 Link ',
+            type: 'string'
+        },
+        {
+            name: 'feature3Icon',
+            title: 'Feature 3 Icon',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'feature3Heading',
+            title: 'Feature 3 Heading',
+            type: 'string'
+        },
+        {
+            name: 'feature3Paragraph',
+            title: 'Feature 3 Paragraph ',
+            type: 'string'
+        },
+        {
+            name: 'feature3ButtonText',
+            title: 'Feature 3 Button Text ',
+            type: 'string'
+        },
+        {
+            name: 'feature3Link',
+            title: 'Feature 3 Link ',
+            type: 'string'
+        },
     ],
   
     preview: {
