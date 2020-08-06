@@ -42,9 +42,11 @@ const Details = ({
                                 </CustomBox3>
                             </Fade>
                             <Fade bottom ssrFadeout>
-                                <NewParagraph>
-                                    {details1ParagraphMobile}
-                                </NewParagraph>
+                                <Box3 width={650}>
+                                    <NewParagraph>
+                                        {details1ParagraphMobile}
+                                    </NewParagraph>
+                                </Box3>
                             </Fade>
                             <Fade bottom ssrFadeout>
                                 <OriginalParagraph>
@@ -78,9 +80,11 @@ const Details = ({
                                 </CustomBox3>
                             </Fade>
                             <Fade bottom ssrFadeout>
-                                <NewParagraph>
-                                    {details2ParagraphMobile}
-                                </NewParagraph>
+                                <Box3 width={650}>
+                                    <NewParagraph>
+                                        {details2ParagraphMobile}
+                                    </NewParagraph>
+                                </Box3>
                             </Fade>
                             <Fade bottom ssrFadeout>
                                 <OriginalParagraph>
@@ -186,18 +190,18 @@ const ServicesCard2 = styled.div`
 `
 
 const CustomBox3 = styled(Box3)`
-    transform: translateY(-10rem);
+    transform: translateY(-12rem);
 
     ${respondTo.xs`
-        transform: translateY(-14rem);
+        transform: translateY(-15rem);
     `}
 
     ${respondTo.sm`
-        transform: translateY(-18rem);
+        transform: translateY(-17rem);
     `}
 
     ${respondTo.md`
-        transform: translateY(-23rem);
+        transform: translateY(-22rem);
     `}
 
     ${respondTo.lg`
