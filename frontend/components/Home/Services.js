@@ -133,6 +133,10 @@ const CustomLine =  styled(Line)`
         ${respondTo.lg`
             width: ${props.width}px;
         `}
+
+        ${respondTo.xl`
+            width: ${props.width * 1.8}px;
+        `}
     `}
 `
 

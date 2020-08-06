@@ -135,6 +135,10 @@ const FeaturesBackground = styled.div`
         height: 30rem;
         box-shadow: ${shadows.card};
     `}
+
+    ${respondTo.lg`
+        height: 40rem;
+    `}
 `
 
 const CustomFlex = styled.div`

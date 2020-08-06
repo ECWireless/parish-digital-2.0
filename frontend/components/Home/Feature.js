@@ -88,6 +88,11 @@ const FeaturePhoto = styled.div`
         width: 65rem;
         height: 40rem;
     `}
+
+    ${respondTo.xl`
+        width: 90rem;
+        height: 50rem;
+    `}
 `
 
 const DescriptionBox = styled.div`
@@ -104,5 +109,9 @@ const DescriptionBox = styled.div`
 
     ${respondTo.sm`
         width: 55rem;
+    `}
+
+    ${respondTo.xl`
+        width: 90rem;
     `}
 `

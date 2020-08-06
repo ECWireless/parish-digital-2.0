@@ -9,7 +9,7 @@ import { P2 } from './Typography'
 import { colors, shadows } from './theme'
 
 const Sidebar = ({ sidebar, setSidebar }) => {
-	const router = useRouter()
+    const router = useRouter()
     
     return (
         <SidebarContainer open={sidebar}>
@@ -116,18 +116,32 @@ const SidebarContainer = styled.div`
 	z-index: 1000;
 	box-shadow: ${shadows.sidebar};
 	transform: translateX(-30rem);
-	transition: all .5s ease;
+    transition: all .5s ease;
+
+    ${respondTo.xl`
+        width: 35rem;
+        transform: translateX(-40rem);
+
+        ${props => props.open && css`
+            transform: translateX(0rem);
+            box-shadow: none;
+        `}
+    `}
 
 	${props => props.open && css`
-		transform: translateX(0);
+		transform: translateX(0rem);
         box-shadow: none;
-	`}
+    `}
 `
 
 const SidebarTop = styled.div`
 	height: 8rem;
 	width: 100%;
-	border-bottom: solid 1px rgba(117, 117, 117, .2);
+    border-bottom: solid 1px rgba(117, 117, 117, .2);
+    
+    ${respondTo.xl`
+	    height: 10rem;
+    `}
 `
 
 const CloseContainer = styled.div`
@@ -187,6 +201,10 @@ const SidebarOption = styled.div`
     border-bottom: solid 1px rgba(117, 117, 117, .2);
     border-right: 5px solid transparent;
     transition: all .3s ease;
+
+    ${respondTo.xl`
+	    height: 7.5rem;
+    `}
     
     &:hover {
         cursor: pointer;

@@ -142,7 +142,8 @@ export const Box3 = styled.div`
                 padding-right: ${props.paddingRight}px;
             `}
 
-            ${respondTo.lg`
+            ${respondTo.xl`
+                width: ${props.width * 1.5}px;
             `}
         `};
 `

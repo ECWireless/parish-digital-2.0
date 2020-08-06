@@ -122,6 +122,11 @@ const VideoTypes = styled.div`
         height: 15rem;
     `}
 
+    ${respondTo.xl`
+        width: 80rem;
+        height: 20rem;
+    `}
+
     #hero-description-card {
         transition: all .5s ease;
         z-index: 1;
@@ -195,5 +200,10 @@ const Logo = styled.div`
     ${respondTo.xs`
         height: 10rem;
         width: 10rem;
+    `}
+
+    ${respondTo.xl`
+        height: 15rem;
+        width: 15rem;
     `}
 `

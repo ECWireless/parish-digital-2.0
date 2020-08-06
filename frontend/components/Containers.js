@@ -21,6 +21,10 @@ export const Container = styled.div`
     ${respondTo.lg`
         width: 1200px;
     `}
+
+    ${respondTo.xl`
+        width: 1800px;
+    `}
 `
 
 export const Col2 = styled.div`

@@ -25,6 +25,10 @@ export const H1 = styled.h1`
         font-size: 7.5rem;
     `}
 
+    ${respondTo.xl`
+        font-size: 8.5rem;
+    `}
+
     ${props => props.center && css`
         text-align: center;
     `}
@@ -59,6 +63,10 @@ export const H2 = styled.h2`
 
     ${respondTo.lg`
         font-size: 5rem;
+    `}
+
+    ${respondTo.xl`
+        font-size: 5.5rem;
     `}
 
     ${props => props.center && css`
@@ -97,6 +105,10 @@ export const H3 = styled.h3`
         font-size: 3.5rem;
     `}
 
+    ${respondTo.xl`
+        font-size: 4rem;
+    `}
+
     ${props => props.center && css`
         text-align: center;
     `}
@@ -130,6 +142,10 @@ export const H4 = styled.h4`
 
     ${respondTo.lg`
         font-size: 2.5rem;
+    `}
+
+    ${respondTo.xl`
+        font-size: 3.2rem;
     `}
 
     ${props => props.center && css`
@@ -167,6 +183,11 @@ export const P1 = styled.p`
         font-size: 2.2rem;
     `}
 
+    ${respondTo.xl`
+        font-size: 2.8rem;
+        line-height: 25px;
+    `}
+
     ${props => props.uppercase && css`
         text-transform: uppercase;
     `}
@@ -193,7 +214,9 @@ export const P2 = styled.p`
         font-size: 2rem;
     `}
 
-    ${respondTo.lg`
+    ${respondTo.xl`
+        font-size: 2.6rem;
+        line-height: 30px;
     `}
 
     ${props => props.uppercase && css`
@@ -222,7 +245,9 @@ export const P3 = styled.p`
         font-size: 1.8rem;
     `}
 
-    ${respondTo.lg`
+    ${respondTo.xl`
+        font-size: 2.4rem;
+        line-height: 25px;
     `}
 
     ${props => props.uppercase && css`
@@ -254,7 +279,9 @@ export const P4 = styled.p`
         font-size: 1.6rem;
     `}
 
-    ${respondTo.lg`
+    ${respondTo.xl`
+        font-size: 2.2rem;
+        line-height: 25px;
     `}
 
     ${props => props.center && css`

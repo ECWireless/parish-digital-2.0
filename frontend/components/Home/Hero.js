@@ -61,6 +61,10 @@ const WebHero =  styled.div`
     ${respondTo.lg`
         height: 70rem;
     `}
+
+    ${respondTo.xl`
+        height: 90rem;
+    `}
 `
 
 const HeroPhoto = styled.div`
@@ -91,8 +95,6 @@ const HeroContainer = styled(Flex)`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
-    
 `
 
 const TexContainer = styled.div`
@@ -112,5 +114,9 @@ const TexContainer = styled.div`
 
     ${respondTo.lg`
         margin-top: 38rem;
+    `}
+
+    ${respondTo.xl`
+    margin-top: 50rem;
     `}
 `

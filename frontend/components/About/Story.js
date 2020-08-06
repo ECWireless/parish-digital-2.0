@@ -103,4 +103,9 @@ const StoryPhoto = styled.div`
     ${respondTo.lg`
         margin-top: 0;
     `}
+
+    ${respondTo.xl`
+        width: 80rem;
+        height: 70rem;
+    `}
 `

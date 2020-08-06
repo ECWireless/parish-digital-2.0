@@ -92,6 +92,10 @@ const CustomLine =  styled(Line)`
         ${respondTo.lg`
             width: ${props.width}px;
         `}
+
+        ${respondTo.xl`
+            width: ${props.width * 2}px;
+        `}
     `}
 `
 
@@ -119,6 +123,12 @@ const Video = styled.iframe`
     ${respondTo.lg`
         width: 60rem;
         height: 34rem;
+        margin-top: 0;
+    `}
+
+    ${respondTo.xl`
+        width: 90rem;
+        height: 51rem;
         margin-top: 0;
     `}
 `

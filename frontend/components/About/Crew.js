@@ -180,6 +180,11 @@ const TeamPhoto = styled.div`
         height: 52rem;
     `}
 
+    ${respondTo.xl`
+        width: 54rem;
+        height: 72rem;
+    `}
+
     #about__team-crew-hover {
         opacity: 0;
         transition: all .5s ease;
@@ -215,6 +220,8 @@ const ParagraphText = styled.p`
         font-size: 1.6rem;
     `}
 
-    ${respondTo.lg`
+    ${respondTo.xl`
+        font-size: 2.2rem;
+        line-height: 30px;
     `}
 `

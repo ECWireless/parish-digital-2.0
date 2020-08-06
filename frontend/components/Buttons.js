@@ -36,6 +36,12 @@ export const Button1 = styled.button`
         font-size: 1.6rem;
     `}
 
+    ${respondTo.xl`
+        width: 22rem;
+        height: 6rem;
+        font-size: 1.8rem;
+    `}
+
     &:hover {
         background: ${colors.white};
         color: ${colors.black};
@@ -80,6 +86,12 @@ export const Button2 = styled.button`
         width: 20rem;
         height: 5rem;
         font-size: 1.6rem;
+    `}
+
+    ${respondTo.xl`
+        width: 22rem;
+        height: 6rem;
+        font-size: 1.8rem;
     `}
 
     &:hover,

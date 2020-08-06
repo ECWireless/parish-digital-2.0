@@ -43,14 +43,14 @@ const Reviews = ({
                         <Flex style={{width: '100%'}} align={'center'} justify={'space-around'} respond>
                             <Fade bottom ssrFadeout>
                                 <Flex align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
+                                    <CustomFlex style={{position: 'relative'}} align={'center'} justify={'flex-start'} direction={'column'}>
                                         <Box3 marginTop={25}>
                                             <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
                                             <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
                                                 {reviewsQuote1}
                                             </P4>
                                         </Box3>
-                                    </Flex>
+                                    </CustomFlex>
                                     <Flex align={'center'} justify={'flex-start'} direction={'column'}>
                                         <Box3 marginBottom={10}>
                                             <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
@@ -68,12 +68,12 @@ const Reviews = ({
                             </Fade>
                             <Fade delay={200} bottom ssrFadeout>
                                 <QuoteContainer2 align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
+                                    <CustomFlex style={{position: 'relative'}} align={'center'} justify={'flex-start'} direction={'column'}>
                                         <CommentBubble large style={{ backgroundImage: `url(${reviewsPhoto})`}} />
                                         <P4 style={{position: 'absolute', top: 0, left: 0, margin: '4rem'}}>
                                             {reviewsQuote2}
                                         </P4>
-                                    </Flex>
+                                    </CustomFlex>
                                     <Flex align={'center'} justify={'flex-start'} direction={'column'}>
                                         <Box3 marginBottom={10}>
                                             <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
@@ -91,14 +91,14 @@ const Reviews = ({
                             </Fade>
                             <Fade delay={400} bottom ssrFadeout>
                                 <QuoteContainer3 align={'center'} justify={'flex-start'} direction={'column'}>
-                                    <Flex style={{position: 'relative', height: '31rem'}} align={'center'} justify={'flex-start'} direction={'column'}>
+                                    <CustomFlex style={{position: 'relative'}} align={'center'} justify={'flex-start'} direction={'column'}>
                                         <Box3 marginTop={25}>
                                             <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
                                             <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
                                                 {reviewsQuote3}
                                             </P4>
                                         </Box3>
-                                    </Flex>
+                                    </CustomFlex>
                                     <Flex align={'center'} justify={'flex-start'} direction={'column'}>
                                         <Box3 marginBottom={10}>
                                             <P2 style={{fontWeight: 700}} color={colors.yellow} uppercase center>
@@ -145,6 +145,14 @@ const QuoteContainer3 = styled(Flex)`
     `}
 `
 
+const CustomFlex = styled(Flex)`
+    height: 31rem;
+
+    ${respondTo.xl`
+        height: 40rem;
+    `}
+`
+
 const CommentBubble = styled.div`
     width: 28rem;
     height: 24rem;
@@ -156,6 +164,11 @@ const CommentBubble = styled.div`
         height: 26rem;
     `}
 
+    ${respondTo.xl`
+        width: 40rem;
+        height: 35rem;
+    `}
+
     ${props => props.large && css`
         width: 32rem;
         height: 28rem;
@@ -163,7 +176,12 @@ const CommentBubble = styled.div`
         ${respondTo.xs`
             width: 35rem;
             height: 30rem;
-    `}
+        `}
+
+        ${respondTo.xl`
+            width: 44rem;
+            height: 38rem;
+        `}
     `}
 `
 
@@ -172,4 +190,9 @@ const TinyFont = styled.p`
     text-align: left;
     color: ${colors.white};
     margin-top: .5rem;
+
+    ${respondTo.xl`
+        font-size: 1.8rem;
+        margin-top: 1rem;
+    `}
 `

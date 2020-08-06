@@ -51,6 +51,10 @@ const BannerBackground = styled.div`
     ${respondTo.lg`
         height: 40rem;
     `}
+
+    ${respondTo.xl`
+        height: 50rem;
+    `}
 `
 
 const Photo = styled.div`
