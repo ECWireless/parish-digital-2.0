@@ -1,15 +1,21 @@
+import Link from 'next/link'
 import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
 import respondTo from '../Breakpoints'
 
 // Components
+import { colors } from '../theme'
 import { Box3 } from '../Boxes'
 import { Button1 } from '../Buttons'
 import { Flex } from '../Containers'
+import { CustomLink } from '../Links'
 import { H1, H4 } from '../Typography'
-import { colors } from '../theme'
 
-const Hero = ({ heroImage, heroHeading, heroSubheading }) => {
+const Hero = ({
+    heroImage,
+    heroHeading,
+    heroSubheading
+}) => {
     return (
         <WebHero>
             <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} />
@@ -29,8 +35,19 @@ const Hero = ({ heroImage, heroHeading, heroSubheading }) => {
                     </Fade>
                     <div style={{ marginTop: '4rem'}}>
                         <Flex align={'center'} justify={'center'}>
-                            <Button1>Get a Quote</Button1>
-                            <Button1>Demo Reel</Button1>
+                            <Link href='/contact'>
+                                <Button1>
+                                    Get a Quote
+                                </Button1>
+                            </Link>
+                            <CustomLink
+                                href='https://vimeo.com/392027059'
+                                target='_blank' rel='noopener noreferrer'
+                            >
+                                <Button1>
+                                    Demo Reel
+                                </Button1>
+                            </CustomLink>
                         </Flex>
                     </div>
                 </TexContainer>

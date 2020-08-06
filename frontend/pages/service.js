@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import respondTo from '../components/Breakpoints'
 import groq from 'groq'
@@ -9,6 +10,7 @@ import Description from '../components/Service/Description'
 import Features from '../components/Service/Features'
 import Details from '../components/Service/Details'
 import Pricing from '../components/Service/Pricing'
+import Modal from '../components/Service/Modal'
 
 const service = ({
     descriptionHeading,
@@ -45,6 +47,7 @@ const service = ({
     pricingButtonText,
     pricingPhoto,
 }) => {
+    const [modal, setModal] = useState(false)
     return (
         <>
             <Description
@@ -53,6 +56,7 @@ const service = ({
                 descriptionParagraph1={descriptionParagraph1}
                 descriptionParagraph2={descriptionParagraph2}
                 descriptionButtonText={descriptionButtonText}
+                setModal={setModal}
             />
             <CustomFlex>
                 <Features
@@ -90,6 +94,8 @@ const service = ({
                 pricingButtonText={pricingButtonText}
                 pricingPhoto={urlFor(pricingPhoto)}
             />
+			<Backdrop onClick={() => setModal(false)} open={modal} />
+            <Modal open={modal} />
         </>
     )
 }
@@ -148,4 +154,21 @@ const CustomFlex = styled.div`
         display: flex;
         flex-direction: column;
     `}
+`
+
+const Backdrop = styled.div`
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	background: #000;
+	z-index: -1;
+	opacity: 0;
+	transition: all .5s ease;
+
+	${props => props.open && css`
+		z-index: 999;
+		opacity: .8;
+        transition: all .5s ease;
+	`}
 `

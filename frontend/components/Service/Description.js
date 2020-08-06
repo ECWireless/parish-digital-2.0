@@ -12,6 +12,7 @@ import { Line } from '../Lines'
 import { H3, P3 } from '../Typography'
 
 const Description = ({
+    setModal,
     descriptionHeading,
     descriptionVideoLink,
     descriptionParagraph1,
@@ -58,7 +59,7 @@ const Description = ({
                                     </Box3>
                                 </Fade>
                                 <ButtonBox marginTop={50} width={480}>
-                                    <Button2>
+                                    <Button2 onClick={() => setModal(true)}>
                                         {descriptionButtonText}
                                     </Button2>
                                 </ButtonBox>

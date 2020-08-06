@@ -130,7 +130,6 @@ const ServicesCard1 = styled.div`
     box-shadow: ${shadows.card};
     padding: 4rem 2rem;
     height: 32rem;
-    background-image: url(./photos/CSS1.jpg);
     background-position: center;
     background-size: cover;
     margin-top: 12rem;
@@ -162,7 +161,6 @@ const ServicesCard2 = styled.div`
     width: 100%;
     padding: 4rem 2rem;
     height: 32rem;
-    background-image: url(./photos/CSS2.jpg);
     background-position: center;
     background-size: cover;
     margin-top: 12rem;

@@ -156,7 +156,6 @@ const VideoTypes = styled.div`
     &active,
     &focus {
         background: #000;
-        cursor: pointer;
         opacity: .9;
 
         #hero-description-card {
