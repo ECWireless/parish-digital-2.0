@@ -121,7 +121,7 @@ const Map = styled.iframe`
         height: 50rem;
     `}
 
-    ${respondTo.sm`
+    ${respondTo.xl`
         width: 80rem;
         height: 60rem;
     `}
