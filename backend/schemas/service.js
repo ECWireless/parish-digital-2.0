@@ -183,6 +183,24 @@ export default {
                 hotspot: true
             }
         },
+        {
+            name: 'pricingHeading',
+            title: 'Pricing Heading',
+            type: 'string'
+        },
+        {
+            name: 'pricingButtonText',
+            title: 'Pricing Button Text',
+            type: 'string'
+        },
+        {
+            name: 'pricingPhoto',
+            title: 'Pricing Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
     ],
   
     preview: {

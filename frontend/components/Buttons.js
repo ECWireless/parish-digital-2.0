@@ -67,12 +67,20 @@ export const Button2 = styled.button`
     box-shadow: ${shadows.button};
     outline: none;
 
+    ${props => props.width && css`
+        width: ${props.width * .7}px;
+    `}
+
     ${respondTo.xs`
         width: 15rem;
         height: 4.5rem;
         font-size: 1.4rem;
         letter-spacing: 3px;
         margin: 0 auto;
+
+        ${props => props.width && css`
+            width: ${props.width * .8}px;
+        `}
     `}
 
     ${respondTo.sm`
@@ -80,18 +88,38 @@ export const Button2 = styled.button`
         height: 4.5rem;
         font-size: 1.5rem;
         letter-spacing: 4px;
+
+        ${props => props.width && css`
+            width: ${props.width * .9}px;
+        `}
     `}
 
     ${respondTo.md`
         width: 20rem;
         height: 5rem;
         font-size: 1.6rem;
+
+        ${props => props.width && css`
+            width: ${props.width}px;
+        `}
     `}
 
     ${respondTo.xl`
         width: 22rem;
         height: 6rem;
         font-size: 1.8rem;
+
+        ${props => props.width && css`
+            width: ${props.width * 1.2}px;
+        `}
+    `}
+
+    ${props => props.background && css`
+        background: ${props.background};
+    `}
+
+    ${props => props.color && css`
+        color: ${props.color};
     `}
 
     &:hover,

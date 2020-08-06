@@ -46,11 +46,12 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
     font-size: 2.8rem;
     font-weight: 700;
-    line-height: 45px;
+    line-height: 35px;
     letter-spacing: 3px;
 
     ${respondTo.xs`
         font-size: 3.5rem;
+        line-height: 45px;
     `}
 
     ${respondTo.sm`

@@ -8,6 +8,7 @@ import client from '../client'
 import Description from '../components/Service/Description'
 import Features from '../components/Service/Features'
 import Details from '../components/Service/Details'
+import Pricing from '../components/Service/Pricing'
 
 const service = ({
     descriptionHeading,
@@ -40,6 +41,9 @@ const service = ({
     details2Paragraph1,
     details2Paragraph2,
     details2Photo,
+    pricingHeading,
+    pricingButtonText,
+    pricingPhoto,
 }) => {
     return (
         <>
@@ -81,6 +85,11 @@ const service = ({
                     details2Photo={urlFor(details2Photo)}
                 />
             </CustomFlex>
+            <Pricing
+                pricingHeading={pricingHeading}
+                pricingButtonText={pricingButtonText}
+                pricingPhoto={urlFor(pricingPhoto)}
+            />
         </>
     )
 }
@@ -120,6 +129,9 @@ const query = groq`*[_type == "service" && slug.current == "v1"][0]{
     details2Paragraph1,
     details2Paragraph2,
     details2Photo,
+    pricingHeading,
+    pricingButtonText,
+    pricingPhoto,
 }`
 
 service.getInitialProps = async function () {
