@@ -90,12 +90,13 @@ const service = ({
                 />
             </CustomFlex>
             <Pricing
+                setModal={setModal}
                 pricingHeading={pricingHeading}
                 pricingButtonText={pricingButtonText}
                 pricingPhoto={urlFor(pricingPhoto)}
             />
 			<Backdrop onClick={() => setModal(false)} open={modal} />
-            <Modal open={modal} />
+            <Modal open={modal} setModal={setModal} />
         </>
     )
 }

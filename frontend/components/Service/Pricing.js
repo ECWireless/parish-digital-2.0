@@ -10,6 +10,7 @@ import { Flex } from '../Containers'
 import { H2 } from '../Typography'
 
 const Pricing = ({
+    setModal,
     pricingHeading,
     pricingButtonText,
     pricingPhoto,
@@ -26,7 +27,7 @@ const Pricing = ({
                 </Fade>
                 <Fade delay={200} bottom ssrFadeout>
                     <Box3 marginTop={25} style={{zIndex: 1}}>
-                        <Button2 width={300} background={colors.white} color={colors.black}>
+                        <Button2 onClick={() => setModal(true)} width={300} background={colors.white} color={colors.black}>
                             {pricingButtonText}
                         </Button2>
                     </Box3>

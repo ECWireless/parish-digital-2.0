@@ -133,6 +133,7 @@ const ServicesCard1 = styled.div`
     background-position: center;
     background-size: cover;
     margin-top: 12rem;
+    border-radius: 5px;
 
     ${respondTo.xs`
         padding: 3rem;
@@ -164,6 +165,7 @@ const ServicesCard2 = styled.div`
     background-position: center;
     background-size: cover;
     margin-top: 12rem;
+    border-radius: 5px;
 
     ${respondTo.xs`
         padding: 3rem;

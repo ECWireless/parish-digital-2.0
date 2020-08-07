@@ -7,6 +7,7 @@ export const Card1 = styled.div`
     width: 100%;
     box-shadow: ${shadows.card};
     padding: 4rem 2rem;
+    border-radius: 5px;
 
     ${respondTo.xs`
         padding: 3rem;

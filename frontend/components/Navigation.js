@@ -91,7 +91,6 @@ const PDLogo = styled.div`
 		height: 4rem;
 		width: 4rem;
     `}
-	
 `
 
 const LogoCaption = styled.p`

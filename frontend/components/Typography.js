@@ -285,6 +285,10 @@ export const P4 = styled.p`
         line-height: 25px;
     `}
 
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
+
     ${props => props.center && css`
         text-align: center;
     `}
