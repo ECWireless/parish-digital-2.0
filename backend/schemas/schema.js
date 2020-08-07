@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import home from './home'
 import about from './about'
 import service from './service'
+import work from './work'
 
 // We import object and document schemas
 import blockContent from './blockContent'
@@ -28,6 +29,7 @@ export default createSchema({
     home,
     about,
     service,
+    work,
     post,
     navigation,
     author,

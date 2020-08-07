@@ -1,12 +1,38 @@
-import styled, { css } from 'styled-components'
-import Head from 'next/head'
+import groq from 'groq'
+import imageUrlBuilder from '@sanity/image-url'
+import client from '../client'
 
-const work = () => {
+// Components
+import Banner from '../components/Work/Banner'
+
+const work = ({
+    bannerHeading,
+    bannerParagraph,
+    bannerPhoto,
+}) => {
     return (
-        <div>
-            <h1 style={{ height: '80rem' }}>Work Page</h1>
-        </div>
+        <>
+            <Banner  
+                bannerHeading={bannerHeading}
+                bannerParagraph={bannerParagraph}
+                bannerPhoto={urlFor(bannerPhoto)}
+            />
+        </>
     )
+}
+
+function urlFor (source) {
+    return imageUrlBuilder(client).image(source)
+}
+
+const query = groq`*[_type == "work" && slug.current == "v1"][0]{
+    bannerHeading,
+    bannerParagraph,
+    bannerPhoto
+}`
+
+work.getInitialProps = async function () {
+    return await client.fetch(query)
 }
 
 export default work
