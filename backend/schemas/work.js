@@ -105,6 +105,51 @@ export default {
             title: 'Detail 3 Link',
             type: 'string'
         },
+        {
+            name: 'exampleHeading',
+            title: 'Example Heading',
+            type: 'string'
+        },
+        {
+            name: 'exampleParagraph',
+            title: 'Example Paragraph',
+            type: 'string'
+        },
+        {
+            name: 'example1Link',
+            title: 'Example 1 Link',
+            type: 'string'
+        },
+        {
+            name: 'example2Link',
+            title: 'Example 2 Link',
+            type: 'string'
+        },
+        {
+            name: 'example3Link',
+            title: 'Example 3 Link',
+            type: 'string'
+        },
+        {
+            name: 'example4Link',
+            title: 'Example 4 Link',
+            type: 'string'
+        },
+        {
+            name: 'example5Link',
+            title: 'Example 5 Link',
+            type: 'string'
+        },
+        {
+            name: 'example6Link',
+            title: 'Example 6 Link',
+            type: 'string'
+        },
+        {
+            name: 'example7Link',
+            title: 'Example 7 Link',
+            type: 'string'
+        },
     ],
   
     preview: {

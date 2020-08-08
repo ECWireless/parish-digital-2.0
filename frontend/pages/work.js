@@ -6,6 +6,7 @@ import client from '../client'
 import Banner from '../components/Work/Banner'
 import Feature from '../components/Work/Feature'
 import Details from '../components/Work/Details'
+import Examples from '../components/Work/Examples'
 
 const work = ({
     bannerHeading,
@@ -25,6 +26,15 @@ const work = ({
     detail3Heading,
     detail3Paragraph,
     detail3Link,
+    exampleHeading,
+    exampleParagraph,
+    example1Link,
+    example2Link,
+    example3Link,
+    example4Link,
+    example5Link,
+    example6Link,
+    example7Link,
 }) => {
     return (
         <>
@@ -50,6 +60,17 @@ const work = ({
                 detail3Heading={detail3Heading}
                 detail3Paragraph={detail3Paragraph}
                 detail3Link={detail3Link}
+            />
+            <Examples
+                exampleHeading={exampleHeading}
+                exampleParagraph={exampleParagraph}
+                example1Link={example1Link}
+                example2Link={example2Link}
+                example3Link={example3Link}
+                example4Link={example4Link}
+                example5Link={example5Link}
+                example6Link={example6Link}
+                example7Link={example7Link}
             />
         </>
     )
@@ -77,6 +98,15 @@ const query = groq`*[_type == "work" && slug.current == "v1"][0]{
     detail3Heading,
     detail3Paragraph,
     detail3Link,
+    exampleHeading,
+    exampleParagraph,
+    example1Link,
+    example2Link,
+    example3Link,
+    example4Link,
+    example5Link,
+    example6Link,
+    example7Link,
 }`
 
 work.getInitialProps = async function () {
