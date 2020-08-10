@@ -116,7 +116,7 @@ const Examples = ({
                         <Box3 marginBottom={50}>
                             <CardContainer>
                                 <ExampleVideo
-                                    src={example6Link}
+                                    src={example7Link}
                                     frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
                                 />
                             </CardContainer>
