@@ -22,6 +22,34 @@ export default {
             title: 'Login Password',
             type: 'string'
         },
+        {
+            name: 'loginBackgroundPhoto',
+            title: 'Login Background Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'loginAlexSubmitHoursLink',
+            title: 'Login Alex Submit Hours Link',
+            type: 'string'
+        },
+        {
+            name: 'loginMikeSubmitHoursLink',
+            title: 'Login Mike Submit Hours Link',
+            type: 'string'
+        },
+        {
+            name: 'loginAlexTimesheetLink',
+            title: 'Login Alex Timesheet Link',
+            type: 'string'
+        },
+        {
+            name: 'loginMikeTimesheetLink',
+            title: 'Login Mike Timesheet Link',
+            type: 'string'
+        },
     ],
   
     preview: {
