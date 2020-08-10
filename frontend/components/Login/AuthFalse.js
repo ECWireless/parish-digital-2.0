@@ -14,7 +14,10 @@ const AuthFalse = ({
 }) => {
     const [tempPassword, setTempPassword] = useState('')
 
-    function onSetTempPassword(e) {setTempPassword(e.target.value)}
+    function onSetTempPassword(e) {
+        e.preventDefault()
+        setTempPassword(e.target.value)
+    }
 
     return (
         <FalseBackground>
