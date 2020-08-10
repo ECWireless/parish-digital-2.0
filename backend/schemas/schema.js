@@ -10,6 +10,7 @@ import about from './about'
 import service from './service'
 import work from './work'
 import gear from './gear'
+import contact from './contact'
 
 // We import object and document schemas
 import blockContent from './blockContent'
@@ -32,6 +33,7 @@ export default createSchema({
     service,
     work,
     gear,
+    contact,
     post,
     navigation,
     author,
