@@ -32,7 +32,42 @@ const ContactForm = ({
 
     function onSubmit(e) {
         e.preventDefault();
-        console.log('submitted')
+        setLoading(true)
+        let state = {
+            name: name,
+            email: email,
+            message: message,
+        }
+        fetch('https://parish-digital-backend.herokuapp.com/contact',{
+        // fetch('http://localhost:8000/service',{
+            method: "POST",
+            body: JSON.stringify(state),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        }).then(
+            (response) => (response.json())
+        ).then((response)=>{
+            if (response.status === 'success'){
+                console.log('success')
+                resetForm();
+                setSubmitted(true)
+                setSuccess(true)
+                setLoading(false)
+            } else if(response.status === 'fail'){
+                console.log('fail')
+                setSubmitted(true)
+                setSuccess(false)
+                setLoading(false)
+            }
+        })
+        .catch(() => {
+            console.log('catch')
+            setSubmitted(true)
+            setSuccess(false)
+            setLoading(false)
+        })
     }
 
     function onCloseSnackbar() {
@@ -46,63 +81,66 @@ const ContactForm = ({
     }
 
     return (
-        <Container>
-            <Box3 marginTop={75} marginBottom={75}>
-                <Flex align={'center'} justify={'space-around'}>
-                    <Fade ssrFadeout>
-                        <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
-                    </Fade>
-                    <H2 uppercase center>
-                        {contactHeading}
-                    </H2>
-                    <Fade ssrFadeout>
-                        <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
-                    </Fade>
-                </Flex>
-                <Box3 marginTop={25}>
-                    <P1 center>
-                        {contactParagraph}
-                    </P1>
-                </Box3>
-            </Box3>
-            <Box3 style={{width: '100%'}} marginBottom={50}>
-                <Card1 style={{background: colors.blue}}>
-                    <Box3 marginTop={50}>
-                        <Form onSubmit={onSubmit}>
-                            <Box3 marginBottom={10}>
-                                <Label uppercase color={colors.white} htmlFor="service-modal__name">
-                                    Name
-                                </Label>
-                            </Box3>
-                            <Input required type="text" id="service-modal__name"
-                                value={name} onChange={onSetName.bind(this)}
-                            />
-                            <Box3 marginTop={25} marginBottom={10}>
-                                <Label uppercase color={colors.white} htmlFor="service-modal__email">
-                                    Email
-                                </Label>
-                            </Box3>
-                            <Input required type="email" id="service-modal__email"
-                                value={email} onChange={onSetEmail.bind(this)}
-                            />
-                            <Box3 marginTop={25} marginBottom={10}>
-                                <Label uppercase color={colors.white} htmlFor="service-modal__message">
-                                    Project Description
-                                </Label>
-                            </Box3>
-                            <TextArea required id="service-modal__message" className="textarea"
-                                value={message} onChange={onSetMessage.bind(this)}
-                            />
-                            <Box3 marginTop={50} marginBottom={50}>
-                                <Button2 color={colors.black} background={colors.white} type="submit">
-                                    {loading ? <Spinner /> : 'Submit'}
-                                </Button2>
-                            </Box3>
-                        </Form>
+        <>
+            <Container>
+                <Box3 marginTop={75} marginBottom={75}>
+                    <Flex align={'center'} justify={'space-around'}>
+                        <Fade ssrFadeout>
+                            <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+                        </Fade>
+                        <H2 uppercase center>
+                            {contactHeading}
+                        </H2>
+                        <Fade ssrFadeout>
+                            <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+                        </Fade>
+                    </Flex>
+                    <Box3 marginTop={25}>
+                        <P1 center>
+                            {contactParagraph}
+                        </P1>
                     </Box3>
-                </Card1>
-            </Box3>
-        </Container>
+                </Box3>
+                <Box3 style={{width: '100%'}} marginBottom={50}>
+                    <Card1 style={{background: colors.blue}}>
+                        <Box3 marginTop={50}>
+                            <Form onSubmit={onSubmit}>
+                                <Box3 marginBottom={10}>
+                                    <Label uppercase color={colors.white} htmlFor="service-modal__name">
+                                        Name
+                                    </Label>
+                                </Box3>
+                                <Input required type="text" id="service-modal__name"
+                                    value={name} onChange={onSetName.bind(this)}
+                                />
+                                <Box3 marginTop={25} marginBottom={10}>
+                                    <Label uppercase color={colors.white} htmlFor="service-modal__email">
+                                        Email
+                                    </Label>
+                                </Box3>
+                                <Input required type="email" id="service-modal__email"
+                                    value={email} onChange={onSetEmail.bind(this)}
+                                />
+                                <Box3 marginTop={25} marginBottom={10}>
+                                    <Label uppercase color={colors.white} htmlFor="service-modal__message">
+                                        Project Description
+                                    </Label>
+                                </Box3>
+                                <TextArea required id="service-modal__message" className="textarea"
+                                    value={message} onChange={onSetMessage.bind(this)}
+                                />
+                                <Box3 marginTop={50} marginBottom={50}>
+                                    <Button2 color={colors.black} background={colors.white} type="submit">
+                                        {loading ? <Spinner /> : 'Submit'}
+                                    </Button2>
+                                </Box3>
+                            </Form>
+                        </Box3>
+                    </Card1>
+                </Box3>
+            </Container>
+            { submitted && <Snackbar success={success} onCloseSnackbar={onCloseSnackbar} /> }
+        </>
     )
 }
 

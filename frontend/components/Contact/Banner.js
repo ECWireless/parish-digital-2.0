@@ -41,11 +41,11 @@ export default Banner
 const BannerBackground = styled.div`
     position: relative;
     width: 100%;
-    height: 65rem;
+    height: 50rem;
     background: linear-gradient(${colors.brown}, #000);
 
     ${respondTo.sm`
-        height: 80rem;
+        height: 70rem;
     `}
 
     ${respondTo.lg`
@@ -59,7 +59,7 @@ const BannerBackground = styled.div`
 
 const Photo = styled.div`
     position: absolute;
-    top: 40rem;
+    top: 25rem;
     height: 25rem;
     width: 100%;
     background-size: cover;
@@ -67,6 +67,7 @@ const Photo = styled.div`
 
     ${respondTo.sm`
         height: 40rem;
+        top: 30rem;
     `}
 
     ${respondTo.lg`
