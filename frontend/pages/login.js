@@ -1,12 +1,34 @@
-import styled, { css } from 'styled-components'
-import Head from 'next/head'
+import { useState } from 'react'
+import groq from 'groq'
+import imageUrlBuilder from '@sanity/image-url'
+import client from '../client'
 
-const login = () => {
+// Components
+import AuthFalse from '../components/Login/AuthFalse'
+import AuthTrue from '../components/Login/AuthTrue'
+
+const login = ({
+    loginPassword,
+}) => {
+    const [password, setPassword] = useState('')
+    
     return (
-        <div>
-            <h1 style={{ height: '80rem' }}>Login Page</h1>
-        </div>
+        <>
+            {password !== loginPassword ? <AuthFalse /> : <AuthTrue />}
+        </>
     )
+}
+
+function urlFor (source) {
+    return imageUrlBuilder(client).image(source)
+}
+
+const query = groq`*[_type == "login" && slug.current == "v1"][0]{
+    loginPassword,
+}`
+
+login.getInitialProps = async function () {
+    return await client.fetch(query)
 }
 
 export default login

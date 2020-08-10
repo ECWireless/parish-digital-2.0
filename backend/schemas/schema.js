@@ -11,6 +11,7 @@ import service from './service'
 import work from './work'
 import gear from './gear'
 import contact from './contact'
+import login from './login'
 
 // We import object and document schemas
 import blockContent from './blockContent'
@@ -34,6 +35,7 @@ export default createSchema({
     work,
     gear,
     contact,
+    login,
     post,
     navigation,
     author,
