@@ -266,8 +266,8 @@ const OutContainer = styled(Box3)`
     `}
 
     ${respondTo.xl`
-        height: auto;
         border: 1px solid transparent;
+        height: 75vh;
     `}
 `
 
