@@ -29,7 +29,7 @@ const Details = ({
                 </Col2Left>
                 <Col2Right style={{position: 'relative'}} justify={'center'} align={'center'}>
                     <Filter />
-                    <ServicesCard1>
+                    <ServicesCard1 backgroundImage={details1Photo}>
                         <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
                             <CustomBox3 width={600}>
                                 <H4 style={{fontWeight: 700}} uppercase center>
@@ -67,7 +67,7 @@ const Details = ({
             <Col2>
                 <Col2Left style={{position: 'relative'}} justify={'center'} align={'center'}>
                     <Filter />
-                    <ServicesCard2>
+                    <ServicesCard2 backgroundImage={details2Photo}>
                         <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
                             <CustomBox3>
                                 <H4 style={{fontWeight: 700}} uppercase center>
@@ -155,6 +155,13 @@ const ServicesCard1 = styled.div`
         width: 90%;
         background-image: none;
     `}
+
+    ${props => props.backgroundImage && css`
+        background-image: url(${props.backgroundImage});
+        ${respondTo.lg`
+            background-image: none;
+        `}
+    `}
 `
 
 const ServicesCard2 = styled.div`
@@ -186,6 +193,13 @@ const ServicesCard2 = styled.div`
         width: 90%;
         background-image: none;
         box-shadow: ${shadows.card};
+    `}
+
+    ${props => props.backgroundImage && css`
+        background-image: url(${props.backgroundImage});
+        ${respondTo.lg`
+            background-image: none;
+        `}
     `}
 `
 
