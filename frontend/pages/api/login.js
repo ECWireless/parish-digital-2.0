@@ -43,5 +43,5 @@ const createSessions = () => {
 const signToken = () => {
     const jwt = require('jsonwebtoken');
     const jwtPayload = { name: 'test' };
-    return Promise.resolve(jwt.sign(jwtPayload, process.env.JTW_SECRET, { expiresIn: '2 days'}))
+    return Promise.resolve(jwt.sign(jwtPayload, 'secret', { expiresIn: '2 days'}))
 }
