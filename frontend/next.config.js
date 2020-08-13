@@ -1,5 +1,5 @@
 module.exports = {
-    serverRuntimeConfig: {
+    env: {
         ENVIRONMENT_TEST: process.env.ENVIRONMENT_TEST,
     },
 }
