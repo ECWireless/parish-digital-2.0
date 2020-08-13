@@ -55,7 +55,7 @@ const AuthFalse = ({
                 console.log('Failed login!')
             } else {
                 window.sessionStorage.setItem('token', resp.token);
-                fetch('http://localhost:3000/api/auth', {
+                fetch('https://parish-digital.vercel.app/api/auth', {
                     method: 'put',
                     headers: {
                         'Content-Type': 'application/json',

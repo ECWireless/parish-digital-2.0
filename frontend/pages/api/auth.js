@@ -8,7 +8,7 @@ const query = groq`*[_type == "login" && slug.current == "v1"][0]{
 export default async (req, res) => {
     const { authorization } = req.headers;
     if (!authorization) {
-        return res.status(401).json('Unauthorized!');
+        return res.status(401).json({ status: 'Unauthorized!'});
     }
     return client.fetch(query)
     .then(data => {
