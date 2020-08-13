@@ -15,6 +15,7 @@ const AuthFalse = ({
     const [tempPassword, setTempPassword] = useState('')
 
     useEffect(() => {
+        console.log('before fetch')
         fetch('http://localhost:3000/api/auth', {
             method: 'put',
             headers: {
@@ -29,7 +30,9 @@ const AuthFalse = ({
                 loggedIn(true)
             }
         })
-        .catch(console.log)
+        .catch(err => {
+            console.log(err)
+        })
       }, []);
 
     function onSetTempPassword(e) {
