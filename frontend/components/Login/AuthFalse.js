@@ -16,7 +16,7 @@ const AuthFalse = ({
 
     useEffect(() => {
         console.log('before fetch')
-        fetch('http://localhost:3000/api/auth', {
+        fetch('https://parish-digital.vercel.app/api/auth', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const AuthFalse = ({
     function submit(e) {
         e.preventDefault()
 
-        fetch('http://localhost:3000/api/login', {
+        fetch('https://parish-digital.vercel.app/api/login', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
