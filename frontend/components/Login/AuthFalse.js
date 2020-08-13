@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 // Components
@@ -10,13 +10,64 @@ import { H2 } from '../Typography'
 import { Input, Label } from '../Forms'
 
 const AuthFalse = ({
-    setPassword,
+    loggedIn,
 }) => {
     const [tempPassword, setTempPassword] = useState('')
 
+    useEffect(() => {
+        fetch('http://localhost:3000/api/auth', {
+            method: 'put',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': window.sessionStorage.getItem('token')
+            }
+        })
+        .then(response => response.json())
+        .then(resp => {
+            console.log(resp)
+            if (resp) {
+                loggedIn(true)
+            }
+        })
+        .catch(console.log)
+      }, []);
+
     function onSetTempPassword(e) {
-        e.preventDefault()
         setTempPassword(e.target.value)
+    }
+
+    function submit(e) {
+        e.preventDefault()
+
+        fetch('http://localhost:3000/api/login', {
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                password: tempPassword
+            })
+        })
+        .then(response => response.json())
+        .then(resp => {
+            if (!resp.token) {
+                console.log('Failed login!')
+            } else {
+                window.sessionStorage.setItem('token', resp.token);
+                fetch('http://localhost:3000/api/auth', {
+                    method: 'put',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': window.sessionStorage.getItem('token')
+                    }
+                })
+                .then(response => response.json())
+                .then(resp => {
+                    if (resp) {
+                        loggedIn(true)
+                    }
+                })
+                .catch(console.log)
+            }
+        })
     }
 
     return (
@@ -27,7 +78,7 @@ const AuthFalse = ({
                         Employee Login
                     </H2>
                     <Box3 marginTop={50} marginBottom={50}>
-                        <form onSubmit={() => setPassword(tempPassword)}>
+                        <form onSubmit={submit}>
                             <Box3 marginBottom={25}>
                                 <Label uppercase color={colors.white} htmlFor="login__password">
                                     Password:
@@ -37,7 +88,7 @@ const AuthFalse = ({
                                 value={tempPassword} onChange={onSetTempPassword.bind(this)}
                             />
                             <Box3 marginTop={50}>
-                                <Button2 color={colors.black} background={colors.white} tyle="submit">
+                                <Button2 color={colors.black} background={colors.white} type="submit">
                                     Login
                                 </Button2>
                             </Box3>

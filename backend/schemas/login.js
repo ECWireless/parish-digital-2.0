@@ -23,6 +23,11 @@ export default {
             type: 'string'
         },
         {
+            name: 'loginToken',
+            title: 'Login Token',
+            type: 'string'
+        },
+        {
             name: 'loginBackgroundPhoto',
             title: 'Login Background Photo',
             type: 'image',

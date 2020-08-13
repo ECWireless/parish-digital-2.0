@@ -9,19 +9,24 @@ import { Container, Flex } from '../Containers'
 import { CustomLink } from '../Links'
 
 const AuthTrue = ({
-    setPassword,
+    setLoggedIn,
     loginBackgroundPhoto,
     loginAlexSubmitHoursLink,
     loginMikeSubmitHoursLink,
     loginAlexTimesheetLink,
     loginMikeTimesheetLink,
 }) => {
+    function logout() {
+        window.sessionStorage.removeItem('token')
+        setLoggedIn(false)
+    }
+
     return (
         <AuthTrueBackground style={{backgroundImage: `url(${loginBackgroundPhoto})`}}>
             <Container>
                 <Flex aling={'center'} justify={'center'}>
                     <Box3 marginTop={50}>
-                        <Button1 onClick={() => setPassword('')}>
+                        <Button1 onClick={logout}>
                             Logout
                         </Button1>
                     </Box3>

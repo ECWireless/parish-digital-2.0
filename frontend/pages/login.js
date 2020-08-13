@@ -8,21 +8,20 @@ import AuthFalse from '../components/Login/AuthFalse'
 import AuthTrue from '../components/Login/AuthTrue'
 
 const login = ({
-    loginPassword,
     loginBackgroundPhoto,
     loginAlexSubmitHoursLink,
     loginMikeSubmitHoursLink,
     loginAlexTimesheetLink,
     loginMikeTimesheetLink,
 }) => {
-    const [password, setPassword] = useState('')
+    const [loggedIn, setLoggedIn] = useState(false)
     
     return (
         <>
-            {password !== loginPassword 
-                ? <AuthFalse setPassword={setPassword} /> 
+            {!loggedIn 
+                ? <AuthFalse loggedIn={setLoggedIn} /> 
                 : <AuthTrue
-                    setPassword={setPassword}
+                    setLoggedIn={setLoggedIn}
                     loginBackgroundPhoto={urlFor(loginBackgroundPhoto)}
                     loginAlexSubmitHoursLink={loginAlexSubmitHoursLink}
                     loginMikeSubmitHoursLink={loginMikeSubmitHoursLink}
@@ -39,7 +38,6 @@ function urlFor (source) {
 }
 
 const query = groq`*[_type == "login" && slug.current == "v1"][0]{
-    loginPassword,
     loginBackgroundPhoto,
     loginAlexSubmitHoursLink,
     loginMikeSubmitHoursLink,
