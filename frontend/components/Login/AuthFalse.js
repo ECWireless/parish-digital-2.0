@@ -15,7 +15,6 @@ const AuthFalse = ({
     const [tempPassword, setTempPassword] = useState('')
 
     useEffect(() => {
-        console.log('before fetch')
         fetch('https://parish-digital.vercel.app/api/auth', {
             method: 'put',
             headers: {
@@ -26,7 +25,7 @@ const AuthFalse = ({
         .then(response => response.json())
         .then(resp => {
             console.log(resp)
-            if (resp) {
+            if (resp.loggedIn) {
                 loggedIn(true)
             }
         })
