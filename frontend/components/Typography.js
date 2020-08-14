@@ -183,6 +183,7 @@ export const P1 = styled.p`
 
     ${respondTo.lg`
         font-size: 2.2rem;
+        line-height: 25px;
     `}
 
     ${respondTo.xl`

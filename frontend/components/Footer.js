@@ -1,72 +1,105 @@
-import styled from 'styled-components'
+import Link from 'next/link'
+import styled, { css } from 'styled-components'
 import respondTo from '../components/Breakpoints'
 
 // Components
-import { Box1, Box3 } from '../components/Boxes'
+import { colors } from '../components/theme'
+import { Box3 } from '../components/Boxes'
 import { Container, Flex } from '../components/Containers'
 import { CustomLink } from '../components/Links'
-import { P2 } from '../components/Typography'
-import { colors } from './theme'
+import { H4, P1 } from '../components/Typography'
 
 const Footer = () => {
     return (
         <FooterContainer>
-            <Container>
-                <Flex align={'center'} justify={'center'} respond>
-					<LeftContainer>
-						<LogoContainer>
-							<PDLogo style={{ backgroundImage: 'url(./logos/pd_logo.png)'}} />
-							<Box1 marginTop={15}>
-								<LogoCaption>Parish Digital</LogoCaption>
-							</Box1>
-						</LogoContainer>
-						<CustomLink
-							href="https://upcity.com/local-marketing-agencies/profiles/parish-digital-video"
-							target="_blank" rel="noopener noreferrer"
-						>
-							<img src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" width="80px" height="80px" />
-						</CustomLink>
-					</LeftContainer>
-                    <Flex direction={'column'}>
-                        <CustomLink  href="mailto: hello@parishdigital.com" color={colors.white} hover={colors.yellow}>
-                            <P2 center>hello@parishdigital.com</P2>
-                        </CustomLink>
-                        <Box3 marginTop={10}>
-                            <CustomLink  href="tel: 4129513331" color={colors.white} hover={colors.yellow}>
-                                <P2 center>(412) 951-3331</P2>
-                            </CustomLink>
-                        </Box3>
-                        <Box3 marginTop={30}>
-                            <P2 color={colors.white} center>5819 Penn Ave</P2>
-                        </Box3>
-                        <Box3 marginTop={10}>
-                            <P2 color={colors.white} center>Pittsburgh, PA 15206</P2>
-                        </Box3>
-                    </Flex>
-                    <SocialContainer>
-                        <Box3 marginRight={10}>
-                            <CustomLink  href="https://vimeo.com/parishdigital" target="_blank" rel="noopener noreferrer">
-                                <SocialLogo style={{ backgroundImage: 'url(./logos/vimeo-icon.png)'}} />
-                            </CustomLink>
-                        </Box3>
-                        <Box3>
-                            <CustomLink  href="https://www.linkedin.com/company/parish-digital-video/" target="_blank" rel="noopener noreferrer">
-                                <SocialLogo style={{ backgroundImage: 'url(./logos/linkedin.png)'}} />
-                            </CustomLink>
-                        </Box3>
-                        <Box3 marginRight={10} marginTop={10}>
-                            <CustomLink  href="https://www.facebook.com/Parish-Digital-Video-Productions-270923643761" target="_blank" rel="noopener noreferrer">
-                                <SocialLogo style={{ backgroundImage: 'url(./logos/facebook.png)'}} />
-                            </CustomLink>
-                        </Box3>
-                        <Box3 marginTop={10}>
-                            <CustomLink  href="https://www.youtube.com/channel/UCTqzflm7Z0JHZwmHI_MorGw" target="_blank" rel="noopener noreferrer">
-                                <SocialLogo style={{ backgroundImage: 'url(./logos/youtube.png)'}} />
-                            </CustomLink>
-                        </Box3>
-                    </SocialContainer>
-                </Flex>
-            </Container>
+			<Container>
+				<Flex align={'center'} justify={'center'} direction={'column'}>
+					<UpperFooter>
+						<Sitemap>
+							<Box3 marginTop={50}>
+								<H4 color={colors.white} uppercase>Sitemap</H4>
+							</Box3>
+							<Box3 marginTop={25}>
+								<SmallLine />
+							</Box3>
+							<Box3 marginTop={25}>
+								<Link href="/about">
+									<ParagraphLink color={colors.yellow}>about</ParagraphLink>
+								</Link>
+							</Box3>
+							<Box3 marginTop={25}>
+								<ParagraphLink color={colors.yellow}>services</ParagraphLink>
+							</Box3>
+							<Box3 marginTop={25}>
+								<ParagraphLink color={colors.yellow}>work</ParagraphLink>
+							</Box3>
+							<Box3 marginTop={25}>
+								<ParagraphLink color={colors.yellow}>gear</ParagraphLink>
+							</Box3>
+							<Box3 marginTop={25} marginBottom={50}>
+								<ParagraphLink color={colors.yellow}>contact</ParagraphLink>
+							</Box3>
+						</Sitemap>
+						<BigLogo1>
+							<CustomLink
+								href="https://www.peerspace.com/resources/corporate-video-production-companies-pittsburgh"
+								target="_blank" rel="noopener noreferrer"
+							>
+								<BigLogoImage src="./logos/best-corporate.png" />
+							</CustomLink>
+						</BigLogo1>
+						<BigLogo2>
+							<CustomLink
+								href="https://upcity.com/local-marketing-agencies/profiles/parish-digital-video"
+								target="_blank" rel="noopener noreferrer"
+							>
+								<BigLogoImage src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" />
+							</CustomLink>
+						</BigLogo2>
+						<Contact>
+							<Box3 marginTop={50}>
+								<H4 color={colors.white} uppercase>Contact</H4>
+							</Box3>
+							<Box3 marginTop={25}>
+								<SmallLine />
+							</Box3>
+							<Box3 marginTop={25}>
+								<P1 color={colors.yellow}>5819 Penn Ave Pittsburgh, PA 15206</P1>
+							</Box3>
+							<Box3 marginTop={25}>
+								<CustomLink
+									href="mailto: hello@parishdigital.com"
+								>
+									<P1 color={colors.yellow}>hello@parishdigital.com</P1>
+								</CustomLink>
+							</Box3>
+							<Box3 marginTop={25} marginBottom={50}>
+								<CustomLink
+									href="tel: 4129513331"
+								>
+									<P1 color={colors.yellow}>(412) 951-3331</P1>
+								</CustomLink>
+							</Box3>
+						</Contact>
+					</UpperFooter>
+
+					<CustomLine />
+
+					<LowerFooter>
+						<Copyright>
+							<Box3 marginTop={50} marginBottom={50}>
+								<P1 color={colors.white}>© All Rights Reserved Parish Digital Video Production</P1>
+							</Box3>
+						</Copyright>
+						<SmallLogos>
+							<SmallLogo style={{backgroundImage: `url(./logos/vimeo-icon.png)`}} />
+							<SmallLogo style={{backgroundImage: `url(./logos/linkedin.png)`}} />
+							<SmallLogo style={{backgroundImage: `url(./logos/facebook.png)`}} />
+							<SmallLogo style={{backgroundImage: `url(./logos/youtube.png)`}} />
+						</SmallLogos>
+					</LowerFooter>
+				</Flex>
+			</Container>
         </FooterContainer>
     )
 }
@@ -75,110 +108,133 @@ export default Footer
 
 const FooterContainer = styled.div`
 	width: 100%;
-	height: 60rem;
 	background: linear-gradient(#585858, #393939);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	flex-direction: column;
     z-index: 0;
-
-	${respondTo.md`
-		height: 30rem;
-	`}
 `
 
-const LogoContainer = styled.div`
+const UpperFooter = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+`
+
+const Sitemap = styled.div`
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+`
+
+const SmallLine = styled.div`
+	width: 10rem;
+	height: 2px;
+	background: lightgrey;
+`
+
+const ParagraphLink = styled.a`
+	font-size: 1.4rem;
+    line-height: 20px;
+    letter-spacing: 1px;
+
+    ${respondTo.xs`
+        font-size: 1.6rem;
+    `}
+
+    ${respondTo.sm`
+        font-size: 1.8rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 2rem;
+    `}
+
+    ${respondTo.lg`
+        font-size: 2.2rem;
+        line-height: 25px;
+    `}
+
+    ${respondTo.xl`
+        font-size: 2.8rem;
+        line-height: 25px;
+	`}
+	
+	&:hover {
+		cursor: pointer;
+	}
+
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
+
+    ${props => props.center && css`
+        text-align: center;
+    `}
+
+    ${props => css`
+        color: ${props.color}
+    `}
+`
+
+const BigLogo1 = styled.div`
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	width: 38rem;
+	height: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+	justify-content: flex-end;
 	margin-right: 2rem;
 `
 
-const LeftContainer = styled.div`
-	position: static;
+const BigLogo2 = styled.div`
+	grid-column: 3 / 4;
+	grid-row: 1 / 2;
+	width: 38rem;
+	height: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	flex-direction: row;
-	margin-bottom: 8rem;
-
-	${respondTo.md`
-		margin-bottom: 0;
-		position: absolute;
-		top: 0;
-		left: 0;
-	`}
+	justify-content: flex-start;
+	margin-left: 2rem;
 `
 
-const PDLogo = styled.div`
-	height: 6rem;
+const BigLogoImage = styled.img`
+	width: 15rem;
+	height: 15rem;
+`
+
+const Contact = styled.div`
+	grid-column: 4 / 5;
+	grid-row: 1 / 2;
+`
+
+const CustomLine = styled.div`
+	width: 100%;
+	height: 2px;
+	background: lightgrey;
+`
+
+const LowerFooter = styled.div`
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+`
+
+const Copyright = styled.div`
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+`
+
+const SmallLogos = styled.div`
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+`
+
+const SmallLogo = styled.div`
 	width: 6rem;
+	height: 6rem;
 	background-position: center;
 	background-size: cover;
-
-	&:hover {
-		cursor: pointer;
-		color: ${colors.yellow};
-		transition: all .3s ease;
-	}
-
-	${respondTo.md`
-		height: 8rem;
-		width: 8rem;
-	`}
-`
-
-const LogoCaption = styled.p`
-	color: #fff;
-	font-size: 1.6rem;
-
-	${respondTo.xs`
-		font-size: 1.8rem;
-    `}
-
-	&:hover {
-		cursor: pointer;
-		color: ${colors.yellow};
-		transition: all .3s ease;
-	}
-`
-
-const SocialContainer = styled.div`
-	position: static;
-	width: 15rem;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	margin-top: 8rem;
-
-	${respondTo.md`
-		margin-top: 0;
-		position: absolute;
-		top: 1rem;
-		right: 0;
-	`}
-`
-
-const SocialLogo = styled.div`
-	height: 5rem;
-	width: 5rem;
-	background-position: center;
-    background-size: cover;
-    transition: all .5s ease;
-    border-radius: 50%;
-
-	&:hover {
-		cursor: pointer;
-        border: 1px solid ${colors.yellow};
-        transform: scale(1.05);
-	}
-
-	${respondTo.xs`
-		height: 5rem;
-		width: 5rem;
-    `}
+	margin-right: 1rem;
 `
