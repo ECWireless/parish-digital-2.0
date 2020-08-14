@@ -31,7 +31,7 @@ const Details = ({
                     <Filter />
                     <ServicesCard1 backgroundImage={details1Photo}>
                         <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
-                            <CustomBox3 width={600}>
+                            <CustomBox3>
                                 <H4 style={{fontWeight: 700}} uppercase center>
                                     {details1Heading}
                                 </H4>
@@ -42,11 +42,9 @@ const Details = ({
                                 </CustomBox3>
                             </Fade>
                             <Fade bottom ssrFadeout>
-                                <Box3 width={650}>
-                                    <NewParagraph>
-                                        {details1ParagraphMobile}
-                                    </NewParagraph>
-                                </Box3>
+                                <NewParagraph>
+                                    {details1ParagraphMobile}
+                                </NewParagraph>
                             </Fade>
                             <Fade bottom ssrFadeout>
                                 <OriginalParagraph>
@@ -80,11 +78,9 @@ const Details = ({
                                 </CustomBox3>
                             </Fade>
                             <Fade bottom ssrFadeout>
-                                <Box3 width={650}>
-                                    <NewParagraph>
-                                        {details2ParagraphMobile}
-                                    </NewParagraph>
-                                </Box3>
+                                <NewParagraph>
+                                    {details2ParagraphMobile}
+                                </NewParagraph>
                             </Fade>
                             <Fade bottom ssrFadeout>
                                 <OriginalParagraph>
@@ -152,7 +148,8 @@ const ServicesCard1 = styled.div`
 
     ${respondTo.lg`
         margin-top: 0;
-        width: 90%;
+        width: 100%;
+        height: 100%;
         background-image: none;
     `}
 
@@ -190,7 +187,8 @@ const ServicesCard2 = styled.div`
 
     ${respondTo.lg`
         margin-top: 0;
-        width: 90%;
+        width: 100%;
+        height: 100%;
         background-image: none;
         box-shadow: ${shadows.card};
     `}

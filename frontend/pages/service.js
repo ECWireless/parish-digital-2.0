@@ -10,6 +10,7 @@ import Description from '../components/Service/Description'
 import Features from '../components/Service/Features'
 import Details from '../components/Service/Details'
 import Pricing from '../components/Service/Pricing'
+import Services from '../components/Service/Services'
 import Modal from '../components/Service/Modal'
 
 const service = ({
@@ -46,6 +47,26 @@ const service = ({
     pricingHeading,
     pricingButtonText,
     pricingPhoto,
+    servicesHeading,
+    servicesSubheading1,
+    servicesList1Item1,
+    servicesList1Item2,
+    servicesList1Item3,
+    servicesList1Item4,
+    servicesList1Item5,
+    servicesList1Item6,
+    servicesList1Item7,
+    servicesList1Item8,
+    servicesList1Item9,
+    servicesPhoto1,
+    servicesSubheading2,
+    servicesList2Item1,
+    servicesList2Item2,
+    servicesList2Item3,
+    servicesList2Item4,
+    servicesList2Item5,
+    servicesList2Item6,
+    servicesPhoto2,
 }) => {
     const [modal, setModal] = useState(false)
     return (
@@ -95,6 +116,28 @@ const service = ({
                 pricingButtonText={pricingButtonText}
                 pricingPhoto={urlFor(pricingPhoto)}
             />
+            <Services
+                servicesHeading={servicesHeading}
+                servicesSubheading1={servicesSubheading1}
+                servicesList1Item1={servicesList1Item1}
+                servicesList1Item2={servicesList1Item2}
+                servicesList1Item3={servicesList1Item3}
+                servicesList1Item4={servicesList1Item4}
+                servicesList1Item5={servicesList1Item5}
+                servicesList1Item6={servicesList1Item6}
+                servicesList1Item7={servicesList1Item7}
+                servicesList1Item8={servicesList1Item8}
+                servicesList1Item9={servicesList1Item9}
+                servicesPhoto1={urlFor(servicesPhoto1)}
+                servicesSubheading2={servicesSubheading2}
+                servicesList2Item1={servicesList2Item1}
+                servicesList2Item2={servicesList2Item2}
+                servicesList2Item3={servicesList2Item3}
+                servicesList2Item4={servicesList2Item4}
+                servicesList2Item5={servicesList2Item5}
+                servicesList2Item6={servicesList2Item6}
+                servicesPhoto2={urlFor(servicesPhoto2)}
+            />
 			<Backdrop onClick={() => setModal(false)} open={modal} />
             <Modal open={modal} setModal={setModal} />
         </>
@@ -139,6 +182,26 @@ const query = groq`*[_type == "service" && slug.current == "v1"][0]{
     pricingHeading,
     pricingButtonText,
     pricingPhoto,
+    servicesHeading,
+    servicesSubheading1,
+    servicesList1Item1,
+    servicesList1Item2,
+    servicesList1Item3,
+    servicesList1Item4,
+    servicesList1Item5,
+    servicesList1Item6,
+    servicesList1Item7,
+    servicesList1Item8,
+    servicesList1Item9,
+    servicesPhoto1,
+    servicesSubheading2,
+    servicesList2Item1,
+    servicesList2Item2,
+    servicesList2Item3,
+    servicesList2Item4,
+    servicesList2Item5,
+    servicesList2Item6,
+    servicesPhoto2,
 }`
 
 service.getInitialProps = async function () {
