@@ -48,68 +48,68 @@ const Services = ({
                         </Fade>
                     </Flex>
                 </Box3>
+                <Col2 respondDirection={'column-reverse'}>
+                    <Col2Left justify={'center'} align={'center'}>
+                        <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto1})` }} />
+                    </Col2Left>
+                    <Col2Right justify={'center'} align={'center'}>
+                        <ServicesCard marginBottom={75}>
+                            <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
+                                <H3 uppercase center>
+                                    {servicesSubheading1}
+                                </H3>
+                                <Fade ssrFadeout>
+                                    <Box3 marginTop={25} marginBottom={25}>
+                                        <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
+                                    </Box3>
+                                </Fade>
+                                <Fade bottom ssrFadeout>
+                                    <ServicesList>
+                                        <li>{servicesList1Item1}</li>
+                                        <li>{servicesList1Item2}</li>
+                                        <li>{servicesList1Item3}</li>
+                                        <li>{servicesList1Item4}</li>
+                                        <li>{servicesList1Item5}</li>
+                                        <li>{servicesList1Item6}</li>
+                                        <li>{servicesList1Item7}</li>
+                                        <li>{servicesList1Item8}</li>
+                                        <li>{servicesList1Item9}</li>
+                                    </ServicesList>
+                                </Fade>
+                            </Flex>
+                        </ServicesCard>
+                    </Col2Right>
+                </Col2>
+                <Col2>
+                    <Col2Left justify={'center'} align={'center'}>
+                        <ServicesCard marginTop={75} marginBottom={75}>
+                            <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
+                                <H3 uppercase center>
+                                    {servicesSubheading2}
+                                </H3>
+                                <Fade ssrFadeout>
+                                    <Box3 marginTop={25} marginBottom={25}>
+                                        <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
+                                    </Box3>
+                                </Fade>
+                                <Fade bottom ssrFadeout>
+                                    <ServicesList>
+                                        <li>{servicesList2Item1}</li>
+                                        <li>{servicesList2Item2}</li>
+                                        <li>{servicesList2Item3}</li>
+                                        <li>{servicesList2Item4}</li>
+                                        <li>{servicesList2Item5}</li>
+                                        <li>{servicesList2Item6}</li>
+                                    </ServicesList>
+                                </Fade>
+                            </Flex>
+                        </ServicesCard>
+                    </Col2Left>
+                    <Col2Right justify={'center'} align={'center'}>
+                        <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto2})` }} />
+                    </Col2Right>
+                </Col2>
             </Container>
-            <Col2 respondDirection={'column-reverse'}>
-                <Col2Left justify={'center'} align={'center'}>
-                    <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto1})` }} />
-                </Col2Left>
-                <Col2Right justify={'center'} align={'center'}>
-                    <ServicesCard marginBottom={75} style={{width: '90%'}}>
-                        <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
-                            <H3 uppercase center>
-                                {servicesSubheading1}
-                            </H3>
-                            <Fade ssrFadeout>
-                                <Box3 marginTop={25} marginBottom={25}>
-                                    <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
-                                </Box3>
-                            </Fade>
-                            <Fade bottom ssrFadeout>
-                                <ServicesList>
-                                    <li>{servicesList1Item1}</li>
-                                    <li>{servicesList1Item2}</li>
-                                    <li>{servicesList1Item3}</li>
-                                    <li>{servicesList1Item4}</li>
-                                    <li>{servicesList1Item5}</li>
-                                    <li>{servicesList1Item6}</li>
-                                    <li>{servicesList1Item7}</li>
-                                    <li>{servicesList1Item8}</li>
-                                    <li>{servicesList1Item9}</li>
-                                </ServicesList>
-                            </Fade>
-                        </Flex>
-                    </ServicesCard>
-                </Col2Right>
-            </Col2>
-            <Col2>
-                <Col2Left justify={'center'} align={'center'}>
-                    <ServicesCard marginTop={75} marginBottom={75} style={{width: '90%'}}>
-                        <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
-                            <H3 uppercase center>
-                                {servicesSubheading2}
-                            </H3>
-                            <Fade ssrFadeout>
-                                <Box3 marginTop={25} marginBottom={25}>
-                                    <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
-                                </Box3>
-                            </Fade>
-                            <Fade bottom ssrFadeout>
-                                <ServicesList>
-                                    <li>{servicesList2Item1}</li>
-                                    <li>{servicesList2Item2}</li>
-                                    <li>{servicesList2Item3}</li>
-                                    <li>{servicesList2Item4}</li>
-                                    <li>{servicesList2Item5}</li>
-                                    <li>{servicesList2Item6}</li>
-                                </ServicesList>
-                            </Fade>
-                        </Flex>
-                    </ServicesCard>
-                </Col2Left>
-                <Col2Right justify={'center'} align={'center'}>
-                    <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto2})` }} />
-                </Col2Right>
-            </Col2>
         </>
     )
 }

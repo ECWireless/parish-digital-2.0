@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 // Components
 import { colors } from '../theme'
-import { Box3 } from '../Boxes'
+import { Box1, Box3 } from '../Boxes'
 import { Button2 } from '../Buttons'
 import { Container, Flex } from '../Containers'
 import { H2 } from '../Typography'
@@ -75,28 +75,30 @@ const AuthFalse = ({
     return (
         <FalseBackground>
             <Container style={{ height: '100%'}}>
-                <Flex style={{width: '100%', height: '100%'}} align={'center'} justify={'center'} direction={'column'}>
-                    <H2 color={colors.white} uppercase center>
-                        Employee Login
-                    </H2>
-                    <Box3 marginTop={50} marginBottom={50}>
-                        <form onSubmit={submit}>
-                            <Box3 marginBottom={25}>
-                                <Label uppercase color={colors.white} htmlFor="login__password">
-                                    Password:
-                                </Label>
-                            </Box3>
-                            <Input required type="password" id="login__password"
-                                value={tempPassword} onChange={onSetTempPassword.bind(this)}
-                            />
-                            <Box3 marginTop={50}>
-                                <Button2 color={colors.black} background={colors.white} type="submit">
-                                    Login
-                                </Button2>
-                            </Box3>
-                        </form>
-                    </Box3>
-                </Flex>
+                <Box1 paddingTop={100}>
+                    <Flex style={{width: '100%', height: '100%'}} align={'center'} justify={'flex-start'} direction={'column'}>
+                        <H2 color={colors.white} uppercase center>
+                            Employee Login
+                        </H2>
+                        <Box3 marginTop={50} marginBottom={50}>
+                            <form onSubmit={submit}>
+                                <Box3 marginBottom={25}>
+                                    <Label uppercase color={colors.white} htmlFor="login__password">
+                                        Password:
+                                    </Label>
+                                </Box3>
+                                <Input required type="password" id="login__password"
+                                    value={tempPassword} onChange={onSetTempPassword.bind(this)}
+                                />
+                                <Box3 marginTop={50}>
+                                    <Button2 color={colors.black} background={colors.white} type="submit">
+                                        Login
+                                    </Button2>
+                                </Box3>
+                            </form>
+                        </Box3>
+                    </Flex>
+                </Box1>
             </Container>
         </FalseBackground>
     )

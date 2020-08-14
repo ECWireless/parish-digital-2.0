@@ -6,6 +6,7 @@ import respondTo from '../Breakpoints'
 import { colors, shadows } from '../theme'
 import { Box3 } from '../Boxes'
 import { Col3, Flex } from '../Containers'
+import { CustomLink } from '../Links'
 import { H3, P3 } from '../Typography'
 
 const Features = ({
@@ -27,8 +28,8 @@ const Features = ({
 }) => {
     return (
         <FeaturesBackground>
-            <Col3 style={{height: '100%'}}>
-                <CustomCol3Left
+            <DesktopCol3 style={{height: '100%'}}>
+                <LinkCol3Left
                     align={'center'} justify={'center'}
                     href={feature1Link}
                     target="_blank" rel="noopener noreferrer"
@@ -53,8 +54,8 @@ const Features = ({
                             </CustomFlex2>
                         </CustomFlex>
                     </Fade>
-                </CustomCol3Left>
-                <CustomCol3Middle
+                </LinkCol3Left>
+                <LinkCol3Middle
                     align={'center'} justify={'center'}
                     href={feature2Link}
                     target="_blank" rel="noopener noreferrer"
@@ -79,8 +80,8 @@ const Features = ({
                             </CustomFlex2>
                         </CustomFlex>
                     </Fade>
-                </CustomCol3Middle>
-                <CustomCol3Right
+                </LinkCol3Middle>
+                <LinkCol3Right
                     align={'center'} justify={'center'}
                     href={feature3Link}
                     target="_blank" rel="noopener noreferrer"
@@ -105,8 +106,91 @@ const Features = ({
                             </CustomFlex2>
                         </CustomFlex>
                     </Fade>
+                </LinkCol3Right>
+            </DesktopCol3>
+            <MobileCol3 style={{height: '100%'}}>
+                <CustomCol3Left align={'center'} justify={'center'}>
+                    <Fade bottom ssrFadeout>
+                        <CustomFlex>
+                            <Icon style={{backgroundImage: `url(${feature1Icon})`}} />
+                            <CustomFlex2 direction={'column'}>
+                                <H3 style={{textAlign: 'inherit'}} uppercase color={colors.white}>
+                                    {feature1Heading}
+                                </H3>
+                                <Box3 marginTop={25}>
+                                    <P3 style={{textAlign: 'inherit'}} color={colors.white}>
+                                        {feature1Paragraph}
+                                    </P3>
+                                </Box3>
+                                <Box3 marginTop={15}>
+                                    <CustomLink
+                                        href={feature1Link}
+                                        target="_blank" rel="noopener noreferrer"
+                                    >
+                                        <P3 uppercase style={{textAlign: 'inherit'}} color={colors.yellow}>
+                                            {feature1ButtonText}
+                                        </P3>
+                                    </CustomLink>
+                                </Box3>
+                            </CustomFlex2>
+                        </CustomFlex>
+                    </Fade>
+                </CustomCol3Left>
+                <CustomCol3Middle align={'center'} justify={'center'}>
+                    <Fade delay={200} bottom ssrFadeout>
+                        <CustomFlex>
+                            <Icon style={{backgroundImage: `url(${feature2Icon})`}} />
+                            <CustomFlex2 direction={'column'}>
+                                <H3 style={{textAlign: 'inherit'}} uppercase color={colors.white}>
+                                    {feature2Heading}
+                                </H3>
+                                <Box3 marginTop={25}>
+                                    <P3 style={{textAlign: 'inherit'}} color={colors.white}>I
+                                        {feature2Paragraph}
+                                    </P3>
+                                </Box3>
+                                <Box3 marginTop={15}>
+                                    <CustomLink
+                                        href={feature2Link}
+                                        target="_blank" rel="noopener noreferrer"
+                                    >
+                                        <P3 uppercase style={{textAlign: 'inherit'}} color={colors.yellow}>
+                                            {feature2ButtonText}
+                                        </P3>
+                                    </CustomLink>
+                                </Box3>
+                            </CustomFlex2>
+                        </CustomFlex>
+                    </Fade>
+                </CustomCol3Middle>
+                <CustomCol3Right align={'center'} justify={'center'}>
+                    <Fade delay={400} bottom ssrFadeout>
+                        <CustomFlex>
+                            <Icon style={{backgroundImage: `url(${feature3Icon})`}} />
+                            <CustomFlex2 direction={'column'}>
+                                <H3 style={{textAlign: 'inherit'}} uppercase color={colors.white}>
+                                    {feature3Heading}
+                                </H3>
+                                <Box3 marginTop={25}>
+                                    <P3 style={{textAlign: 'inherit'}} color={colors.white}>
+                                        {feature3Paragraph}
+                                    </P3>
+                                </Box3>
+                                <Box3 marginTop={15}>
+                                    <CustomLink
+                                        href={feature3Link}
+                                        target="_blank" rel="noopener noreferrer"
+                                    >
+                                        <P3 uppercase style={{textAlign: 'inherit'}} color={colors.yellow}>
+                                            {feature3ButtonText}
+                                        </P3>
+                                    </CustomLink>
+                                </Box3>
+                            </CustomFlex2>
+                        </CustomFlex>
+                    </Fade>
                 </CustomCol3Right>
-            </Col3>
+            </MobileCol3>
         </FeaturesBackground>
     )
 }
@@ -138,6 +222,22 @@ const FeaturesBackground = styled.div`
 
     ${respondTo.lg`
         height: 40rem;
+    `}
+`
+
+const DesktopCol3 = styled(Col3)`
+    display: none;
+
+    ${respondTo.lg`
+        display: grid;
+    `}
+`
+
+const MobileCol3 = styled(Col3)`
+    display: grid;
+
+    ${respondTo.lg`
+        display: none;
     `}
 `
 
@@ -214,7 +314,77 @@ const Icon = styled.div`
     `}
 `
 
-const CustomCol3Left = styled.a`
+const LinkCol3Left = styled.a`
+    ${props => css`
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        align-items: ${props.align};
+        justify-content: ${props.justify};
+        transition: all .3s ease;
+        pointer-events: none;
+
+        &:hover {
+            background: ${colors.yellow};
+        }
+
+        ${respondTo.lg`
+            pointer-events: auto;
+        `}
+    `}
+`
+
+const LinkCol3Middle = styled.a`
+    ${props => css`
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        align-items: ${props.align};
+        justify-content: ${props.justify};
+        transition: all .3s ease;
+        pointer-events: none;
+
+        &:hover {
+            background: ${colors.yellow};
+        }
+
+        ${respondTo.lg`
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            pointer-events: auto;
+        `}
+    `}
+`
+
+const LinkCol3Right = styled.a`
+    ${props => css`
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        align-items: ${props.align};
+        justify-content: ${props.justify};
+        transition: all .3s ease;
+        pointer-events: none;
+
+        &:hover {
+            background: ${colors.yellow};
+        }
+
+        ${respondTo.lg`
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+            pointer-events: auto;
+        `}
+    `}
+`
+
+const CustomCol3Left = styled.div`
     ${props => css`
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -225,16 +395,16 @@ const CustomCol3Left = styled.a`
         justify-content: ${props.justify};
         transition: all .3s ease;
 
-        &:hover {
-            background: ${colors.yellow};
-        }
-
         ${respondTo.lg`
+
+            &:hover {
+                background: ${colors.yellow};
+            }
         `}
     `}
 `
 
-const CustomCol3Middle = styled.a`
+const CustomCol3Middle = styled.div`
     ${props => css`
         grid-column: 1 / 2;
         grid-row: 2 / 3;
@@ -245,18 +415,18 @@ const CustomCol3Middle = styled.a`
         justify-content: ${props.justify};
         transition: all .3s ease;
 
-        &:hover {
-            background: ${colors.yellow};
-        }
-
         ${respondTo.lg`
             grid-column: 2 / 3;
             grid-row: 1 / 2;
+
+            &:hover {
+                background: ${colors.yellow};
+            }
         `}
     `}
 `
 
-const CustomCol3Right = styled.a`
+const CustomCol3Right = styled.div`
     ${props => css`
         grid-column: 1 / 2;
         grid-row: 3 / 4;
@@ -267,13 +437,13 @@ const CustomCol3Right = styled.a`
         justify-content: ${props.justify};
         transition: all .3s ease;
 
-        &:hover {
-            background: ${colors.yellow};
-        }
-
         ${respondTo.lg`
             grid-column: 3 / 4;
             grid-row: 1 / 2;
+
+            &:hover {
+                background: ${colors.yellow};
+            }
         `}
     `}
 `

@@ -7,7 +7,7 @@ import { colors } from '../theme'
 import { Box3 } from '../Boxes'
 import { Container, Flex } from '../Containers'
 import { Card1 } from '../Cards'
-import { H3, P2 } from '../Typography'
+import { H4, P3 } from '../Typography'
 
 const Examples = ({
     example1Heading,
@@ -148,56 +148,56 @@ const ProductCard = (props) => {
                 </PhotoContainer>
                 <Flex style={{width: '100%'}} align={'center'} justify={'center'} direction={'column'}>
                     <Box3 marginTop={50}>
-                        <H3 uppercase center>
+                        <H4 style={{fontWeight: 700}} uppercase center>
                             {props.exampleHeading}
-                        </H3>
-                        <Box3 marginTop={40}>
-                            <ListContainer>
-                                <Flex align={'center'} justify={'center'} direction={'column'}>
+                        </H4>
+                        <Box3 marginTop={25} marginBottom={50}>
+                            <CustomCol2>
+                                <CustomCol2Left>
                                     <Box3 marginTop={10}>
-                                        <P2 center>
+                                        <P3>
                                             {props.exampleItem1}
-                                        </P2>
+                                        </P3>
                                     </Box3>
                                     <Box3 marginTop={10}>
-                                        <P2 center>
+                                        <P3>
                                             {props.exampleItem2}
-                                        </P2>
+                                        </P3>
                                     </Box3>
                                     <Box3 marginTop={10}>
-                                        <P2 center>
+                                        <P3>
                                             {props.exampleItem3}
-                                        </P2>
+                                        </P3>
                                     </Box3>
                                     <Box3 marginTop={10}>
-                                        <P2 center>
+                                        <P3>
                                             {props.exampleItem4}
-                                        </P2>
+                                        </P3>
                                     </Box3>
-                                </Flex>
-                                <Flex align={'center'} justify={'center'} direction={'column'}>
+                                </CustomCol2Left>
+                                <CustomCol2Right>
                                     <Box3 marginTop={10}>
-                                        <P2 center>
+                                        <P3>
                                             {props.exampleItem5}
-                                        </P2>
+                                        </P3>
                                     </Box3>
                                     <Box3 marginTop={10}>
-                                        <P2 center>
+                                        <P3>
                                             {props.exampleItem6}
-                                        </P2>
+                                        </P3>
                                     </Box3>
                                     <Box3 marginTop={10}>
-                                        <P2 center>
+                                        <P3>
                                             {props.exampleItem7}
-                                        </P2>
+                                        </P3>
                                     </Box3>
                                     <Box3 marginTop={10}>
-                                        <P2 center>
+                                        <P3>
                                             {props.exampleItem8}
-                                        </P2>
+                                        </P3>
                                     </Box3>
-                                </Flex>
-                            </ListContainer>
+                                </CustomCol2Right>
+                            </CustomCol2>
                         </Box3>
                     </Box3>
                 </Flex>
@@ -207,7 +207,7 @@ const ProductCard = (props) => {
 }
 
 const ExampleCard = styled(Card1)`
-    width: 28rem;
+    width: 30rem;
     transition: all .3s ease;
 
     &:hover {
@@ -216,14 +216,17 @@ const ExampleCard = styled(Card1)`
 
     ${respondTo.xs`
         width: 40rem;
+        height: 65rem;
     `}
 
     ${respondTo.sm`
         width: 58rem;
+        height: 58rem;
     `}
 
     ${respondTo.xl`
         width: 88rem;
+        height: 68rem;
     `}
 `
 
@@ -284,28 +287,39 @@ const ProductPhoto = styled.div`
     `}
 `
 
-const ListContainer = styled(Flex)`
-    width: 28rem;
-    height: 25rem;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    ${respondTo.xs`
-        width: 38rem;
-        height: 18rem;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-around;
-    `}
+const CustomCol2 = styled.div`
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
 
     ${respondTo.sm`
-        width: 50rem;
-        height: 20rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
     `}
+`
 
-    ${respondTo.xl`
-        width: 70rem;
-        height: 25rem;
+const CustomCol2Left = styled.div`
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: center;
+    margin-right: 0;
+
+    ${respondTo.sm`
+        grid-column: 1 / 2;
+        text-align: right;
+        margin-right: 1.5rem;
+    `}
+`
+
+const CustomCol2Right = styled.div`
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: center;
+    margin-left: 0;
+
+    ${respondTo.sm`
+        grid-column: 2 / 3;
+        text-align: left;
+        margin-left: 1.5rem;
     `}
 `

@@ -41,7 +41,7 @@ const Navigation = ({ setSidebar }) => {
                             <NavItem active={router.pathname === '/about' ? true : false}>About</NavItem>
                         </Link>
                         <Link href="/service">
-                            <NavItem active={router.pathname === '/service' ? true : false}>Service</NavItem>
+                            <NavItem active={router.pathname === '/service' ? true : false}>Services</NavItem>
                         </Link>
                         <Link href="/work">
                             <NavItem active={router.pathname === '/work' ? true : false}>Work</NavItem>

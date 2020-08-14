@@ -97,7 +97,7 @@ const FeatureVideo = styled.iframe`
 `
 
 const DescriptionBox = styled.div`
-    width: 24rem;
+    width: 26rem;
     background: rgba(0,0,0,.5);
 
     &:hover {

@@ -102,35 +102,35 @@ const ContactForm = ({
                     </Box3>
                 </Box3>
                 <Box3 style={{width: '100%'}} marginBottom={50}>
-                    <Card1 style={{background: colors.blue}}>
+                    <Card1>
                         <Box3 marginTop={50}>
                             <Form onSubmit={onSubmit}>
                                 <Box3 marginBottom={10}>
-                                    <Label uppercase color={colors.white} htmlFor="service-modal__name">
+                                    <Label uppercase color={colors.blue} htmlFor="service-modal__name">
                                         Name
                                     </Label>
                                 </Box3>
-                                <Input required type="text" id="service-modal__name"
+                                <Input required type="text" id="service-modal__name" background={'lightgrey'}
                                     value={name} onChange={onSetName.bind(this)}
                                 />
                                 <Box3 marginTop={25} marginBottom={10}>
-                                    <Label uppercase color={colors.white} htmlFor="service-modal__email">
+                                    <Label uppercase color={colors.blue} htmlFor="service-modal__email">
                                         Email
                                     </Label>
                                 </Box3>
-                                <Input required type="email" id="service-modal__email"
+                                <Input required type="email" id="service-modal__email" background={'lightgrey'}
                                     value={email} onChange={onSetEmail.bind(this)}
                                 />
                                 <Box3 marginTop={25} marginBottom={10}>
-                                    <Label uppercase color={colors.white} htmlFor="service-modal__message">
+                                    <Label uppercase color={colors.blue} htmlFor="service-modal__message">
                                         Project Description
                                     </Label>
                                 </Box3>
-                                <TextArea required id="service-modal__message" className="textarea"
+                                <TextArea required id="service-modal__message" className="textarea" background={'lightgrey'}
                                     value={message} onChange={onSetMessage.bind(this)}
                                 />
                                 <Box3 marginTop={50} marginBottom={50}>
-                                    <Button2 color={colors.black} background={colors.white} type="submit">
+                                    <Button2 color={colors.white} background={colors.blue} type="submit">
                                         {loading ? <Spinner /> : 'Submit'}
                                     </Button2>
                                 </Box3>

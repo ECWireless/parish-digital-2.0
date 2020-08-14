@@ -3,7 +3,7 @@ import respondTo from './Breakpoints'
 
 export const Container = styled.div`
     position: relative;
-    width: 280px;
+    width: 300px;
     margin: auto;
 
     ${respondTo.xs`

@@ -8,7 +8,7 @@ import { Box3 } from '../Boxes'
 import { Card2 } from '../Cards'
 import { Container, Flex } from '../Containers'
 import { Line } from '../Lines'
-import { H3, P2 } from '../Typography'
+import { H4, P2 } from '../Typography'
 
 const Examples = ({
     exampleHeading,
@@ -29,9 +29,9 @@ const Examples = ({
                         <CardContainer>
                             <Card2 style={{height: '100%'}}>
                                 <Flex style={{height: '100%'}} direction={'column'} align={'center'} justify={'center'}>
-                                    <H3 center color={colors.white}>
+                                    <H4 uppercase center color={colors.white}>
                                         {exampleHeading}
-                                    </H3>
+                                    </H4>
                                     <Fade ssrFadeout>
                                         <Box3 marginTop={25} marginBottom={25}>
                                             <Line height={5} width={100} color={colors.yellow} />
@@ -158,4 +158,5 @@ const CardContainer = styled.div`
 const ExampleVideo = styled.iframe`
     height: 100%;
     width: 100%;
+    box-shadow: ${shadows.card};
 `

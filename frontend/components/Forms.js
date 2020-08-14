@@ -102,7 +102,8 @@ export const Input = styled.input`
     `}
 
     ${props => css`
-        color: ${props.color}
+        color: ${props.color};
+        background: ${props.background};
     `}
 `
 
@@ -153,6 +154,7 @@ export const TextArea = styled.textarea`
     `}
 
     ${props => css`
-        color: ${props.color}
+        color: ${props.color};
+        background: ${props.background};
     `}
 `

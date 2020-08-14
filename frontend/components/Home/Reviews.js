@@ -46,7 +46,7 @@ const Reviews = ({
                                     <CustomFlex style={{position: 'relative'}} align={'center'} justify={'flex-start'} direction={'column'}>
                                         <Box3 marginTop={25}>
                                             <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
-                                            <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
+                                            <P4 style={{position: 'absolute', top: '6.5rem', left: 0, margin: '3rem'}}>
                                                 {reviewsQuote1}
                                             </P4>
                                         </Box3>
@@ -70,7 +70,7 @@ const Reviews = ({
                                 <QuoteContainer2 align={'center'} justify={'flex-start'} direction={'column'}>
                                     <CustomFlex style={{position: 'relative'}} align={'center'} justify={'flex-start'} direction={'column'}>
                                         <CommentBubble large style={{ backgroundImage: `url(${reviewsPhoto})`}} />
-                                        <P4 style={{position: 'absolute', top: 0, left: 0, margin: '4rem'}}>
+                                        <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '3rem'}}>
                                             {reviewsQuote2}
                                         </P4>
                                     </CustomFlex>
@@ -94,7 +94,7 @@ const Reviews = ({
                                     <CustomFlex style={{position: 'relative'}} align={'center'} justify={'flex-start'} direction={'column'}>
                                         <Box3 marginTop={25}>
                                             <CommentBubble style={{ backgroundImage: `url(${reviewsPhoto})`}} />
-                                            <P4 style={{position: 'absolute', top: '2.5rem', left: 0, margin: '4rem'}}>
+                                            <P4 style={{position: 'absolute', top: '6rem', left: 0, margin: '3rem'}}>
                                                 {reviewsQuote3}
                                             </P4>
                                         </Box3>
@@ -154,33 +154,33 @@ const CustomFlex = styled(Flex)`
 `
 
 const CommentBubble = styled.div`
-    width: 28rem;
-    height: 24rem;
+    width: 26rem;
+    height: 29rem;
     background-size: contain;
     background-position: center;
 
     ${respondTo.xs`
-        width: 30rem;
-        height: 26rem;
+        width: 27rem;
+        height: 29rem;
     `}
 
     ${respondTo.xl`
-        width: 40rem;
-        height: 35rem;
+        width: 36rem;
+        height: 36rem;
     `}
 
     ${props => props.large && css`
-        width: 32rem;
+        width: 28rem;
         height: 28rem;
 
         ${respondTo.xs`
-            width: 35rem;
-            height: 30rem;
+            width: 31rem;
+            height: 31rem;
         `}
 
         ${respondTo.xl`
-            width: 44rem;
-            height: 38rem;
+            width: 40rem;
+            height: 44rem;
         `}
     `}
 `
