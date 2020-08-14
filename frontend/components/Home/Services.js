@@ -115,6 +115,8 @@ const Services = ({
 }
 
 const CustomLine =  styled(Line)`
+    border-radius: 5px;
+    
     ${props => props.width && css`
         width: ${props.width * .08}px;
 

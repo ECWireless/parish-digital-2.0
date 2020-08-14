@@ -6,6 +6,7 @@ export const Line = styled.div`
         width: ${props.width * .6}px;
         height: ${props.height * .6}px;
         margin: 0 auto;
+        border-radius: 5px;
 
         ${respondTo.xs`
             height: ${props.height}px;
