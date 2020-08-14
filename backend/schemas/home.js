@@ -105,6 +105,59 @@ export default {
             }
         },
         {
+            name: 'trustedHeading',
+            title: 'Trusted Heading',
+            type: 'string'
+        },
+        {
+            name: 'trustedLogo1',
+            title: 'Trusted Logo 1',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'trustedLogo2',
+            title: 'Trusted Logo 2',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'trustedLogo3',
+            title: 'Trusted Logo 3',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'trustedLogo4',
+            title: 'Trusted Logo 4',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'trustedLogo5',
+            title: 'Trusted Logo 5',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'trustedLogo6',
+            title: 'Trusted Logo 6',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
             name: 'featureHeading',
             title: 'Feature Heading',
             type: 'string'

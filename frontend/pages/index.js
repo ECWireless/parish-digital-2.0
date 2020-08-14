@@ -5,6 +5,7 @@ import client from '../client'
 // Components
 import Hero from '../components/Home/Hero'
 import Description from '../components/Home/Description'
+import Trusted from '../components/Home/Trusted'
 import Feature from '../components/Home/Feature'
 import Services from '../components/Home/Services'
 import Reviews from '../components/Home/Reviews'
@@ -25,6 +26,13 @@ const index = ({
     descriptionVideoType3,
     descriptionVideoType3Details,
     descriptionVideoType3Photo,
+    trustedHeading,
+    trustedLogo1,
+    trustedLogo2,
+    trustedLogo3,
+    trustedLogo4,
+    trustedLogo5,
+    trustedLogo6,
     featureHeading,
     featureSubheading,
     featureParagraph,
@@ -86,6 +94,15 @@ const index = ({
                 descriptionVideoType3={descriptionVideoType3}
                 descriptionVideoType3Details={descriptionVideoType3Details}
                 descriptionVideoType3Photo={urlFor(descriptionVideoType3Photo)}
+            />
+            <Trusted
+                trustedHeading={trustedHeading}
+                trustedLogo1={urlFor(trustedLogo1)}
+                trustedLogo2={urlFor(trustedLogo2)}
+                trustedLogo3={urlFor(trustedLogo3)}
+                trustedLogo4={urlFor(trustedLogo4)}
+                trustedLogo5={urlFor(trustedLogo5)}
+                trustedLogo6={urlFor(trustedLogo6)}
             />
             <Feature
                 featureHeading={featureHeading}
@@ -157,6 +174,13 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
     descriptionVideoType3,
     descriptionVideoType3Details,
     descriptionVideoType3Photo,
+    trustedHeading,
+    trustedLogo1,
+    trustedLogo2,
+    trustedLogo3,
+    trustedLogo4,
+    trustedLogo5,
+    trustedLogo6,
     featureHeading,
     featureSubheading,
     featureParagraph,
