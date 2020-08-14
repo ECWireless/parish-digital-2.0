@@ -15,7 +15,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
         <SidebarContainer open={sidebar}>
             <SidebarTop>
                 <Flex style={{height: '100%'}} align={'center'} justify={'space-around'}>
-                    <P2 color={colors.blue}>Parish Digital</P2>
+                    <P2 style={{letterSpacing: '1px'}} uppercase color={colors.blue}>Parish Digital</P2>
                     <CloseContainer onClick={() => setSidebar(false)}>
                         <p>&times;</p>
                     </CloseContainer>
