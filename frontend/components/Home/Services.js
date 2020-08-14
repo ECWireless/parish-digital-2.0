@@ -3,11 +3,11 @@ import styled, { css } from 'styled-components'
 import respondTo from '../Breakpoints'
 
 // Components
-import { colors } from '../theme'
+import { colors, shadows } from '../theme'
 import { Box3 } from '../Boxes'
 import { Card1 } from '../Cards'
 import { Container, Flex, Col2, Col2Left, Col2Right } from '../Containers'
-import { H2, H3 } from '../Typography'
+import { H2, H3, P3 } from '../Typography'
 import { Line } from '../Lines'
 
 const Services = ({
@@ -48,12 +48,12 @@ const Services = ({
                         </Fade>
                     </Flex>
                 </Box3>
-                <Col2 respondDirection={'column-reverse'}>
+                <Col2 style={{boxShadow: shadows.card}} respondDirection={'column-reverse'}>
                     <Col2Left justify={'center'} align={'center'}>
                         <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto1})` }} />
                     </Col2Left>
                     <Col2Right justify={'center'} align={'center'}>
-                        <ServicesCard marginBottom={75}>
+                        <ServicesCard>
                             <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
                                 <H3 uppercase center>
                                     {servicesSubheading1}
@@ -64,25 +64,60 @@ const Services = ({
                                     </Box3>
                                 </Fade>
                                 <Fade bottom ssrFadeout>
-                                    <ServicesList>
-                                        <li>{servicesList1Item1}</li>
-                                        <li>{servicesList1Item2}</li>
-                                        <li>{servicesList1Item3}</li>
-                                        <li>{servicesList1Item4}</li>
-                                        <li>{servicesList1Item5}</li>
-                                        <li>{servicesList1Item6}</li>
-                                        <li>{servicesList1Item7}</li>
-                                        <li>{servicesList1Item8}</li>
-                                        <li>{servicesList1Item9}</li>
-                                    </ServicesList>
+                                    <CustomCol2>
+                                        <CustomCol2Left>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList1Item1}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList1Item2}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList1Item3}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList1Item4}
+                                                </P3>
+                                            </Box3>
+                                        </CustomCol2Left>
+                                        <CustomCol2Right>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList1Item5}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList1Item6}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList1Item7}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList1Item8}
+                                                </P3>
+                                            </Box3>
+                                        </CustomCol2Right>
+                                    </CustomCol2>
                                 </Fade>
                             </Flex>
                         </ServicesCard>
                     </Col2Right>
                 </Col2>
-                <Col2>
+                <Col2 style={{boxShadow: shadows.card}}>
                     <Col2Left justify={'center'} align={'center'}>
-                        <ServicesCard marginTop={75} marginBottom={75}>
+                        <ServicesCard>
                             <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
                                 <H3 uppercase center>
                                     {servicesSubheading2}
@@ -93,14 +128,42 @@ const Services = ({
                                     </Box3>
                                 </Fade>
                                 <Fade bottom ssrFadeout>
-                                    <ServicesList>
-                                        <li>{servicesList2Item1}</li>
-                                        <li>{servicesList2Item2}</li>
-                                        <li>{servicesList2Item3}</li>
-                                        <li>{servicesList2Item4}</li>
-                                        <li>{servicesList2Item5}</li>
-                                        <li>{servicesList2Item6}</li>
-                                    </ServicesList>
+                                <CustomCol2>
+                                        <CustomCol2Left>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList2Item1}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList2Item2}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList2Item3}
+                                                </P3>
+                                            </Box3>
+                                        </CustomCol2Left>
+                                        <CustomCol2Right>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList2Item4}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList2Item5}
+                                                </P3>
+                                            </Box3>
+                                            <Box3 marginTop={10}>
+                                                <P3>
+                                                    {servicesList2Item6}
+                                                </P3>
+                                            </Box3>
+                                        </CustomCol2Right>
+                                    </CustomCol2>
                                 </Fade>
                             </Flex>
                         </ServicesCard>
@@ -113,6 +176,8 @@ const Services = ({
         </>
     )
 }
+
+export default Services
 
 const CustomLine =  styled(Line)`
     border-radius: 5px;
@@ -165,74 +230,46 @@ const ServicesPhoto =  styled.div`
 `
 
 const ServicesCard = styled(Card1)`
-    ${props => props.marginBottom && css`
-        margin-bottom: ${props.marginBottom * .7}px;
-        padding: 4rem 2rem;
-        height: 32rem;
+    padding: 4rem 2rem;
+    height: 100%;
+    box-shadow: none;
+`
 
-        ${respondTo.xs`
-            margin-bottom: ${props.marginBottom * .8}px;
-            padding: 4rem;
-        `}
-        
-        ${respondTo.sm`
-            margin-bottom: ${props.marginBottom * .9}px;
-            height: 35rem;
-        `}
+const CustomCol2 = styled.div`
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
 
-        ${respondTo.md`
-            margin-bottom: ${props.marginBottom}px;
-            height: 38rem;
-        `}
-
-        ${respondTo.lg`
-            margin-bottom: 0;
-            height: 45rem;
-        `}
-    `}
-
-    ${props => props.marginTop && css`
-        margin-top: ${props.marginTop * .7}px;
-
-        ${respondTo.xs`
-            margin-top: ${props.marginTop * .8}px;
-        `}
-        
-        ${respondTo.sm`
-            margin-top: ${props.marginTop * .9}px;
-        `}
-
-        ${respondTo.md`
-            margin-top: ${props.marginTop}px;
-        `}
-
-        ${respondTo.lg`
-            margin-top: 0;
-        `}
+    ${respondTo.sm`
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
     `}
 `
 
-const ServicesList = styled.ul`
-    list-style: disc;
-    list-style-position: inside;
+const CustomCol2Left = styled.div`
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
     text-align: center;
+    margin-right: 0;
 
-    li {
-        margin-bottom: .5rem;
-        font-size: 1.4rem;
-
-        ${respondTo.sm`
-            font-size: 1.6rem;
-        `}
-
-        ${respondTo.md`
-            font-size: 1.8rem;
-        `}
-
-        ${respondTo.lg`
-            font-size: 2rem;
-        `}
-    }
+    ${respondTo.sm`
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        text-align: right;
+        margin-right: 1.5rem;
+    `}
 `
 
-export default Services
+const CustomCol2Right = styled.div`
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: center;
+    margin-left: 0;
+
+    ${respondTo.sm`
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        text-align: left;
+        margin-left: 1.5rem;
+    `}
+`

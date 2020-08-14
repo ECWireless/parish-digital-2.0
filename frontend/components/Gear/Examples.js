@@ -306,6 +306,7 @@ const CustomCol2Left = styled.div`
 
     ${respondTo.sm`
         grid-column: 1 / 2;
+        grid-row: 1 / 2;
         text-align: right;
         margin-right: 1.5rem;
     `}
@@ -319,6 +320,7 @@ const CustomCol2Right = styled.div`
 
     ${respondTo.sm`
         grid-column: 2 / 3;
+        grid-row: 1 / 2;
         text-align: left;
         margin-left: 1.5rem;
     `}
