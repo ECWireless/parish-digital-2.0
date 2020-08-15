@@ -7,7 +7,7 @@ import { colors } from '../components/theme'
 import { Box3 } from '../components/Boxes'
 import { Container, Flex } from '../components/Containers'
 import { CustomLink } from '../components/Links'
-import { H4, P1 } from '../components/Typography'
+import { H4, P1, P2 } from '../components/Typography'
 
 const Footer = () => {
     return (
@@ -88,7 +88,7 @@ const Footer = () => {
 					<LowerFooter>
 						<Copyright>
 							<Box3 marginTop={50} marginBottom={50}>
-								<P1 color={colors.white}>© All Rights Reserved Parish Digital Video Production</P1>
+								<P2 color={colors.white}>© All Rights Reserved Parish Digital Video Production</P2>
 							</Box3>
 						</Copyright>
 						<SmallLogos>
@@ -114,19 +114,43 @@ const FooterContainer = styled.div`
 
 const UpperFooter = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+	grid-template-rows: 32rem 20rem 20rem 30rem;
+
+	${respondTo.xs`
+		grid-template-rows: 35rem 20rem 20rem 30rem;
+	`}
+
+	${respondTo.sm`
+		grid-template-columns: 1fr;
+		grid-template-rows: 38rem 20rem 20rem 30rem;
+	`}
+
+	${respondTo.lg`
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+	`}
 `
 
 const Sitemap = styled.div`
-	grid-column: 1 / 2;
 	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+	text-align: center;
+
+	${respondTo.lg`
+		text-align: left;
+	`}
 `
 
 const SmallLine = styled.div`
 	width: 10rem;
 	height: 2px;
 	background: lightgrey;
+	margin: 0 auto;
+
+	${respondTo.lg`
+		margin: 0;
+	`}
 `
 
 const ParagraphLink = styled.a`
@@ -174,25 +198,45 @@ const ParagraphLink = styled.a`
 `
 
 const BigLogo1 = styled.div`
-	grid-column: 2 / 3;
-	grid-row: 1 / 2;
-	width: 38rem;
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+	width: 30rem;
 	height: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
-	margin-right: 2rem;
+	justify-content: center;
+
+	${respondTo.xs`
+		width: 38rem;
+	`}
+
+	${respondTo.lg`
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+		justify-content: flex-end;
+		margin-right: 2rem;
+	`}
 `
 
 const BigLogo2 = styled.div`
-	grid-column: 3 / 4;
-	grid-row: 1 / 2;
-	width: 38rem;
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+	width: 30rem;
 	height: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
-	margin-left: 2rem;
+	justify-content: center;
+
+	${respondTo.xs`
+		width: 38rem;
+	`}
+
+	${respondTo.lg`
+		grid-column: 3 / 4;
+		grid-row: 1 / 2;
+		justify-content: flex-start;
+		margin-left: 2rem;
+	`}
 `
 
 const BigLogoImage = styled.img`
@@ -201,8 +245,15 @@ const BigLogoImage = styled.img`
 `
 
 const Contact = styled.div`
-	grid-column: 4 / 5;
-	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+	grid-row: 4 / 5;
+	text-align: center;
+
+	${respondTo.lg`
+		text-align: left;
+		grid-column: 4 / 5;
+		grid-row: 1 / 2;
+	`}
 `
 
 const CustomLine = styled.div`
@@ -214,21 +265,38 @@ const CustomLine = styled.div`
 const LowerFooter = styled.div`
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+	grid-template-rows: 10rem 10rem;
+
+	${respondTo.md`
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr;
+	`}
 `
 
 const Copyright = styled.div`
 	grid-column: 1 / 2;
 	grid-row: 1 / 2;
+	text-align: center;
+
+	${respondTo.md`
+		text-align: left;
+	`}
 `
 
 const SmallLogos = styled.div`
-	grid-column: 2 / 3;
-	grid-row: 1 / 2;
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
 	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+	align-items: flex-start;
+	justify-content: center;
+
+	${respondTo.md`
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+		justify-content: flex-end;
+		align-items: center;
+	`}
 `
 
 const SmallLogo = styled.div`
