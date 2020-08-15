@@ -28,16 +28,24 @@ const Footer = () => {
 								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
-								<ParagraphLink color={colors.yellow}>services</ParagraphLink>
+								<Link href="/service">
+									<ParagraphLink color={colors.yellow}>services</ParagraphLink>
+								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
-								<ParagraphLink color={colors.yellow}>work</ParagraphLink>
+								<Link href="/work">
+									<ParagraphLink color={colors.yellow}>work</ParagraphLink>
+								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
-								<ParagraphLink color={colors.yellow}>gear</ParagraphLink>
+								<Link href="/gear">
+									<ParagraphLink color={colors.yellow}>gear</ParagraphLink>
+								</Link>
 							</Box3>
 							<Box3 marginTop={25} marginBottom={50}>
-								<ParagraphLink color={colors.yellow}>contact</ParagraphLink>
+								<Link href="/contact">
+									<ParagraphLink color={colors.yellow}>contact</ParagraphLink>
+								</Link>
 							</Box3>
 						</Sitemap>
 						<BigLogo1>
