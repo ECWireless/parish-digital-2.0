@@ -15,7 +15,7 @@ const AuthFalse = ({
     const [tempPassword, setTempPassword] = useState('')
 
     useEffect(() => {
-        fetch('https://parish-digital.vercel.app/api/auth', {
+        fetch('https://parishdigital.com/api/auth', {
             method: 'put',
             headers: {
                 'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ const AuthFalse = ({
     function submit(e) {
         e.preventDefault()
 
-        fetch('https://parish-digital.vercel.app/api/login', {
+        fetch('https://parishdigital.com/api/login', {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -54,7 +54,7 @@ const AuthFalse = ({
                 console.log('Failed login!')
             } else {
                 window.sessionStorage.setItem('token', resp.token);
-                fetch('https://parish-digital.vercel.app/api/auth', {
+                fetch('https://parishdigital.com/api/auth', {
                     method: 'put',
                     headers: {
                         'Content-Type': 'application/json',
