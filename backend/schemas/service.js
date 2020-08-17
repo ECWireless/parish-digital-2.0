@@ -23,6 +23,11 @@ export default {
             type: 'string'
         },
         {
+            name: 'descriptionSubheading',
+            title: 'Description Subheading',
+            type: 'string'
+        },
+        {
             name: 'descriptionVideoLink',
             title: 'Description Video Link',
             type: 'string'

@@ -9,11 +9,12 @@ import { Button2 } from '../Buttons'
 import { Card1 } from '../Cards'
 import { Container, Flex } from '../Containers'
 import { Line } from '../Lines'
-import { H3, P3 } from '../Typography'
+import { H3, H4, P3 } from '../Typography'
 
 const Description = ({
     setModal,
     descriptionHeading,
+    descriptionSubheading,
     descriptionVideoLink,
     descriptionParagraph1,
     descriptionParagraph2,
@@ -21,7 +22,12 @@ const Description = ({
 }) => {
     return (
         <Container>
-            <Box1 marginTop={75} marginBottom={75}>
+            <Box1 marginTop={75} marginBottom={25}>
+                <H4 uppercase center>
+                    {descriptionSubheading}
+                </H4>
+            </Box1>
+            <Box1 marginTop={25} marginBottom={75}>
                 <Flex align={'center'} justify={'space-around'}>
                     <Fade ssrFadeout>
                         <CustomLine style={{margin: 0}} height={5} width={150} color={colors.yellow} />

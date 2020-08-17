@@ -16,6 +16,7 @@ import Modal from '../components/Service/Modal'
 
 const service = ({
     descriptionHeading,
+    descriptionSubheading,
     descriptionVideoLink,
     descriptionParagraph1,
     descriptionParagraph2,
@@ -77,6 +78,7 @@ const service = ({
             </Head>
             <Description
                 descriptionHeading={descriptionHeading}
+                descriptionSubheading={descriptionSubheading}
                 descriptionVideoLink={descriptionVideoLink}
                 descriptionParagraph1={descriptionParagraph1}
                 descriptionParagraph2={descriptionParagraph2}
@@ -154,6 +156,7 @@ function urlFor (source) {
 
 const query = groq`*[_type == "service" && slug.current == "v1"][0]{
     descriptionHeading,
+    descriptionSubheading,
     descriptionVideoLink,
     descriptionParagraph1,
     descriptionParagraph2,
