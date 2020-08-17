@@ -153,17 +153,21 @@ const CloseContainer = styled.div`
     flex-direction: column;
 	justify-content: center;
 	transition: all .5s ease;
+    position: relative;
 	
 	p {
+        position: absolute;
 		color: #000;
 		font-size: 7rem;
-		margin: 0 auto 3px;
-		font-weight: 100;
+        font-weight: 100;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -51%);
 	}
 
 	&:hover {
 		p {
-			color: #FFF;
+            color: #FFF;
 		}
 	}
 
