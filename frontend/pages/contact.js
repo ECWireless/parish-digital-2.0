@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import client from '../client'
@@ -25,6 +26,9 @@ const contact = ({
 }) => {
     return (
         <>
+            <Head>
+                <title>Contact | Parish Digital Video Production</title>
+            </Head>
             <Banner
                 bannerHeading={bannerHeading}
                 bannerParagraph={bannerParagraph}

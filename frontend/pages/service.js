@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import respondTo from '../components/Breakpoints'
@@ -71,6 +72,9 @@ const service = ({
     const [modal, setModal] = useState(false)
     return (
         <>
+            <Head>
+                <title>Services | Parish Digital Video Production</title>
+            </Head>
             <Description
                 descriptionHeading={descriptionHeading}
                 descriptionVideoLink={descriptionVideoLink}

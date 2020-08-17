@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import client from '../client'
@@ -57,6 +58,9 @@ const gear = ({
 }) => {
     return (
         <>
+            <Head>
+                <title>Gear | Parish Digital Video Production</title>
+            </Head>
             <Banner
                 bannerHeading={bannerHeading}
                 bannerParagraph={bannerParagraph}

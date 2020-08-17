@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useState } from 'react'
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
@@ -18,6 +19,9 @@ const login = ({
     
     return (
         <>
+            <Head>
+                <title>Login | Parish Digital Video Production</title>
+            </Head>
             {!loggedIn 
                 ? <AuthFalse loggedIn={setLoggedIn} /> 
                 : <AuthTrue

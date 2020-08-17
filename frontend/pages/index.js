@@ -1,5 +1,7 @@
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
+import Head from 'next/head'
+
 import client from '../client'
 
 // Components
@@ -76,6 +78,9 @@ const index = ({
 }) => {
     return (
         <>
+            <Head>
+                <title>Parish Digital | Video Production</title>
+            </Head>
             <Hero
                 heroImage={urlFor(heroImage)}
                 heroHeading={heroHeading}
