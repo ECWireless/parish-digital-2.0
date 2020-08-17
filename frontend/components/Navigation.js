@@ -132,7 +132,7 @@ const NavMenu = styled.nav`
 	`}
 `
 
-const NavItem = styled.div`
+const NavItem = styled.li`
     font-size: 1.5rem;
     letter-spacing: 1px;
 

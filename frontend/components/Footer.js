@@ -53,7 +53,7 @@ const Footer = () => {
 								href="https://www.peerspace.com/resources/corporate-video-production-companies-pittsburgh"
 								target="_blank" rel="noopener noreferrer"
 							>
-								<BigLogoImage src="./logos/best-corporate.png" />
+								<BigLogoImage alt='peerspace award' src="./logos/best-corporate.png" />
 							</CustomLink>
 						</BigLogo1>
 						<BigLogo2>
@@ -61,7 +61,7 @@ const Footer = () => {
 								href="https://upcity.com/local-marketing-agencies/profiles/parish-digital-video"
 								target="_blank" rel="noopener noreferrer"
 							>
-								<BigLogoImage src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" />
+								<BigLogoImage alt='upcity logo' src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" />
 							</CustomLink>
 						</BigLogo2>
 						<Contact>
