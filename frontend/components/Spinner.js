@@ -1,12 +1,12 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import respondTo from './Breakpoints'
 
 // Components
 import { colors } from './theme'
 
-export default function Spinner() {
+export default function Spinner(props) {
     return (
-        <LDSRing><div></div><div></div><div></div><div></div></LDSRing>
+        <LDSRing color={props.color}><div></div><div></div><div></div><div></div></LDSRing>
     )
 }
 
@@ -32,6 +32,11 @@ const LDSRing = styled.div`
         border-radius: 50%;
         animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
         border-color: ${colors.blue} transparent transparent transparent;
+
+        ${props => props.color && css`
+            border: 3px solid ${props.color};
+            border-color: ${props.color} transparent transparent transparent;
+        `}
 
         ${respondTo.xs`
             width: 35px;

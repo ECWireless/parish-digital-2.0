@@ -131,7 +131,7 @@ const ContactForm = ({
                                 />
                                 <Box3 marginTop={50} marginBottom={50}>
                                     <Button2 color={colors.white} background={colors.blue} type="submit">
-                                        {loading ? <Spinner /> : 'Submit'}
+                                        {loading ? <Spinner color={colors.white} /> : 'Submit'}
                                     </Button2>
                                 </Box3>
                             </Form>

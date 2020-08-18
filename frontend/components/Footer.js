@@ -100,10 +100,30 @@ const Footer = () => {
 							</Box3>
 						</Copyright>
 						<SmallLogos>
-							<SmallLogo style={{backgroundImage: `url(./logos/vimeo-icon.png)`}} />
-							<SmallLogo style={{backgroundImage: `url(./logos/linkedin.png)`}} />
-							<SmallLogo style={{backgroundImage: `url(./logos/facebook.png)`}} />
-							<SmallLogo style={{backgroundImage: `url(./logos/youtube.png)`}} />
+							<CustomLink
+								href="https://vimeo.com/parishdigital"
+								target="_blank" rel="noopener noreferrer"
+							>
+								<SmallLogo style={{backgroundImage: `url(./logos/vimeo-icon.png)`}} />
+							</CustomLink>
+							<CustomLink
+								href="https://www.linkedin.com/company/parish-digital-video/"
+								target="_blank" rel="noopener noreferrer"
+							>
+								<SmallLogo style={{backgroundImage: `url(./logos/linkedin.png)`}} />
+							</CustomLink>
+							<CustomLink
+								href="https://www.facebook.com/Parish-Digital-Video-Productions-270923643761"
+								target="_blank" rel="noopener noreferrer"
+							>
+								<SmallLogo style={{backgroundImage: `url(./logos/facebook.png)`}} />
+							</CustomLink>
+							<CustomLink
+								href="https://www.youtube.com/channel/UCTqzflm7Z0JHZwmHI_MorGw"
+								target="_blank" rel="noopener noreferrer"
+							>
+								<SmallLogo style={{backgroundImage: `url(./logos/youtube.png)`}} />
+							</CustomLink>
 						</SmallLogos>
 					</LowerFooter>
 				</Flex>
