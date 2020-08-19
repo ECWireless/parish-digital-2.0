@@ -48,130 +48,132 @@ const Services = ({
                         </Fade>
                     </Flex>
                 </Box3>
-                <Col2 style={{boxShadow: shadows.card}} respondDirection={'column-reverse'}>
-                    <Col2Left justify={'center'} align={'center'}>
-                        <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto1})` }} />
-                    </Col2Left>
-                    <Col2Right justify={'center'} align={'center'}>
-                        <ServicesCard>
-                            <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
-                                <H3 uppercase center>
-                                    {servicesSubheading1}
-                                </H3>
-                                <Fade ssrFadeout>
-                                    <Box3 marginTop={25} marginBottom={25}>
-                                        <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
-                                    </Box3>
-                                </Fade>
-                                <Fade bottom ssrFadeout>
+                <Box3 marginBottom={75}>
+                    <Col2 style={{boxShadow: shadows.card}} respondDirection={'column-reverse'}>
+                        <Col2Left justify={'center'} align={'center'}>
+                            <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto1})` }} />
+                        </Col2Left>
+                        <Col2Right justify={'center'} align={'center'}>
+                            <ServicesCard>
+                                <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
+                                    <H3 uppercase center>
+                                        {servicesSubheading1}
+                                    </H3>
+                                    <Fade ssrFadeout>
+                                        <Box3 marginTop={25} marginBottom={25}>
+                                            <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
+                                        </Box3>
+                                    </Fade>
+                                    <Fade bottom ssrFadeout>
+                                        <CustomCol2>
+                                            <CustomCol2Left>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList1Item1}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList1Item2}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList1Item3}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList1Item4}
+                                                    </P3>
+                                                </Box3>
+                                            </CustomCol2Left>
+                                            <CustomCol2Right>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList1Item5}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList1Item6}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList1Item7}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList1Item8}
+                                                    </P3>
+                                                </Box3>
+                                            </CustomCol2Right>
+                                        </CustomCol2>
+                                    </Fade>
+                                </Flex>
+                            </ServicesCard>
+                        </Col2Right>
+                    </Col2>
+                    <Col2 style={{boxShadow: shadows.card}}>
+                        <Col2Left justify={'center'} align={'center'}>
+                            <ServicesCard>
+                                <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
+                                    <H3 uppercase center>
+                                        {servicesSubheading2}
+                                    </H3>
+                                    <Fade ssrFadeout>
+                                        <Box3 marginTop={25} marginBottom={25}>
+                                            <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
+                                        </Box3>
+                                    </Fade>
+                                    <Fade bottom ssrFadeout>
                                     <CustomCol2>
-                                        <CustomCol2Left>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList1Item1}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList1Item2}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList1Item3}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList1Item4}
-                                                </P3>
-                                            </Box3>
-                                        </CustomCol2Left>
-                                        <CustomCol2Right>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList1Item5}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList1Item6}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList1Item7}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList1Item8}
-                                                </P3>
-                                            </Box3>
-                                        </CustomCol2Right>
-                                    </CustomCol2>
-                                </Fade>
-                            </Flex>
-                        </ServicesCard>
-                    </Col2Right>
-                </Col2>
-                <Col2 style={{boxShadow: shadows.card}}>
-                    <Col2Left justify={'center'} align={'center'}>
-                        <ServicesCard>
-                            <Flex style={{height: '100%'}} direction={'column'} justify={'center'} align={'center'}>
-                                <H3 uppercase center>
-                                    {servicesSubheading2}
-                                </H3>
-                                <Fade ssrFadeout>
-                                    <Box3 marginTop={25} marginBottom={25}>
-                                        <Line style={{margin: 0}} height={5} width={100} color={colors.yellow} />
-                                    </Box3>
-                                </Fade>
-                                <Fade bottom ssrFadeout>
-                                <CustomCol2>
-                                        <CustomCol2Left>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList2Item1}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList2Item2}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList2Item3}
-                                                </P3>
-                                            </Box3>
-                                        </CustomCol2Left>
-                                        <CustomCol2Right>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList2Item4}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList2Item5}
-                                                </P3>
-                                            </Box3>
-                                            <Box3 marginTop={10}>
-                                                <P3>
-                                                    {servicesList2Item6}
-                                                </P3>
-                                            </Box3>
-                                        </CustomCol2Right>
-                                    </CustomCol2>
-                                </Fade>
-                            </Flex>
-                        </ServicesCard>
-                    </Col2Left>
-                    <Col2Right justify={'center'} align={'center'}>
-                        <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto2})` }} />
-                    </Col2Right>
-                </Col2>
+                                            <CustomCol2Left>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList2Item1}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList2Item2}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList2Item3}
+                                                    </P3>
+                                                </Box3>
+                                            </CustomCol2Left>
+                                            <CustomCol2Right>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList2Item4}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList2Item5}
+                                                    </P3>
+                                                </Box3>
+                                                <Box3 marginTop={10}>
+                                                    <P3>
+                                                        {servicesList2Item6}
+                                                    </P3>
+                                                </Box3>
+                                            </CustomCol2Right>
+                                        </CustomCol2>
+                                    </Fade>
+                                </Flex>
+                            </ServicesCard>
+                        </Col2Left>
+                        <Col2Right justify={'center'} align={'center'}>
+                            <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto2})` }} />
+                        </Col2Right>
+                    </Col2>
+                </Box3>
             </Container>
         </>
     )

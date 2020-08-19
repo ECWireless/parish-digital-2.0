@@ -22,7 +22,7 @@ const Trusted = ({
             <H3 center uppercase>
                 {trustedHeading}
             </H3>
-            <Box3 marginBottom={50} marginTop={25}>
+            <Box3 marginTop={25}>
                 <TrustedBackground>
                     <Flex respond style={{height: '100%'}} align={'center'} justify={'space-around'}>
                         <TrustedLogo style={{backgroundImage: `url(${trustedLogo1})`}} />
