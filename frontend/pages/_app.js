@@ -24,9 +24,12 @@ export default function App({ Component, pageProps }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="theme-color" content="#000000" />
 				<meta
-				name="description"
-				content="Our focus is video for business. We’re a small video production team, but we’ve produced thousands of successful video projects for Pittsburgh-based, national, and international clients."
-				/>
+					name="description"
+					content="Our focus is video for business. We’re a small video production team, but we’ve produced thousands of successful video projects for Pittsburgh-based, national, and international clients."
+					/>
+				<meta property="og:title" content="Parish Digital Video Production" />
+				<meta property="og:description" content="Our focus is video for business. We’re a small video production team, but we’ve produced thousands of successful video projects for Pittsburgh-based, national, and international clients." />
+				<meta property="og:image" content="./logos/pd_logo.png" />
 				<meta name="keywords" content="video, productions, pittsburgh, parish, digital, studio" />
 				<meta name="robots" content="index, follow" />
 				<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
