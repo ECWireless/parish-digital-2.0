@@ -80,6 +80,9 @@ const index = ({
         <>
             <Head>
                 <title>Parish Digital | Video Production</title>
+                <meta property="og:title" content="Parish Digital Video Production" />
+				<meta property="og:description" content="Our focus is video for business. We’re a small video production team, but we’ve produced thousands of successful video projects for Pittsburgh-based, national, and international clients." />
+				<meta property="og:image" content="./logos/pd_logo.png" />
             </Head>
             <Hero
                 heroImage={urlFor(heroImage)}
