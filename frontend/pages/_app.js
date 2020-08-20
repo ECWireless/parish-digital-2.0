@@ -26,10 +26,10 @@ export default function App({ Component, pageProps }) {
 				<meta
 					name="description"
 					content="Our focus is video for business. We’re a small video production team, but we’ve produced thousands of successful video projects for Pittsburgh-based, national, and international clients."
-					/>
+				/>
 				<meta property="og:title" content="Parish Digital Video Production" />
 				<meta property="og:description" content="Our focus is video for business. We’re a small video production team, but we’ve produced thousands of successful video projects for Pittsburgh-based, national, and international clients." />
-				<meta property="og:image" content="./logos/pd_logo.png" />
+				<meta property="og:image" content="https://i.vimeocdn.com/video/865571309.webp?mw=1000&mh=563&q=70" />
 				<meta name="keywords" content="video, productions, pittsburgh, parish, digital, studio" />
 				<meta name="robots" content="index, follow" />
 				<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
