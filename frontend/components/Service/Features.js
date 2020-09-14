@@ -145,7 +145,7 @@ const Features = ({
                                     {feature2Heading}
                                 </H3>
                                 <Box3 marginTop={25}>
-                                    <P3 style={{textAlign: 'inherit'}} color={colors.white}>I
+                                    <P3 style={{textAlign: 'inherit'}} color={colors.white}>
                                         {feature2Paragraph}
                                     </P3>
                                 </Box3>
