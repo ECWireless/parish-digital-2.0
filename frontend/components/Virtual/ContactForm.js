@@ -16,8 +16,6 @@ import Spinner from '../Spinner'
 import Snackbar from '../Snackbar'
 
 const ContactForm = ({
-    contactHeading,
-    contactParagraph,
 }) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')

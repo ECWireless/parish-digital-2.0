@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import Fade from 'react-reveal/Fade';
 import respondTo from '../Breakpoints'
 
 // Components
@@ -14,30 +15,40 @@ const Details = () => {
                 <Flex direction={'column'} justify={'center'} align={'center'}>
                     <MainImage />
                     <Box2 marginBottom={25} marginTop={50}>
-                        <H2 uppercase center>Virtual Event Solutions</H2>
+                        <Fade bottom ssrFadeout>
+                            <H2 uppercase center>Virtual Event Solutions</H2>
+                        </Fade>
                     </Box2>
-                    <H4>
-                        Engaging content for your virtual event
-                    </H4>
+                    <Fade delay={200} bottom ssrFadeout>
+                        <H4>
+                            Engaging content for your virtual event
+                        </H4>
+                    </Fade>
                 </Flex>
             </Box2>
             <Box2 marginTop={75} marginBottom={50}>
                 <Flex respond justify={'space-around'} align={'center'}>
-                    <CardComponent
-                        image={'/photos/pre-recorded.png'}
-                        heading={'Pre-Recorded Content'}
-                        paragraph={'Perfect for distributing well produced content and messaging'}
-                    />
-                    <CardComponent
-                        image={'/photos/live-streaming.png'}
-                        heading={'Live Streaming'}
-                        paragraph={'Perfect for real-time audience engagment'}
-                    />
-                    <CardComponent
-                        image={'/photos/live-production.png'}
-                        heading={'Live Production'}
-                        paragraph={'Perfect for incorporating the most into your virtual event'}
-                    />
+                    <Fade ssrFadeout>
+                        <CardComponent
+                            image={'/photos/pre-recorded.png'}
+                            heading={'Pre-Recorded Content'}
+                            paragraph={'Perfect for distributing well produced content and messaging'}
+                        />
+                    </Fade>
+                    <Fade delay={200} ssrFadeout>
+                        <CardComponent
+                            image={'/photos/live-streaming.png'}
+                            heading={'Live Streaming'}
+                            paragraph={'Perfect for real-time audience engagment'}
+                        />
+                    </Fade>
+                    <Fade delay={400} ssrFadeout>
+                        <CardComponent
+                            image={'/photos/live-production.png'}
+                            heading={'Live Production'}
+                            paragraph={'Perfect for incorporating the most into your virtual event'}
+                        />
+                    </Fade>
                 </Flex>
             </Box2>
         </Container>
