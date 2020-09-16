@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import home from './home'
 import about from './about'
 import service from './service'
+import virtual from './virtual'
 import work from './work'
 import gear from './gear'
 import contact from './contact'
@@ -32,6 +33,7 @@ export default createSchema({
     home,
     about,
     service,
+    virtual,
     work,
     gear,
     contact,

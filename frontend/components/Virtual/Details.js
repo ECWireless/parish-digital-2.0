@@ -8,20 +8,35 @@ import { Container, Flex } from '../Containers'
 import { Box2, Box3 } from '../Boxes'
 import { H2, H4, P1, P4 } from '../Typography'
 
-const Details = () => {
+const Details = ({
+    detailsMainIcon,
+    detailsHeading,
+    detailsSubheading,
+    detailsCard1Icon,
+    detailsCard1Heading,
+    detailsCard1Paragraph,
+    detailsCard2Icon,
+    detailsCard2Heading,
+    detailsCard2Paragraph,
+    detailsCard3Icon,
+    detailsCard3Heading,
+    detailsCard3Paragraph,
+}) => {
     return (
         <Container>
             <Box2 marginTop={75} marginBottom={75}>
                 <Flex direction={'column'} justify={'center'} align={'center'}>
-                    <MainImage />
+                    <MainImage style={{ backgroundImage: `url(${detailsMainIcon})` }} />
                     <Box2 marginBottom={25} marginTop={50}>
                         <Fade bottom ssrFadeout>
-                            <H2 uppercase center>Virtual Event Solutions</H2>
+                            <H2 uppercase center>
+                                {detailsHeading}
+                            </H2>
                         </Fade>
                     </Box2>
                     <Fade delay={200} bottom ssrFadeout>
                         <H4>
-                            Engaging content for your virtual event
+                            {detailsSubheading}
                         </H4>
                     </Fade>
                 </Flex>
@@ -30,23 +45,23 @@ const Details = () => {
                 <Flex respond justify={'space-around'} align={'center'}>
                     <Fade ssrFadeout>
                         <CardComponent
-                            image={'/photos/pre-recorded.png'}
-                            heading={'Pre-Recorded Content'}
-                            paragraph={'Perfect for distributing well produced content and messaging'}
+                            image={detailsCard1Icon}
+                            heading={detailsCard1Heading}
+                            paragraph={detailsCard1Paragraph}
                         />
                     </Fade>
                     <Fade delay={200} ssrFadeout>
                         <CardComponent
-                            image={'/photos/live-streaming.png'}
-                            heading={'Live Streaming'}
-                            paragraph={'Perfect for real-time audience engagment'}
+                            image={detailsCard2Icon}
+                            heading={detailsCard2Heading}
+                            paragraph={detailsCard2Paragraph}
                         />
                     </Fade>
                     <Fade delay={400} ssrFadeout>
                         <CardComponent
-                            image={'/photos/live-production.png'}
-                            heading={'Live Production'}
-                            paragraph={'Perfect for incorporating the most into your virtual event'}
+                            image={detailsCard3Icon}
+                            heading={detailsCard3Heading}
+                            paragraph={detailsCard3Paragraph}
                         />
                     </Fade>
                 </Flex>
@@ -88,7 +103,6 @@ const CardComponent = ({
 const MainImage = styled.div`
     width: 22rem;
     height: 10rem;
-    background-image: url(/photos/vr-headset.png);
     background-size: cover;
     background-position: center;
 
