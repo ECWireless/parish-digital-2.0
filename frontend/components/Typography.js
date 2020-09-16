@@ -51,7 +51,7 @@ export const H2 = styled.h2`
 
     ${respondTo.xs`
         font-size: 3.5rem;
-        line-height: 45px;
+        line-height: 50px;
     `}
 
     ${respondTo.sm`
@@ -197,6 +197,10 @@ export const P1 = styled.p`
 
     ${props => props.center && css`
         text-align: center;
+    `}
+
+    ${props => props.bold && css`
+        font-weight: bold;
     `}
 
     ${props => css`

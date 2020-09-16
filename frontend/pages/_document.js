@@ -32,25 +32,20 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-61952732-1"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `<!-- Global site tag (gtag.js) - Google Analytics -->
-              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61952732-1"></script>
-              <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-              
-                gtag('config', 'UA-61952732-1');
-                gtag('config', 'UA-111622721-2');
-              </script>
-              `,
-          }}
-          />
+          <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=id=UA-61952732-1" >
+          </script>
+          <script dangerouslySetInnerHTML={
+              { __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){window.dataLayer.push(arguments)}
+                  gtag("js", new Date());
+                  gtag("config", "id=UA-61952732-1");
+                  gtag('config', 'UA-111622721-2');
+              `}
+          }>
+          </script>
         </Head>
         <body>
           <Main />

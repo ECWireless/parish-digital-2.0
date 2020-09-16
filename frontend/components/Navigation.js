@@ -43,6 +43,9 @@ const Navigation = ({ setSidebar }) => {
                         <Link href="/service">
                             <NavItem active={router.pathname === '/service' ? true : false}>Services</NavItem>
                         </Link>
+                        <Link href="/virtual">
+                            <NavItem active={router.pathname === '/virtual' ? true : false}>Virtual</NavItem>
+                        </Link>
                         <Link href="/work">
                             <NavItem active={router.pathname === '/work' ? true : false}>Work</NavItem>
                         </Link>
@@ -119,7 +122,7 @@ const NavMenu = styled.nav`
 		position: absolute;
 		right: 4rem;
 		height: 100%;
-		width: 40rem;
+		width: 48rem;
 
 		ul {
 			display: flex;

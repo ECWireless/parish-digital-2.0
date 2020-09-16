@@ -33,6 +33,11 @@ const Footer = () => {
 								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
+								<Link href="/virtual">
+									<ParagraphLink color={colors.yellow}>virtual</ParagraphLink>
+								</Link>
+							</Box3>
+							<Box3 marginTop={25}>
 								<Link href="/work">
 									<ParagraphLink color={colors.yellow}>work</ParagraphLink>
 								</Link>

@@ -198,7 +198,7 @@ const Features = ({
 export default Features
 
 const FeaturesBackground = styled.div`
-    background: #A7B0BC;
+    background: ${colors.greyBlue};
     width: 100%;
     height: 65rem;
     box-shadow: none;

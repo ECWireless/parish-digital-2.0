@@ -31,6 +31,7 @@ export const Col2 = styled.div`
     ${props => css`
         display: flex;
         flex-direction: ${props.respondDirection ? props.respondDirection : 'column'};
+        justify-content: center;
 
         ${respondTo.xs`
         `}
