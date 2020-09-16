@@ -101,6 +101,8 @@ const LogoCaption = styled.p`
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    padding: 0;
+    margin: 0;
 
 	${respondTo.xs`
 		font-size: 1.3rem;

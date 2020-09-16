@@ -174,6 +174,8 @@ const CloseContainer = styled.div`
         top: 50%;
         left: 50%;
         transform: translate(-50%, -51%);
+        padding: 0;
+        margin: 0;
 	}
 
 	&:hover {

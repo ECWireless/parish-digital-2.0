@@ -16,6 +16,8 @@ import Spinner from '../Spinner'
 import Snackbar from '../Snackbar'
 
 const ContactForm = ({
+    contactFormHeading,
+    contactFormSubheading,
 }) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -87,7 +89,7 @@ const ContactForm = ({
                             <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
                         </Fade>
                         <H2 uppercase center>
-                            We Can Help with Your Virtual Event
+                            {contactFormHeading}
                         </H2>
                         <Fade ssrFadeout>
                             <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
@@ -95,7 +97,7 @@ const ContactForm = ({
                     </Flex>
                     <Box3 marginTop={25}>
                         <P1 center>
-                            You will not be signed up for an email list, promotions, or any other annoyances.
+                            {contactFormSubheading}
                         </P1>
                     </Box3>
                 </Box3>

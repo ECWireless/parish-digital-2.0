@@ -89,6 +89,89 @@ export default {
             title: 'Details Card 3 Paragraph',
             type: 'string'
         },
+        {
+            name: 'descriptionImage',
+            title: 'Description Image',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
+            name: 'descriptionBodyText',
+            title: 'Description Body Text',
+            type: 'blockContent'
+        },
+        {
+            name: 'bannerListItem1',
+            title: 'Banner List Item 1',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem2',
+            title: 'Banner List Item 2',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem3',
+            title: 'Banner List Item 3',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem4',
+            title: 'Banner List Item 4',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem5',
+            title: 'Banner List Item 5',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem6',
+            title: 'Banner List Item 6',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem7',
+            title: 'Banner List Item 7',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem8',
+            title: 'Banner List Item 8',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem9',
+            title: 'Banner List Item 9',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem10',
+            title: 'Banner List Item 10',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem11',
+            title: 'Banner List Item 11',
+            type: 'string'
+        },
+        {
+            name: 'bannerListItem12',
+            title: 'Banner List Item 12',
+            type: 'string'
+        },
+        {
+            name: 'contactFormHeading',
+            title: 'Contact Form Heading',
+            type: 'string'
+        },
+        {
+            name: 'contactFormSubheading',
+            title: 'Contact Form Subheading',
+            type: 'string'
+        },
     ],
   
     preview: {
