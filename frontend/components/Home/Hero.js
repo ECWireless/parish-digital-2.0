@@ -14,7 +14,8 @@ import { H1, H4 } from '../Typography'
 const Hero = ({
     heroImage,
     heroHeading,
-    heroSubheading
+    heroSubheading,
+    heroSubheading2,
 }) => {
     return (
         <WebHero>
@@ -22,12 +23,19 @@ const Hero = ({
             <HeroContainer>
                 <TexContainer>
                     <Fade bottom ssrFadeout>
-                        <H1 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center uppercase>
-                            {heroHeading}
-                        </H1>
+                        <H4 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center uppercase>
+                            {heroSubheading2}
+                        </H4>
+                    </Fade>
+                    <Fade bottom ssrFadeout>
+                        <Box3 marginTop={30}>
+                            <H1 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center uppercase>
+                                {heroHeading}
+                            </H1>
+                        </Box3>
                     </Fade>
                     <Fade delay={200} bottom ssrFadeout>
-                        <Box3 marginTop={20}>
+                        <Box3 marginTop={30}>
                             <H4 style={{textShadow: '0 5px 20px rgba(0,0,0,1'}} color={colors.white} center>
                                 {heroSubheading}
                             </H4>
@@ -101,7 +109,7 @@ const HeroPhoto = styled.div`
     `}
 
     ${respondTo.md`
-        filter: brightness(1);
+        filter: brightness(.9);
     `}
 `
 
@@ -118,7 +126,7 @@ const TexContainer = styled.div`
     margin-top: 10rem;
 
     ${respondTo.xs`
-        margin-top: 15rem;
+        margin-top: 11rem;
     `}
 
     ${respondTo.sm`
@@ -126,14 +134,14 @@ const TexContainer = styled.div`
     `}
 
     ${respondTo.md`
-        margin-top: 25rem;
+        margin-top: 28rem;
     `}
 
     ${respondTo.lg`
-        margin-top: 38rem;
+        margin-top: 32rem;
     `}
 
     ${respondTo.xl`
-    margin-top: 50rem;
+        margin-top: 43rem;
     `}
 `

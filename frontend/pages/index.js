@@ -16,6 +16,7 @@ const index = ({
     heroImage,
     heroHeading,
     heroSubheading,
+    heroSubheading2,
     descriptionHeading,
     descriptionParagraph1,
     descriptionParagraph2,
@@ -85,6 +86,7 @@ const index = ({
                 heroImage={urlFor(heroImage)}
                 heroHeading={heroHeading}
                 heroSubheading={heroSubheading}
+                heroSubheading2={heroSubheading2}
             />
             <Description
                 descriptionHeading={descriptionHeading}
@@ -167,6 +169,7 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
     heroImage,
     heroHeading,
     heroSubheading,
+    heroSubheading2,
     descriptionHeading,
     descriptionParagraph1,
     descriptionParagraph2,

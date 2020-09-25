@@ -36,6 +36,11 @@ export default {
             type: 'string'
         },
         {
+            name: 'heroSubheading2',
+            title: 'Hero Subheading 2',
+            type: 'string'
+        },
+        {
             name: 'descriptionHeading',
             title: 'Description Heading',
             type: 'string'
