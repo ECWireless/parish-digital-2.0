@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
 					content="Pittsburgh video production company. Our focus is video for business. We’re a small video production team, but we’ve produced thousands of successful video projects for Pittsburgh-based, national, and international clients."
 				/>
 				<meta property="og:title" content="Parish Digital Video Production" />
-				<meta property="og:description" content="Our focus is video for business. We’re a small video production team, but we’ve produced thousands of successful video projects for Pittsburgh-based, national, and international clients." />
+				<meta property="og:description" content="Pittsburgh video production company. Our focus is video for business. We’re a small video production team, but we’ve produced thousands of successful video projects for Pittsburgh-based, national, and international clients." />
 				<meta property="og:image" content="https://scontent.fapa1-1.fna.fbcdn.net/v/t1.0-9/101089589_10158442805938762_2020887214912700416_o.png?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=HOX8sp2stzUAX-1mtTd&_nc_ht=scontent.fapa1-1.fna&oh=369d4616dd063b4bc37d264fdb5698ea&oe=5F63F0C0" />
 				<meta name="keywords" content="video, productions, pittsburgh, parish, digital, studio" />
 				<meta name="robots" content="index, follow" />
