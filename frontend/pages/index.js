@@ -80,7 +80,7 @@ const index = ({
     return (
         <>
             <Head>
-                <title>Parish Digital | Pittsburgh Video Production Company</title>
+                <title>PD Video | Pittsburgh Video Production Company</title>
             </Head>
             <Hero
                 heroImage={urlFor(heroImage)}
