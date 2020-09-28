@@ -23,32 +23,50 @@ const Footer = () => {
 								<SmallLine />
 							</Box3>
 							<Box3 marginTop={25}>
-								<Link href="/about">
+								<Link
+									href="/about"
+									title="About"
+								>
 									<ParagraphLink color={colors.yellow}>about</ParagraphLink>
 								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
-								<Link href="/service">
+								<Link
+									href="/service"
+									title="Service"
+								>
 									<ParagraphLink color={colors.yellow}>services</ParagraphLink>
 								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
-								<Link href="/virtual">
+								<Link
+									href="/virtual"
+									title="Virtual"
+								>
 									<ParagraphLink color={colors.yellow}>virtual</ParagraphLink>
 								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
-								<Link href="/work">
+								<Link
+									href="/work"
+									title="Work"
+								>
 									<ParagraphLink color={colors.yellow}>work</ParagraphLink>
 								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
-								<Link href="/gear">
+								<Link
+									href="/gear"
+									title="Gear"
+								>
 									<ParagraphLink color={colors.yellow}>gear</ParagraphLink>
 								</Link>
 							</Box3>
 							<Box3 marginTop={25} marginBottom={50}>
-								<Link href="/contact">
+								<Link
+									href="/contact"
+									title="Contact"
+								>
 									<ParagraphLink color={colors.yellow}>contact</ParagraphLink>
 								</Link>
 							</Box3>
