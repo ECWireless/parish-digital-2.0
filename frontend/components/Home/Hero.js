@@ -51,6 +51,7 @@ const Hero = ({
                             <CustomLink
                                 href='https://vimeo.com/392027059'
                                 target='_blank' rel='noopener noreferrer'
+                                title='Vimeo Portfolio'
                             >
                                 <Button1>
                                     Demo Reel

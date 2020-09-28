@@ -57,6 +57,7 @@ const Footer = () => {
 							<CustomLink
 								href="https://www.peerspace.com/resources/corporate-video-production-companies-pittsburgh"
 								target="_blank" rel="noopener noreferrer"
+								title='Peerspace Article'
 							>
 								<BigLogoImage alt='peerspace award' src="./logos/best-corporate.png" />
 							</CustomLink>
@@ -65,6 +66,7 @@ const Footer = () => {
 							<CustomLink
 								href="https://upcity.com/local-marketing-agencies/profiles/parish-digital-video"
 								target="_blank" rel="noopener noreferrer"
+								title='Upcity Marketing Agencies'
 							>
 								<BigLogoImage alt='upcity logo' src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" />
 							</CustomLink>
@@ -82,6 +84,7 @@ const Footer = () => {
 							<Box3 marginTop={25}>
 								<CustomLink
 									href="mailto: hello@parishdigital.com"
+									title="Email"
 								>
 									<P1 color={colors.yellow}>hello@parishdigital.com</P1>
 								</CustomLink>
@@ -89,6 +92,7 @@ const Footer = () => {
 							<Box3 marginTop={25} marginBottom={50}>
 								<CustomLink
 									href="tel: 4129513331"
+									title="Phone number"
 								>
 									<P1 color={colors.yellow}>(412) 951-3331</P1>
 								</CustomLink>
@@ -108,24 +112,28 @@ const Footer = () => {
 							<CustomLink
 								href="https://vimeo.com/parishdigital"
 								target="_blank" rel="noopener noreferrer"
+								title="Vimeo Page"
 							>
 								<SmallLogo style={{backgroundImage: `url(./logos/vimeo-icon.png)`}} />
 							</CustomLink>
 							<CustomLink
 								href="https://www.linkedin.com/company/parish-digital-video/"
 								target="_blank" rel="noopener noreferrer"
+								title="Twitter Page"
 							>
 								<SmallLogo style={{backgroundImage: `url(./logos/linkedin.png)`}} />
 							</CustomLink>
 							<CustomLink
 								href="https://www.facebook.com/Parish-Digital-Video-Productions-270923643761"
 								target="_blank" rel="noopener noreferrer"
+								title="Facebook Page"
 							>
 								<SmallLogo style={{backgroundImage: `url(./logos/facebook.png)`}} />
 							</CustomLink>
 							<CustomLink
 								href="https://www.youtube.com/channel/UCTqzflm7Z0JHZwmHI_MorGw"
 								target="_blank" rel="noopener noreferrer"
+								title="YouTube Page"
 							>
 								<SmallLogo style={{backgroundImage: `url(./logos/youtube.png)`}} />
 							</CustomLink>
