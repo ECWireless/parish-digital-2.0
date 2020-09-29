@@ -133,7 +133,11 @@ const QuoteContainer2 = styled(Flex)`
     margin-top: 6rem;
 
     ${respondTo.lg`
-        margin-top: 0;
+        margin-top: .5rem;
+    `}
+
+    ${respondTo.xl`
+        margin-top: -.8rem;
     `}
 `
 
