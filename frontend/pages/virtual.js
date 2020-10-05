@@ -45,21 +45,21 @@ const virtual = ({
                 <title>Virtual Events | Parish Digital Video Production</title>
             </Head>
             <Details
-                detailsMainIcon={urlFor(detailsMainIcon)}
+                detailsMainIcon={urlFor(detailsMainIcon).auto('format')}
                 detailsHeading={detailsHeading}
                 detailsSubheading={detailsSubheading}
-                detailsCard1Icon={urlFor(detailsCard1Icon)}
+                detailsCard1Icon={urlFor(detailsCard1Icon).auto('format')}
                 detailsCard1Heading={detailsCard1Heading}
                 detailsCard1Paragraph={detailsCard1Paragraph}
-                detailsCard2Icon={urlFor(detailsCard2Icon)}
+                detailsCard2Icon={urlFor(detailsCard2Icon).auto('format')}
                 detailsCard2Heading={detailsCard2Heading}
                 detailsCard2Paragraph={detailsCard2Paragraph}
-                detailsCard3Icon={urlFor(detailsCard3Icon)}
+                detailsCard3Icon={urlFor(detailsCard3Icon).auto('format')}
                 detailsCard3Heading={detailsCard3Heading}
                 detailsCard3Paragraph={detailsCard3Paragraph}
             />
             <Description
-                descriptionImage={urlFor(descriptionImage)}
+                descriptionImage={urlFor(descriptionImage).auto('format')}
                 descriptionBodyText={descriptionBodyText}
             />
             <Banner

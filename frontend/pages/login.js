@@ -20,13 +20,13 @@ const login = ({
     return (
         <>
             <Head>
-                <title>Login | Parish Digital Video Production</title>
+                <title>Login.auto('format') | Parish Digital Video Production</title>
             </Head>
             {!loggedIn 
                 ? <AuthFalse loggedIn={setLoggedIn} /> 
                 : <AuthTrue
                     setLoggedIn={setLoggedIn}
-                    loginBackgroundPhoto={urlFor(loginBackgroundPhoto)}
+                    loginBackgroundPhoto={urlFor(loginBackgroundPhoto).auto('format')}
                     loginAlexSubmitHoursLink={loginAlexSubmitHoursLink}
                     loginMikeSubmitHoursLink={loginMikeSubmitHoursLink}
                     loginAlexTimesheetLink={loginAlexTimesheetLink}

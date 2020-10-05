@@ -45,7 +45,7 @@ const work = ({
             <Banner  
                 bannerHeading={bannerHeading}
                 bannerParagraph={bannerParagraph}
-                bannerPhoto={urlFor(bannerPhoto)}
+                bannerPhoto={urlFor(bannerPhoto).auto('format')}
             />
             <Feature
                 featureHeading={featureHeading}

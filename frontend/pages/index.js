@@ -83,7 +83,7 @@ const index = ({
                 <title>PD Video | Pittsburgh Video Production Company</title>
             </Head>
             <Hero
-                heroImage={urlFor(heroImage)}
+                heroImage={urlFor(heroImage).auto('format')}
                 heroHeading={heroHeading}
                 heroSubheading={heroSubheading}
                 heroSubheading2={heroSubheading2}
@@ -94,29 +94,29 @@ const index = ({
                 descriptionParagraph2={descriptionParagraph2}
                 descriptionVideoType1={descriptionVideoType1}
                 descriptionVideoType1Details={descriptionVideoType1Details}
-                descriptionVideoType1Photo={urlFor(descriptionVideoType1Photo)}
+                descriptionVideoType1Photo={urlFor(descriptionVideoType1Photo).auto('format')}
                 descriptionVideoType2={descriptionVideoType2}
                 descriptionVideoType2Details={descriptionVideoType2Details}
-                descriptionVideoType2Photo={urlFor(descriptionVideoType2Photo)}
+                descriptionVideoType2Photo={urlFor(descriptionVideoType2Photo).auto('format')}
                 descriptionVideoType3={descriptionVideoType3}
                 descriptionVideoType3Details={descriptionVideoType3Details}
-                descriptionVideoType3Photo={urlFor(descriptionVideoType3Photo)}
+                descriptionVideoType3Photo={urlFor(descriptionVideoType3Photo).auto('format')}
             />
             <Trusted
                 trustedHeading={trustedHeading}
-                trustedLogo1={urlFor(trustedLogo1)}
-                trustedLogo2={urlFor(trustedLogo2)}
-                trustedLogo3={urlFor(trustedLogo3)}
-                trustedLogo4={urlFor(trustedLogo4)}
-                trustedLogo5={urlFor(trustedLogo5)}
-                trustedLogo6={urlFor(trustedLogo6)}
+                trustedLogo1={urlFor(trustedLogo1).auto('format')}
+                trustedLogo2={urlFor(trustedLogo2).auto('format')}
+                trustedLogo3={urlFor(trustedLogo3).auto('format')}
+                trustedLogo4={urlFor(trustedLogo4).auto('format')}
+                trustedLogo5={urlFor(trustedLogo5).auto('format')}
+                trustedLogo6={urlFor(trustedLogo6).auto('format')}
             />
             <Feature
                 featureHeading={featureHeading}
                 featureSubheading={featureSubheading}
                 featureParagraph={featureParagraph}
                 featureButton={featureButton}
-                featurePhoto={urlFor(featurePhoto)}
+                featurePhoto={urlFor(featurePhoto).auto('format')}
             />
             <Services
                 servicesHeading={servicesHeading}
@@ -130,7 +130,7 @@ const index = ({
                 servicesList1Item7={servicesList1Item7}
                 servicesList1Item8={servicesList1Item8}
                 servicesList1Item9={servicesList1Item9}
-                servicesPhoto1={urlFor(servicesPhoto1)}
+                servicesPhoto1={urlFor(servicesPhoto1).auto('format')}
                 servicesSubheading2={servicesSubheading2}
                 servicesList2Item1={servicesList2Item1}
                 servicesList2Item2={servicesList2Item2}
@@ -138,12 +138,12 @@ const index = ({
                 servicesList2Item4={servicesList2Item4}
                 servicesList2Item5={servicesList2Item5}
                 servicesList2Item6={servicesList2Item6}
-                servicesPhoto2={urlFor(servicesPhoto2)}
+                servicesPhoto2={urlFor(servicesPhoto2).auto('format')}
             />
             <Reviews
                 reviewsHeading={reviewsHeading}
                 reviewsSubheading={reviewsSubheading}
-                reviewsPhoto={urlFor(reviewsPhoto)}
+                reviewsPhoto={urlFor(reviewsPhoto).auto('format')}
                 reviewsQuote1={reviewsQuote1}
                 reviewsName1={reviewsName1}
                 reviewsPosition1={reviewsPosition1}

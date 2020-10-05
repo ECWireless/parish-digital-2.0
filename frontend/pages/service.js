@@ -87,17 +87,17 @@ const service = ({
             />
             <CustomFlex>
                 <Features
-                    feature1Icon={urlFor(feature1Icon)}
+                    feature1Icon={urlFor(feature1Icon).auto('format')}
                     feature1Heading={feature1Heading}
                     feature1Paragraph={feature1Paragraph}
                     feature1ButtonText={feature1ButtonText}
                     feature1Link={feature1Link}
-                    feature2Icon={urlFor(feature2Icon)}
+                    feature2Icon={urlFor(feature2Icon).auto('format')}
                     feature2Heading={feature2Heading}
                     feature2Paragraph={feature2Paragraph}
                     feature2ButtonText={feature2ButtonText}
                     feature2Link={feature2Link}
-                    feature3Icon={urlFor(feature3Icon)}
+                    feature3Icon={urlFor(feature3Icon).auto('format')}
                     feature3Heading={feature3Heading}
                     feature3Paragraph={feature3Paragraph}
                     feature3ButtonText={feature3ButtonText}
@@ -108,19 +108,19 @@ const service = ({
                     details1ParagraphMobile={details1ParagraphMobile}
                     details1Paragraph1={details1Paragraph1}
                     details1Paragraph2={details1Paragraph2}
-                    details1Photo={urlFor(details1Photo)}
+                    details1Photo={urlFor(details1Photo).auto('format')}
                     details2Heading={details2Heading}
                     details2ParagraphMobile={details2ParagraphMobile}
                     details2Paragraph1={details2Paragraph1}
                     details2Paragraph2={details2Paragraph2}
-                    details2Photo={urlFor(details2Photo)}
+                    details2Photo={urlFor(details2Photo).auto('format')}
                 />
             </CustomFlex>
             <Pricing
                 setModal={setModal}
                 pricingHeading={pricingHeading}
                 pricingButtonText={pricingButtonText}
-                pricingPhoto={urlFor(pricingPhoto)}
+                pricingPhoto={urlFor(pricingPhoto).auto('format')}
             />
             <Services
                 servicesHeading={servicesHeading}
@@ -134,7 +134,7 @@ const service = ({
                 servicesList1Item7={servicesList1Item7}
                 servicesList1Item8={servicesList1Item8}
                 servicesList1Item9={servicesList1Item9}
-                servicesPhoto1={urlFor(servicesPhoto1)}
+                servicesPhoto1={urlFor(servicesPhoto1).auto('format')}
                 servicesSubheading2={servicesSubheading2}
                 servicesList2Item1={servicesList2Item1}
                 servicesList2Item2={servicesList2Item2}
@@ -142,7 +142,7 @@ const service = ({
                 servicesList2Item4={servicesList2Item4}
                 servicesList2Item5={servicesList2Item5}
                 servicesList2Item6={servicesList2Item6}
-                servicesPhoto2={urlFor(servicesPhoto2)}
+                servicesPhoto2={urlFor(servicesPhoto2).auto('format')}
             />
 			<Backdrop onClick={() => setModal(false)} open={modal} />
             <Modal open={modal} setModal={setModal} />

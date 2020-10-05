@@ -24,16 +24,13 @@ const Footer = () => {
 							</Box3>
 							<Box3 marginTop={25}>
 								<Link
-									href="/about"
-									title="About"
-								>
+									href="/about"						>
 									<ParagraphLink color={colors.yellow}>about</ParagraphLink>
 								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
 								<Link
 									href="/service"
-									title="Service"
 								>
 									<ParagraphLink color={colors.yellow}>services</ParagraphLink>
 								</Link>
@@ -41,31 +38,25 @@ const Footer = () => {
 							<Box3 marginTop={25}>
 								<Link
 									href="/virtual"
-									title="Virtual"
 								>
 									<ParagraphLink color={colors.yellow}>virtual</ParagraphLink>
 								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
 								<Link
-									href="/work"
-									title="Work"
-								>
+									href="/work">
 									<ParagraphLink color={colors.yellow}>work</ParagraphLink>
 								</Link>
 							</Box3>
 							<Box3 marginTop={25}>
 								<Link
-									href="/gear"
-									title="Gear"
-								>
+									href="/gear">
 									<ParagraphLink color={colors.yellow}>gear</ParagraphLink>
 								</Link>
 							</Box3>
 							<Box3 marginTop={25} marginBottom={50}>
 								<Link
 									href="/contact"
-									title="Contact"
 								>
 									<ParagraphLink color={colors.yellow}>contact</ParagraphLink>
 								</Link>

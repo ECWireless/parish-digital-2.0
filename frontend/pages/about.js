@@ -55,7 +55,7 @@ const about = ({
             <Banner
                 bannerHeading={bannerHeading}
                 bannerParagraph={bannerParagraph}
-                bannerPhoto={urlFor(bannerPhoto)}
+                bannerPhoto={urlFor(bannerPhoto).auto('format')}
             />
             <Story
                 storyHeading1={storyHeading1}
@@ -64,7 +64,7 @@ const about = ({
                 storyHeading2={storyHeading2}
                 storyParagraph3={storyParagraph3}
                 storyParagraph4={storyParagraph4}
-                storyPhoto={urlFor(storyPhoto)}
+                storyPhoto={urlFor(storyPhoto).auto('format')}
             />
             <Expertise
                 expertiseHeading={expertiseHeading}
@@ -77,17 +77,17 @@ const about = ({
                 crew1Position={crew1Position}
                 crew1Paragraph1={crew1Paragraph1}
                 crew1Paragraph2={crew1Paragraph2}
-                crew1Photo={urlFor(crew1Photo)}
+                crew1Photo={urlFor(crew1Photo).auto('format')}
                 crew2Name={crew2Name}
                 crew2Position={crew2Position}
                 crew2Paragraph1={crew2Paragraph1}
                 crew2Paragraph2={crew2Paragraph2}
-                crew2Photo={urlFor(crew2Photo)}
+                crew2Photo={urlFor(crew2Photo).auto('format')}
                 crew3Name={crew3Name}
                 crew3Position={crew3Position}
                 crew3Paragraph1={crew3Paragraph1}
                 crew3Paragraph2={crew3Paragraph2}
-                crew3Photo={urlFor(crew3Photo)}
+                crew3Photo={urlFor(crew3Photo).auto('format')}
             />
             <Network
                 networkHeading={networkHeading}

@@ -32,7 +32,7 @@ const contact = ({
             <Banner
                 bannerHeading={bannerHeading}
                 bannerParagraph={bannerParagraph}
-                bannerPhoto={urlFor(bannerPhoto)}
+                bannerPhoto={urlFor(bannerPhoto).auto('format')}
             />
             <ContactForm
                 contactHeading={contactHeading}
@@ -43,7 +43,7 @@ const contact = ({
                 ownerParagraph={ownerParagraph}
                 ownerNumber={ownerNumber}
                 ownerEmail={ownerEmail}
-                ownerPhoto={urlFor(ownerPhoto)}
+                ownerPhoto={urlFor(ownerPhoto).auto('format')}
             />
             <Location
                 locationHeading={locationHeading}

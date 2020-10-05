@@ -168,6 +168,8 @@ export const P1 = styled.p`
     font-size: 1.4rem;
     line-height: 20px;
     letter-spacing: 1px;
+    padding: 0;
+    margin: 0;
 
     ${respondTo.xs`
         font-size: 1.6rem;
@@ -212,6 +214,8 @@ export const P2 = styled.p`
     font-size: 1.6rem;
     line-height: 20px;
     letter-spacing: .5px;
+    padding: 0;
+    margin: 0;
 
     ${respondTo.sm`
         font-size: 1.8rem;
@@ -243,6 +247,8 @@ export const P3 = styled.p`
     font-size: 1.5rem;
     line-height: 20px;
     letter-spacing: .5px;
+    padding: 0;
+    margin: 0;
 
     ${respondTo.sm`
         font-size: 1.6rem;
@@ -274,6 +280,8 @@ export const P4 = styled.p`
     font-size: 1.4rem;
     line-height: 20px;
     letter-spacing: .5px;
+    padding: 0;
+    margin: 0;
 
     ${respondTo.xs`
     `}

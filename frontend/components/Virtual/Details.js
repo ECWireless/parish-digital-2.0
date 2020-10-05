@@ -148,6 +148,7 @@ const VirtualCardIcon = styled.div`
 `
 
 const CustomBox = styled.div`
+
     ${props => css`
         width: ${props.width * .8}px;
         margin-top: ${props.marginTop * .7}px;
