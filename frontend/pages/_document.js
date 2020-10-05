@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){window.dataLayer.push(arguments)}
                   gtag("js", new Date());
-                  gtag("config", "id=UA-61952732-1");
+                  gtag("config", "UA-61952732-1");
                   gtag('config', 'UA-111622721-2');
               `}
           }>
