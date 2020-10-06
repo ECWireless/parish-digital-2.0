@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import styled, { css } from 'styled-components'
 import { GTMPageView } from '../utils/gtm';
