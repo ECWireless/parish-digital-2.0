@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Router from 'next/router';
 import Head from 'next/head'
 import styled, { css } from 'styled-components'
 import { GTMPageView } from '../utils/gtm';
@@ -11,6 +12,15 @@ import Footer from '../components/Footer'
 
 export default function App({ Component, pageProps }) {
 	const [sidebar, setSidebar] = useState(false)
+
+	// Initiate GTM
+    useEffect(() => {
+        const handleRouteChange = (url) => GTMPageView(url);
+        Router.events.on('routeChangeComplete', handleRouteChange);
+        return () => {
+            Router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, []);
 
 	return (
 		<>
