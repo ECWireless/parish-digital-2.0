@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Fade from 'react-reveal/Fade';
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import respondTo from '../Breakpoints'
 
 // Components
@@ -9,7 +9,6 @@ import { Box3 } from '../Boxes'
 import { Button1 } from '../Buttons'
 import { Flex } from '../Containers'
 import { CustomLink } from '../Links'
-import { H1, H4 } from '../Typography'
 
 const Hero = ({
     heroImage,
@@ -144,5 +143,88 @@ const TexContainer = styled.div`
 
     ${respondTo.xl`
         margin-top: 43rem;
+    `}
+`
+
+// Custom Typography
+export const H1 = styled.h4`
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 4px;
+
+    ${respondTo.xs`
+        line-height: 40px;
+        font-size: 4rem;
+    `}
+
+    ${respondTo.sm`
+        font-size: 5.5rem;
+        line-height: 40px;
+    `}
+
+    ${respondTo.md`
+        font-size: 6.5rem;
+    `}
+
+    ${respondTo.lg`
+        font-size: 7.5rem;
+    `}
+
+    ${respondTo.xl`
+        font-size: 8.5rem;
+    `}
+
+    ${props => props.center && css`
+        text-align: center;
+    `}
+
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
+
+
+    ${props => css`
+        color: ${props.color}
+    `}
+`
+
+export const H4 = styled.h1`
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 1px;
+
+    ${respondTo.xs`
+        font-size: 1.8rem;
+    `}
+
+    ${respondTo.sm`
+        font-size: 2rem;
+    `}
+
+    ${respondTo.md`
+        font-size: 2.2rem;
+    `}
+
+    ${respondTo.lg`
+        font-size: 2.5rem;
+    `}
+
+    ${respondTo.xl`
+        font-size: 3.2rem;
+    `}
+
+    ${props => props.center && css`
+        text-align: center;
+    `}
+
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
+
+
+    ${props => css`
+        color: ${props.color}
     `}
 `
