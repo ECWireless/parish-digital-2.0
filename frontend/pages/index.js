@@ -13,6 +13,7 @@ import Services from '../components/Home/Services'
 import Reviews from '../components/Home/Reviews'
 
 const index = ({
+    pageTitle,
     heroImage,
     heroHeading,
     heroSubheading,
@@ -80,7 +81,7 @@ const index = ({
     return (
         <>
             <Head>
-                <title>Pittsburgh Video Production | Parish Digital Video</title>
+                <title>{pageTitle}</title>
             </Head>
             <Hero
                 heroImage={urlFor(heroImage).auto('format')}
@@ -166,6 +167,7 @@ function urlFor (source) {
 }
 
 const query = groq`*[_type == "home" && slug.current == "v1"][0]{
+    pageTitle,
     heroImage,
     heroHeading,
     heroSubheading,

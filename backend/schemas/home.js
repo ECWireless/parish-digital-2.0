@@ -18,6 +18,11 @@ export default {
             }
         },
         {
+            name: 'pageTitle',
+            title: 'Page Title',
+            type: 'string'
+        },
+        {
             name: 'heroImage',
             title: 'Hero Image',
             type: 'image',
