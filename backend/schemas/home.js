@@ -31,6 +31,11 @@ export default {
             }
         },
         {
+            name: 'heroDemoReelLink',
+            title: 'Hero Demo Reel Link',
+            type: 'string'
+        },
+        {
             name: 'heroHeading',
             title: 'Hero Heading',
             type: 'string'

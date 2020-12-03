@@ -12,6 +12,7 @@ import { CustomLink } from '../Links'
 
 const Hero = ({
     heroImage,
+    heroDemoReelLink,
     heroHeading,
     heroSubheading,
     heroSubheading2,
@@ -48,7 +49,7 @@ const Hero = ({
                                 </Button1>
                             </Link>
                             <CustomLink
-                                href='https://vimeo.com/392027059'
+                                href={heroDemoReelLink}
                                 target='_blank' rel='noopener noreferrer'
                                 title='Vimeo Portfolio'
                             >

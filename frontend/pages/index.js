@@ -15,6 +15,7 @@ import Reviews from '../components/Home/Reviews'
 const index = ({
     pageTitle,
     heroImage,
+    heroDemoReelLink,
     heroHeading,
     heroSubheading,
     heroSubheading2,
@@ -85,6 +86,7 @@ const index = ({
             </Head>
             <Hero
                 heroImage={urlFor(heroImage).auto('format')}
+                heroDemoReelLink={heroDemoReelLink}
                 heroHeading={heroHeading}
                 heroSubheading={heroSubheading}
                 heroSubheading2={heroSubheading2}
@@ -169,6 +171,7 @@ function urlFor (source) {
 const query = groq`*[_type == "home" && slug.current == "v1"][0]{
     pageTitle,
     heroImage,
+    heroDemoReelLink,
     heroHeading,
     heroSubheading,
     heroSubheading2,
