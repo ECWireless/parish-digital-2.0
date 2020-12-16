@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "parishdigital.com",
+  "Id": "4bc52c8d-f0dd-4fa2-ba23-406a64d032d6"
+}
