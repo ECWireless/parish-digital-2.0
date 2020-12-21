@@ -120,6 +120,26 @@ export default {
             }
         },
         {
+            name: 'examplesLink1',
+            title: 'Examples Link 1',
+            type: 'string'
+        },
+        {
+            name: 'examplesLink2',
+            title: 'Examples Link 2',
+            type: 'string'
+        },
+        {
+            name: 'examplesLink3',
+            title: 'Examples Link 3',
+            type: 'string'
+        },
+        {
+            name: 'examplesLink4',
+            title: 'Examples Link 4',
+            type: 'string'
+        },
+        {
             name: 'trustedHeading',
             title: 'Trusted Heading',
             type: 'string'
