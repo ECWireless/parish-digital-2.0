@@ -19,7 +19,10 @@ const Hero = ({
 }) => {
     return (
         <WebHero>
-            <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} />
+            {/* <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} /> */}
+            <HeroVideo autoPlay loop muted playsInline>
+                <source src='/PD_Hero_Video.mp4' type="video/mp4" />
+            </HeroVideo>
             <HeroContainer>
                 <TexContainer>
                     <Fade bottom ssrFadeout>
@@ -71,6 +74,7 @@ const WebHero =  styled.div`
     width: 100%;
     height: 45rem;
     position: relative;
+    overflow: hidden;
 
     ${respondTo.xs`
         height: 45rem;
@@ -93,26 +97,53 @@ const WebHero =  styled.div`
     `}
 `
 
-const HeroPhoto = styled.div`
-    width: 100%;
+const HeroVideo = styled.video`
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    width: auto;
     position: absolute;
-    filter: brightness(.6);
+    top: 0;
+    filter: brightness(.5);
 
-    ${respondTo.xs`
-        filter: brightness(.8);
-    `}
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
 
-    ${respondTo.sm`
-        filter: brightness(.9);
-    `}
+    @keyframes fade {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 
     ${respondTo.md`
-        filter: brightness(.9);
+        width: 100%;
+        height: auto;
     `}
 `
+
+// const HeroPhoto = styled.div`
+//     width: 100%;
+//     height: 100%;
+//     background-size: cover;
+//     background-position: center;
+//     position: absolute;
+//     filter: brightness(.6);
+
+//     ${respondTo.xs`
+//         filter: brightness(.8);
+//     `}
+
+//     ${respondTo.sm`
+//         filter: brightness(.9);
+//     `}
+
+//     ${respondTo.md`
+//         filter: brightness(.9);
+//     `}
+// `
 
 const HeroContainer = styled(Flex)`
     position: relative;
@@ -124,26 +155,26 @@ const HeroContainer = styled(Flex)`
 `
 
 const TexContainer = styled.div`
-    margin-top: 10rem;
+    margin-top: 8rem;
 
     ${respondTo.xs`
-        margin-top: 11rem;
+        margin-top: 8rem;
     `}
 
     ${respondTo.sm`
-        margin-top: 18rem;
+        margin-top: 12rem;
     `}
 
     ${respondTo.md`
-        margin-top: 28rem;
+        margin-top: 15rem;
     `}
 
     ${respondTo.lg`
-        margin-top: 32rem;
+        margin-top: 20rem;
     `}
 
     ${respondTo.xl`
-        margin-top: 43rem;
+        margin-top: 32rem;
     `}
 `
 
