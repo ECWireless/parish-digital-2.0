@@ -7,6 +7,7 @@ import client from '../client'
 // Components
 import Hero from '../components/Home/Hero'
 import Description from '../components/Home/Description'
+import Examples from '../components/Home/Examples'
 import Trusted from '../components/Home/Trusted'
 import Feature from '../components/Home/Feature'
 import Services from '../components/Home/Services'
@@ -31,6 +32,10 @@ const index = ({
     descriptionVideoType3,
     descriptionVideoType3Details,
     descriptionVideoType3Photo,
+    examplesLink1,
+    examplesLink2,
+    examplesLink3,
+    examplesLink4,
     trustedHeading,
     trustedLogo1,
     trustedLogo2,
@@ -104,6 +109,12 @@ const index = ({
                 descriptionVideoType3={descriptionVideoType3}
                 descriptionVideoType3Details={descriptionVideoType3Details}
                 descriptionVideoType3Photo={urlFor(descriptionVideoType3Photo).auto('format')}
+            />
+            <Examples
+                examplesLink1={examplesLink1}
+                examplesLink2={examplesLink2}
+                examplesLink3={examplesLink3}
+                examplesLink4={examplesLink4}
             />
             <Trusted
                 trustedHeading={trustedHeading}
@@ -187,6 +198,10 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
     descriptionVideoType3,
     descriptionVideoType3Details,
     descriptionVideoType3Photo,
+    examplesLink1,
+    examplesLink2,
+    examplesLink3,
+    examplesLink4,
     trustedHeading,
     trustedLogo1,
     trustedLogo2,
