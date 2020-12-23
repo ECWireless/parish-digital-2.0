@@ -125,13 +125,6 @@ const index = ({
                 trustedLogo5={urlFor(trustedLogo5).auto('format')}
                 trustedLogo6={urlFor(trustedLogo6).auto('format')}
             />
-            <Feature
-                featureHeading={featureHeading}
-                featureSubheading={featureSubheading}
-                featureParagraph={featureParagraph}
-                featureButton={featureButton}
-                featurePhoto={urlFor(featurePhoto).auto('format')}
-            />
             <Services
                 servicesHeading={servicesHeading}
                 servicesSubheading1={servicesSubheading1}
@@ -170,6 +163,13 @@ const index = ({
                 reviewsName3={reviewsName3}
                 reviewsPosition3={reviewsPosition3}
                 reviewsCompany3={reviewsCompany3}
+            />
+            <Feature
+                featureHeading={featureHeading}
+                featureSubheading={featureSubheading}
+                featureParagraph={featureParagraph}
+                featureButton={featureButton}
+                featurePhoto={urlFor(featurePhoto).auto('format')}
             />
         </>
     )
