@@ -75,7 +75,7 @@ const Crew = ({
                                                             {crew1Paragraph1}
                                                         </ParagraphText>
                                                     </Box3>
-                                                    <Box3 paddingTop={25} paddingRight={25} paddingLeft={25}>
+                                                    <Box3 paddingTop={5} paddingRight={25} paddingLeft={25}>
                                                         <ParagraphText color={colors.white}>
                                                             {crew1Paragraph2}
                                                         </ParagraphText>
@@ -108,7 +108,7 @@ const Crew = ({
                                                             {crew2Paragraph1}
                                                         </ParagraphText>
                                                     </Box3>
-                                                    <Box3 paddingTop={25} paddingRight={25} paddingLeft={25}>
+                                                    <Box3 paddingTop={5} paddingRight={25} paddingLeft={25}>
                                                         <ParagraphText color={colors.white}>
                                                             {crew2Paragraph2}
                                                         </ParagraphText>
@@ -164,7 +164,7 @@ const TextBox = styled.div`
 
 const TeamPhoto = styled.div`
     width: 25rem;
-    height: 48rem;
+    height: 50rem;
     background-size: cover;
     background-position: center;
     box-shadow: ${shadows.card};
@@ -177,7 +177,7 @@ const TeamPhoto = styled.div`
 
     ${respondTo.sm`
         width: 36rem;
-        height: 52rem;
+        height: 55rem;
     `}
 
     ${respondTo.xl`
