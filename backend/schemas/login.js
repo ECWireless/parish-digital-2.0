@@ -36,6 +36,14 @@ export default {
             }
         },
         {
+            name: 'loginBackgroundPhoto2',
+            title: 'Login Background Photo 2',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
             name: 'loginAlexSubmitHoursLink',
             title: 'Login Alex Submit Hours Link',
             type: 'string'
@@ -53,6 +61,16 @@ export default {
         {
             name: 'loginMikeTimesheetLink',
             title: 'Login Mike Timesheet Link',
+            type: 'string'
+        },
+        {
+            name: 'loginScottSubmitHoursLink',
+            title: 'Login Scott Submit Hours Link',
+            type: 'string'
+        },
+        {
+            name: 'loginScottTimesheetLink',
+            title: 'Login Scott Timesheet Link',
             type: 'string'
         },
     ],
