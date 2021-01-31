@@ -251,7 +251,6 @@ const BigLogo1 = styled.div`
 	grid-column: 1 / 2;
 	grid-row: 2 / 3;
 	width: 30rem;
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -272,7 +271,6 @@ const BigLogo2 = styled.div`
 	grid-column: 1 / 2;
 	grid-row: 3 / 4;
 	width: 30rem;
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
