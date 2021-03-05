@@ -7,62 +7,98 @@ import { colors } from '../components/theme'
 import { Box3 } from '../components/Boxes'
 import { Container, Flex } from '../components/Containers'
 import { CustomLink } from '../components/Links'
-import { H4, P1, P2 } from '../components/Typography'
+import Spacer from '../components/Spacer'
+import { H4, P1, P2, P3 } from '../components/Typography'
 
 const Footer = () => {
     return (
-        <FooterContainer>
+		<div style={{width: '100%', background: 'linear-gradient(#585858, #393939)', zIndex: 0}}>
+			<Spacer size={'md'} />
 			<Container>
-				<Flex align={'center'} justify={'center'} direction={'column'}>
-					<UpperFooter>
-						<Sitemap>
-							<Box3 marginTop={50}>
-								<H4 color={colors.white} uppercase>Sitemap</H4>
-							</Box3>
-							<Box3 marginTop={25}>
-								<SmallLine />
-							</Box3>
-							<Box3 marginTop={25}>
-								<Link
-									href="/about"						>
-									<ParagraphLink color={colors.yellow}>about</ParagraphLink>
-								</Link>
-							</Box3>
-							<Box3 marginTop={25}>
-								<Link
-									href="/service"
-								>
-									<ParagraphLink color={colors.yellow}>services</ParagraphLink>
-								</Link>
-							</Box3>
-							<Box3 marginTop={25}>
-								<Link
-									href="/virtual"
-								>
-									<ParagraphLink color={colors.yellow}>virtual</ParagraphLink>
-								</Link>
-							</Box3>
-							<Box3 marginTop={25}>
-								<Link
-									href="/work">
-									<ParagraphLink color={colors.yellow}>work</ParagraphLink>
-								</Link>
-							</Box3>
-							<Box3 marginTop={25}>
-								<Link
-									href="/gear">
-									<ParagraphLink color={colors.yellow}>gear</ParagraphLink>
-								</Link>
-							</Box3>
-							<Box3 marginTop={25} marginBottom={50}>
-								<Link
-									href="/contact"
-								>
-									<ParagraphLink color={colors.yellow}>contact</ParagraphLink>
-								</Link>
-							</Box3>
-						</Sitemap>
-						<BigLogo1>
+				<InnerContainer>
+					<TextContainer>
+						<Flex direction={'column'}>
+							<H4 color={colors.white} uppercase>Sitemap</H4>
+							<Spacer size={'sm'} />
+							<Link href="/about">
+								<ParagraphLink>about</ParagraphLink>
+							</Link>
+							<Spacer size={'xs'} />
+							<Link href="/service">
+								<ParagraphLink>services</ParagraphLink>
+							</Link>
+							<Spacer size={'xs'} />
+							<Link href="/virtual">
+								<ParagraphLink>virtual</ParagraphLink>
+							</Link>
+							<Spacer size={'xs'} />
+							<Link href="/work">
+								<ParagraphLink>work</ParagraphLink>
+							</Link>
+							<Spacer size={'xs'} />
+							<Link href="/gear">
+								<ParagraphLink>gear</ParagraphLink>
+							</Link>
+							<Spacer size={'xs'} />
+							<Link href="/contact">
+								<ParagraphLink>contact</ParagraphLink>
+							</Link>
+						</Flex>
+
+						<Flex direction={'column'}>
+							<H4 color={colors.white} uppercase>Contact</H4>
+							<Spacer size={'sm'} />
+							<P3 color={colors.yellow}>5819 Penn Ave Pittsburgh, PA 15206</P3>
+							<Spacer size={'xs'} />
+							<CustomLink
+								href="mailto: hello@parishdigital.com"
+								title="Email"
+							>
+								<P3 color={colors.yellow}>hello@parishdigital.com</P3>
+							</CustomLink>
+							<Spacer size={'xs'} />
+							<CustomLink
+								href="tel: 4129513331"
+								title="Phone number"
+							>
+								<P3 color={colors.yellow}>(412) 951-3331</P3>
+							</CustomLink>
+						</Flex>
+					</TextContainer>
+
+					<SmallLogos>
+						<CustomLink
+							href="https://vimeo.com/parishdigital"
+							target="_blank" rel="noopener noreferrer"
+							title="Vimeo Page"
+						>
+							<SmallLogo style={{backgroundImage: `url(./logos/vimeo-icon.png)`}} />
+						</CustomLink>
+						<CustomLink
+							href="https://www.linkedin.com/company/parish-digital-video/"
+							target="_blank" rel="noopener noreferrer"
+							title="Twitter Page"
+						>
+							<SmallLogo style={{backgroundImage: `url(./logos/linkedin.png)`}} />
+						</CustomLink>
+						<CustomLink
+							href="https://www.facebook.com/Parish-Digital-Video-Productions-270923643761"
+							target="_blank" rel="noopener noreferrer"
+							title="Facebook Page"
+						>
+							<SmallLogo style={{backgroundImage: `url(./logos/facebook.png)`}} />
+						</CustomLink>
+						<CustomLink
+							href="https://www.youtube.com/channel/UCTqzflm7Z0JHZwmHI_MorGw"
+							target="_blank" rel="noopener noreferrer"
+							title="YouTube Page"
+						>
+							<SmallLogo style={{backgroundImage: `url(./logos/youtube.png)`}} />
+						</CustomLink>
+					</SmallLogos>
+
+					<BigLogos>
+						<div>
 							<CustomLink
 								href="https://www.peerspace.com/resources/corporate-video-production-companies-pittsburgh"
 								target="_blank" rel="noopener noreferrer"
@@ -70,8 +106,8 @@ const Footer = () => {
 							>
 								<BigLogoImage alt='peerspace award' src="./logos/best-corporate.png" />
 							</CustomLink>
-						</BigLogo1>
-						<BigLogo2>
+						</div>
+						<div>
 							<CustomLink
 								href="https://upcity.com/local-marketing-agencies/profiles/parish-digital-video"
 								target="_blank" rel="noopener noreferrer"
@@ -79,131 +115,75 @@ const Footer = () => {
 							>
 								<BigLogoImage alt='upcity logo' src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" />
 							</CustomLink>
-						</BigLogo2>
-						<Contact>
-							<Box3 marginTop={50}>
-								<H4 color={colors.white} uppercase>Contact</H4>
-							</Box3>
-							<Box3 marginTop={25}>
-								<SmallLine />
-							</Box3>
-							<Box3 marginTop={25}>
-								<P1 color={colors.yellow}>5819 Penn Ave Pittsburgh, PA 15206</P1>
-							</Box3>
-							<Box3 marginTop={25}>
-								<CustomLink
-									href="mailto: hello@parishdigital.com"
-									title="Email"
-								>
-									<P1 color={colors.yellow}>hello@parishdigital.com</P1>
-								</CustomLink>
-							</Box3>
-							<Box3 marginTop={25} marginBottom={50}>
-								<CustomLink
-									href="tel: 4129513331"
-									title="Phone number"
-								>
-									<P1 color={colors.yellow}>(412) 951-3331</P1>
-								</CustomLink>
-							</Box3>
-						</Contact>
-					</UpperFooter>
-
-					<CustomLine />
-
-					<LowerFooter>
-						<Copyright>
-							<Box3 marginTop={50} marginBottom={50}>
-								<P2 color={colors.white}>© All Rights Reserved Parish Digital Video Production</P2>
-							</Box3>
-						</Copyright>
-						<SmallLogos>
-							<CustomLink
-								href="https://vimeo.com/parishdigital"
-								target="_blank" rel="noopener noreferrer"
-								title="Vimeo Page"
-							>
-								<SmallLogo style={{backgroundImage: `url(./logos/vimeo-icon.png)`}} />
-							</CustomLink>
-							<CustomLink
-								href="https://www.linkedin.com/company/parish-digital-video/"
-								target="_blank" rel="noopener noreferrer"
-								title="Twitter Page"
-							>
-								<SmallLogo style={{backgroundImage: `url(./logos/linkedin.png)`}} />
-							</CustomLink>
-							<CustomLink
-								href="https://www.facebook.com/Parish-Digital-Video-Productions-270923643761"
-								target="_blank" rel="noopener noreferrer"
-								title="Facebook Page"
-							>
-								<SmallLogo style={{backgroundImage: `url(./logos/facebook.png)`}} />
-							</CustomLink>
-							<CustomLink
-								href="https://www.youtube.com/channel/UCTqzflm7Z0JHZwmHI_MorGw"
-								target="_blank" rel="noopener noreferrer"
-								title="YouTube Page"
-							>
-								<SmallLogo style={{backgroundImage: `url(./logos/youtube.png)`}} />
-							</CustomLink>
-						</SmallLogos>
-					</LowerFooter>
-				</Flex>
+						</div>
+					</BigLogos>
+				</InnerContainer>
+				<Spacer size={'md'} />
+				<CustomLine />
+				<Spacer size={'md'} />
 			</Container>
-        </FooterContainer>
+			<Spacer size={'md'} />
+		</div>
     )
 }
 
 export default Footer
 
-const FooterContainer = styled.div`
-	width: 100%;
-	background: linear-gradient(#585858, #393939);
-    z-index: 0;
+const InnerContainer = styled.div`
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+
+	${respondTo.lg`
+		justify-content: space-between;
+		flex-direction: row;
+	`}
 `
 
-const UpperFooter = styled.div`
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 32rem 20rem 20rem 30rem;
+const TextContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	height: 40rem;
+	justify-content: space-between;
+	tex-align: center;
+	width: 32rem;
+
+	div {
+		align-items: center;
+	}
 
 	${respondTo.xs`
-		grid-template-rows: 35rem 20rem 20rem 30rem;
+		align-self: flex-start;
+		flex-direction: row;
+		height: auto;
+		width: 35rem;
+
+		div {
+			align-items: flex-start;
+		}
 	`}
 
 	${respondTo.sm`
-		grid-template-columns: 1fr;
-		grid-template-rows: 38rem 20rem 20rem 30rem;
+		width: 42rem;
+	`}
+
+	${respondTo.md`
+		width: 48rem;
 	`}
 
 	${respondTo.lg`
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr;
+		width: 44rem;
 	`}
-`
 
-const Sitemap = styled.div`
-	grid-row: 1 / 2;
-	grid-column: 1 / 2;
-	text-align: center;
-
-	${respondTo.lg`
-		text-align: left;
-	`}
-`
-
-const SmallLine = styled.div`
-	width: 10rem;
-	height: 2px;
-	background: lightgrey;
-	margin: 0 auto;
-
-	${respondTo.lg`
-		margin: 0;
+	${respondTo.xl`
+		width: 55rem;
 	`}
 `
 
 const ParagraphLink = styled.a`
+	color: ${colors.yellow};
 	font-size: 1.4rem;
     line-height: 20px;
     letter-spacing: 1px;
@@ -221,136 +201,69 @@ const ParagraphLink = styled.a`
     `}
 
     ${respondTo.lg`
-        font-size: 2.2rem;
-        line-height: 25px;
+        font-size: 2rem;
+        line-height: 20px;
     `}
 
     ${respondTo.xl`
-        font-size: 2.8rem;
-        line-height: 25px;
+        font-size: 2.4rem;
 	`}
 	
 	&:hover {
 		cursor: pointer;
 	}
-
-    ${props => props.uppercase && css`
-        text-transform: uppercase;
-    `}
-
-    ${props => props.center && css`
-        text-align: center;
-    `}
-
-    ${props => css`
-        color: ${props.color}
-    `}
 `
 
-const BigLogo1 = styled.div`
-	grid-column: 1 / 2;
-	grid-row: 2 / 3;
-	width: 30rem;
-	display: flex;
+const SmallLogos = styled.div`
 	align-items: center;
-	justify-content: center;
+	display: flex;
+	height: 16rem;
+	justify-content: space-between;
+	left: 50%;
+	width: 18rem;
 
 	${respondTo.xs`
-		width: 38rem;
+		height: 20rem;
 	`}
 
 	${respondTo.lg`
-		grid-column: 2 / 3;
-		grid-row: 1 / 2;
-		justify-content: flex-end;
-		margin-right: 2rem;
+		height: auto;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	`}
+
+	${respondTo.xl`
+		width: 22rem;
 	`}
 `
 
-const BigLogo2 = styled.div`
-	grid-column: 1 / 2;
-	grid-row: 3 / 4;
-	width: 30rem;
+const SmallLogo = styled.div`
+	width: 4rem;
+	height: 4rem;
+	background-position: center;
+	background-size: cover;
+
+	${respondTo.xl`
+		width: 5rem;
+		height: 5rem;
+	`}
+`
+
+const BigLogos = styled.div`
+	width: 22rem;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-
-	${respondTo.xs`
-		width: 38rem;
-	`}
-
-	${respondTo.lg`
-		grid-column: 3 / 4;
-		grid-row: 1 / 2;
-		justify-content: flex-start;
-		margin-left: 2rem;
-	`}
+	justify-content: space-between;
 `
 
 const BigLogoImage = styled.img`
-	width: 15rem;
-	height: 15rem;
-`
-
-const Contact = styled.div`
-	grid-column: 1 / 2;
-	grid-row: 4 / 5;
-	text-align: center;
-
-	${respondTo.lg`
-		text-align: left;
-		grid-column: 4 / 5;
-		grid-row: 1 / 2;
-	`}
+	width: 10rem;
+	height: 10rem;
 `
 
 const CustomLine = styled.div`
 	width: 100%;
 	height: 2px;
 	background: lightgrey;
-`
-
-const LowerFooter = styled.div`
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 10rem 10rem;
-
-	${respondTo.md`
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
-	`}
-`
-
-const Copyright = styled.div`
-	grid-column: 1 / 2;
-	grid-row: 1 / 2;
-	text-align: center;
-
-	${respondTo.md`
-		text-align: left;
-	`}
-`
-
-const SmallLogos = styled.div`
-	grid-column: 1 / 2;
-	grid-row: 2 / 3;
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-
-	${respondTo.md`
-		grid-column: 2 / 3;
-		grid-row: 1 / 2;
-		justify-content: flex-end;
-		align-items: center;
-	`}
-`
-
-const SmallLogo = styled.div`
-	width: 6rem;
-	height: 6rem;
-	background-position: center;
-	background-size: cover;
-	margin-right: 1rem;
 `
