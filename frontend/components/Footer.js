@@ -4,64 +4,56 @@ import respondTo from '../components/Breakpoints'
 
 // Components
 import { colors } from '../components/theme'
-import { Box3 } from '../components/Boxes'
 import { Container, Flex } from '../components/Containers'
 import { CustomLink } from '../components/Links'
 import Spacer from '../components/Spacer'
-import { H4, P1, P2, P3 } from '../components/Typography'
+import { H5 } from '../components/Typography'
 
 const Footer = () => {
     return (
-		<div style={{width: '100%', background: 'linear-gradient(#585858, #393939)', zIndex: 0}}>
+		<div style={{width: '100%', background: '#585858', zIndex: 0}}>
 			<Spacer size={'md'} />
 			<Container>
 				<InnerContainer>
 					<TextContainer>
 						<Flex direction={'column'}>
-							<H4 color={colors.white} uppercase>Sitemap</H4>
-							<Spacer size={'sm'} />
+							<H5 color={colors.white} uppercase>Sitemap</H5>
+							<Spacer size={'xs'} />
 							<Link href="/about">
 								<ParagraphLink>about</ParagraphLink>
 							</Link>
-							<Spacer size={'xs'} />
 							<Link href="/service">
 								<ParagraphLink>services</ParagraphLink>
 							</Link>
-							<Spacer size={'xs'} />
 							<Link href="/virtual">
 								<ParagraphLink>virtual</ParagraphLink>
 							</Link>
-							<Spacer size={'xs'} />
 							<Link href="/work">
 								<ParagraphLink>work</ParagraphLink>
 							</Link>
-							<Spacer size={'xs'} />
 							<Link href="/gear">
 								<ParagraphLink>gear</ParagraphLink>
 							</Link>
-							<Spacer size={'xs'} />
 							<Link href="/contact">
 								<ParagraphLink>contact</ParagraphLink>
 							</Link>
 						</Flex>
 
-						<Flex direction={'column'}>
-							<H4 color={colors.white} uppercase>Contact</H4>
-							<Spacer size={'sm'} />
-							<P3 color={colors.yellow}>5819 Penn Ave Pittsburgh, PA 15206</P3>
+						<Flex direction={'column'} justify={'flex-start'}>
+							<H5 color={colors.white} uppercase>Contact</H5>
 							<Spacer size={'xs'} />
+							<ParagraphContact color={colors.yellow}>5819 Penn Ave Pittsburgh, PA 15206</ParagraphContact>
 							<CustomLink
 								href="mailto: hello@parishdigital.com"
 								title="Email"
 							>
-								<P3 color={colors.yellow}>hello@parishdigital.com</P3>
+								<ParagraphContact>hello@parishdigital.com</ParagraphContact>
 							</CustomLink>
-							<Spacer size={'xs'} />
 							<CustomLink
 								href="tel: 4129513331"
 								title="Phone number"
 							>
-								<P3 color={colors.yellow}>(412) 951-3331</P3>
+								<ParagraphContact color={colors.yellow}>(412) 951-3331</ParagraphContact>
 							</CustomLink>
 						</Flex>
 					</TextContainer>
@@ -145,7 +137,7 @@ const InnerContainer = styled.div`
 const TextContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	height: 40rem;
+	height: 28rem;
 	justify-content: space-between;
 	tex-align: center;
 	width: 32rem;
@@ -154,7 +146,7 @@ const TextContainer = styled.div`
 		align-items: center;
 	}
 
-	${respondTo.xs`
+	${respondTo.lg`
 		align-self: flex-start;
 		flex-direction: row;
 		height: auto;
@@ -165,48 +157,38 @@ const TextContainer = styled.div`
 		}
 	`}
 
-	${respondTo.sm`
-		width: 42rem;
-	`}
-
-	${respondTo.md`
-		width: 48rem;
-	`}
-
-	${respondTo.lg`
-		width: 44rem;
-	`}
-
 	${respondTo.xl`
-		width: 55rem;
+		width: 50rem;
 	`}
 `
 
 const ParagraphLink = styled.a`
 	color: ${colors.yellow};
 	font-size: 1.4rem;
-    line-height: 20px;
     letter-spacing: 1px;
-
-    ${respondTo.xs`
-        font-size: 1.6rem;
-    `}
-
-    ${respondTo.sm`
-        font-size: 1.8rem;
-    `}
-
-    ${respondTo.md`
-        font-size: 2rem;
-    `}
-
-    ${respondTo.lg`
-        font-size: 2rem;
-        line-height: 20px;
-    `}
+	line-height: 20px;
 
     ${respondTo.xl`
-        font-size: 2.4rem;
+        font-size: 2rem;
+		line-height: 28px;
+	`}
+	
+	&:hover {
+		cursor: pointer;
+	}
+`
+
+const ParagraphContact = styled.p`
+	color: ${colors.yellow};
+	font-size: 1.4rem;
+    letter-spacing: 1px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+
+    ${respondTo.xl`
+        font-size: 2rem;
+		line-height: 28px;
 	`}
 	
 	&:hover {
@@ -220,9 +202,9 @@ const SmallLogos = styled.div`
 	height: 16rem;
 	justify-content: space-between;
 	left: 50%;
-	width: 18rem;
+	width: 13.5rem;
 
-	${respondTo.xs`
+	${respondTo.md`
 		height: 20rem;
 	`}
 
@@ -234,32 +216,41 @@ const SmallLogos = styled.div`
 	`}
 
 	${respondTo.xl`
-		width: 22rem;
+		width: 19rem;
 	`}
 `
 
 const SmallLogo = styled.div`
-	width: 4rem;
-	height: 4rem;
+	width: 3rem;
+	height: 3rem;
 	background-position: center;
 	background-size: cover;
 
 	${respondTo.xl`
-		width: 5rem;
-		height: 5rem;
+		width: 4rem;
+		height: 4rem;
 	`}
 `
 
 const BigLogos = styled.div`
-	width: 22rem;
+	width: 14rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	${respondTo.xl`
+		width: 18rem;
+	`}
 `
 
 const BigLogoImage = styled.img`
-	width: 10rem;
-	height: 10rem;
+	width: 6rem;
+	height: 6rem;
+
+	${respondTo.xl`
+		width: 8rem;
+		height: 8rem;
+	`}
 `
 
 const CustomLine = styled.div`

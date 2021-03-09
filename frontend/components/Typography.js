@@ -158,6 +158,31 @@ export const H4 = styled.h4`
         text-transform: uppercase;
     `}
 
+    ${props => css`
+        color: ${props.color}
+    `}
+`
+
+export const H5 = styled.h5`
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+    ${respondTo.sm`
+        font-size: 1.4rem;
+    `}
+
+    ${respondTo.xl`
+        font-size: 2rem;
+    `}
+
+    ${props => props.center && css`
+        text-align: center;
+    `}
+
+    ${props => props.uppercase && css`
+        text-transform: uppercase;
+    `}
 
     ${props => css`
         color: ${props.color}
