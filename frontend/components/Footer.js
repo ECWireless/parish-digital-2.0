@@ -110,11 +110,11 @@ const Footer = () => {
 						</div>
 					</BigLogos>
 				</InnerContainer>
-				<Spacer size={'md'} />
+				<Spacer size={'sm'} />
 				<CustomLine />
-				<Spacer size={'md'} />
+				<Spacer size={'sm'} />
 			</Container>
-			<Spacer size={'md'} />
+			<Spacer size={'sm'} />
 		</div>
     )
 }
@@ -150,7 +150,7 @@ const TextContainer = styled.div`
 		align-self: flex-start;
 		flex-direction: row;
 		height: auto;
-		width: 35rem;
+		width: 32rem;
 
 		div {
 			align-items: flex-start;
@@ -164,12 +164,12 @@ const TextContainer = styled.div`
 
 const ParagraphLink = styled.a`
 	color: ${colors.yellow};
-	font-size: 1.4rem;
+	font-size: 1.2rem;
     letter-spacing: 1px;
 	line-height: 20px;
 
     ${respondTo.xl`
-        font-size: 2rem;
+        font-size: 1.8rem;
 		line-height: 28px;
 	`}
 	
@@ -180,14 +180,14 @@ const ParagraphLink = styled.a`
 
 const ParagraphContact = styled.p`
 	color: ${colors.yellow};
-	font-size: 1.4rem;
+	font-size: 1.2rem;
     letter-spacing: 1px;
 	line-height: 20px;
 	margin: 0;
 	padding: 0;
 
     ${respondTo.xl`
-        font-size: 2rem;
+        font-size: 1.8rem;
 		line-height: 28px;
 	`}
 	
