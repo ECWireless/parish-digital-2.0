@@ -18,7 +18,7 @@
     "bcrypt": "^5.0.0",
     "groq": "^1.149.16",
     "jsonwebtoken": "^8.5.1",
-    "next": "^10.0.0",
+    "next": "^10.0.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-reveal": "^1.2.2",
