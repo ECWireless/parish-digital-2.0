@@ -21,7 +21,7 @@ const Hero = ({
         <WebHero>
             {/* <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} /> */}
             <HeroVideo autoPlay loop muted playsInline>
-                <source src='/PD_Hero_Video_2.mp4' type="video/mp4" />
+                <source src='/PD_Hero_Video_3.mp4' type="video/mp4" />
             </HeroVideo>
             <HeroContainer>
                 <TexContainer>
