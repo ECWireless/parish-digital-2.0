@@ -10,32 +10,30 @@ export default async (req, res) => {
   // const saltRounds = 10;
   // bcrypt.hash(plainPassword, saltRounds, function(err, hash) {
   // });
-  try {
-    const plainPassword = req.body.password;
-    const queryObject = await client.fetch(query)
-    const hash = await queryObject.loginPassword
-    const match = await bcrypt.compare(plainPassword, hash);
-    if (match) {
-      return createSessions()
-      .then(token => {
-        client.patch(process.env.SANITY_DOC_ID).set({loginToken: token}).commit()
-        .then(doc => {
-          return Promise.resolve(res.status(200).json({ password: 'logged in! Token:', token: doc.loginToken }))
-        })
-        .catch(err => {
-          console.error('Oh no, the update failed: ', err.message)
-          return Promise.resolve(res.status(500).json({ password: err.message }))
-        })
+
+  const plainPassword = req.body.password;
+  const queryObject = await client.fetch(query)
+  return Promise.resolve(res.status(200).json({ error: queryObject }))
+  const hash = await queryObject.loginPassword
+  const match = await bcrypt.compare(plainPassword, hash);
+  if (match) {
+    return createSessions()
+    .then(token => {
+      client.patch(process.env.SANITY_DOC_ID).set({loginToken: token}).commit()
+      .then(doc => {
+        return Promise.resolve(res.status(200).json({ password: 'logged in! Token:', token: doc.loginToken }))
       })
       .catch(err => {
-        console.error(err)
-        return Promise.resolve(res.status(401).json({ password: err }));
+        console.error('Oh no, the update failed: ', err.message)
+        return Promise.resolve(res.status(500).json({ password: err.message }))
       })
-    } else {
-      return Promise.resolve(res.status(200).json({ password: 'wrong password!' }))
-    }
-  } catch (err) {
-    return Promise.resolve(res.status(500).json({ error: err }))
+    })
+    .catch(err => {
+      console.error(err)
+      return Promise.resolve(res.status(401).json({ password: err }));
+    })
+  } else {
+    return Promise.resolve(res.status(200).json({ password: 'wrong password!' }))
   }
 }
 
