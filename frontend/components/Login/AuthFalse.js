@@ -78,7 +78,7 @@ const AuthFalse = ({
           }
         })
         .catch(err => {
-          console.log(err)
+          console.error('Login endpoint error: ', err)
         })
       }
     })
