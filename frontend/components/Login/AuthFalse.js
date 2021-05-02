@@ -20,7 +20,7 @@ const AuthFalse = ({
 
   useEffect(() => {
     setLoading(true);
-    fetch('https://staging.parishdigital.com/api/auth', {
+    fetch('http://localhost:3000/api/auth', {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const AuthFalse = ({
     e.preventDefault();
     setLoading(true);
 
-    fetch('https://staging.parishdigital.com/api/login', {
+    fetch('http://localhost:3000/api/login', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -56,13 +56,14 @@ const AuthFalse = ({
     })
     .then(response => response.json())
     .then(resp => {
+      console.log(resp)
       if (!resp.token) {
         console.log('Failed login!')
         setWrongPassword(true);
         setLoading(false);
       } else {
         window.sessionStorage.setItem('token', resp.token);
-        fetch('https://staging.parishdigital.com/api/auth', {
+        fetch('http://localhost:3000/api/auth', {
           method: 'put',
           headers: {
             'Content-Type': 'application/json',
