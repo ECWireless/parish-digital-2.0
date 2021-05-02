@@ -25,15 +25,15 @@ export default async (req, res) => {
       })
       .catch(err => {
         console.error('Oh no, the update failed: ', err.message)
-        return res.status(500).json({ password: err.message })
+        return Promise.resolve(res.status(500).json({ password: err.message }))
       })
     })
     .catch(err => {
       console.error('Wrong Password!')
-      return res.status(401).json({ password: 'Unauthorized!' });
+      return Promise.resolve(res.status(401).json({ password: 'Unauthorized!' }));
     })
   } else {
-    return res.status(200).json({ password: 'wrong password!' })
+    return Promise.resolve(res.status(200).json({ password: 'wrong password!' }))
   }
 }
 
