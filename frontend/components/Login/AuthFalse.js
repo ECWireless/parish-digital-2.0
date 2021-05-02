@@ -65,8 +65,8 @@ const AuthFalse = ({
         fetch('https://staging.parishdigital.com/api/auth', {
           method: 'put',
           headers: {
-              'Content-Type': 'application/json',
-              'Authorization': window.sessionStorage.getItem('token')
+            'Content-Type': 'application/json',
+            'Authorization': window.sessionStorage.getItem('token')
           }
         })
         .then(response => response.json())
