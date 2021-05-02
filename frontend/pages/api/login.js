@@ -15,7 +15,7 @@ export default async (req, res) => {
   const queryObject = await client.fetch(query)
   const hash = await queryObject.loginPassword
   const match = await bcrypt.compare(plainPassword, hash);
-  
+  return Promise.resolve(res.status(200).json({ error: 'test error' }))
   if (match) {
     return createSessions()
     .then(token => {
