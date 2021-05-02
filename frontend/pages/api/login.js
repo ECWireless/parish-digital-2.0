@@ -29,8 +29,8 @@ export default async (req, res) => {
       })
     })
     .catch(err => {
-      console.error('Wrong Password!')
-      return Promise.resolve(res.status(401).json({ password: 'Unauthorized!' }));
+      console.error(err)
+      return Promise.resolve(res.status(401).json({ password: err }));
     })
   } else {
     return Promise.resolve(res.status(200).json({ password: 'wrong password!' }))
@@ -38,12 +38,12 @@ export default async (req, res) => {
 }
 
 const createSessions = () => {
-    const token = signToken('Keith')
-    return  Promise.resolve(token)
+  const token = signToken('Keith')
+  return Promise.resolve(token)
 }
 
 const signToken = () => {
-    const jwt = require('jsonwebtoken');
-    const jwtPayload = { name: 'test' };
-    return Promise.resolve(jwt.sign(jwtPayload, 'secret', { expiresIn: '2 days'}))
+  const jwt = require('jsonwebtoken');
+  const jwtPayload = { name: 'test' };
+  return Promise.resolve(jwt.sign(jwtPayload, 'secret', { expiresIn: '2 days'}))
 }

@@ -34,7 +34,7 @@ const AuthFalse = ({
       }
     })
     .catch(err => {
-      console.log(err)
+      console.error('Auth endpoint error: ', err)
     })
     setLoading(false);
   }, []);
