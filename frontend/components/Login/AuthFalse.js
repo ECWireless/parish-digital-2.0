@@ -29,7 +29,6 @@ const AuthFalse = ({
     })
     .then(response => response.json())
     .then(resp => {
-      console.log(resp);
       if (resp.loggedIn) {
         loggedIn(true)
       }
@@ -72,11 +71,14 @@ const AuthFalse = ({
         })
         .then(response => response.json())
         .then(resp => {
+          console.log(resp);
           if (resp) {
             loggedIn(true)
           }
         })
-        .catch(console.log)
+        .catch(err => {
+          console.log(err)
+        })
       }
     })
   }
