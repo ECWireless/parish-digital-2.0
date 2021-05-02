@@ -15,7 +15,7 @@ export default async (req, res) => {
   const queryObject = await client.fetch(query)
   const hash = await queryObject.loginPassword
   const match = await bcrypt.compare(plainPassword, hash);
-
+  
   if (match) {
     return createSessions()
     .then(token => {
@@ -28,7 +28,7 @@ export default async (req, res) => {
       })
     })
     .catch(err => {
-        console.error('Wrong Password!')
+      console.error('Wrong Password!')
     })
   } else {
     return res.status(200).json({ password: 'wrong password!' })

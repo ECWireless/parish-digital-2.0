@@ -29,6 +29,7 @@ const AuthFalse = ({
     })
     .then(response => response.json())
     .then(resp => {
+      console.log(resp);
       if (resp.loggedIn) {
         loggedIn(true)
       }
