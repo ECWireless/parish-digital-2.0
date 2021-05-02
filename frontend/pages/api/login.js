@@ -6,8 +6,8 @@ const query = groq`*[_type == "login" && slug.current == "v1"][0]{
 }`
 
 export default async (req, res) => {
-  console.log('Request: ', req)
-  return Promise.resolve(res.status(500).json({ error: req }))
+  console.log('Request: ')
+  return Promise.resolve(res.status(500).json({ error: 'req' }))
   const bcrypt = require('bcrypt');
   // const saltRounds = 10;
   // bcrypt.hash(plainPassword, saltRounds, function(err, hash) {
