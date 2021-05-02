@@ -20,7 +20,7 @@ const AuthFalse = ({
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://staging.parishdigital/api/auth', {
+    fetch('https://staging.parishdigital/api/auth', {
       method: 'put',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const AuthFalse = ({
     e.preventDefault();
     setLoading(true);
 
-    fetch('http://staging.parishdigital/api/login', {
+    fetch('https://staging.parishdigital/api/login', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -62,7 +62,7 @@ const AuthFalse = ({
         setLoading(false);
       } else {
         window.sessionStorage.setItem('token', resp.token);
-        fetch('http://staging.parishdigital/api/auth', {
+        fetch('https://staging.parishdigital/api/auth', {
           method: 'put',
           headers: {
               'Content-Type': 'application/json',
