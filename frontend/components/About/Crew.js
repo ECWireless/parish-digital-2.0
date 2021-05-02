@@ -90,6 +90,7 @@ const Crew = ({
                       crewParagraph2={crew3Paragraph2}
                     />
                   </Box3>
+                  Test
                 </Fade>
                 <Fade delay={600} bottom ssrFadeout>
                   <Box3 marginTop={50}>
