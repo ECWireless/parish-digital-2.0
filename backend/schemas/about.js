@@ -178,6 +178,34 @@ export default {
             }
         },
         {
+            name: 'crew4Name',
+            title: 'Crew 4 Name',
+            type: 'string'
+        },
+        {
+            name: 'crew4Position',
+            title: 'Crew 4 Position',
+            type: 'string'
+        },
+        {
+            name: 'crew4Paragraph1',
+            title: 'Crew 4 Paragraph 1',
+            type: 'string'
+        },
+        {
+            name: 'crew4Paragraph2',
+            title: 'Crew 4 Paragraph 2',
+            type: 'string'
+        },
+        {
+            name: 'crew4Photo',
+            title: 'Crew 4 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
             name: 'networkHeading',
             title: 'Network Heading',
             type: 'string'
