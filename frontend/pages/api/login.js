@@ -1,18 +1,18 @@
 import client from '../../client'
 import groq from 'groq'
+const bcrypt = require('bcrypt');
 
 const query = groq`*[_type == "login" && slug.current == "v1"][0]{
   loginPassword,
 }`
 
 export default async (req, res) => {
-  const bcrypt = require('bcrypt');
   // const saltRounds = 10;
   // bcrypt.hash(plainPassword, saltRounds, function(err, hash) {
   // });
 
+  return Promise.resolve(res.status(200).json({ error: req.body }))
   const plainPassword = req.body.password;
-  return Promise.resolve(res.status(200).json({ error: plainPassword }))
   const queryObject = await client.fetch(query)
   const hash = await queryObject.loginPassword
   const match = await bcrypt.compare(plainPassword, hash);
