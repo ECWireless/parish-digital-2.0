@@ -12,11 +12,6 @@ export default async (req, res) => {
   // });
 
   const plainPassword = await req.body.password;
-  try {
-    return Promise.resolve(res.status(500).json({ error: plainPassword }))
-  } catch (err) {
-    return Promise.resolve(res.status(500).json({ error: err }))
-  }
   const queryObject = await client.fetch(query)
   const hash = await queryObject.loginPassword
   const match = await bcryptjs.compare(plainPassword, hash);
