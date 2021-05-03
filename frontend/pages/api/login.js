@@ -1,6 +1,6 @@
 import groq from 'groq'
 import client from '../../client'
-const bcrypt = require('bcrypt');
+import bcrypt from 'bcrypt';
 
 const query = groq`*[_type == "login" && slug.current == "v1"][0]{
   loginPassword,
