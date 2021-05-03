@@ -12,7 +12,7 @@ export default async (req, res) => {
   // bcrypt.hash(plainPassword, saltRounds, function(err, hash) {
   // });
 
-  const plainPassword = req.body.password;
+  const plainPassword = await req.body.password;
   try {
     return Promise.resolve(res.status(500).json({ error: plainPassword }))
   } catch (err) {
