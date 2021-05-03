@@ -8,7 +8,7 @@ const query = groq`*[_type == "login" && slug.current == "v1"][0]{
 export default async (req, res) => {
   console.log('Request: ')
   try {
-    return Promise.resolve(res.status(500).json({ error: req }))
+    return Promise.resolve(res.status(500).json({ error: req.body }))
   } catch (err) {
     return Promise.resolve(res.status(500).json({ error: err }))
   }
