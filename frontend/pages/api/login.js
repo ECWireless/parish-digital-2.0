@@ -1,12 +1,12 @@
-import client from '../../client'
 import groq from 'groq'
+import client from '../../client'
+const bcrypt = require('bcrypt');
 
 const query = groq`*[_type == "login" && slug.current == "v1"][0]{
   loginPassword,
 }`
 
 export default async (req, res) => {
-  // const bcrypt = require('bcrypt');
   // const saltRounds = 10;
   // bcrypt.hash(plainPassword, saltRounds, function(err, hash) {
   // });
