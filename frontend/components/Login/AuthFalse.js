@@ -56,7 +56,6 @@ const AuthFalse = ({
     })
     .then(response => response.json())
     .then(resp => {
-      console.log(resp.error)
       if (!resp.token) {
         console.log('Failed login!')
         setWrongPassword(true);
@@ -72,7 +71,6 @@ const AuthFalse = ({
         })
         .then(response => response.json())
         .then(resp => {
-          console.log(resp);
           if (resp) {
             loggedIn(true)
           }
