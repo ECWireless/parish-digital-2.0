@@ -1,5 +1,5 @@
 import groq from 'groq'
-import bcrypt from 'bcrypt';
+// import bcrypt from 'bcrypt';
 import client from '../../client'
 
 const query = groq`*[_type == "login" && slug.current == "v1"][0]{
