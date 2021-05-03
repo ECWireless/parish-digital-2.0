@@ -1,5 +1,5 @@
 import groq from 'groq'
-// import bcrypt from 'bcrypt';
+import bcryptjs from 'bcryptjs';
 import client from '../../client'
 
 const query = groq`*[_type == "login" && slug.current == "v1"][0]{
@@ -19,7 +19,7 @@ export default async (req, res) => {
   }
   const queryObject = await client.fetch(query)
   const hash = await queryObject.loginPassword
-  const match = await bcrypt.compare(plainPassword, hash);
+  const match = await bcryptjs.compare(plainPassword, hash);
   if (match) {
     return createSessions()
     .then(token => {
