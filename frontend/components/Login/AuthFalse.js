@@ -38,7 +38,7 @@ const AuthFalse = ({
     const email = elements.email.value;
     const emailEnd = email.split('@')[1];
 
-    if (emailEnd !== 'parishdigital.com') {
+    if (emailEnd !== 'parishdigital.com' || emailEnd !== 'valtechcreative.com') {
       setWrongPassword(true);
       return;
     }
