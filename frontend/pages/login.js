@@ -4,6 +4,8 @@ import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import client from '../client'
 
+import useAuth from '../hooks/useAuth';
+
 // Components
 import AuthFalse from '../components/Login/AuthFalse'
 import AuthTrue from '../components/Login/AuthTrue'
@@ -18,6 +20,7 @@ const login = ({
   loginScottSubmitHoursLink,
   loginScottTimesheetLink,
 }) => {
+  const { user, loading } = useAuth();
   const [loggedIn, setLoggedIn] = useState(false)
   
   return (
@@ -28,6 +31,8 @@ const login = ({
       {!loggedIn 
         ? <AuthFalse loggedIn={setLoggedIn} /> 
         : <AuthTrue
+          user={user}
+          loading={loading}
           setLoggedIn={setLoggedIn}
           loginBackgroundPhoto={urlFor(loginBackgroundPhoto).auto('format')}
           loginBackgroundPhoto2={urlFor(loginBackgroundPhoto2).auto('format')}
