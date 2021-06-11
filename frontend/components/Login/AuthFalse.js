@@ -38,30 +38,30 @@ const AuthFalse = ({
     const email = elements.email.value;
     const emailEnd = email.split('@')[1];
 
-    if (emailEnd !== 'parishdigital.com' || emailEnd !== 'valtechcreative.com') {
-      setWrongPassword(true);
-      return;
-    }
-
-    const did = await new Magic(process.env.MAGIC_PUBLISHABLE_KEY)
+    if (emailEnd === 'parishdigital.com' || emailEnd === 'valtechcreative.com') {
+      const did = await new Magic(process.env.MAGIC_PUBLISHABLE_KEY)
       .auth
       .loginWithMagicLink({ email: elements.email.value })
 
-    // Once we have the token from magic,
-    // update our own database
+      // Once we have the token from magic,
+      // update our own database
 
-    const authRequest = await fetch('/api/login', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${did}` }
-    })
-  
-    if (authRequest.ok) {
-      // We successfully logged in, our API
-      // set authorization cookies and now we
-      // can redirect to the dashboard!
-      loggedIn(true);
+      const authRequest = await fetch('/api/login', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${did}` }
+      })
+    
+      if (authRequest.ok) {
+        // We successfully logged in, our API
+        // set authorization cookies and now we
+        // can redirect to the dashboard!
+        loggedIn(true);
+      } else {
+        loggedIn(false);
+      }
     } else {
-      loggedIn(false);
+      setWrongPassword(true);
+      return;
     }
   }
 
