@@ -1,48 +1,17 @@
-import groq from 'groq'
-import bcryptjs from 'bcryptjs';
-import client from '../../client'
-
-const query = groq`*[_type == "login" && slug.current == "v1"][0]{
-  loginPassword,
-}`
+import { Magic } from '@magic-sdk/admin'
+import Iron from '@hapi/iron'
+import CookieService from '../../lib/cookies'
 
 export default async (req, res) => {
-  // const saltRounds = 10;
-  // bcrypt.hash(plainPassword, saltRounds, function(err, hash) {
-  // });
+  if (req.method !== 'POST') return res.status(405).end()
 
-  const plainPassword = await req.body.password;
-  const queryObject = await client.fetch(query)
-  const hash = await queryObject.loginPassword
-  const match = await bcryptjs.compare(plainPassword, hash);
-  if (match) {
-    return createSessions()
-    .then(token => {
-      client.patch(process.env.SANITY_DOC_ID).set({loginToken: token}).commit()
-      .then(doc => {
-        return Promise.resolve(res.status(200).json({ password: 'logged in! Token:', token: doc.loginToken }))
-      })
-      .catch(err => {
-        console.error('Oh no, the update failed: ', err.message)
-        return Promise.resolve(res.status(500).json({ password: err.message }))
-      })
-    })
-    .catch(err => {
-      console.error(err)
-      return Promise.resolve(res.status(401).json({ password: err }));
-    })
-  } else {
-    return Promise.resolve(res.status(200).json({ password: 'wrong password!' }))
-  }
-}
+  // exchange the did from Magic for some user data
+  const did = req.headers.authorization.split('Bearer').pop().trim()
+  const user = await new Magic(process.env.MAGIC_SECRET_KEY).users.getMetadataByToken(did)
 
-const createSessions = () => {
-  const token = signToken('Keith')
-  return Promise.resolve(token)
-}
+  // Author a couple of cookies to persist a user's session
+  const token = await Iron.seal(user, process.env.ENCRYPTION_SECRET, Iron.defaults)
+  CookieService.setTokenCookie(res, token)
 
-const signToken = () => {
-  const jwt = require('jsonwebtoken');
-  const jwtPayload = { name: 'test' };
-  return Promise.resolve(jwt.sign(jwtPayload, 'secret', { expiresIn: '2 days'}))
+  res.end()
 }

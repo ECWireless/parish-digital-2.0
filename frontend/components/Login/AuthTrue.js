@@ -9,6 +9,8 @@ import { Container, Flex } from '../Containers'
 import { CustomLink } from '../Links'
 
 const AuthTrue = ({
+    user,
+    loading,
     setLoggedIn,
     loginBackgroundPhoto,
     loginBackgroundPhoto2,
@@ -19,10 +21,22 @@ const AuthTrue = ({
     loginScottSubmitHoursLink,
     loginScottTimesheetLink,
 }) => {
-    function logout() {
-        window.sessionStorage.removeItem('token')
-        setLoggedIn(false)
+  const logout = async () => {
+    if (!user) return;
+    const authRequest = await fetch('/api/logout', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${user.publicAddress}` }
+    })
+  
+    if (authRequest.ok) {
+      // We successfully logged in, our API
+      // set authorization cookies and now we
+      // can redirect to the dashboard!
+      setLoggedIn(false);
+    } else {
+      setLoggedIn(true);
     }
+  }
 
     return (
         <>

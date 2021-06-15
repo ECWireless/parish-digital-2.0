@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { Magic } from 'magic-sdk'
 
 // Components
 import { colors } from '../theme'
@@ -20,22 +21,9 @@ const AuthFalse = ({
 
   useEffect(() => {
     setLoading(true);
-    fetch('https://parishdigital.com/api/auth', {
-      method: 'put',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': window.sessionStorage.getItem('token')
-      }
-    })
-    .then(response => response.json())
-    .then(resp => {
-      if (resp.loggedIn) {
-        loggedIn(true)
-      }
-    })
-    .catch(err => {
-      console.error('Auth endpoint error: ', err)
-    })
+    if (document.cookie.includes('authed')) {
+      loggedIn(true);
+    }
     setLoading(false);
   }, []);
 
@@ -43,43 +31,37 @@ const AuthFalse = ({
     setTempPassword(e.target.value)
   }
 
-  function submit(e) {
-    e.preventDefault();
-    setLoading(true);
+  const submit = async (e) => {
+    e.preventDefault()
 
-    fetch('https://parishdigital.com/api/login', {
-      method: 'post',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        password: tempPassword
+    const { elements } = e.target
+    const email = elements.email.value;
+    const emailEnd = email.split('@')[1];
+
+    if (emailEnd === 'parishdigital.com' || emailEnd === 'valtechcreative.com') {
+      const did = await new Magic(process.env.MAGIC_PUBLISHABLE_KEY)
+      .auth
+      .loginWithMagicLink({ email: elements.email.value })
+
+      // Once we have the token from magic,
+      // update our own database
+      const authRequest = await fetch('/api/login', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${did}` }
       })
-    })
-    .then(response => response.json())
-    .then(resp => {
-      if (!resp.token) {
-        console.log('Failed login!')
-        setWrongPassword(true);
-        setLoading(false);
+    
+      if (authRequest.ok) {
+        // We successfully logged in, our API
+        // set authorization cookies and now we
+        // can redirect to the dashboard!
+        loggedIn(true);
       } else {
-        window.sessionStorage.setItem('token', resp.token);
-        fetch('https://parishdigital.com/api/auth', {
-          method: 'put',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': window.sessionStorage.getItem('token')
-          }
-        })
-        .then(response => response.json())
-        .then(resp => {
-          if (resp) {
-            loggedIn(true)
-          }
-        })
-        .catch(err => {
-          console.error('Login endpoint error: ', err)
-        })
+        loggedIn(false);
       }
-    })
+    } else {
+      setWrongPassword(true);
+      return;
+    }
   }
 
   return (
@@ -93,11 +75,11 @@ const AuthFalse = ({
             <Box3 marginTop={50} marginBottom={50}>
               <form onSubmit={submit}>
                 <Box3 marginBottom={25}>
-                  <Label uppercase color={colors.white} htmlFor="login__password">
-                    Password:
+                  <Label uppercase color={colors.white} htmlFor="login__email">
+                    PD Email:
                   </Label>
                 </Box3>
-                <Input required type="password" id="login__password"
+                <Input name={'email'} required type={'email'} id="login__email"
                   value={tempPassword} onChange={onSetTempPassword.bind(this)}
                 />
                 <Box3 marginTop={50}>
@@ -106,7 +88,7 @@ const AuthFalse = ({
                   </Button2>
                 </Box3>
                 <Spacer size={'xs'} />
-                {wrongPassword && <P4 color={colors.yellow}>Wrong Password</P4>}
+                {wrongPassword && <P4 color={colors.yellow}>You must use a PD email.</P4>}
               </form>
             </Box3>
           </Flex>
