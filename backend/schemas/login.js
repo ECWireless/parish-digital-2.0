@@ -73,6 +73,16 @@ export default {
             title: 'Login Scott Timesheet Link',
             type: 'string'
         },
+        {
+            name: 'loginCalebSubmitHoursLink',
+            title: 'Login Caleb Submit Hours Link',
+            type: 'string'
+        },
+        {
+            name: 'loginCalebTimesheetLink',
+            title: 'Login Caleb Timesheet Link',
+            type: 'string'
+        },
     ],
   
     preview: {
