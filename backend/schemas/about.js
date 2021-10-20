@@ -206,6 +206,34 @@ export default {
             }
         },
         {
+            name: 'crew5Name',
+            title: 'Crew 5 Name',
+            type: 'string'
+        },
+        {
+            name: 'crew5Position',
+            title: 'Crew 5 Position',
+            type: 'string'
+        },
+        {
+            name: 'crew5Paragraph1',
+            title: 'Crew 5 Paragraph 1',
+            type: 'string'
+        },
+        {
+            name: 'crew5Paragraph2',
+            title: 'Crew 5 Paragraph 2',
+            type: 'string'
+        },
+        {
+            name: 'crew5Photo',
+            title: 'Crew 5 Photo',
+            type: 'image',
+            options: {
+                hotspot: true
+            }
+        },
+        {
             name: 'networkHeading',
             title: 'Network Heading',
             type: 'string'
