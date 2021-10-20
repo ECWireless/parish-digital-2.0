@@ -46,6 +46,11 @@ const about = ({
     crew4Paragraph1,
     crew4Paragraph2,
     crew4Photo,
+    crew5Name,
+    crew5Position,
+    crew5Paragraph1,
+    crew5Paragraph2,
+    crew5Photo,
     networkHeading,
     networkParagraph,
     locationHeading,
@@ -98,6 +103,11 @@ const about = ({
                 crew4Paragraph1={crew4Paragraph1}
                 crew4Paragraph2={crew4Paragraph2}
                 crew4Photo={urlFor(crew4Photo).auto('format')}
+                crew5Name={crew5Name}
+                crew5Position={crew5Position}
+                crew5Paragraph1={crew5Paragraph1}
+                crew5Paragraph2={crew5Paragraph2}
+                crew5Photo={urlFor(crew5Photo).auto('format')}
             />
             <Network
                 networkHeading={networkHeading}
@@ -151,6 +161,11 @@ const query = groq`*[_type == "about" && slug.current == "v1"][0]{
     crew4Paragraph1,
     crew4Paragraph2,
     crew4Photo,
+    crew5Name,
+    crew5Position,
+    crew5Paragraph1,
+    crew5Paragraph2,
+    crew5Photo,
     networkHeading,
     networkParagraph,
     locationHeading,
