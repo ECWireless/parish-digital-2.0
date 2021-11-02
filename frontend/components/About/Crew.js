@@ -33,6 +33,11 @@ const Crew = ({
   crew4Paragraph1,
   crew4Paragraph2,
   crew4Photo,
+  crew5Name,
+  crew5Position,
+  crew5Paragraph1,
+  crew5Paragraph2,
+  crew5Photo,
 }) => {
   return (
     <Container>
@@ -67,7 +72,7 @@ const Crew = ({
                     />
                     </Box3>
                   </Fade>
-                  <Fade delay={400} bottom ssrFadeout>
+                  <Fade delay={300} bottom ssrFadeout>
                     <Box3 marginTop={50}>
                       <TeamCard
                         crewPhoto={crew2Photo}
@@ -80,7 +85,7 @@ const Crew = ({
                   </Fade>
                 </Flex>
               <Flex style={{width: '70%'}} align={'center'} justify={'space-between'} respond>
-                <Fade delay={600} bottom ssrFadeout>
+                <Fade delay={400} bottom ssrFadeout>
                   <Box3 marginTop={50}>
                     <TeamCard
                       crewPhoto={crew3Photo}
@@ -91,7 +96,7 @@ const Crew = ({
                     />
                   </Box3>
                 </Fade>
-                <Fade delay={600} bottom ssrFadeout>
+                <Fade delay={500} bottom ssrFadeout>
                   <Box3 marginTop={50}>
                     <TeamCard
                       crewPhoto={crew4Photo}
@@ -99,6 +104,19 @@ const Crew = ({
                       crewPosition={crew4Position}
                       crewParagraph1={crew4Paragraph1}
                       crewParagraph2={crew4Paragraph2}
+                    />
+                  </Box3>
+                </Fade>
+              </Flex>
+              <Flex style={{width: '70%'}} align={'center'} justify={'center'} respond>
+                <Fade delay={600} bottom ssrFadeout>
+                  <Box3 marginTop={50}>
+                    <TeamCard
+                      crewPhoto={crew5Photo}
+                      crewName={crew5Name}
+                      crewPosition={crew5Position}
+                      crewParagraph1={crew5Paragraph1}
+                      crewParagraph2={crew5Paragraph2}
                     />
                   </Box3>
                 </Fade>
