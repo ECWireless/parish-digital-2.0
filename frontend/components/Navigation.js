@@ -17,13 +17,13 @@ const Navigation = ({ setSidebar }) => {
                 <SandWhichContainer onClick={() => setSidebar(true)}>
                     <Flex direction={'column'} justify={'space-between'}>
                         <Box3>
-                            <SandwhichLine width={35} height={4} color={'white'} />
+                            <SandwhichLine width={40} height={3} color={'white'} />
                         </Box3>
-                        <Box3 marginTop={8}>
-                            <SandwhichLine width={35} height={4} color={'white'} />
+                        <Box3 marginTop={12}>
+                            <SandwhichLine width={40} height={3} color={'white'} />
                         </Box3>
-                        <Box3 marginTop={8}>
-                            <SandwhichLine width={35} height={4} color={'white'} />
+                        <Box3 marginTop={12}>
+                            <SandwhichLine width={40} height={3} color={'white'} />
                         </Box3>
                     </Flex>
                 </SandWhichContainer>
@@ -71,7 +71,7 @@ const NavBar = styled.div`
     z-index: 100;
 
     ${respondTo.xs`
-        height: 8rem;
+        height: 10rem;
     `}
 `
 
@@ -88,8 +88,8 @@ const PDLogo = styled.div`
 	}
 
 	${respondTo.xs`
-		height: 4rem;
-		width: 4rem;
+		height: 5rem;
+		width: 5rem;
     `}
 `
 
@@ -121,7 +121,7 @@ const NavMenu = styled.nav`
 		position: absolute;
 		right: 4rem;
 		height: 100%;
-		width: 48rem;
+		width: 46rem;
 
 		ul {
 			display: flex;
@@ -171,7 +171,7 @@ const SandWhichContainer = styled.div`
     `}
 
     ${respondTo.sm`
-        top: 1rem;
+        top: 2rem;
         width: 60px;
         height: 60px;
     `}
