@@ -7,7 +7,6 @@ import { colors } from '../components/theme'
 import { Container, Flex } from '../components/Containers'
 import { CustomLink } from '../components/Links'
 import Spacer from '../components/Spacer'
-import { H5 } from '../components/Typography'
 
 const Footer = () => {
     return (
@@ -17,7 +16,7 @@ const Footer = () => {
 				<InnerContainer>
 					<TextContainer>
 						<Flex direction={'column'}>
-							<H5 color={colors.white} uppercase>Sitemap</H5>
+							<FooterHeading color={colors.white} uppercase>Sitemap</FooterHeading>
 							<Spacer size={'xs'} />
 							<Link href="/about">
 								<ParagraphLink>about</ParagraphLink>
@@ -40,7 +39,7 @@ const Footer = () => {
 						</Flex>
 
 						<Flex direction={'column'} justify={'flex-start'}>
-							<H5 color={colors.white} uppercase>Contact</H5>
+							<FooterHeading color={colors.white} uppercase>Contact</FooterHeading>
 							<Spacer size={'xs'} />
 							<ParagraphContact color={colors.yellow}>5819 Penn Ave Pittsburgh, PA 15206</ParagraphContact>
 							<CustomLink
@@ -110,7 +109,7 @@ const Footer = () => {
 						</div>
 					</BigLogos>
 				</InnerContainer>
-				<Spacer size={'sm'} />
+				<Spacer size={'md'} />
 				<CustomLine />
 				<Spacer size={'sm'} />
 			</Container>
@@ -164,12 +163,12 @@ const TextContainer = styled.div`
 
 const ParagraphLink = styled.a`
 	color: ${colors.yellow};
-	font-size: 1.2rem;
-    letter-spacing: 1px;
+	font-size: 1rem;
+	letter-spacing: 1px;
 	line-height: 20px;
 
-    ${respondTo.xl`
-        font-size: 1.8rem;
+	${respondTo.xl`
+		font-size: 1.6rem;
 		line-height: 28px;
 	`}
 	
@@ -180,14 +179,14 @@ const ParagraphLink = styled.a`
 
 const ParagraphContact = styled.p`
 	color: ${colors.yellow};
-	font-size: 1.2rem;
-    letter-spacing: 1px;
+	font-size: 1rem;
+	letter-spacing: 1px;
 	line-height: 20px;
 	margin: 0;
 	padding: 0;
 
-    ${respondTo.xl`
-        font-size: 1.8rem;
+	${respondTo.xl`
+		font-size: 1.6rem;
 		line-height: 28px;
 	`}
 	
@@ -233,23 +232,23 @@ const SmallLogo = styled.div`
 `
 
 const BigLogos = styled.div`
-	width: 14rem;
+	width: 20rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 
 	${respondTo.xl`
-		width: 18rem;
+		width: 28rem;
 	`}
 `
 
 const BigLogoImage = styled.img`
-	width: 6rem;
-	height: 6rem;
+	width: 9rem;
+	height: 9rem;
 
 	${respondTo.xl`
-		width: 8rem;
-		height: 8rem;
+		width: 12rem;
+		height: 12rem;
 	`}
 `
 
@@ -257,4 +256,26 @@ const CustomLine = styled.div`
 	width: 100%;
 	height: 2px;
 	background: lightgrey;
+`
+
+const FooterHeading = styled.h5`
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 1px;
+
+	${respondTo.xl`
+		font-size: 1.6rem;
+	`}
+
+	${props => props.center && css`
+		text-align: center;
+	`}
+
+	${props => props.uppercase && css`
+		text-transform: uppercase;
+	`}
+
+	${props => css`
+		color: ${props.color}
+	`}
 `
