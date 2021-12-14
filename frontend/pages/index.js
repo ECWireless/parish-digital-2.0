@@ -70,8 +70,6 @@ const index = ({
         descriptionParagraph1={descriptionParagraph1}
         descriptionParagraph2={descriptionParagraph2}
         descriptionVideoType1={descriptionVideoType1}
-      />
-      <Trusted
         trustedHeading={trustedHeading}
         trustedLogo1={urlFor(trustedLogo1).auto('format')}
         trustedLogo2={urlFor(trustedLogo2).auto('format')}

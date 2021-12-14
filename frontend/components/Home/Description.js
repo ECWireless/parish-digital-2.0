@@ -2,6 +2,7 @@ import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
 import styled from 'styled-components'
 import respondTo from '../Breakpoints'
+import { colors } from '../theme'
 
 import { Button3 } from '../Buttons'
 import { Box3 } from '../Boxes'
@@ -14,6 +15,13 @@ const Description = ({
   descriptionPhoto,
   descriptionParagraph1,
   descriptionParagraph2,
+  trustedHeading,
+  trustedLogo1,
+  trustedLogo2,
+  trustedLogo3,
+  trustedLogo4,
+  trustedLogo5,
+  trustedLogo6,
 }) => {
   return (
     <Container>
@@ -58,6 +66,19 @@ const Description = ({
             </Flex>
           </Card3>
         </Fade>
+        <TrustedBackground>
+          <StyledTrustedHeading center uppercase>
+            {trustedHeading}
+          </StyledTrustedHeading>
+          <Flex respond align={'center'} justify={'space-around'}>
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo1})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo2})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo3})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo4})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo5})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo6})`}} />
+          </Flex>
+        </TrustedBackground>
       </Box3>
     </Container>
   )
@@ -68,8 +89,12 @@ export default Description
 const StyledPhoto = styled.div`
   background-position: center;
   background-size: cover;
-  height: 300px;
+  height: 320px;
   width: 100%;
+
+  ${respondTo.md`
+    height: 420px;
+  `}
 
   ${respondTo.lg`
     height: 600px;
@@ -106,5 +131,54 @@ const Logo = styled.div`
   ${respondTo.xl`
     height: 10rem;
     width: 10rem;
+  `}
+`
+const TrustedBackground = styled.div`
+  background: ${colors.brown};
+  width: 100%;
+  height: 550px;
+
+  ${respondTo.sm`
+    height: 680px;
+  `}
+
+  ${respondTo.lg`
+    height: 200px;
+  `}
+
+  ${respondTo.xl`
+    height: 200px;
+  `}
+`
+
+const StyledTrustedHeading = styled.div`
+  font-size: 1.2rem;
+  color: ${colors.white};
+  line-height: 20px;
+  letter-spacing: .5px;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: center;
+`;
+
+const TrustedLogo = styled.div`
+  height: 80px;
+  width: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  ${respondTo.sm`
+    height: 100px;
+  `}
+
+  ${respondTo.lg`
+    margin-top: 32px;
+    width: 200px;
+  `}
+
+  ${respondTo.xl`
+    height: 80px;
+    width: 240px;
   `}
 `
