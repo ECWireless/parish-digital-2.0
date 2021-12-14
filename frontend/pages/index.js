@@ -9,6 +9,7 @@ import Description from '../components/Home/Description'
 import Examples from '../components/Home/Examples'
 import Services from '../components/Home/Services'
 import ContactForm from '../components/Contact/ContactForm'
+import Map from '../components/Map'
 
 const index = ({
   pageTitle,
@@ -110,6 +111,7 @@ const index = ({
         contactHeading={'Contact Us'}
         contactParagraph={'We can help bring your next project to life'}
       />
+      <Map />
     </>
   )
 }

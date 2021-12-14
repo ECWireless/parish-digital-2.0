@@ -2,7 +2,6 @@ import Fade from 'react-reveal/Fade';
 import styled, { css } from 'styled-components'
 import respondTo from '../Breakpoints'
 
-// Components
 import { colors, shadows } from '../theme'
 import { Box3 } from '../Boxes'
 import { Card3 } from '../Cards'
