@@ -1,9 +1,7 @@
-import Link from 'next/link'
 import Fade from 'react-reveal/Fade';
 import styled, { css } from 'styled-components'
 import respondTo from '../Breakpoints'
 
-// Components
 import { colors } from '../theme'
 import { Box3 } from '../Boxes'
 import { Button1 } from '../Buttons'
@@ -147,7 +145,7 @@ const TexContainer = styled.div`
   `}
 
   ${respondTo.xl`
-    margin-top: 45rem;
+    margin-top: 48rem;
   `}
 `
 
@@ -176,10 +174,6 @@ export const H1 = styled.h4`
         font-size: 7.5rem;
     `}
 
-    ${respondTo.xl`
-        font-size: 8.5rem;
-    `}
-
     ${props => props.center && css`
         text-align: center;
     `}
@@ -195,41 +189,21 @@ export const H1 = styled.h4`
 `
 
 export const H4 = styled.h1`
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 1px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 1px;
 
-    ${respondTo.xs`
-        font-size: 1.8rem;
-    `}
+  ${props => props.center && css`
+    text-align: center;
+  `}
 
-    ${respondTo.sm`
-        font-size: 2rem;
-    `}
-
-    ${respondTo.md`
-        font-size: 2.2rem;
-    `}
-
-    ${respondTo.lg`
-        font-size: 2.5rem;
-    `}
-
-    ${respondTo.xl`
-        font-size: 3.2rem;
-    `}
-
-    ${props => props.center && css`
-        text-align: center;
-    `}
-
-    ${props => props.uppercase && css`
-        text-transform: uppercase;
-    `}
+  ${props => props.uppercase && css`
+    text-transform: uppercase;
+  `}
 
 
-    ${props => css`
-        color: ${props.color}
-    `}
+  ${props => css`
+    color: ${props.color}
+  `}
 `

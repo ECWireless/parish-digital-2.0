@@ -7,17 +7,26 @@ export const H1 = styled.h1`
     line-height: 35px;
     letter-spacing: 4px;
 
-    ${respondTo.sm`
+    ${respondTo.xs`
+        line-height: 40px;
         font-size: 4rem;
+    `}
+
+    ${respondTo.sm`
+        font-size: 5.5rem;
         line-height: 40px;
     `}
 
     ${respondTo.md`
-        font-size: 5.5rem;
+        font-size: 6.5rem;
     `}
 
     ${respondTo.lg`
         font-size: 7.5rem;
+    `}
+
+    ${respondTo.xl`
+        font-size: 8.5rem;
     `}
 
     ${props => props.center && css`

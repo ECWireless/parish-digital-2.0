@@ -39,7 +39,6 @@ export const Button1 = styled.button`
   ${respondTo.xl`
     width: 22rem;
     height: 6rem;
-    font-size: 1.8rem;
   `}
 
   &:hover {
