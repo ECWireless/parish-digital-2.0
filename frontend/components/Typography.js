@@ -336,3 +336,31 @@ export const P4 = styled.p`
         color: ${props.color}
     `}
 `
+
+export const P5 = styled.p`
+  font-size: 1.4rem;
+  line-height: 20px;
+  letter-spacing: .5px;
+  padding: 0;
+  margin: 0;
+
+  ${respondTo.sm`
+    font-size: 1.5rem;
+  `}
+
+  ${respondTo.md`
+    font-size: 1.6rem;
+  `}
+
+  ${props => props.uppercase && css`
+    text-transform: uppercase;
+  `}
+
+  ${props => props.center && css`
+    text-align: center;
+  `}
+
+  ${props => css`
+    color: ${props.color}
+  `}
+`

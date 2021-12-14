@@ -14,20 +14,13 @@ const index = ({
   pageTitle,
   heroDemoReelLink,
   heroHeading,
+  descriptionPhoto,
   heroSubheading,
   heroSubheading2,
   descriptionHeading,
   descriptionParagraph1,
   descriptionParagraph2,
   descriptionVideoType1,
-  descriptionVideoType1Details,
-  descriptionVideoType1Photo,
-  descriptionVideoType2,
-  descriptionVideoType2Details,
-  descriptionVideoType2Photo,
-  descriptionVideoType3,
-  descriptionVideoType3Details,
-  descriptionVideoType3Photo,
   examplesLink1,
   examplesLink2,
   examplesLink3,
@@ -73,17 +66,10 @@ const index = ({
       />
       <Description
         descriptionHeading={descriptionHeading}
+        descriptionPhoto={urlFor(descriptionPhoto).auto('format')}
         descriptionParagraph1={descriptionParagraph1}
         descriptionParagraph2={descriptionParagraph2}
         descriptionVideoType1={descriptionVideoType1}
-        descriptionVideoType1Details={descriptionVideoType1Details}
-        descriptionVideoType1Photo={urlFor(descriptionVideoType1Photo).auto('format')}
-        descriptionVideoType2={descriptionVideoType2}
-        descriptionVideoType2Details={descriptionVideoType2Details}
-        descriptionVideoType2Photo={urlFor(descriptionVideoType2Photo).auto('format')}
-        descriptionVideoType3={descriptionVideoType3}
-        descriptionVideoType3Details={descriptionVideoType3Details}
-        descriptionVideoType3Photo={urlFor(descriptionVideoType3Photo).auto('format')}
       />
       <Trusted
         trustedHeading={trustedHeading}
@@ -134,20 +120,12 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
   pageTitle,
   heroDemoReelLink,
   heroHeading,
+  descriptionPhoto,
   heroSubheading,
   heroSubheading2,
   descriptionHeading,
   descriptionParagraph1,
   descriptionParagraph2,
-  descriptionVideoType1,
-  descriptionVideoType1Details,
-  descriptionVideoType1Photo,
-  descriptionVideoType2,
-  descriptionVideoType2Details,
-  descriptionVideoType2Photo,
-  descriptionVideoType3,
-  descriptionVideoType3Details,
-  descriptionVideoType3Photo,
   examplesLink1,
   examplesLink2,
   examplesLink3,

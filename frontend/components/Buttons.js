@@ -131,3 +131,38 @@ export const Button2 = styled.button`
         box-shadow: ${shadows.button};
     }
 `
+
+export const Button3 = styled.button`
+  border: none;
+  color: ${colors.white};
+  background: rgba(0,0,0,1);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 14px 20px;
+  transition: all .3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  ${respondTo.xs`
+    font-size: 1.4rem;
+  `}
+
+  ${respondTo.sm`
+    font-size: 1.5rem;
+  `}
+
+  ${respondTo.md`
+    font-size: 1.6rem;
+  `}
+
+  ${respondTo.xl`
+    font-size: 1.6rem;
+  `}
+
+  &:hover {
+    background: ${colors.white};
+    color: ${colors.black};
+    cursor: pointer;
+  }
+`
