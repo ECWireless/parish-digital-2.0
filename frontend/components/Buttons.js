@@ -166,3 +166,35 @@ export const Button3 = styled.button`
     cursor: pointer;
   }
 `
+
+export const Button4 = styled.button`
+  border: none;
+  color: ${colors.black};
+  background: ${colors.yellow};
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 10px 32px;
+  transition: all .3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  ${respondTo.xs`
+    font-size: 1.4rem;
+  `}
+
+  ${respondTo.sm`
+    font-size: 1.5rem;
+  `}
+
+  ${respondTo.md`
+    font-size: 1.6rem;
+  `}
+
+  &:hover {
+    background: ${colors.white};
+    color: ${colors.black};
+    cursor: pointer;
+  }
+`

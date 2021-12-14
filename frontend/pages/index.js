@@ -7,8 +7,8 @@ import client from '../client'
 import Hero from '../components/Home/Hero'
 import Description from '../components/Home/Description'
 import Examples from '../components/Home/Examples'
-import Trusted from '../components/Home/Trusted'
 import Services from '../components/Home/Services'
+import ContactForm from '../components/Contact/ContactForm'
 
 const index = ({
   pageTitle,
@@ -105,6 +105,10 @@ const index = ({
         servicesList2Item5={servicesList2Item5}
         servicesList2Item6={servicesList2Item6}
         servicesPhoto2={urlFor(servicesPhoto2).auto('format')}
+      />
+      <ContactForm
+        contactHeading={'Contact Us'}
+        contactParagraph={'We can help bring your next project to life'}
       />
     </>
   )

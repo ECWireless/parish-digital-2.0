@@ -5,7 +5,7 @@ import respondTo from '../Breakpoints'
 // Components
 import { colors, shadows } from '../theme'
 import { Box3 } from '../Boxes'
-import { Card1 } from '../Cards'
+import { Card3 } from '../Cards'
 import { Container, Flex, Col2, Col2Left, Col2Right } from '../Containers'
 import { H2, H3, P3 } from '../Typography'
 import { Line } from '../Lines'
@@ -48,7 +48,7 @@ const Services = ({
                         </Fade>
                     </Flex>
                 </Box3>
-                <Box3 marginBottom={75}>
+                <Box3>
                     <Col2 style={{boxShadow: shadows.card}} respondDirection={'column-reverse'}>
                         <Col2Left justify={'center'} align={'center'}>
                             <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto1})` }} />
@@ -231,7 +231,7 @@ const ServicesPhoto =  styled.div`
     `}
 `
 
-const ServicesCard = styled(Card1)`
+const ServicesCard = styled(Card3)`
     padding: 4rem 2rem;
     height: 100%;
     box-shadow: none;
