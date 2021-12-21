@@ -4,6 +4,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import client from '../client'
 
 import Description from '../components/Service/Description'
+import Reviews from '../components/Service/Reviews'
 import Services from '../components/Service/Services'
 
 const service = ({
@@ -13,6 +14,21 @@ const service = ({
   descriptionPhoto,
   descriptionParagraph1,
   descriptionParagraph2,
+  reviewsHeading,
+  reviewsSubheading,
+  reviewsPhoto,
+  reviewsQuote1,
+  reviewsName1,
+  reviewsPosition1,
+  reviewsCompany1,
+  reviewsQuote2,
+  reviewsName2,
+  reviewsPosition2,
+  reviewsCompany2,
+  reviewsQuote3,
+  reviewsName3,
+  reviewsPosition3,
+  reviewsCompany3,
   servicesHeading,
   servicesSubheading1,
   servicesList1Item1,
@@ -46,6 +62,23 @@ const service = ({
         descriptionPhoto={urlFor(descriptionPhoto).auto('format')}
         descriptionParagraph1={descriptionParagraph1}
         descriptionParagraph2={descriptionParagraph2}
+      />
+      <Reviews
+        reviewsHeading={reviewsHeading}
+        reviewsSubheading={reviewsSubheading}
+        reviewsPhoto={urlFor(reviewsPhoto).auto('format')}
+        reviewsQuote1={reviewsQuote1}
+        reviewsName1={reviewsName1}
+        reviewsPosition1={reviewsPosition1}
+        reviewsCompany1={reviewsCompany1}
+        reviewsQuote2={reviewsQuote2}
+        reviewsName2={reviewsName2}
+        reviewsPosition2={reviewsPosition2}
+        reviewsCompany2={reviewsCompany2}
+        reviewsQuote3={reviewsQuote3}
+        reviewsName3={reviewsName3}
+        reviewsPosition3={reviewsPosition3}
+        reviewsCompany3={reviewsCompany3}
       />
       <Services
         servicesHeading={servicesHeading}
@@ -84,6 +117,21 @@ const query = groq`*[_type == "service" && slug.current == "v1"][0]{
   descriptionPhoto,
   descriptionParagraph1,
   descriptionParagraph2,
+  reviewsHeading,
+  reviewsSubheading,
+  reviewsPhoto,
+  reviewsQuote1,
+  reviewsName1,
+  reviewsPosition1,
+  reviewsCompany1,
+  reviewsQuote2,
+  reviewsName2,
+  reviewsPosition2,
+  reviewsCompany2,
+  reviewsQuote3,
+  reviewsName3,
+  reviewsPosition3,
+  reviewsCompany3,
   servicesHeading,
   servicesSubheading1,
   servicesList1Item1,

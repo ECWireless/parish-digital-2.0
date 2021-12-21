@@ -27,7 +27,7 @@ const Description = ({
           <P6 style={{ fontStyle: 'italic' }} align={'center'}>{subheading}</P6>
         </Box3>
       </StyledTextContainer1>
-      <Box3 marginTop={50} marginBottom={50}>
+      <Box3 marginTop={50}>
         <Fade bottom ssrFadeout>
           <Card3>
             <Flex justify={'space-between'} respondFlip>
