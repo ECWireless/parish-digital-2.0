@@ -6,13 +6,14 @@ import { colors } from '../theme'
 import { Box3 } from '../Boxes'
 import { Button1 } from '../Buttons'
 import { Flex } from '../Containers'
-import { CustomLink } from '../Links'
+// import { CustomLink } from '../Links'
 
 const Hero = ({
-  heroDemoReelLink,
+  // heroDemoReelLink,
   heroHeading,
   heroSubheading,
   heroSubheading2,
+  setModalOpen,
 }) => {
   return (
     <WebHero>
@@ -43,15 +44,15 @@ const Hero = ({
           </Fade>
           <div style={{ marginTop: '4rem'}}>
             <Flex align={'center'} justify={'center'}>
-              <CustomLink
+              {/* <CustomLink
                 href={heroDemoReelLink}
                 target='_blank' rel='noopener noreferrer'
                 title='Vimeo Portfolio'
-              >
-                <Button1>
+              > */}
+                <Button1 onClick={() => setModalOpen(true)}>
                   Demo Reel
                 </Button1>
-              </CustomLink>
+              {/* </CustomLink> */}
             </Flex>
           </div>
         </TexContainer>
@@ -73,11 +74,11 @@ const WebHero =  styled.div`
     `}
 
     ${respondTo.sm`
-        height: 50rem;
+        height: 560px;
     `}
 
     ${respondTo.md`
-        height: 60rem;
+        height: 600px;
     `}
 
     ${respondTo.lg`

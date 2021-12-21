@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import styled from 'styled-components';
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import Head from 'next/head'
@@ -10,6 +12,8 @@ import Examples from '../components/Home/Examples'
 import Services from '../components/Home/Services'
 import ContactForm from '../components/Contact/ContactForm'
 import Map from '../components/Map'
+import Modal from '../components/Modal'
+import respondTo from '../components/Breakpoints'
 
 const index = ({
   pageTitle,
@@ -54,6 +58,8 @@ const index = ({
   servicesList2Item6,
   servicesPhoto2,
 }) => {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <>
       <Head>
@@ -64,6 +70,7 @@ const index = ({
         heroHeading={heroHeading}
         heroSubheading={heroSubheading}
         heroSubheading2={heroSubheading2}
+        setModalOpen={setModalOpen}
       />
       <Description
         descriptionHeading={descriptionHeading}
@@ -112,6 +119,9 @@ const index = ({
         contactParagraph={'We can help bring your next project to life'}
       />
       <Map />
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+        <StyledIFrame src="https://player.vimeo.com/video/486986897?h=dbf0d01a15&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+      </Modal>
     </>
   )
 }
@@ -167,4 +177,34 @@ index.getInitialProps = async function () {
   return await client.fetch(query)
 }
 
-export default index
+export default index;
+
+const StyledIFrame = styled.iframe`
+  width: 256px;
+  height: 144px;
+
+  ${respondTo.xs`
+    width: 320px;
+    height: 180px;
+  `}
+
+  ${respondTo.sm`
+    width: 640px;
+    height: 360px;
+  `}
+
+  ${respondTo.md`
+    width: 640px;
+    height: 360px;
+  `}
+
+  ${respondTo.lg`
+    width: 960px;
+    height: 540px;
+  `}
+
+  ${respondTo.xl`
+    width: 1280px;
+    height: 720px;
+  `}
+`;
