@@ -110,7 +110,7 @@ const ContactForm = ({
                       Name
                     </Label>
                   </Box3>
-                  <Input required type="text" id="contact__name" background={'lightgrey'}
+                  <Input required type="text" id="contact__name" background={'#fff'}
                     value={name} onChange={onSetName.bind(this)}
                   />
                   <Box3 marginTop={25} marginBottom={10}>
@@ -119,7 +119,7 @@ const ContactForm = ({
                     </Label>
                   </Box3>
                   <Box3 marginBottom={35}>
-                    <Input required type="email" id="contact__email" background={'lightgrey'}
+                    <Input required type="email" id="contact__email" background={'#fff'}
                       value={email} onChange={onSetEmail.bind(this)}
                     />
                   </Box3>
@@ -130,7 +130,7 @@ const ContactForm = ({
                       Project Description
                     </Label>
                   </Box3>
-                  <TextArea required id="contact__message" className="textarea" background={'lightgrey'}
+                  <TextArea required id="contact__message" className="textarea" background={'#fff'}
                     value={message} onChange={onSetMessage.bind(this)}
                   />
                 </StyledFormHalf>

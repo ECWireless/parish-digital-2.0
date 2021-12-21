@@ -129,11 +129,6 @@ export default {
         type: 'string'
     },
     {
-      name: 'servicesHeading',
-      title: 'Services Heading',
-      type: 'string'
-    },
-    {
       name: 'servicesSubheading1',
       title: 'Services Subheading 1',
       type: 'string'

@@ -6,6 +6,7 @@ import client from '../client'
 import Description from '../components/Service/Description'
 import Reviews from '../components/Service/Reviews'
 import Services from '../components/Service/Services'
+import ContactForm from '../components/Contact/ContactForm'
 
 const service = ({
   heading,
@@ -29,7 +30,6 @@ const service = ({
   reviewsName3,
   reviewsPosition3,
   reviewsCompany3,
-  servicesHeading,
   servicesSubheading1,
   servicesList1Item1,
   servicesList1Item2,
@@ -81,7 +81,6 @@ const service = ({
         reviewsCompany3={reviewsCompany3}
       />
       <Services
-        servicesHeading={servicesHeading}
         servicesSubheading1={servicesSubheading1}
         servicesList1Item1={servicesList1Item1}
         servicesList1Item2={servicesList1Item2}
@@ -101,6 +100,10 @@ const service = ({
         servicesList2Item5={servicesList2Item5}
         servicesList2Item6={servicesList2Item6}
         servicesPhoto2={urlFor(servicesPhoto2).auto('format')}
+      />
+      <ContactForm
+        contactHeading={'Contact Us'}
+        contactParagraph={'We can help bring your next project to life'}
       />
     </>
   )
@@ -132,7 +135,6 @@ const query = groq`*[_type == "service" && slug.current == "v1"][0]{
   reviewsName3,
   reviewsPosition3,
   reviewsCompany3,
-  servicesHeading,
   servicesSubheading1,
   servicesList1Item1,
   servicesList1Item2,
