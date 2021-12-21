@@ -2,7 +2,6 @@ import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
 import respondTo from '../Breakpoints'
 
-// Components
 import { colors } from '../theme'
 import { Box3 } from '../Boxes'
 import { Container, Flex } from '../Containers'
