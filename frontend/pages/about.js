@@ -57,6 +57,11 @@ const about = ({
   crew5Paragraph1,
   crew5Paragraph2,
   crew5Photo,
+  crew6Name,
+  crew6Position,
+  crew6Paragraph1,
+  crew6Paragraph2,
+  crew6Photo,
 }) => {
   return (
     <>
@@ -118,6 +123,11 @@ const about = ({
         crew5Paragraph1={crew5Paragraph1}
         crew5Paragraph2={crew5Paragraph2}
         crew5Photo={urlFor(crew5Photo).auto('format')}
+        crew6Name={crew6Name}
+        crew6Position={crew6Position}
+        crew6Paragraph1={crew6Paragraph1}
+        crew6Paragraph2={crew6Paragraph2}
+        crew6Photo={urlFor(crew6Photo).auto('format')}
       />
     </>
   )
@@ -176,6 +186,11 @@ const query = groq`*[_type == "about" && slug.current == "v1"][0]{
   crew5Paragraph1,
   crew5Paragraph2,
   crew5Photo,
+  crew6Name,
+  crew6Position,
+  crew6Paragraph1,
+  crew6Paragraph2,
+  crew6Photo,
 }`
 
 about.getInitialProps = async function () {

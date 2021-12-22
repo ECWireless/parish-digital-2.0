@@ -277,6 +277,34 @@ export default {
             hotspot: true
         }
     },
+    {
+        name: 'crew6Name',
+        title: 'Crew 6 Name',
+        type: 'string'
+    },
+    {
+        name: 'crew6Position',
+        title: 'Crew 6 Position',
+        type: 'string'
+    },
+    {
+        name: 'crew6Paragraph1',
+        title: 'Crew 6 Paragraph 1',
+        type: 'string'
+    },
+    {
+        name: 'crew6Paragraph2',
+        title: 'Crew 6 Paragraph 2',
+        type: 'string'
+    },
+    {
+        name: 'crew6Photo',
+        title: 'Crew 6 Photo',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
   ],
 
   preview: {
