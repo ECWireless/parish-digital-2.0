@@ -245,10 +245,10 @@ const PhotoContainer = styled.div`
     position: relative;
     width: 100%;
     height: 30rem;
-    background: ${colors.blue};
+    background: #525252;
 
     ${respondTo.xl`
-        height: 35rem;
+      height: 35rem;
     `}
 `
 
