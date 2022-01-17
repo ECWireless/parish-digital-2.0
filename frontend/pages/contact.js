@@ -3,7 +3,7 @@ import groq from 'groq'
 import client from '../client'
 
 // import Banner from '../components/Contact/Banner'
-import ContactForm from '../components/Contact/ContactForm'
+import ContactFormNew from '../components/Contact/ContactFormNew'
 
 const contact = ({
   // bannerHeading,
@@ -24,7 +24,7 @@ const contact = ({
         ownerNumber={ownerNumber}
         ownerEmail={ownerEmail}
       /> */}
-      <ContactForm
+      <ContactFormNew
         contactHeading={contactHeading}
         contactParagraph={contactParagraph}
       />
