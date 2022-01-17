@@ -2,14 +2,14 @@ import Head from 'next/head'
 import groq from 'groq'
 import client from '../client'
 
-import Banner from '../components/Contact/Banner'
+// import Banner from '../components/Contact/Banner'
 import ContactForm from '../components/Contact/ContactForm'
 
 const contact = ({
-  bannerHeading,
-  bannerParagraph,
-  ownerNumber,
-  ownerEmail,
+  // bannerHeading,
+  // bannerParagraph,
+  // ownerNumber,
+  // ownerEmail,
   contactHeading,
   contactParagraph,
 }) => {
@@ -18,12 +18,12 @@ const contact = ({
       <Head>
         <title>Contact | Parish Digital Video Production</title>
       </Head>
-      <Banner
+      {/* <Banner
         bannerHeading={bannerHeading}
         bannerParagraph={bannerParagraph}
         ownerNumber={ownerNumber}
         ownerEmail={ownerEmail}
-      />
+      /> */}
       <ContactForm
         contactHeading={contactHeading}
         contactParagraph={contactParagraph}

@@ -7,11 +7,11 @@ import { Box3 } from '../Boxes'
 import { Button3 } from '../Buttons'
 import { Card3 } from '../Cards'
 import { Container, Flex } from '../Containers'
-import { H3, H4, P5, P6 } from '../Typography'
+import { H4, P5 } from '../Typography'
 
 const Description = ({
-  heading,
-  subheading,
+  // heading,
+  // subheading,
   descriptionPhoto,
   descriptionHeading,
   descriptionParagraph1,
@@ -19,14 +19,14 @@ const Description = ({
 }) => {
   return (
     <Container>
-      <StyledTextContainer1 align={'center'} direction={'column'} justify={'center'}>
+      {/* <StyledTextContainer1 align={'center'} direction={'column'} justify={'center'}>
         <Box3 marginTop={50} marginBottom={25}>
           <H3 align={'center'} uppercase weight={900}>{heading}</H3>
         </Box3>
         <Box3 marginBottom={25}>
           <P6 style={{ fontStyle: 'italic' }} align={'center'}>{subheading}</P6>
         </Box3>
-      </StyledTextContainer1>
+      </StyledTextContainer1> */}
       <Box3 marginTop={50}>
         <Fade bottom ssrFadeout>
           <Card3>
@@ -72,22 +72,22 @@ const Description = ({
 
 export default Description;
 
-const StyledTextContainer1 = styled(Flex)`
-  margin: 0 auto;
-  width: 100%;
+// const StyledTextContainer1 = styled(Flex)`
+//   margin: 0 auto;
+//   width: 100%;
 
-  ${respondTo.xs`
-    width: 400px;
-  `}
+//   ${respondTo.xs`
+//     width: 400px;
+//   `}
 
-  ${respondTo.sm`
-    width: 600px;
-  `}
+//   ${respondTo.sm`
+//     width: 600px;
+//   `}
 
-  ${respondTo.md`
-    width: 750px;
-  `}
-`;
+//   ${respondTo.md`
+//     width: 750px;
+//   `}
+// `;
 
 const StyledTextContainer2 = styled.div`
   box-sizing: border-box;

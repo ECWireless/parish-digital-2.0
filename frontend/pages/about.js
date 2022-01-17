@@ -3,14 +3,14 @@ import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import client from '../client'
 
-import Banner from '../components/About/Banner'
+// import Banner from '../components/About/Banner'
 import Story from '../components/About/Story'
 import Reviews from '../components/About/Reviews'
 import Crew from '../components/About/Crew'
 
 const about = ({
-  bannerHeading,
-  bannerParagraph,
+  // bannerHeading,
+  // bannerParagraph,
   storyHeading,
   storyParagraph1,
   storyParagraph2,
@@ -68,10 +68,10 @@ const about = ({
       <Head>
         <title>About | Parish Digital Video Production</title>
       </Head>
-      <Banner
+      {/* <Banner
         bannerHeading={bannerHeading}
         bannerParagraph={bannerParagraph}
-      />
+      /> */}
       <Story
         storyHeading={storyHeading}
         storyParagraph1={storyParagraph1}

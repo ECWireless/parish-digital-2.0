@@ -5,11 +5,11 @@ import respondTo from '../Breakpoints'
 import { colors, shadows } from '../theme'
 import { Box3 } from '../Boxes'
 import { Container, Flex } from '../Containers'
-import { H3, P6 } from '../Typography'
+// import { H3, P6 } from '../Typography'
 
 const Examples = ({
-  heading,
-  subheading,
+  // heading,
+  // subheading,
   example1Link,
   example2Link,
   example3Link,
@@ -26,14 +26,14 @@ const Examples = ({
   return (
     <ExamplesBackground>
       <Container>
-        <StyledTextContainer align={'center'} direction={'column'} justify={'center'}>
+        {/* <StyledTextContainer align={'center'} direction={'column'} justify={'center'}>
           <Box3 marginTop={50} marginBottom={25}>
             <H3 align={'center'} uppercase weight={900}>{heading}</H3>
           </Box3>
           <Box3 marginBottom={25}>
             <P6 style={{ fontStyle: 'italic' }} align={'center'}>{subheading}</P6>
           </Box3>
-        </StyledTextContainer>
+        </StyledTextContainer> */}
         <Flex align={'center'} justify={'space-between'} respond>
           <Fade ssrFadeout>
             <Box3 marginTop={50} marginBottom={25}>
@@ -178,22 +178,22 @@ const ExamplesBackground = styled.div`
   background: ${colors.white};
 `;
 
-const StyledTextContainer = styled(Flex)`
-  margin: 0 auto;
-  width: 100%;
+// const StyledTextContainer = styled(Flex)`
+//   margin: 0 auto;
+//   width: 100%;
 
-  ${respondTo.xs`
-    width: 400px;
-  `}
+//   ${respondTo.xs`
+//     width: 400px;
+//   `}
 
-  ${respondTo.sm`
-    width: 600px;
-  `}
+//   ${respondTo.sm`
+//     width: 600px;
+//   `}
 
-  ${respondTo.md`
-    width: 750px;
-  `}
-`;
+//   ${respondTo.md`
+//     width: 750px;
+//   `}
+// `;
 
 const CardContainer = styled.div`
     width: 30rem;
