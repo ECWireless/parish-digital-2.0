@@ -4,7 +4,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import client from '../client'
 
 import Description from '../components/Service/Description'
-import Reviews from '../components/Service/Reviews'
+// import Reviews from '../components/Service/Reviews'
 import Services from '../components/Service/Services'
 import ContactForm from '../components/Contact/ContactForm'
 
@@ -15,21 +15,21 @@ const service = ({
   descriptionPhoto,
   descriptionParagraph1,
   descriptionParagraph2,
-  reviewsHeading,
-  reviewsSubheading,
-  reviewsPhoto,
-  reviewsQuote1,
-  reviewsName1,
-  reviewsPosition1,
-  reviewsCompany1,
-  reviewsQuote2,
-  reviewsName2,
-  reviewsPosition2,
-  reviewsCompany2,
-  reviewsQuote3,
-  reviewsName3,
-  reviewsPosition3,
-  reviewsCompany3,
+  // reviewsHeading,
+  // reviewsSubheading,
+  // reviewsPhoto,
+  // reviewsQuote1,
+  // reviewsName1,
+  // reviewsPosition1,
+  // reviewsCompany1,
+  // reviewsQuote2,
+  // reviewsName2,
+  // reviewsPosition2,
+  // reviewsCompany2,
+  // reviewsQuote3,
+  // reviewsName3,
+  // reviewsPosition3,
+  // reviewsCompany3,
   servicesSubheading1,
   servicesList1Item1,
   servicesList1Item2,
@@ -63,7 +63,7 @@ const service = ({
         descriptionParagraph1={descriptionParagraph1}
         descriptionParagraph2={descriptionParagraph2}
       />
-      <Reviews
+      {/* <Reviews
         reviewsHeading={reviewsHeading}
         reviewsSubheading={reviewsSubheading}
         reviewsPhoto={urlFor(reviewsPhoto).auto('format')}
@@ -79,7 +79,7 @@ const service = ({
         reviewsName3={reviewsName3}
         reviewsPosition3={reviewsPosition3}
         reviewsCompany3={reviewsCompany3}
-      />
+      /> */}
       <Services
         servicesSubheading1={servicesSubheading1}
         servicesList1Item1={servicesList1Item1}
