@@ -46,94 +46,92 @@ const Crew = ({
   return (
     <Container>
       <Fade bottom ssrFadeout>
-        <Box1 marginBottom={50}>
-          <Card1>
-            <Flex style={{ width: '100%' }} align={'center'} justify={'center'} direction={'column'}>
-              <H3 uppercase>
-                {crewHeading}
-              </H3>
-              <Fade ssrFadeout>
-                <Box3 marginTop={25} marginBottom={25}>
-                  <Line height={5} width={100} color={colors.yellow} />
+        <Box1 marginTop={50} marginBottom={75}>
+          <Flex style={{ width: '100%' }} align={'center'} justify={'center'} direction={'column'}>
+            <H3 uppercase>
+              {crewHeading}
+            </H3>
+            <Fade ssrFadeout>
+              <Box3 marginTop={25} marginBottom={25}>
+                <Line height={5} width={100} color={colors.yellow} />
+              </Box3>
+            </Fade>
+            {/* <Fade bottom ssrFadeout>
+              <TextBox>
+                <P4>
+                  {crewParagraph}
+                </P4>
+              </TextBox>
+            </Fade> */}
+            <StyledCardContainer align={'center'} justify={'space-between'} respond>
+              <Fade delay={200} bottom ssrFadeout>
+                <Box3 marginTop={50}>
+                <TeamCard
+                  crewPhoto={crew1Photo}
+                  crewName={crew1Name}
+                  crewPosition={crew1Position}
+                  crewParagraph1={crew1Paragraph1}
+                  crewParagraph2={crew1Paragraph2}
+                />
                 </Box3>
               </Fade>
-              <Fade bottom ssrFadeout>
-                <TextBox>
-                  <P4>
-                    {crewParagraph}
-                  </P4>
-                </TextBox>
-              </Fade>
-              <StyledCardContainer align={'center'} justify={'space-between'} respond>
-                <Fade delay={200} bottom ssrFadeout>
-                  <Box3 marginTop={50}>
+              <Fade delay={300} bottom ssrFadeout>
+                <Box3 marginTop={50}>
                   <TeamCard
-                    crewPhoto={crew1Photo}
-                    crewName={crew1Name}
-                    crewPosition={crew1Position}
-                    crewParagraph1={crew1Paragraph1}
-                    crewParagraph2={crew1Paragraph2}
+                    crewPhoto={crew2Photo}
+                    crewName={crew2Name}
+                    crewPosition={crew2Position}
+                    crewParagraph1={crew2Paragraph1}
+                    crewParagraph2={crew2Paragraph2}
                   />
-                  </Box3>
-                </Fade>
-                <Fade delay={300} bottom ssrFadeout>
-                  <Box3 marginTop={50}>
-                    <TeamCard
-                      crewPhoto={crew2Photo}
-                      crewName={crew2Name}
-                      crewPosition={crew2Position}
-                      crewParagraph1={crew2Paragraph1}
-                      crewParagraph2={crew2Paragraph2}
-                    />
-                  </Box3>
-                </Fade>
-                <Fade delay={400} bottom ssrFadeout>
-                  <Box3 marginTop={50}>
-                    <TeamCard
-                      crewPhoto={crew3Photo}
-                      crewName={crew3Name}
-                      crewPosition={crew3Position}
-                      crewParagraph1={crew3Paragraph1}
-                      crewParagraph2={crew3Paragraph2}
-                    />
-                  </Box3>
-                </Fade>
-                <Fade delay={500} bottom ssrFadeout>
-                  <Box3 marginTop={50}>
-                    <TeamCard
-                      crewPhoto={crew4Photo}
-                      crewName={crew4Name}
-                      crewPosition={crew4Position}
-                      crewParagraph1={crew4Paragraph1}
-                      crewParagraph2={crew4Paragraph2}
-                    />
-                  </Box3>
-                </Fade>
-                <Fade delay={600} bottom ssrFadeout>
-                  <Box3 marginTop={50}>
-                    <TeamCard
-                      crewPhoto={crew5Photo}
-                      crewName={crew5Name}
-                      crewPosition={crew5Position}
-                      crewParagraph1={crew5Paragraph1}
-                      crewParagraph2={crew5Paragraph2}
-                    />
-                  </Box3>
-                </Fade>
-                {crew6Name && <Fade delay={700} bottom ssrFadeout>
-                  <Box3 marginTop={50}>
-                    <TeamCard
-                      crewPhoto={crew6Photo}
-                      crewName={crew6Name}
-                      crewPosition={crew6Position}
-                      crewParagraph1={crew6Paragraph1}
-                      crewParagraph2={crew6Paragraph2}
-                    />
-                  </Box3>
-                </Fade>}
-              </StyledCardContainer>
-            </Flex>
-          </Card1>
+                </Box3>
+              </Fade>
+              <Fade delay={400} bottom ssrFadeout>
+                <Box3 marginTop={50}>
+                  <TeamCard
+                    crewPhoto={crew3Photo}
+                    crewName={crew3Name}
+                    crewPosition={crew3Position}
+                    crewParagraph1={crew3Paragraph1}
+                    crewParagraph2={crew3Paragraph2}
+                  />
+                </Box3>
+              </Fade>
+              <Fade delay={500} bottom ssrFadeout>
+                <Box3 marginTop={50}>
+                  <TeamCard
+                    crewPhoto={crew4Photo}
+                    crewName={crew4Name}
+                    crewPosition={crew4Position}
+                    crewParagraph1={crew4Paragraph1}
+                    crewParagraph2={crew4Paragraph2}
+                  />
+                </Box3>
+              </Fade>
+              <Fade delay={600} bottom ssrFadeout>
+                <Box3 marginTop={50}>
+                  <TeamCard
+                    crewPhoto={crew5Photo}
+                    crewName={crew5Name}
+                    crewPosition={crew5Position}
+                    crewParagraph1={crew5Paragraph1}
+                    crewParagraph2={crew5Paragraph2}
+                  />
+                </Box3>
+              </Fade>
+              {crew6Name && <Fade delay={700} bottom ssrFadeout>
+                <Box3 marginTop={50}>
+                  <TeamCard
+                    crewPhoto={crew6Photo}
+                    crewName={crew6Name}
+                    crewPosition={crew6Position}
+                    crewParagraph1={crew6Paragraph1}
+                    crewParagraph2={crew6Paragraph2}
+                  />
+                </Box3>
+              </Fade>}
+            </StyledCardContainer>
+          </Flex>
         </Box1>
       </Fade>
     </Container>

@@ -25,8 +25,8 @@ const Reviews = ({
   reviewsCompany3,
 }) => {
   return (
-    <Container>
-      <ReviewsBackground>
+    <ReviewsBackground>
+      <Container>
         <Flex style={{width: '100%'}} align={'center'} justify={'space-between'} respond>
           <div>
             <P2 color={colors.white} uppercase weight={900}>
@@ -114,8 +114,8 @@ const Reviews = ({
             </Flex>
           </Fade>
         </Flex>
-      </ReviewsBackground>
-    </Container>
+      </Container>
+    </ReviewsBackground>
   )
 }
 

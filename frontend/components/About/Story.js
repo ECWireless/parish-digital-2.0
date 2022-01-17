@@ -4,7 +4,7 @@ import respondTo from '../Breakpoints'
 
 import { Box3 } from '../Boxes'
 import { Card3 } from '../Cards'
-import { Container, Flex } from '../Containers'
+import { Flex } from '../Containers'
 import { H4, P5 } from '../Typography'
 
 const Story = ({
@@ -14,40 +14,36 @@ const Story = ({
   storyPhoto,
 }) => {
   return (
-    <Container>
-      <Box3 marginTop={50}>
-        <Fade bottom ssrFadeout>
-          <Card3>
-            <Flex justify={'space-between'} respondFlip>
-              <StyledPhoto style={{ backgroundImage: `url(${storyPhoto})`}} />
-              <Flex align={'center'} justify={'flex-start'} direction={'column'}>
-                <StyledTextContainer>
-                  <Box3 marginBottom={25}>
-                    <H4 style={{fontWeight: 900}} uppercase>
-                      {storyHeading}
-                    </H4>
-                  </Box3>
-                  <Fade delay={200} bottom ssrFadeout>
-                    <Box3 width={450} marginBottom={25}>
-                      <P5>
-                        {storyParagraph1}
-                      </P5>
-                    </Box3>
-                  </Fade>
-                  <Fade delay={400} bottom ssrFadeout>
-                    <Box3 width={450}>
-                      <P5>
-                        {storyParagraph2}
-                      </P5>
-                    </Box3>
-                  </Fade>
-                </StyledTextContainer>
-              </Flex>
-            </Flex>
-          </Card3>
-        </Fade>
-      </Box3>
-    </Container>
+    <Fade bottom ssrFadeout>
+      <Card3>
+        <Flex justify={'space-between'} respondFlip>
+          <StyledPhoto style={{ backgroundImage: `url(${storyPhoto})`}} />
+          <Flex align={'center'} justify={'flex-start'} direction={'column'}>
+            <StyledTextContainer>
+              <Box3 marginBottom={25}>
+                <H4 style={{fontWeight: 900}} uppercase>
+                  {storyHeading}
+                </H4>
+              </Box3>
+              <Fade delay={200} bottom ssrFadeout>
+                <Box3 width={450} marginBottom={25}>
+                  <P5>
+                    {storyParagraph1}
+                  </P5>
+                </Box3>
+              </Fade>
+              <Fade delay={400} bottom ssrFadeout>
+                <Box3 width={450}>
+                  <P5>
+                    {storyParagraph2}
+                  </P5>
+                </Box3>
+              </Fade>
+            </StyledTextContainer>
+          </Flex>
+        </Flex>
+      </Card3>
+    </Fade>
   )
 }
 
