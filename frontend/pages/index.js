@@ -63,7 +63,7 @@ const index = ({
   return (
     <>
       <Head>
-          <title>{pageTitle}</title>
+        <title>{pageTitle}</title>
       </Head>
       <Hero
         heroDemoReelLink={heroDemoReelLink}

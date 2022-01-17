@@ -24,63 +24,69 @@ const Description = ({
   trustedLogo6,
 }) => {
   return (
-    <Container>
-      <Box3 marginTop={50} marginBottom={50}>
-        <Fade bottom ssrFadeout>
-          <Card3>
-            <Flex justify={'space-between'} respondFlip>
-              <StyledPhoto style={{ backgroundImage: `url(${descriptionPhoto})`}} />
-              <Flex align={'center'} justify={'flex-start'} direction={'column'}>
-                <StyledTextContainer>
-                  <Box3 marginBottom={25}>
-                    <Logo />
+    <Box3 marginBottom={50}>
+      <Fade bottom ssrFadeout>
+        <Card3>
+          <Flex justify={'space-between'} respondFlip>
+            <StyledPhoto style={{ backgroundImage: `url(${descriptionPhoto})`}} />
+            <Flex align={'center'} justify={'flex-start'} direction={'column'}>
+              <StyledTextContainer>
+                <Box3 marginBottom={25}>
+                  <Logo />
+                </Box3>
+                <Box3 marginBottom={25}>
+                  <H4 center style={{fontWeight: 900}} uppercase>
+                    {descriptionHeading}
+                  </H4>
+                </Box3>
+                <Fade delay={200} bottom ssrFadeout>
+                  <Box3 width={500} marginBottom={25}>
+                    <P5>
+                      {descriptionParagraph1}
+                    </P5>
                   </Box3>
-                  <Box3 marginBottom={25}>
-                    <H4 center style={{fontWeight: 900}} uppercase>
-                      {descriptionHeading}
-                    </H4>
+                </Fade>
+                <Fade delay={400} bottom ssrFadeout>
+                  <Box3 width={500}>
+                    <P5>
+                      {descriptionParagraph2}
+                    </P5>
                   </Box3>
-                  <Fade delay={200} bottom ssrFadeout>
-                    <Box3 width={500} marginBottom={25}>
-                      <P5>
-                        {descriptionParagraph1}
-                      </P5>
-                    </Box3>
-                  </Fade>
-                  <Fade delay={400} bottom ssrFadeout>
-                    <Box3 width={500}>
-                      <P5>
-                        {descriptionParagraph2}
-                      </P5>
-                    </Box3>
-                  </Fade>
-                  <Box3 marginTop={32}>
-                    <Link href='/contact'>
-                      <Button3>
-                        Ready for a quote!
-                      </Button3>
-                    </Link>
-                  </Box3>
-                </StyledTextContainer>
-              </Flex>
+                </Fade>
+                <Box3 marginTop={32}>
+                  <Link href='/contact'>
+                    <Button3>
+                      Ready for a quote!
+                    </Button3>
+                  </Link>
+                </Box3>
+              </StyledTextContainer>
             </Flex>
-          </Card3>
-        </Fade>
-        <TrustedBackground>
-          <StyledTrustedHeading center uppercase>
-            {trustedHeading}
-          </StyledTrustedHeading>
-          <Flex respond align={'center'} justify={'space-around'}>
+          </Flex>
+        </Card3>
+      </Fade>
+      <TrustedBackground>
+        <StyledTrustedHeading center uppercase>
+          {trustedHeading}
+        </StyledTrustedHeading>
+        <StyledLogoContainer>
+          <StyledLogoContainerInner>
             <TrustedLogo style={{backgroundImage: `url(${trustedLogo1})`}} />
             <TrustedLogo style={{backgroundImage: `url(${trustedLogo2})`}} />
             <TrustedLogo style={{backgroundImage: `url(${trustedLogo3})`}} />
             <TrustedLogo style={{backgroundImage: `url(${trustedLogo4})`}} />
             <TrustedLogo style={{backgroundImage: `url(${trustedLogo5})`}} />
             <TrustedLogo style={{backgroundImage: `url(${trustedLogo6})`}} />
-          </Flex>
-        </TrustedBackground>
-      </Box3>
-    </Container>
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo1})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo2})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo3})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo4})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo5})`}} />
+            <TrustedLogo style={{backgroundImage: `url(${trustedLogo6})`}} />
+          </StyledLogoContainerInner>
+        </StyledLogoContainer>
+      </TrustedBackground>
+    </Box3>
   )
 }
 
@@ -89,15 +95,14 @@ export default Description
 const StyledPhoto = styled.div`
   background-position: center;
   background-size: cover;
-  height: 320px;
+  height: 400px;
   width: 100%;
 
   ${respondTo.md`
-    height: 420px;
+    height: 600px;
   `}
 
   ${respondTo.lg`
-    height: 600px;
     width: 50%;
   `}
 `;
@@ -136,10 +141,10 @@ const Logo = styled.div`
 const TrustedBackground = styled.div`
   background: ${colors.brown};
   width: 100%;
-  height: 550px;
+  height: 1050px;
 
   ${respondTo.sm`
-    height: 680px;
+    height: 500px;
   `}
 
   ${respondTo.lg`
@@ -161,15 +166,57 @@ const StyledTrustedHeading = styled.div`
   text-align: center;
 `;
 
+const StyledLogoContainer = styled.div`
+  margin: 0 auto;
+  width: 300px;
+
+  ${respondTo.xs`
+    width: 350px;
+  `}
+  
+  ${respondTo.sm`
+    width: 600px;
+  `}
+
+  ${respondTo.md`
+    width: 800px;
+  `}
+
+  ${respondTo.lg`
+    overflow-x: scroll;
+    width: 1200px;
+  `}
+
+  ${respondTo.xl`
+    width: 1800px;
+  `}
+`;
+
+const StyledLogoContainerInner = styled(Flex)`
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  ${respondTo.lg`
+    flex-wrap: nowrap;
+  `}
+`;
+
 const TrustedLogo = styled.div`
   height: 80px;
-  width: 100px;
+  width: 200px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
   ${respondTo.sm`
     height: 100px;
+  `}
+
+  ${respondTo.md`
+    height: 100px;
+    margin-right: 20px;
   `}
 
   ${respondTo.lg`

@@ -23,11 +23,11 @@ const Hero = ({
       </HeroVideo>
       <HeroContainer>
         <TexContainer>
-          <Fade bottom ssrFadeout>
+          {/* <Fade bottom ssrFadeout>
             <H4 style={{ textShadow: '0 3px 6px rgba(0,0,0,1)' }} color={colors.white} center>
               {heroSubheading2}
             </H4>
-          </Fade>
+          </Fade> */}
           <Fade bottom ssrFadeout>
             <Box3 marginTop={50}>
               <H1 style={{ textShadow: '0 10px 20px rgba(0,0,0,1)' }} color={colors.white} center uppercase>
@@ -35,13 +35,13 @@ const Hero = ({
               </H1>
             </Box3>
           </Fade>
-          <Fade delay={200} bottom ssrFadeout>
+          {/* <Fade delay={200} bottom ssrFadeout>
             <Box3 marginTop={50}>
               <H4 style={{ textShadow: '0 5px 20px rgba(0,0,0,1)' }} color={colors.white} center>
                 {heroSubheading}
               </H4>
             </Box3>
-          </Fade>
+          </Fade> */}
           <div style={{ marginTop: '4rem'}}>
             <Flex align={'center'} justify={'center'}>
               {/* <CustomLink
@@ -190,7 +190,7 @@ export const H1 = styled.h4`
 `
 
 export const H4 = styled.h1`
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 30px;
   letter-spacing: 1px;

@@ -97,11 +97,11 @@ const ContactForm = ({
                     <CustomLine style={{ margin: 0 }} height={5} width={100} color={colors.yellow} />
                   </Fade>
                 </Flex>
-                <Box3 marginTop={25}>
+                {/* <Box3 marginTop={25}>
                   <P5 color={colors.white} center>
                     {contactParagraph}
                   </P5>
-                </Box3>
+                </Box3> */}
               </Box3>
               <Flex justify={'space-between'} respond>
                 <StyledFormHalf>
