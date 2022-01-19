@@ -10,7 +10,7 @@ import { Button4 } from '../Buttons'
 import { Card1 } from '../Cards'
 import { Container, Flex } from '../Containers'
 import { Label, Input, TextArea } from '../Forms'
-import { H4, P4, P5 } from '../Typography'
+import { H3, P4, P5 } from '../Typography'
 import { Line } from '../Lines'
 import Spinner from '../Spinner'
 import Snackbar from '../Snackbar'
@@ -86,9 +86,9 @@ const ContactFormNew = ({
         <StyledForm onSubmit={onSubmit}>
           <StyledInnerContainer>
             <Box3 marginBottom={75}>
-              <H4 color={colors.white} center uppercase center weight={700}>
+              <H3 color={colors.white} center uppercase center weight={700}>
                 {contactHeading}
-              </H4>
+              </H3>
             </Box3>
             <Flex direction={'column'}>
               <Box3 marginBottom={10}>
@@ -172,14 +172,26 @@ const StyledForm = styled.form`
 
 const StyledInnerContainer = styled.div`
   margin: 0 auto;
-  width: 300px;
+  width: 290px;
+
+  ${respondTo.xs`
+    width: 310px;
+  `}
 
   ${respondTo.sm`
+    width: 360px;
+  `}
+
+  ${respondTo.md`
     width: 400px;
+  `}
+
+  ${respondTo.lg`
+    width: 460px;
   `}
   
   ${respondTo.xl`
-    width: 450px;
+    width: 520px;
   `}
 `;
 
