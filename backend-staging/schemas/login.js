@@ -83,6 +83,16 @@ export default {
           title: 'Login Caleb Timesheet Link',
           type: 'string'
       },
+      {
+        name: 'loginMariaSubmitHoursLink',
+        title: 'Login Maria Submit Hours Link',
+        type: 'string'
+      },
+      {
+        name: 'loginMariaTimesheetLink',
+        title: 'Login Maria Timesheet Link',
+        type: 'string'
+      },
   ],
 
   preview: {
