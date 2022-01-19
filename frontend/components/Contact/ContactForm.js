@@ -81,8 +81,8 @@ const ContactForm = ({
 
   return (
     <>
-      <Box3 style={{width: '100%'}} marginBottom={50}>
-        <Card1 style={{ background: colors.brown, borderRadius: '0 0 5px 5px' }}>
+      <Box3 style={{width: '100%'}}>
+        <Card1 style={{ background: colors.brown }}>
           <Form onSubmit={onSubmit}>
             <Box3 marginBottom={75}>
               <Flex align={'center'} justify={'space-between'}>
