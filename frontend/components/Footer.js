@@ -18,20 +18,17 @@ const Footer = () => {
 						<Flex direction={'column'}>
 							<FooterHeading color={colors.white} uppercase>Sitemap</FooterHeading>
 							<Spacer size={'xs'} />
-							<Link href="/about">
-								<ParagraphLink>about</ParagraphLink>
-							</Link>
-							<Link href="/service">
-								<ParagraphLink>services</ParagraphLink>
-							</Link>
-							<Link href="/virtual">
-								<ParagraphLink>virtual</ParagraphLink>
-							</Link>
 							<Link href="/work">
 								<ParagraphLink>work</ParagraphLink>
 							</Link>
+							<Link href="/services">
+								<ParagraphLink>services</ParagraphLink>
+							</Link>
 							<Link href="/gear">
 								<ParagraphLink>gear</ParagraphLink>
+							</Link>
+							<Link href="/about">
+								<ParagraphLink>about</ParagraphLink>
 							</Link>
 							<Link href="/contact">
 								<ParagraphLink>contact</ParagraphLink>
