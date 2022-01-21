@@ -119,7 +119,7 @@ const Services = ({
 							</Box3>
 							<Box3 marginTop={10} marginBottom={50}>
 								<P4 weight={200}>
-									Test
+									{servicesList2Item5}
 								</P4>
 							</Box3>
 						</Fade>
