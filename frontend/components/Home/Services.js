@@ -15,7 +15,7 @@ const Services = ({
 	servicesList1Item2,
 	servicesList1Item3,
 	servicesList1Item4,
-	// servicesList1Item5,
+	servicesList1Item5,
 	// servicesList1Item6,
 	// servicesList1Item7,
 	// servicesList1Item8,
