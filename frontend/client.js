@@ -1,8 +1,8 @@
 // client.js
 import sanityClient from '@sanity/client'
 
-// const token = process.env.SANITY_TOKEN; // Production
-const token = process.env.BACKEND_SANITY_TOKEN; // Staging
+const token = process.env.SANITY_TOKEN; // Production
+// const token = process.env.BACKEND_SANITY_TOKEN; // Staging
 
 export default sanityClient({
   projectId: 'w1dauhhn', // Production
