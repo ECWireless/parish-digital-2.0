@@ -1,86 +1,67 @@
-import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
 import respondTo from '../Breakpoints'
 
-// Components
-import { colors } from '../theme'
-import { Box2, Box3 } from '../Boxes'
-import { Container } from '../Containers'
-import { H2, P2 } from '../Typography'
+import { Box3 } from '../Boxes'
+import { Container, Flex } from '../Containers'
+import { H3, H4, P6 } from '../Typography'
 
 const Banner = ({
     bannerHeading,
     bannerParagraph,
-    bannerPhoto,
+    ownerNumber,
+    ownerEmail,
 }) => {
-    return (
-        <BannerBackground>
-            <Container style={{height: '100%'}}>
-                <Fade bottom ssrFadeout>
-                    <Box2 paddingTop={100}>
-                        <H2 style={{fontWeight: 300}} uppercase color={colors.white}>
-                            {bannerHeading}
-                        </H2>
-                    </Box2>
-                </Fade>
-                <Fade delay={200} bottom ssrFadeout>
-                    <Box3 paddingTop={50} width={600}>
-                        <P2 color={colors.white}>
-                            {bannerParagraph}
-                        </P2>
-                    </Box3>
-                </Fade>
-            </Container>
-            <Photo style={{backgroundImage: `url(${bannerPhoto})`}} />
-        </BannerBackground>
-    )
+  return (
+    <Container>
+      <StyledTextContainer align={'center'} direction={'column'} justify={'center'}>
+        <Box3 marginTop={50} marginBottom={25}>
+          <H3 align={'center'} uppercase weight={900}>{bannerHeading}</H3>
+        </Box3>
+        <Box3 marginBottom={50}>
+          <P6 style={{ fontStyle: 'italic' }} align={'center'}>{bannerParagraph}</P6>
+        </Box3>
+        <StyledContactContainer marginBottom={50}>
+          <Flex align={'center'} justify={'space-between'} respond>
+            <H4 weight={700}>{ownerNumber}</H4>
+            <H4 weight={700}>{ownerEmail}</H4>
+          </Flex>
+        </StyledContactContainer>
+      </StyledTextContainer>
+    </Container>
+  )
 }
 
 export default Banner
 
-const BannerBackground = styled.div`
-    position: relative;
-    width: 100%;
-    height: 50rem;
-    background: linear-gradient(${colors.brown}, #000);
+const StyledTextContainer = styled(Flex)`
+  margin: 0 auto;
+  width: 100%;
 
-    ${respondTo.sm`
-        height: 70rem;
-    `}
+  ${respondTo.xs`
+    width: 400px;
+  `}
 
-    ${respondTo.lg`
-        height: 40rem;
-    `}
+  ${respondTo.sm`
+    width: 600px;
+  `}
 
-    ${respondTo.xl`
-        height: 50rem;
-    `}
-`
+  ${respondTo.md`
+    width: 750px;
+  `}
+`;
 
-const Photo = styled.div`
-    position: absolute;
-    top: 25rem;
-    height: 25rem;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
+const StyledContactContainer = styled(Box3)`
+  width: 100%;
 
-    ${respondTo.sm`
-        height: 40rem;
-        top: 30rem;
-    `}
+  ${respondTo.xs`
+    width: 400px;
+  `}
 
-    ${respondTo.lg`
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 60rem;
-    `}
+  ${respondTo.sm`
+    width: 70%;
+  `}
 
-    ${respondTo.xl`
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 80rem;
-    `}
-`
+  ${respondTo.xl`
+    width: 90%;
+  `}
+`;

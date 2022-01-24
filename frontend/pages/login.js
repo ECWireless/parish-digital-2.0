@@ -21,6 +21,8 @@ const login = ({
   loginScottTimesheetLink,
   loginCalebSubmitHoursLink,
   loginCalebTimesheetLink,
+  loginMariaSubmitHoursLink,
+  loginMariaTimesheetLink,
 }) => {
   const { user, loading } = useAuth();
   const [loggedIn, setLoggedIn] = useState(false)
@@ -46,6 +48,8 @@ const login = ({
           loginScottTimesheetLink={loginScottTimesheetLink}
           loginCalebSubmitHoursLink={loginCalebSubmitHoursLink}
           loginCalebTimesheetLink={loginCalebTimesheetLink}
+          loginMariaSubmitHoursLink={loginMariaSubmitHoursLink}
+          loginMariaTimesheetLink={loginMariaTimesheetLink}
         />
       }
     </>
@@ -67,6 +71,8 @@ const query = groq`*[_type == "login" && slug.current == "v1"][0]{
   loginScottTimesheetLink,
   loginCalebSubmitHoursLink,
   loginCalebTimesheetLink,
+  loginMariaSubmitHoursLink,
+  loginMariaTimesheetLink,
 }`
 
 login.getInitialProps = async function () {

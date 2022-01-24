@@ -1,7 +1,5 @@
-import { useState } from 'react'
 import styled from 'styled-components'
 
-// Components
 import { colors } from '../theme'
 import { Box2, Box3 } from '../Boxes'
 import { Button1, Button2 } from '../Buttons'
@@ -22,6 +20,8 @@ const AuthTrue = ({
 	loginScottTimesheetLink,
 	loginCalebSubmitHoursLink,
 	loginCalebTimesheetLink,
+  loginMariaSubmitHoursLink,
+  loginMariaTimesheetLink,
 }) => {
   const logout = async () => {
     if (!user) return;
@@ -44,7 +44,7 @@ const AuthTrue = ({
 		<>
 			<AuthTrueBackground style={{backgroundImage: `url(${loginBackgroundPhoto})`}}>
 				<Container>
-					<Flex aling={'center'} justify={'center'}>
+					<Flex align={'center'} justify={'center'}>
 							<Box3 marginTop={50}>
 									<Button1 onClick={logout}>
 											Logout
@@ -52,7 +52,7 @@ const AuthTrue = ({
 							</Box3>
 					</Flex>
 					<Box2 marginTop={150}>
-						<Flex aling={'center'} justify={'space-between'}>
+						<Flex align={'center'} justify={'space-between'}>
 							<CustomLink
 								href={loginAlexSubmitHoursLink}
 								target='_blank' rel='noopener noreferrer'
@@ -72,7 +72,7 @@ const AuthTrue = ({
 						</Flex>
 					</Box2>
 					<Box3 marginTop={50}>
-						<Flex aling={'center'} justify={'space-between'}>
+						<Flex align={'center'} justify={'space-between'}>
 							<CustomLink
 								href={loginAlexTimesheetLink}
 								target='_blank' rel='noopener noreferrer'
@@ -95,46 +95,64 @@ const AuthTrue = ({
 			</AuthTrueBackground>
 			<AuthTrueBackground2 style={{backgroundImage: `url(${loginBackgroundPhoto2})`}}>
 				<Container>
-				<Box2 paddingTop={250}>
-						<Flex aling={'center'} justify={'space-between'}>
-							<CustomLink
-								href={loginScottSubmitHoursLink}
-								target='_blank' rel='noopener noreferrer'
-							>
-								<Button2 style={{marginLeft: 0}} color={colors.black} background={colors.white}>
-									Jeff Submit Hours
-								</Button2>
-							</CustomLink>
-							<CustomLink
-								href={loginCalebSubmitHoursLink}
-								target='_blank' rel='noopener noreferrer'
-							>
-								<Button2 style={{marginRight: 0}} color={colors.black} background={colors.white}>
-									Caleb Submit Hours
-								</Button2>
-							</CustomLink>
-						</Flex>
-					</Box2>
-					<Box3 marginTop={50}>
-						<Flex aling={'center'} justify={'space-between'}>
-							<CustomLink
-								href={loginScottTimesheetLink}
-								target='_blank' rel='noopener noreferrer'
-							>
-								<Button2 style={{marginLeft: 0}} color={colors.black} background={colors.white}>
-									Jeff Timesheet
-								</Button2>
-							</CustomLink>
-							<CustomLink
-								href={loginCalebTimesheetLink}
-								target='_blank' rel='noopener noreferrer'
-							>
-								<Button2 style={{marginRight: 0}} color={colors.black} background={colors.white}>
-									Caleb Timesheet
-								</Button2>
-							</CustomLink>
-						</Flex>
-					</Box3>
+					<Flex direction={'column'} align={'center'} justify={'center'}>
+						<Box3 marginTop={50}>
+							<Flex respond align={'center'} justify={'space-between'}>
+								<CustomLink
+									href={loginScottSubmitHoursLink}
+									target='_blank' rel='noopener noreferrer'
+								>
+									<Button2 style={{ marginBottom: 10 }} color={colors.black} background={colors.white}>
+										Jeff Submit Hours
+									</Button2>
+								</CustomLink>
+								<CustomLink
+									href={loginCalebSubmitHoursLink}
+									target='_blank' rel='noopener noreferrer'
+								>
+									<Button2 style={{ margin: '0 10px 10px' }} color={colors.black} background={colors.white}>
+										Caleb Submit Hours
+									</Button2>
+								</CustomLink>
+								<CustomLink
+									href={loginMariaSubmitHoursLink}
+									target='_blank' rel='noopener noreferrer'
+								>
+									<Button2 style={{ marginBottom: 10 }} color={colors.black} background={colors.white}>
+										Maria Submit Hours
+									</Button2>
+								</CustomLink>
+							</Flex>
+						</Box3>
+						<Box3 marginTop={50}>
+							<Flex respond align={'center'} justify={'space-between'}>
+								<CustomLink
+									href={loginScottTimesheetLink}
+									target='_blank' rel='noopener noreferrer'
+								>
+									<Button2 style={{ marginBottom: 10 }} color={colors.black} background={colors.white}>
+										Jeff Timesheet
+									</Button2>
+								</CustomLink>
+								<CustomLink
+									href={loginCalebTimesheetLink}
+									target='_blank' rel='noopener noreferrer'
+								>
+									<Button2 style={{ margin: '0 10px 10px' }} color={colors.black} background={colors.white}>
+										Caleb Timesheet
+									</Button2>
+								</CustomLink>
+								<CustomLink
+									href={loginMariaTimesheetLink}
+									target='_blank' rel='noopener noreferrer'
+								>
+									<Button2 style={{ marginBottom: 10  }} color={colors.black} background={colors.white}>
+										Maria Timesheet
+									</Button2>
+								</CustomLink>
+							</Flex>
+						</Box3>
+					</Flex>
 				</Container>
 			</AuthTrueBackground2>
 	</>
@@ -151,8 +169,8 @@ const AuthTrueBackground = styled.div`
 `
 
 const AuthTrueBackground2 = styled.div`
-	height: 80vh;
 	width: 100%;
 	background-position: center;
 	background-size: cover;
+	padding: 100px 0 100px;
 `

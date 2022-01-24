@@ -3,50 +3,49 @@ import respondTo from './Breakpoints'
 import { colors, shadows } from './theme'
 
 export const Button1 = styled.button`
-    width: 13rem;
-    height: 4rem;
-    border: 2px solid ${colors.white};
-    color: ${colors.white};
-    background: rgba(0,0,0,.5);
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    transition: all .3s ease;
-    font-family: 'Source Sans Pro', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  width: 13rem;
+  height: 4rem;
+  border: none;
+  color: ${colors.white};
+  background: rgba(0,0,0,.5);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  transition: all .3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-    ${respondTo.xs`
-        width: 15rem;
-        height: 4.5rem;
-        font-size: 1.4rem;
-        letter-spacing: 3px;
-    `}
+  ${respondTo.xs`
+    width: 15rem;
+    height: 4.5rem;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+  `}
 
-    ${respondTo.sm`
-        width: 18rem;
-        height: 4.5rem;
-        font-size: 1.5rem;
-        letter-spacing: 4px;
-    `}
+  ${respondTo.sm`
+    width: 18rem;
+    height: 4.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+  `}
 
-    ${respondTo.md`
-        width: 20rem;
-        height: 5rem;
-        font-size: 1.6rem;
-    `}
+  ${respondTo.md`
+    width: 20rem;
+    height: 5rem;
+    font-size: 1.6rem;
+  `}
 
-    ${respondTo.xl`
-        width: 22rem;
-        height: 6rem;
-        font-size: 1.8rem;
-    `}
+  ${respondTo.xl`
+    width: 22rem;
+    height: 6rem;
+  `}
 
-    &:hover {
-        background: ${colors.white};
-        color: ${colors.black};
-        cursor: pointer;
-    }
+  &:hover {
+    background: ${colors.white};
+    color: ${colors.black};
+    cursor: pointer;
+  }
 `
 
 export const Button2 = styled.button`
@@ -131,4 +130,107 @@ export const Button2 = styled.button`
     &:active {
         box-shadow: ${shadows.button};
     }
+`
+
+export const Button3 = styled.button`
+  border: none;
+  color: ${colors.white};
+  background: rgba(0,0,0,1);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 14px 20px;
+  transition: all .3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  ${respondTo.xs`
+    font-size: 1.4rem;
+  `}
+
+  ${respondTo.sm`
+    font-size: 1.5rem;
+  `}
+
+  ${respondTo.md`
+    font-size: 1.6rem;
+  `}
+
+  ${respondTo.xl`
+    font-size: 1.6rem;
+  `}
+
+  &:hover {
+    background: ${colors.white};
+    color: ${colors.black};
+    cursor: pointer;
+  }
+`
+
+export const Button4 = styled.button`
+  border: none;
+  color: ${colors.black};
+  background: ${colors.yellow};
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 10px 32px;
+  transition: all .3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  ${respondTo.xs`
+    font-size: 1.4rem;
+  `}
+
+  ${respondTo.sm`
+    font-size: 1.5rem;
+  `}
+
+  ${respondTo.md`
+    font-size: 1.6rem;
+  `}
+
+  &:hover {
+    background: ${colors.white};
+    color: ${colors.black};
+    cursor: pointer;
+  }
+`
+
+export const Button5 = styled.button`
+  border: none;
+  color: ${colors.white};
+  background: rgba(0,0,0,.5);
+  border: '1px solid #707070';
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 14px 20px;
+  transition: all .3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  ${respondTo.xs`
+    font-size: 1.4rem;
+  `}
+
+  ${respondTo.sm`
+    font-size: 1.5rem;
+  `}
+
+  ${respondTo.md`
+    font-size: 1.6rem;
+  `}
+
+  ${respondTo.xl`
+    font-size: 1.6rem;
+  `}
+
+  &:hover {
+    background: ${colors.white};
+    color: ${colors.black};
+    cursor: pointer;
+  }
 `

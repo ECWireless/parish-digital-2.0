@@ -3,14 +3,13 @@ import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import client from '../client'
 
-// Components
-import Banner from '../components/Gear/Banner'
+// import Banner from '../components/Gear/Banner'
 import Examples from '../components/Gear/Examples'
 
 const gear = ({
-    bannerHeading,
-    bannerParagraph,
-    bannerPhoto,
+    // bannerHeading,
+    // bannerParagraph,
+    // bannerPhoto,
     example1Heading,
     example1BackgroundPhoto,
     example1ProductPhoto,
@@ -61,11 +60,11 @@ const gear = ({
             <Head>
                 <title>Gear | Parish Digital Video Production</title>
             </Head>
-            <Banner
+            {/* <Banner
                 bannerHeading={bannerHeading}
                 bannerParagraph={bannerParagraph}
                 bannerPhoto={urlFor(bannerPhoto).auto('format')}
-            />
+            /> */}
             <Examples
                 example1Heading={example1Heading}
                 example1BackgroundPhoto={urlFor(example1BackgroundPhoto).auto('format')}
