@@ -244,6 +244,21 @@ export default {
           hotspot: true
       }
     },
+    {
+      name: 'locationHeading',
+      title: 'Location Heading',
+      type: 'string'
+    },
+    {
+      name: 'locationParagraph1',
+      title: 'Location Paragraph 1',
+      type: 'string'
+    },
+    {
+      name: 'locationParagraph2',
+      title: 'Location Paragraph 2',
+      type: 'string'
+    },
   ],
 
   preview: {

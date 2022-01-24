@@ -8,7 +8,11 @@ import { Container, Flex } from './Containers'
 import { Line } from './Lines'
 import { H3, P5 } from './Typography'
 
-const Location = () => {
+const Location = ({
+  locationHeading,
+  locationParagraph1,
+  locationParagraph2,
+}) => {
   return (
     <Container>
       <Box3 marginTop={50} marginBottom={50}>
@@ -22,7 +26,7 @@ const Location = () => {
               </SVG>
               <Box3 marginTop={50}>
                 <H3 center uppercase>
-                  Located in Pittsburgh, PA
+                  {locationHeading}
                 </H3>
               </Box3>
             </Flex>
@@ -32,12 +36,12 @@ const Location = () => {
               </Box3>
             </Fade>
               <P5 style={{ textAlign: 'left' }} center>
-                We&#39;re located at 5819 Penn Ave in East Liberty
+                {locationParagraph1}
               </P5>
             <Fade delay={200} bottom ssrFadeout>
               <Box3 marginTop={25}>
                 <P5 style={{ textAlign: 'left' }} center>
-                  Pittsburgh may be our hometown, but we travel across the United States and Canada
+                  {locationParagraph2}
                 </P5>
               </Box3>
             </Fade>

@@ -57,6 +57,9 @@ const index = ({
   servicesList2Item5,
   servicesList2Item6,
   servicesPhoto2,
+  locationHeading,
+  locationParagraph1,
+  locationParagraph2,
 }) => {
   const [modalOpen, setModalOpen] = useState(false)
 
@@ -118,7 +121,11 @@ const index = ({
         contactHeading={'Contact Us'}
         contactParagraph={'We can help bring your next project to life'}
       />
-      <Map />
+      <Map
+        locationHeading={locationHeading}
+        locationParagraph1={locationParagraph1}
+        locationParagraph2={locationParagraph2}
+      />
       <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
         <StyledIFrame src="https://player.vimeo.com/video/486986897?h=dbf0d01a15&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
       </Modal>
@@ -171,6 +178,9 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
   servicesList2Item5,
   servicesList2Item6,
   servicesPhoto2,
+  locationHeading,
+  locationParagraph1,
+  locationParagraph2,
 }`
 
 index.getInitialProps = async function () {
