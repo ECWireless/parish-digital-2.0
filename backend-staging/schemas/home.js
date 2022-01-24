@@ -119,6 +119,38 @@ export default {
         }
     },
     {
+        name: 'trustedLogo7',
+        title: 'Trusted Logo 7',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'trustedLogo8',
+        title: 'Trusted Logo 8',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'trustedLogo9',
+        title: 'Trusted Logo 9',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'trustedLogo10',
+        title: 'Trusted Logo 10',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
         name: 'examplesLink1',
         title: 'Examples Link 1',
         type: 'string'

@@ -22,12 +22,16 @@ const Description = ({
   trustedLogo4,
   trustedLogo5,
   trustedLogo6,
+  trustedLogo7,
+  trustedLogo8,
+  trustedLogo9,
+  trustedLogo10,
 }) => {
   return (
     <Box3 marginBottom={50}>
       <Fade bottom ssrFadeout>
         <Card3>
-          <Flex justify={'space-between'} respondFlip>
+          <Flex respondFlip>
             <StyledPhoto style={{ backgroundImage: `url(${descriptionPhoto})`}} />
             <Flex align={'center'} justify={'flex-start'} direction={'column'}>
               <StyledTextContainer>
@@ -71,18 +75,16 @@ const Description = ({
         </StyledTrustedHeading>
         <StyledLogoContainer>
           <StyledLogoContainerInner>
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo1})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo2})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo3})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo4})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo5})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo6})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo1})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo2})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo3})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo4})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo5})`}} />
-            <TrustedLogo style={{backgroundImage: `url(${trustedLogo6})`}} />
+            {trustedLogo1 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo1})`}} />}
+            {trustedLogo2 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo2})`}} />}
+            {trustedLogo3 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo3})`}} />}
+            {trustedLogo4 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo4})`}} />}
+            {trustedLogo5 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo5})`}} />}
+            {trustedLogo6 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo6})`}} />}
+            {trustedLogo7 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo7})`}} />}
+            {trustedLogo8 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo8})`}} />}
+            {trustedLogo9 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo9})`}} />}
+            {trustedLogo10 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo10})`}} />}
           </StyledLogoContainerInner>
         </StyledLogoContainer>
       </TrustedBackground>
@@ -141,18 +143,16 @@ const Logo = styled.div`
 const TrustedBackground = styled.div`
   background: ${colors.brown};
   width: 100%;
-  height: 1050px;
+  maxHeight: 1010px;
+  padding: 0 0 40px 0;
 
   ${respondTo.sm`
-    height: 500px;
+    maxHeight: 460px;
   `}
 
   ${respondTo.lg`
     height: 200px;
-  `}
-
-  ${respondTo.xl`
-    height: 200px;
+    padding: 0
   `}
 `
 
