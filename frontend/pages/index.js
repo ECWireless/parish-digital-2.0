@@ -73,7 +73,6 @@ const index = ({
         <title>{pageTitle}</title>
       </Head>
       <Hero
-        heroDemoReelLink={heroDemoReelLink}
         heroHeading={heroHeading}
         heroSubheading={heroSubheading}
         heroSubheading2={heroSubheading2}
@@ -135,7 +134,7 @@ const index = ({
         locationParagraph2={locationParagraph2}
       />
       <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-        <StyledIFrame src="https://player.vimeo.com/video/486986897?h=dbf0d01a15&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+        <StyledIFrame src={`https://player.vimeo.com/video/${heroDemoReelLink}?h=dbf0d01a15&title=0&byline=0&portrait=0`} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
       </Modal>
     </>
   )
