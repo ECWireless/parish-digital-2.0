@@ -9,7 +9,6 @@ import { Flex } from '../Containers'
 // import { CustomLink } from '../Links'
 
 const Hero = ({
-  // heroDemoReelLink,
   heroHeading,
   heroSubheading,
   heroSubheading2,

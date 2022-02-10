@@ -24,7 +24,7 @@ export default {
     },
     {
         name: 'heroDemoReelLink',
-        title: 'Hero Demo Reel Link',
+        title: 'Hero Demo Reel Vimeo ID',
         type: 'string'
     },
     {
