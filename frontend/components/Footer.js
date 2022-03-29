@@ -88,6 +88,15 @@ const Footer = () => {
 					<BigLogos>
 						<div>
 							<CustomLink
+								href="https://www.designrush.com/agency/video-production/pennsylvania"
+								target="_blank" rel="noopener noreferrer"
+								title='Peerspace Article'
+							>
+								<BigLogoImage alt='top video production companies award' src="./logos/top-companies.png" />
+							</CustomLink>
+						</div>
+						<div>
+							<CustomLink
 								href="https://www.peerspace.com/resources/corporate-video-production-companies-pittsburgh"
 								target="_blank" rel="noopener noreferrer"
 								title='Peerspace Article'
@@ -229,7 +238,7 @@ const SmallLogo = styled.div`
 `
 
 const BigLogos = styled.div`
-	width: 20rem;
+	width: 22rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -240,12 +249,12 @@ const BigLogos = styled.div`
 `
 
 const BigLogoImage = styled.img`
-	width: 9rem;
-	height: 9rem;
+	width: 7rem;
+	height: 7rem;
 
 	${respondTo.xl`
-		width: 12rem;
-		height: 12rem;
+		width: 9rem;
+		height: 9rem;
 	`}
 `
 
