@@ -38,7 +38,7 @@ const AuthFalse = ({
     const email = elements.email.value;
     const emailEnd = email.split('@')[1];
 
-    if (emailEnd === 'parishdigital.com' || emailEnd === 'valtechcreative.com') {
+    if (emailEnd === 'parishdigital.com' || emailEnd === 'coopallc.com') {
       const did = await new Magic(process.env.MAGIC_PUBLISHABLE_KEY)
       .auth
       .loginWithMagicLink({ email: elements.email.value })
