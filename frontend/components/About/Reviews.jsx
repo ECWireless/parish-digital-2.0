@@ -124,7 +124,11 @@ export default Reviews
 const ReviewsBackground = styled.div`
   width: 100%;
   background: ${colors.brown};
-  padding: 50px 30px;
+  padding: 50px 12px;
+
+  ${respondTo.xs`
+    padding: 50px 30px;
+  `}
 
   ${respondTo.xl`
     padding: 50px;
