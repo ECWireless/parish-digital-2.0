@@ -63,7 +63,7 @@ const Crew = ({
                 </P4>
               </TextBox>
             </Fade> */}
-            <StyledCardContainer align={'center'} justify={'space-between'} respond>
+            <StyledCardContainer align={'center'} respond>
               <Fade delay={200} bottom ssrFadeout>
                 <Box3 marginTop={50}>
                 <TeamCard
@@ -182,6 +182,8 @@ const TeamCard = ({
 
 const StyledCardContainer = styled(Flex)`
   flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
   width: 100%;
 
   ${respondTo.sm`
@@ -189,12 +191,12 @@ const StyledCardContainer = styled(Flex)`
   `}
 `;
 
-const TextBox = styled.div`
-  ${respondTo.lg`
-    margin-bottom: 40px;
-    width: 1200px;
-  `}
-`
+// const TextBox = styled.div`
+//   ${respondTo.lg`
+//     margin-bottom: 40px;
+//     width: 1200px;
+//   `}
+// `
 
 const TeamPhoto = styled.div`
   width: 25rem;
