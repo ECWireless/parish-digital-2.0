@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
 				<meta name="theme-color" content="#000000" />
 				<meta
 					name="description"
-					content="Pittsburgh video production company with a focus on video for business. Our team is experienced in producing successful video projects for companies."
+					content="We're a Pittsburgh video production company that provides video and creative services for small businesses, large corporations, and advertising agencies."
 				/>
 				<meta property="og:title" content="PD Video | Pittsburgh Video Production Company" />
 				<meta property="og:description" content="Pittsburgh video production company with a focus on video for business. Our team is experienced in producing successful video projects for companies." />

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "EC Wireless <Elliott@ValtechCreative.com>",
+  "author": "EC Wireless <Elliott@coopallc.com>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
