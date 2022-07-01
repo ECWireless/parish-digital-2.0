@@ -231,16 +231,21 @@ const StyledContentContainer = styled.div`
 `;
 
 const VideoContainer = styled.div`
-  width: 30rem;
-  height: 17rem;
+  width: 26rem;
+  height: 15rem;
   margin: 0 auto 40px;
 
   ${respondTo.xs`
-    width: 40rem;
-    height: 23rem;
+    width: 36rem;
+    height: 21rem;
   `}
 
   ${respondTo.sm`
+    width: 50rem;
+    height: 29rem;
+  `}
+
+  ${respondTo.md`
     width: 59rem;
     height: 34rem;
   `}
