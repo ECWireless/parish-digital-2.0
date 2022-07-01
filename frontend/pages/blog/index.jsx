@@ -43,7 +43,7 @@ const Blog = ({
 
   return (
     <Container>
-      <Box3 marginTop={75} marginBottom={75}>
+      <Box3 marginTop={75} marginBottom={50}>
         <Flex align={'center'} justify={'space-between'}>
           <Fade ssrFadeout>
             <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
@@ -146,7 +146,7 @@ const SearchLabel = styled.label`
   border-radius: 50px;
   display: flex;
   gap: 12px;
-  margin: 0 auto 20px;
+  margin: 0 auto 32px;
   padding: 0 12px;
   width: 300px;
 

@@ -30,6 +30,9 @@ const Footer = () => {
 							<Link href="/about">
 								<ParagraphLink>about</ParagraphLink>
 							</Link>
+							<Link href="/blog">
+								<ParagraphLink>blog</ParagraphLink>
+							</Link>
 							<Link href="/contact">
 								<ParagraphLink>contact</ParagraphLink>
 							</Link>
