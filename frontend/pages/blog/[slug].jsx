@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 import respondTo from 'components/Breakpoints'
 import { Container, Flex } from 'components/Containers';
-import { H3, P4 } from 'components/Typography'
+import { H3, P4, P5 } from 'components/Typography'
 
 function urlFor (source) {
   return imageUrlBuilder(client).image(source)
@@ -39,6 +39,7 @@ const Post = ({post}) => {
     // categories,
     authorImage,
     mainImage,
+    publishedAt,
     body = []
   } = post
   return (
@@ -59,23 +60,33 @@ const Post = ({post}) => {
               alt={`${title} cover photo`}
             />
           )}
-          <Flex direction={'column'} p={'0px 40px'}>
-            <H3>{title}</H3>
-            <Flex align={'center'} gap={'8px'} mt={'20px'}>
-              {authorImage && (
-                <StyledAuthorImage
-                  src={urlFor(authorImage).url()}
-                  alt={`${name}'s picture`}
-                />
-              )}
-              <P4>By {name}</P4>
-            </Flex>
-            {/* {categories && (
-              <ul>
-                Posted in
-                {categories.map(category => <li key={category}>{category}</li>)}
-              </ul>
-            )} */}
+          <Flex justify={'center'} width={'100%'}>
+            <div>
+              <H3>{title}</H3>
+              <Flex mt={'8px'}>
+                <P5>Published on {new Date(publishedAt).toLocaleDateString(undefined, {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </P5>
+              </Flex>
+              <Flex align={'center'} gap={'8px'} mt={'20px'} mb={'8px'}>
+                {authorImage && (
+                  <StyledAuthorImage
+                    src={urlFor(authorImage).url()}
+                    alt={`${name}'s picture`}
+                  />
+                )}
+                <P4>By {name}</P4>
+              </Flex>
+              {/* {categories && (
+                <ul>
+                  Posted in
+                  {categories.map(category => <li key={category}>{category}</li>)}
+                </ul>
+              )} */}
+            </div>
           </Flex>
         </Flex>
         <StyledContentBackground>
@@ -97,6 +108,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  publishedAt,
   body
 }`
 export async function getStaticPaths() {
