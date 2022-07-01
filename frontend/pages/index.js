@@ -4,16 +4,16 @@ import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import Head from 'next/head'
 
-import client from '../client'
+import client from 'client'
 
-import Hero from '../components/Home/Hero'
-import Description from '../components/Home/Description'
-import Examples from '../components/Home/Examples'
-import Services from '../components/Home/Services'
-import ContactForm from '../components/Contact/ContactForm'
-import Map from '../components/Map'
-import Modal from '../components/Modal'
-import respondTo from '../components/Breakpoints'
+import Hero from 'components/Home/Hero'
+import Description from 'components/Home/Description'
+import Examples from 'components/Home/Examples'
+import Services from 'components/Home/Services'
+import ContactForm from 'components/Contact/ContactForm'
+import Map from 'components/Map'
+import Modal from 'components/Modal'
+import respondTo from 'components/Breakpoints'
 
 const Index = ({
   pageTitle,
@@ -194,8 +194,9 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
   locationParagraph2,
 }`
 
-Index.getInitialProps = async function () {
-  return await client.fetch(query)
+export async function getStaticProps() {
+  const props = await client.fetch(query)
+  return { props }
 }
 
 export default Index;

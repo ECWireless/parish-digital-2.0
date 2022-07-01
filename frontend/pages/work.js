@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import groq from 'groq'
-import client from '../client'
+import client from 'client'
 
-import Examples from '../components/Work/Examples'
+import Examples from 'components/Work/Examples'
 
 const Work = ({
   heading,
@@ -62,8 +62,9 @@ const query = groq`*[_type == "work" && slug.current == "v1"][0]{
     example12Link,
 }`
 
-Work.getInitialProps = async function () {
-  return await client.fetch(query)
+export async function getStaticProps() {
+  const props = await client.fetch(query)
+  return { props }
 }
 
 export default Work

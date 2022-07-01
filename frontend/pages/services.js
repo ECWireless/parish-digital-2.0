@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
-import client from '../client'
+import client from 'client'
 
-import Description from '../components/Service/Description'
-// import Reviews from '../components/Service/Reviews'
-import Services from '../components/Service/Services'
-import ContactForm from '../components/Contact/ContactForm'
+import Description from 'components/Service/Description'
+// import Reviews from 'components/Service/Reviews'
+import Services from 'components/Service/Services'
+import ContactForm from 'components/Contact/ContactForm'
 
 const Service = ({
   heading,
@@ -156,8 +156,9 @@ const query = groq`*[_type == "service" && slug.current == "v1"][0]{
   servicesPhoto2,
 }`
 
-Service.getInitialProps = async function () {
-  return await client.fetch(query)
+export async function getStaticProps() {
+  const props = await client.fetch(query)
+  return { props }
 }
 
 export default Service

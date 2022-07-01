@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import groq from 'groq'
-import client from '../client'
+import client from 'client'
 
 // import Banner from '../components/Contact/Banner'
-import ContactFormNew from '../components/Contact/ContactFormNew'
+import ContactFormNew from 'components/Contact/ContactFormNew'
 
 const Contact = ({
   // bannerHeading,
@@ -41,8 +41,9 @@ const query = groq`*[_type == "contact" && slug.current == "v1"][0]{
   ownerEmail,
 }`
 
-Contact.getInitialProps = async function () {
-  return await client.fetch(query)
+export async function getStaticProps() {
+  const props = await client.fetch(query)
+  return { props }
 }
 
 export default Contact
