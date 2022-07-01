@@ -15,7 +15,7 @@ import Map from '../components/Map'
 import Modal from '../components/Modal'
 import respondTo from '../components/Breakpoints'
 
-const index = ({
+const Index = ({
   pageTitle,
   heroDemoReelLink,
   heroHeading,
@@ -194,11 +194,11 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
   locationParagraph2,
 }`
 
-index.getInitialProps = async function () {
+Index.getInitialProps = async function () {
   return await client.fetch(query)
 }
 
-export default index;
+export default Index;
 
 const StyledIFrame = styled.iframe`
   width: 256px;

@@ -8,7 +8,7 @@ import Story from '../components/About/Story'
 import Reviews from '../components/About/Reviews'
 import Crew from '../components/About/Crew'
 
-const about = ({
+const About = ({
   // bannerHeading,
   // bannerParagraph,
   storyHeading,
@@ -193,8 +193,8 @@ const query = groq`*[_type == "about" && slug.current == "v1"][0]{
   crew6Photo,
 }`
 
-about.getInitialProps = async function () {
+About.getInitialProps = async function () {
   return await client.fetch(query)
 }
 
-export default about
+export default About

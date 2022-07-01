@@ -5,7 +5,7 @@ import client from '../client'
 // import Banner from '../components/Contact/Banner'
 import ContactFormNew from '../components/Contact/ContactFormNew'
 
-const contact = ({
+const Contact = ({
   // bannerHeading,
   // bannerParagraph,
   // ownerNumber,
@@ -41,8 +41,8 @@ const query = groq`*[_type == "contact" && slug.current == "v1"][0]{
   ownerEmail,
 }`
 
-contact.getInitialProps = async function () {
+Contact.getInitialProps = async function () {
   return await client.fetch(query)
 }
 
-export default contact
+export default Contact

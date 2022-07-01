@@ -6,7 +6,7 @@ import client from '../client'
 // import Banner from '../components/Gear/Banner'
 import Examples from '../components/Gear/Examples'
 
-const gear = ({
+const Gear = ({
     // bannerHeading,
     // bannerParagraph,
     // bannerPhoto,
@@ -169,8 +169,8 @@ const query = groq`*[_type == "gear" && slug.current == "v1"][0]{
     example4Item8,
 }`
 
-gear.getInitialProps = async function () {
+Gear.getInitialProps = async function () {
     return await client.fetch(query)
 }
 
-export default gear
+export default Gear

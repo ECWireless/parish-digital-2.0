@@ -1,11 +1,12 @@
 import groq from 'groq'
 import Link from 'next/link'
+import { Container } from 'components/Containers';
 
-import client from '../../client'
+import client from 'client'
 
 const Blog = ({posts}) => {
   return (
-    <div>
+    <Container>
       <h1>Welcome to the blog!</h1>
       {posts.length > 0 && posts.map(
         ({ _id, title = '', slug = '', publishedAt = '' }) =>
@@ -18,7 +19,7 @@ const Blog = ({posts}) => {
             </li>
           )
       )}
-    </div>
+    </Container>
   )
 }
 

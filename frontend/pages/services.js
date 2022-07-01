@@ -8,7 +8,7 @@ import Description from '../components/Service/Description'
 import Services from '../components/Service/Services'
 import ContactForm from '../components/Contact/ContactForm'
 
-const service = ({
+const Service = ({
   heading,
   subheading,
   descriptionHeading,
@@ -156,8 +156,8 @@ const query = groq`*[_type == "service" && slug.current == "v1"][0]{
   servicesPhoto2,
 }`
 
-service.getInitialProps = async function () {
+Service.getInitialProps = async function () {
   return await client.fetch(query)
 }
 
-export default service
+export default Service

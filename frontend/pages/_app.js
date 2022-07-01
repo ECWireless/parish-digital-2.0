@@ -62,15 +62,15 @@ export default function App({ Component, pageProps }) {
 }
 
 const Layout = ({ children, setSidebar, sidebar }) => {
-    return(
-        <div>
-            <Navigation setSidebar={setSidebar} />
+	return(
+		<div>
+			<Navigation setSidebar={setSidebar} />
 			<Backdrop onClick={() => setSidebar(false)} open={sidebar} />
 			<Sidebar sidebar={sidebar} setSidebar={setSidebar} />
-            {children}
+				{children}
 			<Footer />
-        </div>
-    )
+		</div>
+	)
 }
 
 const Backdrop = styled.div`
