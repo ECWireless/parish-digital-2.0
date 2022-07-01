@@ -60,28 +60,28 @@ const Footer = () => {
 							target="_blank" rel="noopener noreferrer"
 							title="Vimeo Page"
 						>
-							<SmallLogo style={{backgroundImage: `url(./logos/vimeo-icon.png)`}} />
+							<SmallLogo style={{backgroundImage: `url(/logos/vimeo-icon.png)`}} />
 						</CustomLink>
 						<CustomLink
 							href="https://www.linkedin.com/company/parish-digital-video/"
 							target="_blank" rel="noopener noreferrer"
 							title="Twitter Page"
 						>
-							<SmallLogo style={{backgroundImage: `url(./logos/linkedin.png)`}} />
+							<SmallLogo style={{backgroundImage: `url(/logos/linkedin.png)`}} />
 						</CustomLink>
 						<CustomLink
 							href="https://www.facebook.com/Parish-Digital-Video-Productions-270923643761"
 							target="_blank" rel="noopener noreferrer"
 							title="Facebook Page"
 						>
-							<SmallLogo style={{backgroundImage: `url(./logos/facebook.png)`}} />
+							<SmallLogo style={{backgroundImage: `url(/logos/facebook.png)`}} />
 						</CustomLink>
 						<CustomLink
 							href="https://www.youtube.com/channel/UCTqzflm7Z0JHZwmHI_MorGw"
 							target="_blank" rel="noopener noreferrer"
 							title="YouTube Page"
 						>
-							<SmallLogo style={{backgroundImage: `url(./logos/youtube.png)`}} />
+							<SmallLogo style={{backgroundImage: `url(/logos/youtube.png)`}} />
 						</CustomLink>
 					</SmallLogos>
 
@@ -92,7 +92,7 @@ const Footer = () => {
 								target="_blank" rel="noopener noreferrer"
 								title='Peerspace Article'
 							>
-								<BigLogoImage alt='top video production companies award' src="./logos/top-companies.png" />
+								<BigLogoImage alt='top video production companies award' src="/logos/top-companies.png" />
 							</CustomLink>
 						</div>
 						<div>
@@ -101,7 +101,7 @@ const Footer = () => {
 								target="_blank" rel="noopener noreferrer"
 								title='Peerspace Article'
 							>
-								<BigLogoImage alt='peerspace award' src="./logos/best-corporate.png" />
+								<BigLogoImage alt='peerspace award' src="/logos/best-corporate.png" />
 							</CustomLink>
 						</div>
 						<div>

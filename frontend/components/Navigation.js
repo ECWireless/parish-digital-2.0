@@ -29,7 +29,7 @@ const Navigation = ({ setSidebar }) => {
                 </SandWhichContainer>
                 <Link href="/">
                     <Flex align={'center'} justify={'space-around'} direction={'column'}>
-                        <PDLogo style={{ backgroundImage: 'url(./logos/pd_logo.png)'}} />
+                        <PDLogo style={{ backgroundImage: 'url(/logos/pd_logo.png)'}} />
                         <Box1 marginTop={5}>
                             <LogoCaption>Parish Digital</LogoCaption>
                         </Box1>
