@@ -1,5 +1,4 @@
 import groq from 'groq'
-import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import styled from 'styled-components';
 import client from 'client'
@@ -7,13 +6,11 @@ import { colors, shadows } from 'components/theme';
 import Image from 'next/image';
 import Link from 'next/link'
 
+import { urlFor } from 'lib/helpers';
+
 import respondTo from 'components/Breakpoints'
 import { Container, Flex } from 'components/Containers';
 import { H3, P4, P5 } from 'components/Typography'
-
-function urlFor (source) {
-  return imageUrlBuilder(client).image(source)
-}
 
 const ptComponents = {
   types: {
@@ -62,7 +59,7 @@ const Post = ({post}) => {
               alt={`${title} cover photo`}
             />
           )}
-          <Flex justify={'center'} width={'100%'}>
+          <Flex justify={'center'} width={'100%'} p={'20px'}>
             <div>
               <H3>{title}</H3>
               <Flex mt={'8px'}>
@@ -171,14 +168,14 @@ const StyledCoverPhoto = styled.img`
   height: 300px;
   margin-top: 20px;
   object-fit: cover;
-  width: 100%;
+  min-width: 100%;
 
   ${respondTo.sm`
     margin-top: 40px;
   `}
 
   ${respondTo.lg`
-    width: 50%;
+    min-width: 50%;
   `}
 
   ${respondTo.xl`

@@ -33,18 +33,18 @@ const Services = ({
 	return (
 		<StyledContainer>
 			<Box3 marginTop={75} marginBottom={75}>
-					<Flex align={'center'} justify={'space-between'}>
-						<Fade ssrFadeout>
-							<CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
-						</Fade>
-						<H2 uppercase center>
-							{servicesHeading}
-						</H2>
-						<Fade ssrFadeout>
-							<CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
-						</Fade>
-					</Flex>
-				</Box3>
+				<Flex align={'center'} justify={'space-between'}>
+					<Fade ssrFadeout>
+						<CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+					</Fade>
+					<H2 uppercase center>
+						{servicesHeading}
+					</H2>
+					<Fade ssrFadeout>
+						<CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+					</Fade>
+				</Flex>
+			</Box3>
 				<Flex respond>
 					<ServicesPhoto style={{backgroundImage: `url(${servicesPhoto1})` }} />
 					<Flex direction={'column'} justify={'center'}>

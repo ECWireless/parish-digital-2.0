@@ -1,24 +1,45 @@
 import groq from 'groq'
+import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
-import { Container } from 'components/Containers';
-
 import client from 'client'
+import styled, { css } from 'styled-components'
 
-const Blog = ({posts}) => {
+import { shortenString, urlFor } from 'lib/helpers';
+
+import { Box3 } from 'components/Boxes'
+import respondTo from 'components/Breakpoints'
+import { Card1 } from 'components/Cards'
+import { Container, Flex } from 'components/Containers';
+import { Line } from 'components/Lines'
+import { colors } from 'components/theme'
+import { H2, H4, P6 } from 'components/Typography'
+
+const Blog = ({
+  posts
+}) => {
   return (
     <Container>
-      <h1>Welcome to the blog!</h1>
-      {posts.length > 0 && posts.map(
-        ({ _id, title = '', slug = '', publishedAt = '' }) =>
-          slug && (
-            <li key={_id}>
-              <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
-                <a>{title}</a>
-              </Link>{' '}
-              ({new Date(publishedAt).toDateString()})
-            </li>
-          )
-      )}
+      <Box3 marginTop={75} marginBottom={75}>
+        <Flex align={'center'} justify={'space-between'}>
+          <Fade ssrFadeout>
+            <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+          </Fade>
+          <H2 uppercase center>
+            BLOG
+          </H2>
+          <Fade ssrFadeout>
+            <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+          </Fade>
+        </Flex>
+      </Box3>
+      <StyledArticlesContainer>
+        {posts.length > 0 && posts.map(
+          ({ _id, slug, ...rest }) =>
+            slug && (
+              <ArticleCard key={_id} post={rest} slug={slug} />
+            )
+        )}
+      </StyledArticlesContainer>
     </Container>
   )
 }
@@ -34,4 +55,105 @@ export async function getStaticProps() {
   }
 }
 
-export default Blog
+export default Blog;
+
+const CustomLine =  styled(Line)`
+	border-radius: 5px;
+    
+	${props => props.width && css`
+		width: ${props.width * .25}px;
+
+		${respondTo.sm`
+      width: ${props.width * .5}px;
+		`}
+
+		${respondTo.md`
+      width: ${props.width * .6}px;
+		`}
+
+		${respondTo.lg`
+      width: ${props.width}px;
+		`}
+
+		${respondTo.xl`
+      width: ${props.width * 1.8}px;
+		`}
+	`}
+`;
+
+const StyledArticlesContainer = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 100px;
+
+  ${respondTo.md`
+    justify-content: flex-start;
+  `}
+`;
+
+const StyledBlogCard = styled(Card1)`
+  height: 328px;
+  padding: 0;
+  transition: all 0.3s ease;
+  width: 290px;
+
+  ${respondTo.xs`
+    width: 385px;
+  `}
+
+  ${respondTo.xl`
+    width: 435px;
+  `}
+
+  &:hover {
+    box-shadow: 5px 3px 25px -3px rgba(0,0,0,.1);
+  }
+`;
+
+const ArticleCard = ({
+  post,
+  slug,
+}) => {
+  const { title = '', publishedAt = '', mainImage = '' } = post;
+
+  return (
+    <li>
+      <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
+        <a style={{ textDecoration: 'none' }}>
+          <StyledBlogCard>
+            {mainImage && (
+              <StyledCoverPhoto
+                src={urlFor(mainImage).url()}
+                alt={`${title} cover photo`}
+              />
+            )}
+            <StyledDetailsContainer>
+              <H4 color={colors.black}>{shortenString(title, 50)}</H4>
+              <P6 color={colors.black}>
+                Published on {new Date(publishedAt).toLocaleDateString(undefined, {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </P6>
+            </StyledDetailsContainer>
+          </StyledBlogCard>
+        </a>
+      </Link>
+    </li>
+  )
+}
+
+const StyledCoverPhoto = styled.img`
+  height: 200px;
+  width: 100%;
+`;
+
+const StyledDetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+`;
