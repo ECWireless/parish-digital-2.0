@@ -22,10 +22,10 @@ const ptComponents = {
         return null
       }
       return (
-        <img
+        <StyledContentImage
           alt={value.alt || ' '}
           loading="lazy"
-          src={urlFor(value).width(320).height(240).fit('max').auto('format')}
+          src={urlFor(value).auto('format')}
         />
       )
     }
@@ -52,7 +52,7 @@ const Post = ({post}) => {
             </StyledLink>
           </Link>
         </Flex>
-        <Flex align={'center'} mt={'12px'}>
+        <Flex align={'center'} mt={'12px'} respondFlip>
           {mainImage && (
             <StyledCoverPhoto
               src={urlFor(mainImage).url()}
@@ -140,8 +140,21 @@ const StyledLink = styled.a`
 
 const StyledCoverPhoto = styled.img`
   height: 300px;
+  margin-top: 20px;
   object-fit: cover;
-  width: 50%;
+  width: 100%;
+
+  ${respondTo.sm`
+    margin-top: 40px;
+  `}
+
+  ${respondTo.lg`
+    width: 50%;
+  `}
+
+  ${respondTo.xl`
+    height: 400px;
+  `}
 `;
 
 const StyledAuthorImage = styled.img`
@@ -149,9 +162,17 @@ const StyledAuthorImage = styled.img`
   width: 30px;
 `;
 
+const StyledContentImage = styled.img`
+  width: 100%;
+`;
+
 
 const StyledContentBackground = styled.div`
-  background: rgba(167, 176, 188, 0.2);
+  background: transparent;
+
+  ${respondTo.lg`
+    background: rgba(167, 176, 188, 0.2);
+  `}
 `;
 
 const StyledContentContainer = styled.div`
@@ -160,20 +181,23 @@ const StyledContentContainer = styled.div`
   line-height: 20px;
   letter-spacing: .5px;
   margin: 40px auto;
-  padding: 40px;
-  width: 800px;
+  padding: 20px;
+  width: 100%;
 
   ${respondTo.sm`
     font-size: 1.5rem;
+    padding: 40px;
   `}
 
   ${respondTo.md`
     font-size: 1.6rem;
+    width: 800px;
   `}
 
   ${respondTo.xl`
     font-size: 2.2rem;
     line-height: 25px;
+    width: 1200px;
   `}
 `;
 
