@@ -3,6 +3,7 @@ import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
 import client from 'client'
 import styled, { css } from 'styled-components'
+import Image from 'next/image';
 
 import { shortenString, urlFor } from 'lib/helpers';
 
@@ -32,6 +33,10 @@ const Blog = ({
           </Fade>
         </Flex>
       </Box3>
+      <SearchLabel htmlFor={'search'}>
+        <Image src="/icons/search.svg" height={16} width={16} />
+        <input type={'text'} id={'search'} placeholder="Search" />
+      </SearchLabel>
       <StyledArticlesContainer>
         {posts.length > 0 && posts.map(
           ({ _id, slug, ...rest }) =>
@@ -109,6 +114,25 @@ const StyledBlogCard = styled(Card1)`
 
   &:hover {
     box-shadow: 5px 3px 25px -3px rgba(0,0,0,.1);
+  }
+`;
+
+const SearchLabel = styled.label`
+  align-items: center;
+  border: 1px solid ${colors.black};
+  border-radius: 50px;
+  display: flex;
+  gap: 12px;
+  margin: 0 auto 20px;
+  padding: 0 12px;
+  width: 300px;
+
+  input {
+    background: transparent;
+    border: none;
+    height: 40px;
+    outline: none;
+    width: 240px;
   }
 `;
 
