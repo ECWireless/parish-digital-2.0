@@ -3,7 +3,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import { PortableText } from '@portabletext/react'
 import styled from 'styled-components';
 import client from 'client'
-import { colors } from 'components/theme';
+import { colors, shadows } from 'components/theme';
 import Image from 'next/image';
 import Link from 'next/link'
 
@@ -40,7 +40,9 @@ const Post = ({post}) => {
     authorImage,
     mainImage,
     publishedAt,
-    body = []
+    topOfPageVideo,
+    body = [],
+    bottomOfPageVideo,
   } = post
   return (
     <article>
@@ -91,12 +93,25 @@ const Post = ({post}) => {
         </Flex>
         <StyledContentBackground>
           <StyledContentContainer>
+            {topOfPageVideo && <VideoContainer>
+              <Video
+                src={topOfPageVideo}
+                frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+              />
+            </VideoContainer>}
             <PortableText
               value={body}
               components={ptComponents}
             />
+
+            {bottomOfPageVideo && <VideoContainer>
+              <Video
+                src={bottomOfPageVideo}
+                frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+              />
+            </VideoContainer>}
           </StyledContentContainer>
-          </StyledContentBackground>
+        </StyledContentBackground>
       </Container>
     </article>
   )
@@ -109,7 +124,9 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "categories": categories[]->title,
   "authorImage": author->image,
   publishedAt,
-  body
+  topOfPageVideo,
+  body,
+  bottomOfPageVideo
 }`
 export async function getStaticPaths() {
   const paths = await client.fetch(
@@ -212,4 +229,31 @@ const StyledContentContainer = styled.div`
     width: 1200px;
   `}
 `;
+
+const VideoContainer = styled.div`
+  width: 30rem;
+  height: 17rem;
+  margin: 0 auto 40px;
+
+  ${respondTo.xs`
+    width: 40rem;
+    height: 23rem;
+  `}
+
+  ${respondTo.sm`
+    width: 59rem;
+    height: 34rem;
+  `}
+
+  ${respondTo.xl`
+    width: 88rem;
+    height: 50rem;
+  `}
+`
+
+const Video = styled.iframe`
+  box-shadow: ${shadows.card};
+  height: 100%;
+  width: 100%;
+`
 

@@ -196,23 +196,23 @@ const ExamplesBackground = styled.div`
 // `;
 
 const CardContainer = styled.div`
-    width: 30rem;
-    height: 17rem;
+  width: 30rem;
+  height: 17rem;
 
-    ${respondTo.xs`
-      width: 40rem;
-      height: 23rem;
-    `}
+  ${respondTo.xs`
+    width: 40rem;
+    height: 23rem;
+  `}
 
-    ${respondTo.sm`
-      width: 59rem;
-      height: 34rem;
-    `}
+  ${respondTo.sm`
+    width: 59rem;
+    height: 34rem;
+  `}
 
-    ${respondTo.xl`
-      width: 88rem;
-      height: 50rem;
-    `}
+  ${respondTo.xl`
+    width: 88rem;
+    height: 50rem;
+  `}
 `
 
 const ExampleVideo = styled.iframe`

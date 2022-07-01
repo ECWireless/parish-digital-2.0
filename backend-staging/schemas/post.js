@@ -43,9 +43,19 @@ export default {
       type: 'datetime',
     },
     {
+      name: 'topOfPageVideo',
+      title: 'Top of page Vimeo video (optional)',
+      type: 'string',
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    },
+    {
+      name: 'bottomOfPageVideo',
+      title: 'Bottom of page Vimeo video (optional)',
+      type: 'string',
     },
   ],
 
