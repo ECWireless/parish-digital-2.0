@@ -21,6 +21,7 @@
     "@sanity/image-url": "^0.140.19",
     "bcryptjs": "^2.4.3",
     "cookie": "^0.4.1",
+    "fuzzy-search": "^3.2.1",
     "groq": "^1.149.16",
     "jsonwebtoken": "^8.5.1",
     "magic-sdk": "^4.3.0",

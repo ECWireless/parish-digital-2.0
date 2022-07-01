@@ -1,9 +1,11 @@
 import groq from 'groq'
+import { useCallback, useState } from 'react';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
 import client from 'client'
 import styled, { css } from 'styled-components'
 import Image from 'next/image';
+import FuzzySearch from 'fuzzy-search';
 
 import { shortenString, urlFor } from 'lib/helpers';
 
@@ -18,6 +20,27 @@ import { H2, H4, P6 } from 'components/Typography'
 const Blog = ({
   posts
 }) => {
+  const [searchText, setSearchText] = useState('');
+  const [results, setResults] = useState(posts);
+
+  const onSearchChange = useCallback((e) => {
+    setSearchText(e.target.value);
+    if (e.target.value === '') {
+      setResults(posts);
+    } else {
+      const searcher = new FuzzySearch(
+        posts,
+        ['title'],
+        {
+          sort: true,
+        },
+      );
+
+      const searchResults = searcher.search(e.target.value);
+      setResults(searchResults);
+    }
+  }, [posts]);
+
   return (
     <Container>
       <Box3 marginTop={75} marginBottom={75}>
@@ -35,10 +58,10 @@ const Blog = ({
       </Box3>
       <SearchLabel htmlFor={'search'}>
         <Image src="/icons/search.svg" height={16} width={16} />
-        <input type={'text'} id={'search'} placeholder="Search" />
+        <input type={'text'} id={'search'} onChange={onSearchChange} placeholder={'Search'} value={searchText} />
       </SearchLabel>
       <StyledArticlesContainer>
-        {posts.length > 0 && posts.map(
+        {results.length > 0 && results.map(
           ({ _id, slug, ...rest }) =>
             slug && (
               <ArticleCard key={_id} post={rest} slug={slug} />
