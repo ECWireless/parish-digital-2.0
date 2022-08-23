@@ -32,7 +32,7 @@ const Login = ({
       <Head>
         <title>Employee Page | Parish Digital Video Production</title>
       </Head>
-      {loggedIn 
+      {!loggedIn 
         ? <AuthFalse loggedIn={setLoggedIn} /> 
         : <AuthTrue
           user={user}
