@@ -81,7 +81,7 @@ const Modal = ({
             <ModalBackground open={open}>
                 <Flex align={'center'} justify={'center'}>
                     <Box3 marginTop={40}>
-                        <PDLogo style={{ backgroundImage: 'url(./logos/pd_logo.png)'}} />
+                        <PDLogo style={{ backgroundImage: 'url(/logos/pd_logo.png)'}} />
                     </Box3>
                     <CloseContainer onClick={() => setModal(false)}>
                         <p>&times;</p>

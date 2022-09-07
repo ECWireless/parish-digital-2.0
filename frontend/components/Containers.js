@@ -155,10 +155,21 @@ export const Flex = styled.div`
 
     ${props => css`
         justify-content: ${props.justify};
+        gap: ${props.gap ? props.gap : '0'};
         align-items: ${props.align};
         flex-wrap: ${props.wrap};
         flex-direction: ${props.direction};
         height: ${props.height};
+
+        margin-bottom: ${props.mb ? props.mb : '0'};
+        margin-top: ${props.mt ? props.mt : '0'};
+        padding-bottom: ${props.pb ? props.pb : '0'};
+        padding-left: ${props.pl ? props.pl : '0'};
+        padding-top: ${props.pt ? props.pt : '0'};
+        padding-right: ${props.pr ? props.pr : '0'};
+        padding: ${props.p ? props.p : '0'};
+
+        width: ${props.width ? props.width : 'auto'};
     `}
 
     ${props => props.respond && css`

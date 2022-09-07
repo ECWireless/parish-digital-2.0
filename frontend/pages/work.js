@@ -1,14 +1,10 @@
 import Head from 'next/head'
 import groq from 'groq'
-import imageUrlBuilder from '@sanity/image-url'
-import client from '../client'
+import client from 'client'
 
-import Banner from '../components/Work/Banner'
-import Feature from '../components/Work/Feature'
-import Details from '../components/Work/Details'
-import Examples from '../components/Work/Examples'
+import Examples from 'components/Work/Examples'
 
-const work = ({
+const Work = ({
   heading,
   subheading,
   example1Link,
@@ -49,10 +45,6 @@ const work = ({
   )
 }
 
-function urlFor (source) {
-    return imageUrlBuilder(client).image(source)
-}
-
 const query = groq`*[_type == "work" && slug.current == "v1"][0]{
     heading,
     subheading,
@@ -70,8 +62,9 @@ const query = groq`*[_type == "work" && slug.current == "v1"][0]{
     example12Link,
 }`
 
-work.getInitialProps = async function () {
-    return await client.fetch(query)
+export async function getStaticProps() {
+  const props = await client.fetch(query)
+  return { props }
 }
 
-export default work
+export default Work

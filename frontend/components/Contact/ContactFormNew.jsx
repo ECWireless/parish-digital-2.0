@@ -86,7 +86,7 @@ const ContactFormNew = ({
         <StyledForm onSubmit={onSubmit}>
           <StyledInnerContainer>
             <Box3 marginBottom={75}>
-              <H3 color={colors.white} center uppercase center weight={700}>
+              <H3 color={colors.white} center uppercase weight={700}>
                 {contactHeading}
               </H3>
             </Box3>

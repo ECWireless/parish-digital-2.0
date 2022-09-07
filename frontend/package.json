@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "lint": "next lint",
     "start": "next start"
   },
   "keywords": [],
@@ -14,23 +15,28 @@
   "dependencies": {
     "@hapi/iron": "^6.0.0",
     "@magic-sdk/admin": "^1.3.0",
+    "@portabletext/react": "^1.0.6",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^1.149.18",
     "@sanity/image-url": "^0.140.19",
     "bcryptjs": "^2.4.3",
     "cookie": "^0.4.1",
+    "fuzzy-search": "^3.2.1",
     "groq": "^1.149.16",
     "jsonwebtoken": "^8.5.1",
     "magic-sdk": "^4.3.0",
-    "next": "^10.0.8",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "next": "12",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-modal": "^3.14.4",
     "react-reveal": "^1.2.2",
     "styled-components": "^5.1.1",
-    "swr": "^0.5.6"
+    "swr": "^1.3.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.11.1"
+    "babel-plugin-styled-components": "^1.11.1",
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0"
   }
 }

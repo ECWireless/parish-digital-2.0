@@ -125,7 +125,7 @@ const StyledTextContainer = styled.div`
 const Logo = styled.div`
   height: 6rem;
   width: 6rem;
-  background-image: url(./logos/pd_logo.png);
+  background-image: url(/logos/pd_logo.png);
   background-position: center;
   background-size: cover;
   margin: 0 auto;

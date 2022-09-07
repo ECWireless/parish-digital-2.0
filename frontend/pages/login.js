@@ -10,7 +10,7 @@ import useAuth from '../hooks/useAuth';
 import AuthFalse from '../components/Login/AuthFalse'
 import AuthTrue from '../components/Login/AuthTrue'
 
-const login = ({
+const Login = ({
   loginBackgroundPhoto,
   loginBackgroundPhoto2,
   loginAlexSubmitHoursLink,
@@ -75,8 +75,9 @@ const query = groq`*[_type == "login" && slug.current == "v1"][0]{
   loginMariaTimesheetLink,
 }`
 
-login.getInitialProps = async function () {
-  return await client.fetch(query)
+export async function getStaticProps() {
+  const props = await client.fetch(query)
+  return { props }
 }
 
-export default login
+export default Login

@@ -1,14 +1,14 @@
 import Head from 'next/head'
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
-import client from '../client'
+import client from 'client'
 
-// import Banner from '../components/About/Banner'
-import Story from '../components/About/Story'
-import Reviews from '../components/About/Reviews'
-import Crew from '../components/About/Crew'
+// import Banner from 'components/About/Banner'
+import Story from 'components/About/Story'
+import Reviews from 'components/About/Reviews'
+import Crew from 'components/About/Crew'
 
-const about = ({
+const About = ({
   // bannerHeading,
   // bannerParagraph,
   storyHeading,
@@ -193,8 +193,9 @@ const query = groq`*[_type == "about" && slug.current == "v1"][0]{
   crew6Photo,
 }`
 
-about.getInitialProps = async function () {
-  return await client.fetch(query)
+export async function getStaticProps() {
+  const props = await client.fetch(query)
+  return { props }
 }
 
-export default about
+export default About

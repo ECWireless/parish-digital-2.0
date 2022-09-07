@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
-import client from '../client'
+import client from 'client'
 
-// import Banner from '../components/Gear/Banner'
-import Examples from '../components/Gear/Examples'
+// import Banner from 'components/Gear/Banner'
+import Examples from 'components/Gear/Examples'
 
-const gear = ({
+const Gear = ({
     // bannerHeading,
     // bannerParagraph,
     // bannerPhoto,
@@ -116,61 +116,62 @@ const gear = ({
 }
 
 function urlFor (source) {
-    return imageUrlBuilder(client).image(source)
+  return imageUrlBuilder(client).image(source)
 }
 
 const query = groq`*[_type == "gear" && slug.current == "v1"][0]{
-    bannerHeading,
-    bannerParagraph,
-    bannerPhoto,
-    example1Heading,
-    example1BackgroundPhoto,
-    example1ProductPhoto,
-    example1Item1,
-    example1Item2,
-    example1Item3,
-    example1Item4,
-    example1Item5,
-    example1Item6,
-    example1Item7,
-    example1Item8,
-    example2Heading,
-    example2BackgroundPhoto,
-    example2ProductPhoto,
-    example2Item1,
-    example2Item2,
-    example2Item3,
-    example2Item4,
-    example2Item5,
-    example2Item6,
-    example2Item7,
-    example2Item8,
-    example3Heading,
-    example3BackgroundPhoto,
-    example3ProductPhoto,
-    example3Item1,
-    example3Item2,
-    example3Item3,
-    example3Item4,
-    example3Item5,
-    example3Item6,
-    example3Item7,
-    example3Item8,
-    example4Heading,
-    example4BackgroundPhoto,
-    example4ProductPhoto,
-    example4Item1,
-    example4Item2,
-    example4Item3,
-    example4Item4,
-    example4Item5,
-    example4Item6,
-    example4Item7,
-    example4Item8,
+  bannerHeading,
+  bannerParagraph,
+  bannerPhoto,
+  example1Heading,
+  example1BackgroundPhoto,
+  example1ProductPhoto,
+  example1Item1,
+  example1Item2,
+  example1Item3,
+  example1Item4,
+  example1Item5,
+  example1Item6,
+  example1Item7,
+  example1Item8,
+  example2Heading,
+  example2BackgroundPhoto,
+  example2ProductPhoto,
+  example2Item1,
+  example2Item2,
+  example2Item3,
+  example2Item4,
+  example2Item5,
+  example2Item6,
+  example2Item7,
+  example2Item8,
+  example3Heading,
+  example3BackgroundPhoto,
+  example3ProductPhoto,
+  example3Item1,
+  example3Item2,
+  example3Item3,
+  example3Item4,
+  example3Item5,
+  example3Item6,
+  example3Item7,
+  example3Item8,
+  example4Heading,
+  example4BackgroundPhoto,
+  example4ProductPhoto,
+  example4Item1,
+  example4Item2,
+  example4Item3,
+  example4Item4,
+  example4Item5,
+  example4Item6,
+  example4Item7,
+  example4Item8,
 }`
 
-gear.getInitialProps = async function () {
-    return await client.fetch(query)
+export async function getStaticProps() {
+  const props = await client.fetch(query)
+  return { props }
 }
 
-export default gear
+export default Gear
