@@ -7,17 +7,14 @@ import respondTo from '../Breakpoints'
 import { colors } from '../theme'
 import { Box3 } from '../Boxes'
 import { Button4 } from '../Buttons'
-import { Card1 } from '../Cards'
-import { Container, Flex } from '../Containers'
+import { Flex } from '../Containers'
 import { Label, Input, TextArea } from '../Forms'
-import { H3, P4, P5 } from '../Typography'
-import { Line } from '../Lines'
+import { H3, P4 } from '../Typography'
 import Spinner from '../Spinner'
 import Snackbar from '../Snackbar'
 
 const ContactFormNew = ({
     contactHeading,
-    contactParagraph,
 }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -30,44 +27,39 @@ const ContactFormNew = ({
   function onSetEmail(e) {setEmail(e.target.value)}
   function onSetMessage(e) {setMessage(e.target.value)}
 
-  function onSubmit(e) {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true)
-    let state = {
-      name: name,
-      email: email,
-      message: message,
-    }
-    fetch('https://parish-digital-backend.herokuapp.com/contact',{
-    // fetch('http://localhost:8000/service',{
-      method: "POST",
-      body: JSON.stringify(state),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-    }).then(
-      (response) => (response.json())
-    ).then((response)=>{
-      if (response.status === 'success'){
+    try {
+      setLoading(true)
+      let state = {
+        name,
+        email,
+        message,
+      }
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(state)
+      })
+      if (res.status === 200) {
         console.log('success')
         resetForm();
         setSubmitted(true)
         setSuccess(true)
         setLoading(false)
-      } else if(response.status === 'fail'){
+      } else {
         console.log('fail')
         setSubmitted(true)
         setSuccess(false)
         setLoading(false)
       }
-    })
-    .catch(() => {
-      console.log('catch')
+    } catch (e) {
       setSubmitted(true)
       setSuccess(false)
       setLoading(false)
-    })
+    }
   }
 
   function onCloseSnackbar() {
