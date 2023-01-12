@@ -30,40 +30,6 @@ const Modal = ({
 
     function onSubmit(e) {
         e.preventDefault();
-        setLoading(true)
-        let state = {
-            name: name,
-            email: email,
-            message: message,
-        }
-        fetch('https://parish-digital-backend.herokuapp.com/service',{
-        // fetch('http://localhost:8000/service',{
-            method: "POST",
-            body: JSON.stringify(state),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-        }).then(
-            (response) => (response.json())
-        ).then((response)=>{
-            if (response.status === 'success'){
-                resetForm();
-                setModal(false)
-                setSubmitted(true)
-                setSuccess(true)
-                setLoading(false)
-            } else if(response.status === 'fail'){
-                setSubmitted(true)
-                setSuccess(false)
-                setLoading(false)
-            }
-        })
-        .catch(() => {
-            setSubmitted(true)
-            setSuccess(false)
-            setLoading(false)
-        })
     }
 
     function onCloseSnackbar() {

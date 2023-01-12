@@ -195,6 +195,7 @@ const ArticleCard = ({
 
 const StyledCoverPhoto = styled.img`
   height: 200px;
+  object-fit: cover;
   width: 100%;
 `;
 

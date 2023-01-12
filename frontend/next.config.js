@@ -1,5 +1,6 @@
 module.exports = {
   env: {
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
     SANITY_TOKEN: process.env.SANITY_TOKEN,
     BACKEND_SANITY_TOKEN: process.env.BACKEND_SANITY_TOKEN,
     JWT_SECRET: process.env.JTW_SECRET,
