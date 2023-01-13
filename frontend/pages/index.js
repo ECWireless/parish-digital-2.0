@@ -164,7 +164,7 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
   locationParagraph2,
 }`
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const props = await client.fetch(query)
   return { props }
 }

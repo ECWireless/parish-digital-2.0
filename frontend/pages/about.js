@@ -193,7 +193,7 @@ const query = groq`*[_type == "about" && slug.current == "v1"][0]{
   crew6Photo,
 }`
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const props = await client.fetch(query)
   return { props }
 }

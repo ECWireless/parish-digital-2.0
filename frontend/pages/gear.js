@@ -169,7 +169,7 @@ const query = groq`*[_type == "gear" && slug.current == "v1"][0]{
   example4Item8,
 }`
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const props = await client.fetch(query)
   return { props }
 }

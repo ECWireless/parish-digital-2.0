@@ -41,7 +41,7 @@ const query = groq`*[_type == "contact" && slug.current == "v1"][0]{
   ownerEmail,
 }`
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const props = await client.fetch(query)
   return { props }
 }

@@ -62,7 +62,7 @@ const query = groq`*[_type == "work" && slug.current == "v1"][0]{
     example12Link,
 }`
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const props = await client.fetch(query)
   return { props }
 }
