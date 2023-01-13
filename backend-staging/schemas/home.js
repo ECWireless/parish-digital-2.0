@@ -66,6 +66,60 @@ export default {
         type: 'string'
     },
     {
+      name: 'servicesPhoto1',
+      title: 'Services Photo 1',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'servicesSubheading1',
+      title: 'Services Subheading 1',
+      type: 'string'
+    },
+    {
+      name: 'servicesDescription1',
+      title: 'Services Description 1',
+      type: 'string'
+    },
+    {
+      name: 'servicesPhoto2',
+      title: 'Services Photo 2',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'servicesSubheading2',
+      title: 'Services Subheading 2',
+      type: 'string'
+    },
+    {
+      name: 'servicesDescription2',
+      title: 'Services Description 2',
+      type: 'string'
+    },
+    {
+      name: 'servicesPhoto3',
+      title: 'Services Photo 3',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'servicesSubheading3',
+      title: 'Services Subheading 3',
+      type: 'string'
+    },
+    {
+      name: 'servicesDescription3',
+      title: 'Services Description 3',
+      type: 'string'
+    },
+    {
       name: 'trustedHeading',
       title: 'Trusted Heading',
       type: 'string'
@@ -169,112 +223,6 @@ export default {
         name: 'examplesLink4',
         title: 'Examples Link 4',
         type: 'string'
-    },
-    {
-        name: 'servicesHeading',
-        title: 'Services Heading',
-        type: 'string'
-    },
-    {
-        name: 'servicesSubheading1',
-        title: 'Services Subheading 1',
-        type: 'string'
-    },
-    {
-        name: 'servicesList1Item1',
-        title: 'Services List 1 Item 1',
-        type: 'string'
-    },
-    {
-        name: 'servicesList1Item2',
-        title: 'Services List 1 Item 2',
-        type: 'string'
-    },
-    {
-        name: 'servicesList1Item3',
-        title: 'Services List 1 Item 3',
-        type: 'string'
-    },
-    {
-        name: 'servicesList1Item4',
-        title: 'Services List 1 Item 4',
-        type: 'string'
-    },
-    {
-        name: 'servicesList1Item5',
-        title: 'Services List 1 Item 5',
-        type: 'string'
-    },
-    {
-        name: 'servicesList1Item6',
-        title: 'Services List 1 Item 6',
-        type: 'string'
-    },
-    {
-        name: 'servicesList1Item7',
-        title: 'Services List 1 Item 7',
-        type: 'string'
-    },
-    {
-        name: 'servicesList1Item8',
-        title: 'Services List 1 Item 8',
-        type: 'string'
-    },
-    {
-        name: 'servicesList1Item9',
-        title: 'Services List 1 Item 9',
-        type: 'string'
-    },
-    {
-        name: 'servicesPhoto1',
-        title: 'Services Photo 1',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-    },
-    {
-        name: 'servicesSubheading2',
-        title: 'Services Subheading 2',
-        type: 'string'
-    },
-    {
-        name: 'servicesList2Item1',
-        title: 'Services List 2 Item 1',
-        type: 'string'
-    },
-    {
-        name: 'servicesList2Item2',
-        title: 'Services List 2 Item 2',
-        type: 'string'
-    },
-    {
-      name: 'servicesList2Item3',
-      title: 'Services List 2 Item 3',
-      type: 'string'
-    },
-    {
-      name: 'servicesList2Item4',
-      title: 'Services List 2 Item 4',
-      type: 'string'
-    },
-    {
-      name: 'servicesList2Item5',
-      title: 'Services List 2 Item 5',
-      type: 'string'
-    },
-    {
-      name: 'servicesList2Item6',
-      title: 'Services List 2 Item 6',
-      type: 'string'
-    },
-    {
-      name: 'servicesPhoto2',
-      title: 'Services Photo 2',
-      type: 'image',
-      options: {
-          hotspot: true
-      }
     },
     {
       name: 'locationHeading',
