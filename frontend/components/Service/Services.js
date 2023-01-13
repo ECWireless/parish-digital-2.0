@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade';
+
 import respondTo from '../Breakpoints'
 import { Flex } from '../Containers'
 import { H3, P4 } from '../Typography'
@@ -56,18 +58,19 @@ const ServicesRow = ({
             <H3 center color={'white'} style={{ fontWeight: 700}}>
               {servicesSubheading}
             </H3>
-            <P4 center color={'white'}>
-              {servicesDescription}
-            </P4>
+            <Fade delay={200} bottom ssrFadeout>
+              <P4 center color={'white'}>
+                {servicesDescription}
+              </P4>
+            </Fade>
           </StyledTextContainer>
         </StyledServicesPhotoContainer>
         <StyledVideoContainer>
           <iframe 
             width="100%" 
             src={servicesVideoLink}
-            frameborder="0" 
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
+            allowFullScreen
           />
         </StyledVideoContainer>
       </Flex>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade';
 
 import Spacer from '../Spacer'
 import { Box3 } from '../Boxes'
@@ -28,9 +29,11 @@ const Services = ({
 								{servicesSubheading1}
 							</H3>
 							<Spacer size={'sm'} />
-							<P4 center color={'white'} style={{ lineHeight: '24px'}}>
-								{servicesDescription1}
-							</P4>
+							<Fade bottom ssrFadeout>
+								<P4 center color={'white'} style={{ lineHeight: '24px'}}>
+									{servicesDescription1}
+								</P4>
+							</Fade>
 						</StyledTextContainer>
 					</StyledServicesPhotoContainer>
 					<StyledServicesPhotoContainer>
@@ -41,9 +44,11 @@ const Services = ({
 								{servicesSubheading2}
 							</H3>
 							<Spacer size={'sm'} />
-							<P4 center color={'white'} style={{ lineHeight: '24px'}}>
-								{servicesDescription2}
-							</P4>
+							<Fade delay={200} bottom ssrFadeout>
+								<P4 center color={'white'} style={{ lineHeight: '24px'}}>
+									{servicesDescription2}
+								</P4>
+							</Fade>
 						</StyledTextContainer>
 					</StyledServicesPhotoContainer>
 					<StyledServicesPhotoContainer>
@@ -54,9 +59,11 @@ const Services = ({
 								{servicesSubheading3}
 							</H3>
 							<Spacer size={'sm'} />
-							<P4 center color={'white'} style={{ lineHeight: '24px'}}>
-								{servicesDescription3}
-							</P4>
+							<Fade delay={400} bottom ssrFadeout>
+								<P4 center color={'white'} style={{ lineHeight: '24px'}}>
+									{servicesDescription3}
+								</P4>
+							</Fade>
 						</StyledTextContainer>
 					</StyledServicesPhotoContainer>
 				</Flex>
