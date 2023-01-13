@@ -341,7 +341,7 @@ export const P4 = styled.p`
 
   ${respondTo.xl`
     font-size: 2.2rem;
-    line-height: 25px;
+    line-height: 32px;
   `}
 
   ${props => props.uppercase && css`

@@ -1,13 +1,9 @@
-import Fade from 'react-reveal/Fade';
-import styled, { css } from 'styled-components'
-import respondTo from '../Breakpoints'
+import styled from 'styled-components'
 
-import { colors, shadows } from '../theme'
 import Spacer from '../Spacer'
 import { Box3 } from '../Boxes'
 import { Container, Flex } from '../Containers'
-import { H3, P1, P4 } from '../Typography'
-import { Line } from '../Lines'
+import { H3, P4 } from '../Typography'
 
 const Services = ({
   servicesPhoto1,
