@@ -8,15 +8,13 @@ import { Button5 } from '../Buttons'
 import { H3, P5 } from '../Typography'
 
 const Description = ({
-  // heading,
-  // subheading,
   descriptionPhoto,
   descriptionHeading,
   descriptionParagraph1,
   descriptionParagraph2,
 }) => {
   return (
-    <StyledContainer marginBottom={50}>
+    <StyledContainer>
       <StyledPhoto style={{ backgroundImage: `url(${descriptionPhoto})`}} />
       <Fade bottom ssrFadeout>
         <StyledTextContainer2>

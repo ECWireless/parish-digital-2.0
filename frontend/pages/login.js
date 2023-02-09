@@ -75,7 +75,7 @@ const query = groq`*[_type == "login" && slug.current == "v1"][0]{
   loginMariaTimesheetLink,
 }`
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const props = await client.fetch(query)
   return { props }
 }
