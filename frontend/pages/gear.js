@@ -169,9 +169,9 @@ const query = groq`*[_type == "gear" && slug.current == "v1"][0]{
   example4Item8,
 }`
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const props = await client.fetch(query)
-  return { props }
+  return { props, revalidate: 10 }
 }
 
 export default Gear

@@ -88,9 +88,9 @@ const query = groq`*[_type == "service" && slug.current == "v1"][0]{
   servicesVideoLink3,
 }`
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const props = await client.fetch(query)
-  return { props }
+  return { props, revalidate: 10 }
 }
 
 export default Service
