@@ -79,7 +79,8 @@ export async function getStaticProps() {
   return {
     props: {
       posts: posts.filter(p => p._id.includes('drafts.') === false),
-    }
+    },
+    revalidate: 10
   }
 }
 
