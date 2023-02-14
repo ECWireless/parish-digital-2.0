@@ -37,11 +37,6 @@ const Index = ({
   trustedLogo3,
   trustedLogo4,
   trustedLogo5,
-  trustedLogo6,
-  trustedLogo7,
-  trustedLogo8,
-  trustedLogo9,
-  trustedLogo10,
   servicesPhoto1,
   servicesSubheading1,
   servicesDescription1,
@@ -93,11 +88,6 @@ const Index = ({
         trustedLogo3={trustedLogo3 && urlFor(trustedLogo3).auto('format')}
         trustedLogo4={trustedLogo4 && urlFor(trustedLogo4).auto('format')}
         trustedLogo5={trustedLogo5 && urlFor(trustedLogo5).auto('format')}
-        trustedLogo6={trustedLogo6 && urlFor(trustedLogo6).auto('format')}
-        trustedLogo7={trustedLogo7 && urlFor(trustedLogo7).auto('format')}
-        trustedLogo8={trustedLogo8 && urlFor(trustedLogo8).auto('format')}
-        trustedLogo9={trustedLogo9 && urlFor(trustedLogo9).auto('format')}
-        trustedLogo10={trustedLogo10 && urlFor(trustedLogo10).auto('format')}
       />
       <Examples
         examplesLink1={examplesLink1}
@@ -145,11 +135,6 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
   trustedLogo3,
   trustedLogo4,
   trustedLogo5,
-  trustedLogo6,
-  trustedLogo7,
-  trustedLogo8,
-  trustedLogo9,
-  trustedLogo10,
   servicesPhoto1,
   servicesSubheading1,
   servicesDescription1,

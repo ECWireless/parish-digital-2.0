@@ -12,31 +12,19 @@ const Trusted = ({
   trustedLogo3,
   trustedLogo4,
   trustedLogo5,
-  trustedLogo6,
-  trustedLogo7,
-  trustedLogo8,
-  trustedLogo9,
-  trustedLogo10,
 }) => {
   return (
     <TrustedBackground>
       <StyledTrustedHeading center uppercase>
         {trustedHeading}
       </StyledTrustedHeading>
-      <StyledLogoContainer>
-        <StyledLogoContainerInner>
-          {trustedLogo1 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo1})`}} />}
-          {trustedLogo2 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo2})`}} />}
-          {trustedLogo3 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo3})`}} />}
-          {trustedLogo4 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo4})`}} />}
-          {trustedLogo5 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo5})`}} />}
-          {trustedLogo6 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo6})`}} />}
-          {trustedLogo7 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo7})`}} />}
-          {trustedLogo8 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo8})`}} />}
-          {trustedLogo9 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo9})`}} />}
-          {trustedLogo10 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo10})`}} />}
-        </StyledLogoContainerInner>
-      </StyledLogoContainer>
+      <StyledLogoContainerInner>
+        {trustedLogo1 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo1})`}} />}
+        {trustedLogo2 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo2})`}} />}
+        {trustedLogo3 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo3})`}} />}
+        {trustedLogo4 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo4})`}} />}
+        {trustedLogo5 && <TrustedLogo style={{backgroundImage: `url(${trustedLogo5})`}} />}
+      </StyledLogoContainerInner>
     </TrustedBackground>
   )
 }
@@ -70,37 +58,12 @@ const StyledTrustedHeading = styled.div`
   text-align: center;
 `;
 
-const StyledLogoContainer = styled.div`
-  margin: 0 auto;
-  width: 300px;
-
-  ${respondTo.xs`
-    width: 350px;
-  `}
-  
-  ${respondTo.sm`
-    width: 600px;
-  `}
-
-  ${respondTo.md`
-    width: 800px;
-  `}
-
-  ${respondTo.lg`
-    overflow-x: scroll;
-    width: 1200px;
-  `}
-
-  ${respondTo.xl`
-    width: 1800px;
-  `}
-`;
-
 const StyledLogoContainerInner = styled(Flex)`
   align-items: center;
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
 
   ${respondTo.lg`
     flex-wrap: nowrap;
