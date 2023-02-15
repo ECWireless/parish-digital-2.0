@@ -5,6 +5,7 @@ import Link from 'next/link'
 import client from 'client'
 import styled, { css } from 'styled-components'
 import Image from 'next/image';
+import Head from 'next/head';
 import FuzzySearch from 'fuzzy-search';
 
 import { shortenString, urlFor } from 'lib/helpers';
@@ -42,33 +43,38 @@ const Blog = ({
   }, [posts]);
 
   return (
-    <Container>
-      <Box3 marginTop={75} marginBottom={50}>
-        <Flex align={'center'} justify={'space-between'}>
-          <Fade ssrFadeout>
-            <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
-          </Fade>
-          <H2 uppercase center>
-            BLOG
-          </H2>
-          <Fade ssrFadeout>
-            <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
-          </Fade>
-        </Flex>
-      </Box3>
-      <SearchLabel htmlFor={'search'}>
-        <Image src="/icons/search.svg" height={16} width={16} />
-        <input type={'text'} id={'search'} onChange={onSearchChange} placeholder={'Search'} value={searchText} />
-      </SearchLabel>
-      <StyledArticlesContainer>
-        {results.length > 0 && results.map(
-          ({ _id, slug, ...rest }) =>
-            slug && (
-              <ArticleCard key={_id} post={rest} slug={slug} />
-            )
-        )}
-      </StyledArticlesContainer>
-    </Container>
+    <>
+      <Head>
+          <title>Blog | Parish Digital Video Production</title>
+      </Head>
+      <Container>
+        <Box3 marginTop={75} marginBottom={50}>
+          <Flex align={'center'} justify={'space-between'}>
+            <Fade ssrFadeout>
+              <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+            </Fade>
+            <H2 uppercase center>
+              BLOG
+            </H2>
+            <Fade ssrFadeout>
+              <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+            </Fade>
+          </Flex>
+        </Box3>
+        <SearchLabel htmlFor={'search'}>
+          <Image src="/icons/search.svg" height={16} width={16} />
+          <input type={'text'} id={'search'} onChange={onSearchChange} placeholder={'Search'} value={searchText} />
+        </SearchLabel>
+        <StyledArticlesContainer>
+          {results.length > 0 && results.map(
+            ({ _id, slug, ...rest }) =>
+              slug && (
+                <ArticleCard key={_id} post={rest} slug={slug} />
+              )
+          )}
+        </StyledArticlesContainer>
+        </Container>
+      </>
   )
 }
 
