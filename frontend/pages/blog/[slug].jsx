@@ -1,5 +1,6 @@
 import groq from 'groq'
 import { PortableText } from '@portabletext/react'
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import client from 'client'
 import { colors, shadows } from 'components/theme';
@@ -11,6 +12,7 @@ import { urlFor } from 'lib/helpers';
 import respondTo from 'components/Breakpoints'
 import { Container, Flex } from 'components/Containers';
 import { H3, P4, P5 } from 'components/Typography'
+import Spinner from 'components/Spinner';
 
 const ptComponents = {
   types: {
@@ -29,7 +31,17 @@ const ptComponents = {
   }
 }
 
-const Post = ({post}) => {
+const Post = ({ post }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return (
+      <StyledSpinnerContainer>
+        <Spinner />
+      </StyledSpinnerContainer>
+    )
+  }
+
   const {
     title = 'Missing title',
     name = 'Missing name',
@@ -41,6 +53,7 @@ const Post = ({post}) => {
     body = [],
     bottomOfPageVideo,
   } = post
+
   return (
     <article>
       <Container>
@@ -148,6 +161,14 @@ export async function getStaticProps(context) {
   }
 }
 export default Post;
+
+const StyledSpinnerContainer = styled.div`
+  align-items: center;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  width: 100%;
+`;
 
 const StyledLink = styled.a`
   align-items: center;
