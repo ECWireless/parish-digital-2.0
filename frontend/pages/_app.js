@@ -37,15 +37,15 @@ export default function App({ Component, pageProps }) {
 				/>
 				<meta property="og:title" content="PD Video | Pittsburgh Video Production Company" />
 				<meta property="og:description" content="Pittsburgh video production company with a focus on video for business. Our team is experienced in producing successful video projects for companies." />
-				<meta property="og:image" content="/pd.jpg" />
+				<meta property="og:image" content="https://parishdigital.com/pd.jpg" />
 				<meta property="og:type" content="website" />
 				<meta property="og:site_name" content="Parish Digital" />
 				<meta property="og:url" content="https://parishdigital.com/" />
 
 				<meta name="twitter:title" content="PD Video | Pittsburgh Video Production Company" />
 				<meta name="twitter:description" content="Pittsburgh video production company with a focus on video for business. Our team is experienced in producing successful video projects for companies." />
-				<meta name="twitter:card" content="/pd.jpg" />
-				<meta name="twitter:image" content="/pd.jpg" />
+				<meta name="twitter:card" content="https://parishdigital.com/pd.jpg" />
+				<meta name="twitter:image" content="https://parishdigital.com/pd.jpg" />
 				
 				<meta name="keywords" content="video, productions, pittsburgh, parish, digital, pd, studio, company" />
 				<meta name="robots" content="index, follow" />
