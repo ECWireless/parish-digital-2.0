@@ -35,6 +35,17 @@ export default function App({ Component, pageProps }) {
 					name="description"
 					content="We're a Pittsburgh video production company that provides video and creative services for small businesses, large corporations, and advertising agencies."
 				/>
+				<script type="application/ld+json">
+					{`
+						{
+							"@context": "https://schema.org",
+							"@type": "Organization",
+							"name": "Parish Digital Video Production",
+							"url": "https://parishdigital.com",
+							"logo": "https://parishdigital.com/pd.jpg"
+						}
+					`}
+				</script>
 				<meta property="og:title" content="PD Video | Pittsburgh Video Production Company" />
 				<meta property="og:description" content="Pittsburgh video production company with a focus on video for business. Our team is experienced in producing successful video projects for companies." />
 				<meta property="og:image" content="https://parishdigital.com/pd.jpg" />
