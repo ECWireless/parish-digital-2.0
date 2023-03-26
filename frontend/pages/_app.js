@@ -37,15 +37,15 @@ export default function App({ Component, pageProps }) {
 				/>
 				<meta property="og:title" content="PD Video | Pittsburgh Video Production Company" />
 				<meta property="og:description" content="Pittsburgh video production company with a focus on video for business. Our team is experienced in producing successful video projects for companies." />
-				<meta property="og:image" content="https://scontent.fapa1-1.fna.fbcdn.net/v/t1.0-9/101089589_10158442805938762_2020887214912700416_o.png?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=SDgLutCHHhAAX-yFlWP&_nc_ht=scontent.fapa1-1.fna&oh=c18cec2fd3b128d7d957682e0be196e7&oe=5F975B40" />
+				<meta property="og:image" content="/pd.jpg" />
 				<meta property="og:type" content="website" />
 				<meta property="og:site_name" content="Parish Digital" />
 				<meta property="og:url" content="https://parishdigital.com/" />
 
 				<meta name="twitter:title" content="PD Video | Pittsburgh Video Production Company" />
 				<meta name="twitter:description" content="Pittsburgh video production company with a focus on video for business. Our team is experienced in producing successful video projects for companies." />
-				<meta name="twitter:card" content="https://scontent.fapa1-1.fna.fbcdn.net/v/t1.0-9/101089589_10158442805938762_2020887214912700416_o.png?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=SDgLutCHHhAAX-yFlWP&_nc_ht=scontent.fapa1-1.fna&oh=c18cec2fd3b128d7d957682e0be196e7&oe=5F975B40" />
-				<meta name="twitter:image" content="https://scontent.fapa1-1.fna.fbcdn.net/v/t1.0-9/101089589_10158442805938762_2020887214912700416_o.png?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=SDgLutCHHhAAX-yFlWP&_nc_ht=scontent.fapa1-1.fna&oh=c18cec2fd3b128d7d957682e0be196e7&oe=5F975B40" />
+				<meta name="twitter:card" content="/pd.jpg" />
+				<meta name="twitter:image" content="/pd.jpg" />
 				
 				<meta name="keywords" content="video, productions, pittsburgh, parish, digital, pd, studio, company" />
 				<meta name="robots" content="index, follow" />
