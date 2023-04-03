@@ -67,6 +67,19 @@ export default class MyDocument extends Document {
               `}
           }>
           </script>
+          <script type="application/ld+json"
+            dangerouslySetInnerHTML={
+              {
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "Organization",
+                  "name": "Parish Digital Video Production",
+                  "url": "https://parishdigital.com",
+                  "logo": "https://parishdigital.com/pd.jpg"
+                })
+              }
+            }
+          />
         </Head>
         <body>
           <Main />
