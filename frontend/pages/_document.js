@@ -35,14 +35,14 @@ export default class MyDocument extends Document {
 				<link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" as="style" />
 				<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet" />
           {/* Google Tag */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMDL7Z97QG"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3H9CHRJWC"></script>
           <script dangerouslySetInnerHTML={
             { __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'G-ZMDL7Z97QG');
+              gtag('config', 'G-G3H9CHRJWC');
             `}
           } />
           <script type="application/ld+json"
