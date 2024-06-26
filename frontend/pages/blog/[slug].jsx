@@ -25,6 +25,8 @@ const ptComponents = {
           alt={value.alt || ' '}
           loading="lazy"
           src={urlFor(value).auto('format')}
+          height={value.asset.metadata.dimensions.height}
+          with={value.asset.metadata.dimensions.width}
         />
       )
     }
@@ -68,6 +70,8 @@ const Post = ({ post }) => {
             <StyledCoverPhoto
               src={urlFor(mainImage).url()}
               alt={`${title} cover photo`}
+              height={300}
+              width={300}
             />
           )}
           <Flex justify={'center'} width={'100%'} p={'20px'}>
@@ -86,6 +90,8 @@ const Post = ({ post }) => {
                   <StyledAuthorImage
                     src={urlFor(authorImage).url()}
                     alt={`${name}'s picture`}
+                    height={30}
+                    width={30}
                   />
                 )}
                 <P4>By {name}</P4>
@@ -193,7 +199,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const StyledCoverPhoto = styled.img`
+const StyledCoverPhoto = styled(Image)`
   height: 300px;
   margin-top: 20px;
   object-fit: cover;
@@ -212,12 +218,12 @@ const StyledCoverPhoto = styled.img`
   `}
 `;
 
-const StyledAuthorImage = styled.img`
+const StyledAuthorImage = styled(Image)`
   border-radius: 50%;
   width: 30px;
 `;
 
-const StyledContentImage = styled.img`
+const StyledContentImage = styled(Image)`
   width: 100%;
 `;
 

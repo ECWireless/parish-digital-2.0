@@ -180,6 +180,8 @@ const ArticleCard = ({
             <StyledCoverPhoto
               src={urlFor(mainImage).url()}
               alt={`${title} cover photo`}
+              height={200}
+              width={200}
             />
           )}
           <StyledDetailsContainer>
@@ -198,7 +200,7 @@ const ArticleCard = ({
   )
 }
 
-const StyledCoverPhoto = styled.img`
+const StyledCoverPhoto = styled(Image)`
   height: 200px;
   object-fit: cover;
   width: 100%;

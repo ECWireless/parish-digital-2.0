@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import styled, { css } from 'styled-components'
 import respondTo from '../components/Breakpoints'
 
@@ -95,7 +96,7 @@ const Footer = () => {
 								target="_blank" rel="noopener noreferrer"
 								title='Peerspace Article'
 							>
-								<BigLogoImage alt='top video production companies award' src="/logos/top-companies.png" />
+								<BigLogoImage alt='top video production companies award' src="/logos/top-companies.png" height={70} width={70} />
 							</CustomLink>
 						</div>
 						<div>
@@ -104,7 +105,7 @@ const Footer = () => {
 								target="_blank" rel="noopener noreferrer"
 								title='Peerspace Article'
 							>
-								<BigLogoImage alt='peerspace award' src="/logos/best-corporate.png" />
+								<BigLogoImage alt='peerspace award' src="/logos/best-corporate.png" height={70} width={70} />
 							</CustomLink>
 						</div>
 						<div>
@@ -113,7 +114,7 @@ const Footer = () => {
 								target="_blank" rel="noopener noreferrer"
 								title='Upcity Marketing Agencies'
 							>
-								<BigLogoImage alt='upcity logo' src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" />
+								<BigLogoImage alt='upcity logo' src="https://upcity-marketplace.s3.amazonaws.com/badges/43f09c0f05c5717ea1aa9aa0533ce196.png" height={70} width={70} />
 							</CustomLink>
 						</div>
 					</BigLogos>
@@ -252,7 +253,7 @@ const BigLogos = styled.div`
 	`}
 `
 
-const BigLogoImage = styled.img`
+const BigLogoImage = styled(Image)`
 	width: 7rem;
 	height: 7rem;
 

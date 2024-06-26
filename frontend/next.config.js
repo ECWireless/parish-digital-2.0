@@ -13,6 +13,10 @@ const nextConfig = {
     // ssr and displayName are configured by default
     styledComponents: true,
   },
+  images: {
+    domains: ['upcity-marketplace.s3.amazonaws.com', 'cdn.sanity.io'],
+    formats: ['image/avif', 'image/webp']
+  }
 };
 
 module.exports = nextConfig;
