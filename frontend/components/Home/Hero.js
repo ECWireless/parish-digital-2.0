@@ -17,9 +17,9 @@ const Hero = ({
   return (
     <WebHero>
       {/* <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} /> */}
-      <HeroVideo autoPlay loop muted playsInline>
+      {/* <HeroVideo autoPlay loop muted playsInline>
         <source src='https://arweave.net/zylbPfX-DIsUH23RiKUpmjIMp3pbUzaWmCLx4NJFo3I' type="video/mp4" />
-      </HeroVideo>
+      </HeroVideo> */}
       <HeroContainer>
         <TexContainer>
           <Fade bottom ssrFadeout>
