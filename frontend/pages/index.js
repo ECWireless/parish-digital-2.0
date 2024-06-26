@@ -104,9 +104,9 @@ const Index = ({
         locationParagraph1={locationParagraph1}
         locationParagraph2={locationParagraph2}
       />
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+      {/* <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
         <StyledIFrame src={`https://player.vimeo.com/video/${heroDemoReelLink}?h=dbf0d01a15&title=0&byline=0&portrait=0`} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
-      </Modal>
+      </Modal> */}
     </>
   )
 }

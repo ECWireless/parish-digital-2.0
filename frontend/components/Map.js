@@ -46,12 +46,12 @@ const Location = ({
               </Box3>
             </Fade>
           </CustomBox3>
-          <MapContainer>
+          {/* <MapContainer>
             <Map
               src={'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.576299312737!2d-79.92954478459674!3d40.4625138607777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834ed807d90d8ad%3A0xb2dd6a71d36f89c5!2sParish%20Digital%20Video%20Production!5e0!3m2!1sen!2sus!4v1596596108633!5m2!1sen!2sus'}
               frameBorder={0} style={{ border: 0}} aria-hidden={'false'} tabIndex={0}
             />
-          </MapContainer>
+          </MapContainer> */}
         </Flex>
       </Box3>
     </Container>

@@ -67,10 +67,10 @@ const DetailCard = (props) => {
                                 </Box3>
                             </Fade>
                         </Flex>
-                        <DetailVideo
+                        {/* <DetailVideo
                             src={props.detailLink}
                             frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                        />
+                        /> */}
                     </Flex>
                 </Card1>
             </Fade>

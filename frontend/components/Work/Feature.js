@@ -22,10 +22,10 @@ const Features = ({
             <Container>
                 <Box3 paddingTop={75} paddingBottom={75}>
                     <Flex align={'center'} respondFlip>
-                        <FeatureVideo
+                        {/* <FeatureVideo
                             src={featureLink}
                             frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                        />
+                        /> */}
                         <Link href='/service'>
                             <DescriptionBox>
                                 <Flex direction={'column'} align={'center'} justify={'center'}>

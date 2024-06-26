@@ -38,20 +38,20 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginTop={50} marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example1Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginTop={50} marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example2Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
@@ -60,20 +60,20 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example3Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example4Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
@@ -82,20 +82,20 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example5Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example6Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
@@ -104,20 +104,20 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example7Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example8Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
@@ -136,10 +136,10 @@ const Examples = ({
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example10Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
@@ -148,20 +148,20 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example11Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
+                {/* <ExampleVideo
                   src={example12Link}
                   frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                /> */}
               </CardContainer>
             </Box3>
           </Fade>

@@ -101,7 +101,7 @@ const Post = ({ post }) => {
             </div>
           </Flex>
         </Flex>
-        <StyledContentBackground>
+        {/* <StyledContentBackground>
           <StyledContentContainer>
             {topOfPageVideo && <VideoContainer>
               <Video
@@ -121,7 +121,7 @@ const Post = ({ post }) => {
               />
             </VideoContainer>}
           </StyledContentContainer>
-        </StyledContentBackground>
+        </StyledContentBackground> */}
       </Container>
     </article>
   )

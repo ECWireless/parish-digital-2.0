@@ -65,14 +65,14 @@ const ServicesRow = ({
             </Fade>
           </StyledTextContainer>
         </StyledServicesPhotoContainer>
-        <StyledVideoContainer>
+        {/* <StyledVideoContainer>
           <iframe 
             width="100%" 
             src={servicesVideoLink}
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen
           />
-        </StyledVideoContainer>
+        </StyledVideoContainer> */}
       </Flex>
   )
 }

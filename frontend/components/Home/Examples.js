@@ -15,7 +15,7 @@ const Examples = ({
     return (
         <ExamplesBackground>
             <Container>
-                <Flex align={'center'} justify={'space-between'} respond>
+                {/* <Flex align={'center'} justify={'space-between'} respond>
                     <Fade bottom ssrFadeout>
                         <Box3 marginBottom={25}>
                             <CardContainer>
@@ -58,7 +58,7 @@ const Examples = ({
                             </CardContainer>
                         </Box3>
                     </Fade>
-                </Flex>
+                </Flex> */}
             </Container>
         </ExamplesBackground>
     )
