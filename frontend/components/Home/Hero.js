@@ -1,4 +1,4 @@
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 import styled, { css } from 'styled-components'
 import respondTo from '../Breakpoints'
 
