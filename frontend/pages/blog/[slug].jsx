@@ -58,12 +58,10 @@ const Post = ({ post }) => {
     <article>
       <Container>
         <Flex mt={'48px'}>
-          <Link href="/blog">
-            <StyledLink>
-              <Image src="/icons/arrow.svg" height={20} width={20} />
-              <P4>View more posts</P4>
-            </StyledLink>
-          </Link>
+          <StyledLink href="/blog">
+            <Image src="/icons/arrow.svg" height={20} width={20} />
+            <P4>View more posts</P4>
+          </StyledLink>
         </Flex>
         <Flex align={'center'} mt={'12px'} respondFlip>
           {mainImage && (
@@ -177,15 +175,17 @@ const StyledSpinnerContainer = styled.div`
   width: 100%;
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   align-items: center;
   background: transparent;
   border: none;
   border-radius: 8px;
+  color: #000;
   cursor: pointer;
   display: flex;
   gap: 8px;
   padding: 4px;
+  text-decoration: none;
   transition: all 0.3s ease;
 
   &:hover {

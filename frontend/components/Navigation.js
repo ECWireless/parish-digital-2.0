@@ -13,51 +13,51 @@ const Navigation = ({ setSidebar }) => {
     
 	return (
 		<NavBar>
-				<Flex style={{ height: '100%', width: '100%' }} align={'center'} justify={'center'}>
-						<SandWhichContainer onClick={() => setSidebar(true)}>
-								<Flex direction={'column'} justify={'space-between'}>
-										<Box3>
-												<SandwhichLine width={40} height={3} color={'white'} />
-										</Box3>
-										<Box3 marginTop={12}>
-												<SandwhichLine width={40} height={3} color={'white'} />
-										</Box3>
-										<Box3 marginTop={12}>
-												<SandwhichLine width={40} height={3} color={'white'} />
-										</Box3>
-								</Flex>
-						</SandWhichContainer>
-						<Link href="/">
-								<Flex align={'center'} justify={'space-around'} direction={'column'}>
-										<PDLogo style={{ backgroundImage: 'url(/logos/pd_logo.png)'}} />
-										<Box1 marginTop={5}>
-												<LogoCaption>Parish Digital</LogoCaption>
-										</Box1>
-								</Flex>
-						</Link>
-						<NavMenu>
-								<ul>
-										<Link href="/work">
-												<NavItem active={router.pathname === '/work' ? true : false}>Work</NavItem>
-										</Link>
-										<Link href="/services">
-												<NavItem active={router.pathname === '/services' ? true : false}>Services</NavItem>
-										</Link>
-										<Link href="/gear">
-												<NavItem active={router.pathname === '/gear' ? true : false}>Gear</NavItem>
-										</Link>
-										<Link href="/about">
-												<NavItem active={router.pathname === '/about' ? true : false}>About</NavItem>
-										</Link>
-										<Link href="/blog">
-												<NavItem active={router.pathname === '/blog' ? true : false}>Blog</NavItem>
-										</Link>
-										<Link href="/contact">
-												<NavItem active={router.pathname === '/contact' ? true : false}>Contact</NavItem>
-										</Link>
-								</ul>
-						</NavMenu>
-				</Flex>
+			<Flex style={{ height: '100%', width: '100%' }} align={'center'} justify={'center'}>
+					<SandWhichContainer onClick={() => setSidebar(true)}>
+						<Flex direction={'column'} justify={'space-between'}>
+							<Box3>
+								<SandwhichLine width={40} height={3} color={'white'} />
+							</Box3>
+							<Box3 marginTop={12}>
+								<SandwhichLine width={40} height={3} color={'white'} />
+							</Box3>
+							<Box3 marginTop={12}>
+								<SandwhichLine width={40} height={3} color={'white'} />
+							</Box3>
+						</Flex>
+					</SandWhichContainer>
+					<Link href="/" style={{ textDecoration: 'none'}}>
+						<Flex align={'center'} justify={'space-around'} direction={'column'}>
+							<PDLogo style={{ backgroundImage: 'url(/logos/pd_logo.png)'}} />
+							<Box1 marginTop={5}>
+								<LogoCaption>Parish Digital</LogoCaption>
+							</Box1>
+						</Flex>
+					</Link>
+					<NavMenu>
+						<ul>
+							<Link href="/work" style={{ textDecoration: 'none'}}>
+								<NavItem active={router.pathname === '/work' ? true : false}>Work</NavItem>
+							</Link>
+							<Link href="/services" style={{ textDecoration: 'none'}}>
+								<NavItem active={router.pathname === '/services' ? true : false}>Services</NavItem>
+							</Link>
+							<Link href="/gear" style={{ textDecoration: 'none'}}>
+								<NavItem active={router.pathname === '/gear' ? true : false}>Gear</NavItem>
+							</Link>
+							<Link href="/about" style={{ textDecoration: 'none'}}>
+								<NavItem active={router.pathname === '/about' ? true : false}>About</NavItem>
+							</Link>
+							<Link href="/blog" style={{ textDecoration: 'none'}}>
+								<NavItem active={router.pathname === '/blog' ? true : false}>Blog</NavItem>
+							</Link>
+							<Link href="/contact" style={{ textDecoration: 'none'}}>
+								<NavItem active={router.pathname === '/contact' ? true : false}>Contact</NavItem>
+							</Link>
+						</ul>
+				</NavMenu>
+			</Flex>
 		</NavBar>
 	)
 }
@@ -138,6 +138,7 @@ const NavMenu = styled.nav`
 `
 
 const NavItem = styled.li`
+		color: #fff;
     font-size: 1.5rem;
     letter-spacing: 1px;
 

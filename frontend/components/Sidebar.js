@@ -21,7 +21,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     </CloseContainer>
                 </Flex>
             </SidebarTop>
-            <Link href="/">
+            <Link href="/" style={{ textDecoration: 'none'}}>
                 <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/' ? true : false}>
                     <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
                         <svg style={{marginLeft: '3rem', marginRight: '4rem'}} version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
@@ -33,7 +33,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     </Flex>
                 </SidebarOption>
             </Link>
-            <Link href="/work">
+            <Link href="/work" style={{ textDecoration: 'none'}}>
                 <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/work' ? true : false}>
                     <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
                         <svg style={{marginLeft: '3rem', marginRight: '4rem'}} version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
@@ -44,7 +44,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     </Flex>
                 </SidebarOption>
             </Link>
-            <Link href="/services">
+            <Link href="/services" style={{ textDecoration: 'none'}}>
                 <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/services' ? true : false}>
                     <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
                         <svg style={{marginLeft: '3rem', marginRight: '4rem'}} version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
@@ -55,7 +55,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     </Flex>
                 </SidebarOption>
             </Link>
-            <Link href="/gear">
+            <Link href="/gear" style={{ textDecoration: 'none'}}>
                 <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/gear' ? true : false}>
                     <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
                         <svg style={{marginLeft: '3rem', marginRight: '4rem'}} version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
@@ -66,7 +66,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     </Flex>
                 </SidebarOption>
             </Link>
-            <Link href="/about">
+            <Link href="/about" style={{ textDecoration: 'none'}}>
                 <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/about' ? true : false}>
                     <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
                         <svg style={{marginLeft: '3rem', marginRight: '4rem'}} version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 32">
@@ -78,7 +78,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     </Flex>
                 </SidebarOption>
             </Link>
-            <Link href="/blog">
+            <Link href="/blog" style={{ textDecoration: 'none'}}>
                 <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/blog' ? true : false}>
                     <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
                         <svg style={{marginLeft: '3rem', marginRight: '4rem'}} version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
@@ -89,7 +89,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     </Flex>
                 </SidebarOption>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact" style={{ textDecoration: 'none'}}>
                 <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/contact' ? true : false}>
                     <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
                         <svg style={{marginLeft: '3rem', marginRight: '4rem'}} version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
@@ -100,7 +100,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     </Flex>
                 </SidebarOption>
             </Link>
-            <Link href="/login">
+            <Link href="/login" style={{ textDecoration: 'none'}}>
                 <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/login' ? true : false}>
                     <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
                     <svg style={{marginLeft: '3rem', marginRight: '4rem'}} version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
@@ -214,6 +214,7 @@ const CloseContainer = styled.div`
 `
 
 const SidebarOption = styled.div`
+    color: #000;
     height: 6rem;
     border-bottom: solid 1px rgba(117, 117, 117, .2);
     border-right: 5px solid transparent;

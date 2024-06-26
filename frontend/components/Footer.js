@@ -18,24 +18,24 @@ const Footer = () => {
 						<Flex direction={'column'}>
 							<FooterHeading color={colors.white} uppercase>Sitemap</FooterHeading>
 							<Spacer size={'xs'} />
-							<Link href="/work">
-								<ParagraphLink>work</ParagraphLink>
-							</Link>
-							<Link href="/services">
-								<ParagraphLink>services</ParagraphLink>
-							</Link>
-							<Link href="/gear">
-								<ParagraphLink>gear</ParagraphLink>
-							</Link>
-							<Link href="/about">
-								<ParagraphLink>about</ParagraphLink>
-							</Link>
-							<Link href="/blog">
-								<ParagraphLink>blog</ParagraphLink>
-							</Link>
-							<Link href="/contact">
-								<ParagraphLink>contact</ParagraphLink>
-							</Link>
+							<ParagraphLink href="/work">
+								work
+							</ParagraphLink>
+							<ParagraphLink href="/services">
+								services
+							</ParagraphLink>
+							<ParagraphLink href="/gear">
+								gear
+							</ParagraphLink>
+							<ParagraphLink href="/about">
+								about
+							</ParagraphLink>
+							<ParagraphLink href="/blog">
+								blog
+							</ParagraphLink>
+							<ParagraphLink href="/contact">
+								contact
+							</ParagraphLink>
 						</Flex>
 
 						<Flex direction={'column'} justify={'flex-start'}>
@@ -170,11 +170,12 @@ const TextContainer = styled.div`
 	`}
 `
 
-const ParagraphLink = styled.a`
+const ParagraphLink = styled(Link)`
 	color: ${colors.yellow};
 	font-size: 1rem;
 	letter-spacing: 1px;
 	line-height: 20px;
+	text-decoration: none;
 
 	${respondTo.xl`
 		font-size: 1.6rem;

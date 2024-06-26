@@ -174,27 +174,25 @@ const ArticleCard = ({
 
   return (
     <li>
-      <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
-        <a style={{ textDecoration: 'none' }}>
-          <StyledBlogCard>
-            {mainImage && (
-              <StyledCoverPhoto
-                src={urlFor(mainImage).url()}
-                alt={`${title} cover photo`}
-              />
-            )}
-            <StyledDetailsContainer>
-              <H4 color={colors.black}>{shortenString(title, 50)}</H4>
-              <P6 color={colors.black}>
-                Published on {new Date(publishedAt).toLocaleDateString(undefined, {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </P6>
-            </StyledDetailsContainer>
-          </StyledBlogCard>
-        </a>
+      <Link href="/blog/[slug]" as={`/blog/${slug.current}`} style={{ textDecoration: 'none' }}>
+        <StyledBlogCard>
+          {mainImage && (
+            <StyledCoverPhoto
+              src={urlFor(mainImage).url()}
+              alt={`${title} cover photo`}
+            />
+          )}
+          <StyledDetailsContainer>
+            <H4 color={colors.black}>{shortenString(title, 50)}</H4>
+            <P6 color={colors.black}>
+              Published on {new Date(publishedAt).toLocaleDateString(undefined, {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </P6>
+          </StyledDetailsContainer>
+        </StyledBlogCard>
       </Link>
     </li>
   )
