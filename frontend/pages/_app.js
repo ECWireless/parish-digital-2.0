@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react'
 import Router from 'next/router';
 import Head from 'next/head'
+import { Source_Sans_3 } from 'next/font/google'
 import styled, { css } from 'styled-components'
 import { GTMPageView } from '../utils/gtm';
 import '../styles.css'
+
+const sourceSans = Source_Sans_3({
+	subsets: ['latin'],
+	style: 'normal',
+});
 
 // Components
 // import Navigation from '../components/Navigation'
@@ -54,7 +60,7 @@ export default function App({ Component, pageProps }) {
 				<link rel="canonical" href="https://parishdigital.com/"></link>
 			</Head>
 			
-			<Layout setSidebar={setSidebar} sidebar={sidebar}>
+			<Layout setSidebar={setSidebar} sidebar={sidebar} className={sourceSans.className}>
 				<Component {...pageProps} />
 			</Layout>
 		</>

@@ -60,7 +60,7 @@ export const Input = styled.input`
 
   font-size: 1.6rem;
   line-height: 20px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: .5px;
@@ -117,7 +117,7 @@ export const TextArea = styled.textarea`
 
     font-size: 1.6rem;
     line-height: 20px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: .5px;

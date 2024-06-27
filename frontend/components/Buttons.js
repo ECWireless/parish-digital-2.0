@@ -12,7 +12,7 @@ export const Button1 = styled.button`
   font-size: 1.2rem;
   letter-spacing: 2px;
   transition: all .3s ease;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -53,7 +53,7 @@ export const Button2 = styled.button`
     height: 4rem;
     letter-spacing: 2px;
     transition: all .3s ease;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     border-radius: 10px;
@@ -140,7 +140,7 @@ export const Button3 = styled.button`
   letter-spacing: 2px;
   padding: 14px 20px;
   transition: all .3s ease;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -175,7 +175,7 @@ export const Button4 = styled.button`
   letter-spacing: 2px;
   padding: 10px 32px;
   transition: all .3s ease;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -208,7 +208,7 @@ export const Button5 = styled.button`
   letter-spacing: 2px;
   padding: 14px 20px;
   transition: all .3s ease;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
