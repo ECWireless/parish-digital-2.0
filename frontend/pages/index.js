@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import groq from 'groq'
-import imageUrlBuilder from '@sanity/image-url'
+// import imageUrlBuilder from '@sanity/image-url'
 import Head from 'next/head'
 
 import client from 'client'
 
 import Hero from 'components/Home/Hero'
-import Description from 'components/Home/Description'
-import Examples from 'components/Home/Examples'
-import Services from 'components/Home/Services'
-import Trusted from 'components/Home/Trusted'
-import ContactForm from 'components/Contact/ContactForm'
-import Map from 'components/Map'
-import Modal from 'components/Modal'
+// import Description from 'components/Home/Description'
+// import Examples from 'components/Home/Examples'
+// import Services from 'components/Home/Services'
+// import Trusted from 'components/Home/Trusted'
+// import ContactForm from 'components/Contact/ContactForm'
+// import Map from 'components/Map'
+// import Modal from 'components/Modal'
 import respondTo from 'components/Breakpoints'
 
 const Index = ({
@@ -63,7 +63,7 @@ const Index = ({
         heroSubheading2={heroSubheading2}
         setModalOpen={setModalOpen}
       />
-      <Description
+      {/* <Description
         descriptionHeading={descriptionHeading}
         descriptionPhoto={urlFor(descriptionPhoto).auto('format')}
         descriptionParagraph1={descriptionParagraph1}
@@ -98,12 +98,12 @@ const Index = ({
       <ContactForm
         contactHeading={'Contact Us'}
         contactParagraph={'We can help bring your next project to life'}
-      />
-      <Map
+      /> */}
+      {/* <Map
         locationHeading={locationHeading}
         locationParagraph1={locationParagraph1}
         locationParagraph2={locationParagraph2}
-      />
+      /> */}
       {/* <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
         <StyledIFrame src={`https://player.vimeo.com/video/${heroDemoReelLink}?h=dbf0d01a15&title=0&byline=0&portrait=0`} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
       </Modal> */}
@@ -111,9 +111,9 @@ const Index = ({
   )
 }
 
-function urlFor (source) {
-  return imageUrlBuilder(client).image(source)
-}
+// function urlFor (source) {
+//   return imageUrlBuilder(client).image(source)
+// }
 
 const query = groq`*[_type == "home" && slug.current == "v1"][0]{
   pageTitle,
@@ -156,32 +156,32 @@ export async function getStaticProps() {
 
 export default Index;
 
-const StyledIFrame = styled.iframe`
-  width: 256px;
-  height: 144px;
+// const StyledIFrame = styled.iframe`
+//   width: 256px;
+//   height: 144px;
 
-  ${respondTo.xs`
-    width: 320px;
-    height: 180px;
-  `}
+//   ${respondTo.xs`
+//     width: 320px;
+//     height: 180px;
+//   `}
 
-  ${respondTo.sm`
-    width: 640px;
-    height: 360px;
-  `}
+//   ${respondTo.sm`
+//     width: 640px;
+//     height: 360px;
+//   `}
 
-  ${respondTo.md`
-    width: 640px;
-    height: 360px;
-  `}
+//   ${respondTo.md`
+//     width: 640px;
+//     height: 360px;
+//   `}
 
-  ${respondTo.lg`
-    width: 960px;
-    height: 540px;
-  `}
+//   ${respondTo.lg`
+//     width: 960px;
+//     height: 540px;
+//   `}
 
-  ${respondTo.xl`
-    width: 1280px;
-    height: 720px;
-  `}
-`;
+//   ${respondTo.xl`
+//     width: 1280px;
+//     height: 720px;
+//   `}
+// `;
