@@ -1,4 +1,4 @@
-import Fade from 'react-reveal/Fade';
+// import Fade from 'react-reveal/Fade';
 import styled, { css } from 'styled-components'
 import respondTo from '../Breakpoints'
 
@@ -22,18 +22,14 @@ const Hero = ({
       </HeroVideo>
       <HeroContainer>
         <TexContainer>
-          <Fade bottom ssrFadeout>
             <H4 style={{ textShadow: '0 3px 6px rgba(0,0,0,1)' }} color={colors.white} center>
               {heroSubheading2}
             </H4>
-          </Fade>
-          <Fade bottom ssrFadeout>
             <Box3 marginTop={50}>
               <H1 style={{ textShadow: '0 10px 20px rgba(0,0,0,1)' }} color={colors.white} center uppercase>
                 {heroHeading}
               </H1>
             </Box3>
-          </Fade>
           {/* <Fade delay={200} bottom ssrFadeout>
             <Box3 marginTop={50}>
               <H4 style={{ textShadow: '0 5px 20px rgba(0,0,0,1)' }} color={colors.white} center>

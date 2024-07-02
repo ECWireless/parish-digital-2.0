@@ -29,12 +29,10 @@ const Examples = ({
           <Fade bottom delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                {/* <Suspense fallback={<div>Loading...</div>}>
-                  <ExampleVideo
-                    src={examplesLink2}
-                    frameborder={0} allowfullscreen
-                  />
-                </Suspense> */}
+                <LazyIframe
+                  src={examplesLink2}
+                  frameborder={0} allowfullscreen
+                />
               </CardContainer>
             </Box3>
           </Fade>
@@ -43,24 +41,20 @@ const Examples = ({
           <Fade bottom ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                {/* <Suspense fallback={<div>Loading...</div>}>
-                  <ExampleVideo
-                    src={examplesLink3}
-                    frameborder={0} allowfullscreen
-                  />
-                </Suspense> */}
+                <LazyIframe
+                  src={examplesLink3}
+                  frameborder={0} allowfullscreen
+                />
               </CardContainer>
             </Box3>
           </Fade>
           <Fade bottom delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                {/* <Suspense fallback={<div>Loading...</div>}>
-                  <ExampleVideo
-                    src={examplesLink4}
-                    frameborder={0} allowfullscreen
-                  />
-                </Suspense> */}
+                <LazyIframe
+                  src={examplesLink4}
+                  frameborder={0} allowfullscreen
+                />
               </CardContainer>
             </Box3>
           </Fade>
@@ -105,7 +99,7 @@ const LazyIframe = ({ src, ...props }) => {
   }, []);
 
   return (
-    <div ref={iframeRef}>
+    <div style={{ height: '100%', width: '100%' }} ref={iframeRef}>
       {isLoaded ? (
         <ExampleVideo src={src} {...props} />
       ) : (
