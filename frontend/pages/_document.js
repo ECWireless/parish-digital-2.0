@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Google Tag */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3H9CHRJWC"></script>
+          <script defer src="https://www.googletagmanager.com/gtag/js?id=G-G3H9CHRJWC"></script>
           <script dangerouslySetInnerHTML={
             { __html: `
               window.dataLayer = window.dataLayer || [];
