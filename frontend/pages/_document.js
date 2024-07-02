@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from 'styled-components'
+import Script from 'next/script'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -33,8 +34,8 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Google Tag */}
-          <script defer src="https://www.googletagmanager.com/gtag/js?id=G-G3H9CHRJWC"></script>
-          <script dangerouslySetInnerHTML={
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-G3H9CHRJWC" />
+          <Script dangerouslySetInnerHTML={
             { __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -43,7 +44,7 @@ export default class MyDocument extends Document {
               gtag('config', 'G-G3H9CHRJWC');
             `}
           } />
-          <script type="application/ld+json"
+          <Script type="application/ld+json"
             dangerouslySetInnerHTML={
               {
                 __html: JSON.stringify({
