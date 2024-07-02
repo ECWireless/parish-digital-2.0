@@ -5,6 +5,7 @@ import respondTo from '../Breakpoints'
 import { shadows } from '../theme'
 import { Box3 } from '../Boxes'
 import { Container, Flex } from '../Containers'
+import { LazyIframe } from '../LazyIframe'
 
 const Examples = ({
   examplesLink1,
@@ -19,20 +20,18 @@ const Examples = ({
           <Fade bottom ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <LazyIframe
-                  src={examplesLink1}
-                  frameborder={0} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo src={examplesLink1} frameborder={0} allowfullscreen />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade bottom delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <LazyIframe
-                  src={examplesLink2}
-                  frameborder={0} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo src={examplesLink2} frameborder={0} allowfullscreen />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
@@ -41,20 +40,18 @@ const Examples = ({
           <Fade bottom ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <LazyIframe
-                  src={examplesLink3}
-                  frameborder={0} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo src={examplesLink3} frameborder={0} allowfullscreen />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade bottom delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <LazyIframe
-                  src={examplesLink4}
-                  frameborder={0} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo src={examplesLink4} frameborder={0} allowfullscreen />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
@@ -65,49 +62,6 @@ const Examples = ({
 }
 
 export default Examples;
-
-import { useEffect, useRef, useState } from 'react';
-
-const LazyIframe = ({ src, ...props }) => {
-  const iframeRef = useRef(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsLoaded(true);
-            observer.disconnect();
-          }
-        });
-      },
-      {
-        rootMargin: '200px',
-      }
-    );
-
-    if (iframeRef.current) {
-      observer.observe(iframeRef.current);
-    }
-
-    return () => {
-      if (iframeRef.current) {
-        observer.unobserve(iframeRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <div style={{ height: '100%', width: '100%' }} ref={iframeRef}>
-      {isLoaded ? (
-        <ExampleVideo src={src} {...props} />
-      ) : (
-        <div>Loading...</div>
-      )}
-    </div>
-  );
-};
 
 const ExamplesBackground = styled.div`
     width: 100%;
