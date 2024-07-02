@@ -1,6 +1,7 @@
 import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
 import respondTo from '../Breakpoints'
+import { Suspense } from 'react'
 
 import { shadows } from '../theme'
 import { Box3 } from '../Boxes'
@@ -19,20 +20,24 @@ const Examples = ({
           <Fade bottom ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={examplesLink1}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ExampleVideo
+                    src={examplesLink1}
+                    frameborder={0} allowfullscreen
+                  />
+                </Suspense>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade bottom delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={examplesLink2}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ExampleVideo
+                    src={examplesLink2}
+                    frameborder={0} allowfullscreen
+                  />
+                </Suspense>
               </CardContainer>
             </Box3>
           </Fade>
@@ -41,20 +46,24 @@ const Examples = ({
           <Fade bottom ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={examplesLink3}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ExampleVideo
+                    src={examplesLink3}
+                    frameborder={0} allowfullscreen
+                  />
+                </Suspense>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade bottom delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={examplesLink4}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <ExampleVideo
+                    src={examplesLink4}
+                    frameborder={0} allowfullscreen
+                  />
+                </Suspense>
               </CardContainer>
             </Box3>
           </Fade>
