@@ -1,7 +1,6 @@
 import Fade from 'react-reveal/Fade';
 import styled from 'styled-components'
 import respondTo from '../Breakpoints'
-import { Suspense } from 'react'
 
 import { shadows } from '../theme'
 import { Box3 } from '../Boxes'
@@ -20,24 +19,22 @@ const Examples = ({
           <Fade bottom ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <Suspense fallback={<div>Loading...</div>}>
-                  <ExampleVideo
-                    src={examplesLink1}
-                    frameborder={0} allowfullscreen
-                  />
-                </Suspense>
+                <LazyIframe
+                  src={examplesLink1}
+                  frameborder={0} allowfullscreen
+                />
               </CardContainer>
             </Box3>
           </Fade>
           <Fade bottom delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <Suspense fallback={<div>Loading...</div>}>
+                {/* <Suspense fallback={<div>Loading...</div>}>
                   <ExampleVideo
                     src={examplesLink2}
                     frameborder={0} allowfullscreen
                   />
-                </Suspense>
+                </Suspense> */}
               </CardContainer>
             </Box3>
           </Fade>
@@ -46,24 +43,24 @@ const Examples = ({
           <Fade bottom ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <Suspense fallback={<div>Loading...</div>}>
+                {/* <Suspense fallback={<div>Loading...</div>}>
                   <ExampleVideo
                     src={examplesLink3}
                     frameborder={0} allowfullscreen
                   />
-                </Suspense>
+                </Suspense> */}
               </CardContainer>
             </Box3>
           </Fade>
           <Fade bottom delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <Suspense fallback={<div>Loading...</div>}>
+                {/* <Suspense fallback={<div>Loading...</div>}>
                   <ExampleVideo
                     src={examplesLink4}
                     frameborder={0} allowfullscreen
                   />
-                </Suspense>
+                </Suspense> */}
               </CardContainer>
             </Box3>
           </Fade>
@@ -73,7 +70,50 @@ const Examples = ({
   )
 }
 
-export default Examples
+export default Examples;
+
+import { useEffect, useRef, useState } from 'react';
+
+const LazyIframe = ({ src, ...props }) => {
+  const iframeRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsLoaded(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        rootMargin: '200px',
+      }
+    );
+
+    if (iframeRef.current) {
+      observer.observe(iframeRef.current);
+    }
+
+    return () => {
+      if (iframeRef.current) {
+        observer.unobserve(iframeRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div ref={iframeRef}>
+      {isLoaded ? (
+        <ExampleVideo src={src} {...props} />
+      ) : (
+        <div>Loading...</div>
+      )}
+    </div>
+  );
+};
 
 const ExamplesBackground = styled.div`
     width: 100%;
