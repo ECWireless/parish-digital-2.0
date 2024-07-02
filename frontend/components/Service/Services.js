@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 import respondTo from '../Breakpoints'
 import { Flex } from '../Containers'
 import { H3, P4 } from '../Typography'
+import { LazyIframe } from '../LazyIframe';
 
 const Services = ({
     servicesPhoto1,
@@ -65,15 +66,17 @@ const ServicesRow = ({
             </Fade>
           </StyledTextContainer>
         </StyledServicesPhotoContainer>
-        {/* <StyledVideoContainer>
+      <StyledVideoContainer>
+        <LazyIframe>
           <iframe 
             width="100%" 
             src={servicesVideoLink}
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen
           />
-        </StyledVideoContainer> */}
-      </Flex>
+        </LazyIframe>
+        </StyledVideoContainer>
+    </Flex>
   )
 }
 

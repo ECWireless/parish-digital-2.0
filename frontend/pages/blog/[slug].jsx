@@ -13,6 +13,7 @@ import respondTo from 'components/Breakpoints'
 import { Container, Flex } from 'components/Containers';
 import { H3, P4, P5 } from 'components/Typography'
 import Spinner from 'components/Spinner';
+import { LazyIframe } from 'components/LazyIframe';
 
 const ptComponents = {
   types: {
@@ -105,13 +106,15 @@ const Post = ({ post }) => {
             </div>
           </Flex>
         </Flex>
-        {/* <StyledContentBackground>
+        <StyledContentBackground>
           <StyledContentContainer>
             {topOfPageVideo && <VideoContainer>
-              <Video
-                src={topOfPageVideo}
-                frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-              />
+              <LazyIframe>
+                <Video
+                  src={topOfPageVideo}
+                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                />
+              </LazyIframe>
             </VideoContainer>}
             <PortableText
               value={body}
@@ -119,13 +122,15 @@ const Post = ({ post }) => {
             />
 
             {bottomOfPageVideo && <VideoContainer>
-              <Video
-                src={bottomOfPageVideo}
-                frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-              />
+              <LazyIframe>
+                <Video
+                  src={bottomOfPageVideo}
+                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                />
+              </LazyIframe>
             </VideoContainer>}
           </StyledContentContainer>
-        </StyledContentBackground> */}
+        </StyledContentBackground>
       </Container>
     </article>
   )

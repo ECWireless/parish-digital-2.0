@@ -9,6 +9,7 @@ import { Card1 } from '../Cards'
 import { Container, Flex } from '../Containers'
 import { Line } from '../Lines'
 import { H3, P4 } from '../Typography'
+import { LazyIframe } from '../LazyIframe';
 
 const Details = ({
     detail1Heading,
@@ -67,10 +68,10 @@ const DetailCard = (props) => {
                                 </Box3>
                             </Fade>
                         </Flex>
-                        {/* <DetailVideo
+                        <DetailVideo
                             src={props.detailLink}
                             frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                        /> */}
+                        />
                     </Flex>
                 </Card1>
             </Fade>

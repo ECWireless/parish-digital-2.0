@@ -9,6 +9,7 @@ import { Box3 } from '../Boxes'
 import { Container, Flex } from '../Containers'
 import { Line } from '../Lines'
 import { H3, P1, P4 } from '../Typography'
+import { LazyIframe } from '../LazyIframe';
 
 const Features = ({
     featureHeading,
@@ -22,10 +23,12 @@ const Features = ({
             <Container>
                 <Box3 paddingTop={75} paddingBottom={75}>
                     <Flex align={'center'} respondFlip>
-                        {/* <FeatureVideo
-                            src={featureLink}
-                            frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                        /> */}
+                        <LazyIframe>
+                            <FeatureVideo
+                                src={featureLink}
+                                frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                            />
+                        </LazyIframe>
                         <Link href='/service'>
                             <DescriptionBox>
                                 <Flex direction={'column'} align={'center'} justify={'center'}>
