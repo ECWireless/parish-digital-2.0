@@ -7,61 +7,61 @@ import { Box3 } from '../Boxes'
 import { Container, Flex } from '../Containers'
 
 const Examples = ({
-    examplesLink1,
-    examplesLink2,
-    examplesLink3,
-    examplesLink4,
+  examplesLink1,
+  examplesLink2,
+  examplesLink3,
+  examplesLink4,
 }) => {
-    return (
-        <ExamplesBackground>
-            <Container>
-                {/* <Flex align={'center'} justify={'space-between'} respond>
-                    <Fade bottom ssrFadeout>
-                        <Box3 marginBottom={25}>
-                            <CardContainer>
-                                <ExampleVideo
-                                    src={examplesLink1}
-                                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                                />
-                            </CardContainer>
-                        </Box3>
-                    </Fade>
-                    <Fade bottom delay={200} ssrFadeout>
-                        <Box3 marginBottom={25}>
-                            <CardContainer>
-                                <ExampleVideo
-                                    src={examplesLink2}
-                                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                                />
-                            </CardContainer>
-                        </Box3>
-                    </Fade>
-                </Flex>
-                <Flex align={'center'} justify={'space-between'} respond>
-                    <Fade bottom ssrFadeout>
-                        <Box3 marginBottom={25}>
-                            <CardContainer>
-                                <ExampleVideo
-                                    src={examplesLink3}
-                                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                                />
-                            </CardContainer>
-                        </Box3>
-                    </Fade>
-                    <Fade bottom delay={200} ssrFadeout>
-                        <Box3 marginBottom={25}>
-                            <CardContainer>
-                                <ExampleVideo
-                                    src={examplesLink4}
-                                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                                />
-                            </CardContainer>
-                        </Box3>
-                    </Fade>
-                </Flex> */}
-            </Container>
-        </ExamplesBackground>
-    )
+  return (
+    <ExamplesBackground>
+      <Container>
+        <Flex align={'center'} justify={'space-between'} respond>
+          <Fade bottom ssrFadeout>
+            <Box3 marginBottom={25}>
+              <CardContainer>
+                <ExampleVideo
+                  src={examplesLink1}
+                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                />
+              </CardContainer>
+            </Box3>
+          </Fade>
+          <Fade bottom delay={200} ssrFadeout>
+            <Box3 marginBottom={25}>
+              <CardContainer>
+                <ExampleVideo
+                  src={examplesLink2}
+                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                />
+              </CardContainer>
+            </Box3>
+          </Fade>
+        </Flex>
+        <Flex align={'center'} justify={'space-between'} respond>
+          <Fade bottom ssrFadeout>
+            <Box3 marginBottom={25}>
+              <CardContainer>
+                <ExampleVideo
+                  src={examplesLink3}
+                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                />
+              </CardContainer>
+            </Box3>
+          </Fade>
+          <Fade bottom delay={200} ssrFadeout>
+            <Box3 marginBottom={25}>
+              <CardContainer>
+                <ExampleVideo
+                  src={examplesLink4}
+                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                />
+              </CardContainer>
+            </Box3>
+          </Fade>
+        </Flex>
+      </Container>
+    </ExamplesBackground>
+  )
 }
 
 export default Examples
