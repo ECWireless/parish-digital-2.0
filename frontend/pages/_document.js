@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from 'styled-components'
+import Script from 'next/script'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -32,11 +33,11 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-				<link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" as="style" />
-				<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet" />
+          <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" as="style" />
+          <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet" />
           {/* Google Tag */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3H9CHRJWC"></script>
-          <script dangerouslySetInnerHTML={
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-G3H9CHRJWC" />
+          <Script dangerouslySetInnerHTML={
             { __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -45,7 +46,7 @@ export default class MyDocument extends Document {
               gtag('config', 'G-G3H9CHRJWC');
             `}
           } />
-          <script type="application/ld+json"
+          <Script type="application/ld+json"
             dangerouslySetInnerHTML={
               {
                 __html: JSON.stringify({

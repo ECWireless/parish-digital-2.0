@@ -5,6 +5,7 @@ import respondTo from '../Breakpoints'
 import { colors, shadows } from '../theme'
 import { Box3 } from '../Boxes'
 import { Container, Flex } from '../Containers'
+import { LazyIframe } from '../LazyIframe';
 // import { H3, P6 } from '../Typography'
 
 const Examples = ({
@@ -38,20 +39,24 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginTop={50} marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={example1Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example1Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginTop={50} marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={example2Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example2Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
@@ -60,20 +65,24 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={example3Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example3Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={example4Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example4Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
@@ -82,20 +91,24 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={example5Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example5Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={25}>
               <CardContainer>
-                <ExampleVideo
-                  src={example6Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example6Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
@@ -104,20 +117,24 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
-                  src={example7Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example7Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
-                  src={example8Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example8Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
@@ -126,20 +143,24 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
-                  src={example9Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example9Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
-                  src={example10Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example10Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
@@ -148,20 +169,24 @@ const Examples = ({
           <Fade ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
-                  src={example11Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example11Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>
           <Fade delay={200} ssrFadeout>
             <Box3 marginBottom={50}>
               <CardContainer>
-                <ExampleVideo
-                  src={example12Link}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
+                <LazyIframe>
+                  <ExampleVideo
+                    src={example12Link}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
               </CardContainer>
             </Box3>
           </Fade>

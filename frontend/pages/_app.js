@@ -5,7 +5,6 @@ import styled, { css } from 'styled-components'
 import { GTMPageView } from '../utils/gtm';
 import '../styles.css'
 
-// Components
 import Navigation from '../components/Navigation'
 import Sidebar from '../components/Sidebar'
 import Footer from '../components/Footer'

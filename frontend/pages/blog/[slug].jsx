@@ -13,6 +13,7 @@ import respondTo from 'components/Breakpoints'
 import { Container, Flex } from 'components/Containers';
 import { H3, P4, P5 } from 'components/Typography'
 import Spinner from 'components/Spinner';
+import { LazyIframe } from 'components/LazyIframe';
 
 const ptComponents = {
   types: {
@@ -25,6 +26,8 @@ const ptComponents = {
           alt={value.alt || ' '}
           loading="lazy"
           src={urlFor(value).auto('format')}
+          height={value.asset.metadata.dimensions.height}
+          with={value.asset.metadata.dimensions.width}
         />
       )
     }
@@ -58,18 +61,18 @@ const Post = ({ post }) => {
     <article>
       <Container>
         <Flex mt={'48px'}>
-          <Link href="/blog">
-            <StyledLink>
-              <Image src="/icons/arrow.svg" height={20} width={20} />
-              <P4>View more posts</P4>
-            </StyledLink>
-          </Link>
+          <StyledLink href="/blog">
+            <Image src="/icons/arrow.svg" height={20} width={20} />
+            <P4>View more posts</P4>
+          </StyledLink>
         </Flex>
         <Flex align={'center'} mt={'12px'} respondFlip>
           {mainImage && (
             <StyledCoverPhoto
               src={urlFor(mainImage).url()}
               alt={`${title} cover photo`}
+              height={300}
+              width={300}
             />
           )}
           <Flex justify={'center'} width={'100%'} p={'20px'}>
@@ -88,6 +91,8 @@ const Post = ({ post }) => {
                   <StyledAuthorImage
                     src={urlFor(authorImage).url()}
                     alt={`${name}'s picture`}
+                    height={30}
+                    width={30}
                   />
                 )}
                 <P4>By {name}</P4>
@@ -104,10 +109,12 @@ const Post = ({ post }) => {
         <StyledContentBackground>
           <StyledContentContainer>
             {topOfPageVideo && <VideoContainer>
-              <Video
-                src={topOfPageVideo}
-                frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-              />
+              <LazyIframe>
+                <Video
+                  src={topOfPageVideo}
+                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                />
+              </LazyIframe>
             </VideoContainer>}
             <PortableText
               value={body}
@@ -115,10 +122,12 @@ const Post = ({ post }) => {
             />
 
             {bottomOfPageVideo && <VideoContainer>
-              <Video
-                src={bottomOfPageVideo}
-                frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-              />
+              <LazyIframe>
+                <Video
+                  src={bottomOfPageVideo}
+                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                />
+              </LazyIframe>
             </VideoContainer>}
           </StyledContentContainer>
         </StyledContentBackground>
@@ -177,15 +186,17 @@ const StyledSpinnerContainer = styled.div`
   width: 100%;
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   align-items: center;
   background: transparent;
   border: none;
   border-radius: 8px;
+  color: #000;
   cursor: pointer;
   display: flex;
   gap: 8px;
   padding: 4px;
+  text-decoration: none;
   transition: all 0.3s ease;
 
   &:hover {
@@ -193,7 +204,7 @@ const StyledLink = styled.a`
   }
 `;
 
-const StyledCoverPhoto = styled.img`
+const StyledCoverPhoto = styled(Image)`
   height: 300px;
   margin-top: 20px;
   object-fit: cover;
@@ -212,12 +223,12 @@ const StyledCoverPhoto = styled.img`
   `}
 `;
 
-const StyledAuthorImage = styled.img`
+const StyledAuthorImage = styled(Image)`
   border-radius: 50%;
   width: 30px;
 `;
 
-const StyledContentImage = styled.img`
+const StyledContentImage = styled(Image)`
   width: 100%;
 `;
 

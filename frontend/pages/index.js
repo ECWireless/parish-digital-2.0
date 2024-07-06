@@ -15,6 +15,7 @@ import ContactForm from 'components/Contact/ContactForm'
 import Map from 'components/Map'
 import Modal from 'components/Modal'
 import respondTo from 'components/Breakpoints'
+import { LazyIframe } from 'components/LazyIframe';
 
 const Index = ({
   pageTitle,
@@ -105,7 +106,9 @@ const Index = ({
         locationParagraph2={locationParagraph2}
       />
       <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-        <StyledIFrame src={`https://player.vimeo.com/video/${heroDemoReelLink}?h=dbf0d01a15&title=0&byline=0&portrait=0`} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+        <LazyIframe>
+          <StyledIFrame src={`https://player.vimeo.com/video/${heroDemoReelLink}?h=dbf0d01a15&title=0&byline=0&portrait=0`} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+        </LazyIframe>
       </Modal>
     </>
   )

@@ -1,4 +1,4 @@
-module.exports = {
+const nextConfig = {
   env: {
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
     BACKEND_SANITY_PROJECT_ID: process.env.BACKEND_SANITY_PROJECT_ID,
@@ -13,4 +13,10 @@ module.exports = {
     // ssr and displayName are configured by default
     styledComponents: true,
   },
-}
+  images: {
+    domains: ['upcity-marketplace.s3.amazonaws.com', 'cdn.sanity.io'],
+    formats: ['image/avif', 'image/webp']
+  }
+};
+
+module.exports = nextConfig;
