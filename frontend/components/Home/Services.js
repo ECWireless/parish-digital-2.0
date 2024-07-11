@@ -22,7 +22,7 @@ const Services = ({
 			<Box3 marginBottom={60}>
 				<Flex respond>
 					<StyledServicesPhotoContainer>
-						{/* <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto1})` }} /> */}
+						<ServicesPhoto style={{backgroundImage: `url(${servicesPhoto1})` }} />
 						<StyledOverlay />
 						<StyledTextContainer>
 							<H3 center color={'white'} style={{ fontWeight: 700, height: '80px', lineHeight: '40px'}}>
@@ -37,7 +37,7 @@ const Services = ({
 						</StyledTextContainer>
 					</StyledServicesPhotoContainer>
 					<StyledServicesPhotoContainer>
-						{/* <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto2})` }} /> */}
+						<ServicesPhoto style={{backgroundImage: `url(${servicesPhoto2})` }} />
 						<StyledOverlay />
 						<StyledTextContainer>
 							<H3 center color={'white'} style={{ fontWeight: 700, height: '80px', lineHeight: '40px'}}>
@@ -52,7 +52,7 @@ const Services = ({
 						</StyledTextContainer>
 					</StyledServicesPhotoContainer>
 					<StyledServicesPhotoContainer>
-						{/* <ServicesPhoto style={{backgroundImage: `url(${servicesPhoto3})` }} /> */}
+						<ServicesPhoto style={{backgroundImage: `url(${servicesPhoto3})` }} />
 						<StyledOverlay />
 						<StyledTextContainer>
 							<H3 center color={'white'} style={{ fontWeight: 700, height: '80px', lineHeight: '40px'}}>
