@@ -1,5 +1,7 @@
 // import Fade from 'react-reveal/Fade';
 import styled, { css } from 'styled-components'
+import { buildFileUrl, getFileAsset } from '@sanity/asset-utils';
+import { useMemo } from 'react';
 import respondTo from '../Breakpoints'
 
 import { colors } from '../theme'
@@ -9,16 +11,19 @@ import { Flex } from '../Containers'
 // import { CustomLink } from '../Links'
 
 const Hero = ({
+  heroVideo,
   heroHeading,
-  heroSubheading,
+  // heroSubheading,
   heroSubheading2,
   setModalOpen,
 }) => {
+  const heroVideoUrl = useMemo(() => getFileAsset(heroVideo, { projectId: process.env.BACKEND_SANITY_PROJECT_ID, dataset: 'production' }).url, [heroVideo])
+
   return (
     <WebHero>
       {/* <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} /> */}
       <HeroVideo autoPlay loop muted playsInline>
-        <source src='https://arweave.net/zylbPfX-DIsUH23RiKUpmjIMp3pbUzaWmCLx4NJFo3I' type="video/mp4" />
+        <source src={heroVideoUrl} type="video/mp4" />
       </HeroVideo>
       <HeroContainer>
         <TexContainer>
@@ -90,7 +95,6 @@ const HeroVideo = styled.video`
   width: auto;
   position: absolute;
   top: 0;
-  filter: brightness(.5);
 
   animation-name: fade;
   animation-duration: 2s;

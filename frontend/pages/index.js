@@ -20,6 +20,7 @@ import { LazyIframe } from 'components/LazyIframe';
 const Index = ({
   pageTitle,
   heroDemoReelLink,
+  heroVideo,
   heroHeading,
   descriptionPhoto,
   heroSubheading,
@@ -59,6 +60,7 @@ const Index = ({
         <title>{pageTitle}</title>
       </Head>
       <Hero
+        heroVideo={heroVideo}
         heroHeading={heroHeading}
         heroSubheading={heroSubheading}
         heroSubheading2={heroSubheading2}
@@ -121,6 +123,7 @@ function urlFor (source) {
 const query = groq`*[_type == "home" && slug.current == "v1"][0]{
   pageTitle,
   heroDemoReelLink,
+  heroVideo,
   heroHeading,
   descriptionPhoto,
   heroSubheading,

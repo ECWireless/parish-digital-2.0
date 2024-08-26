@@ -27,6 +27,11 @@ export default {
 				title: 'Hero Demo Reel Vimeo ID',
 				type: 'string'
 		},
+    {
+        name: 'heroVideo',
+        title: 'Hero Video',
+        type: 'file'
+    },
 		{
 				name: 'heroHeading',
 				title: 'Hero Heading',
