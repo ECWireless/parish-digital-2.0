@@ -28,6 +28,11 @@ export default {
         type: 'string'
     },
     {
+        name: 'heroVideo',
+        title: 'Hero Video',
+        type: 'file'
+    },
+    {
         name: 'heroHeading',
         title: 'Hero Heading',
         type: 'string'
