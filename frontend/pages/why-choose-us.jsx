@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 import ContactForm from 'components/Contact/ContactForm'
 import { Container } from 'components/Containers';
-import { Box, Button, Flex, HStack, Spacer, VStack } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, HStack, Spacer, VStack } from '@chakra-ui/react';
 import { H1, H3, P4 } from 'components/Typography';
 
 const WhyChooseUs = () => {
@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
       if (scrollLeft + clientWidth >= scrollWidth - 10) {
         carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
       } else {
-        carouselRef.current.scrollBy({ left: 200, behavior: "smooth" });
+        carouselRef.current.scrollBy({ left: 270, behavior: "smooth" });
       }
     }
   };
@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
           behavior: "smooth",
         });
       } else {
-        carouselRef.current.scrollBy({ left: -200, behavior: "smooth" });
+        carouselRef.current.scrollBy({ left: -270, behavior: "smooth" });
       }
     }
   };
@@ -41,11 +41,11 @@ const WhyChooseUs = () => {
       <Head>
         <title>Why Choose Us | Parish Digital Video Production</title>
       </Head>
-      <Box my={28}>
+      <Box my={{ base: 16, xs: 20, md: 28 }}>
         <Container>
-          <Flex gap={20} minH="70vh">
-            <div style={{ width: '50%', minH: '100%', backgroundColor: 'grey' }} />
-            <VStack alignItems="start" spaceY={6} w="50%">
+          <Flex direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 16, xs: 20 }} minH="70vh">
+            <Box bgColor="grey" minH={{ base: '250px', sm: '500px', lg: '100%' }} w={{ base: '100%', lg: '50%' }}/>
+            <VStack alignItems="start" spaceY={{ base: 2, xs: 4, md: 6 }} w={{ base: '100%', lg: '50%' }}>
               <H1 color="black">Why Choose Us</H1>
               <Spacer />
               <P4 color="black">
@@ -68,37 +68,37 @@ const WhyChooseUs = () => {
         </Container>
 
         <Container>
-          <VStack mt={28}>
+          <VStack mt={{ base: 16, xs: 20, md: 28 }}>
             <H3 color="black">Brands we’ve worked with:</H3>
           </VStack>
         </Container>
 
-        <HStack justifyContent="center" mt={12} spaceX={8} >
-          <Button onClick={scrollLeft} px={6} variant="ghost">
-            <svg fill="none" height="25" viewBox="0 0 27 25"  width="27" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 12.5L26.25 0.808657V24.1913L0 12.5Z" fill="#FFD110"/>
-            </svg>
-          </Button>
-          <Container>
-            <Box ref={carouselRef} maxW="100%" overflowX="hidden" w="100%">
-              <Flex gap={10} >
-                <Box h="150px" minW="250px" bg="grey" />
-                <Box h="150px" minW="250px" bg="grey" />
-                <Box h="150px" minW="250px" bg="grey" />
-                <Box h="150px" minW="250px" bg="grey" />
-                <Box h="150px" minW="250px" bg="grey" />
-                <Box h="150px" minW="250px" bg="grey" />
-                <Box h="150px" minW="250px" bg="grey" />
-                <Box h="150px" minW="250px" bg="grey" />
-              </Flex>
-            </Box>
-          </Container>
-          <Button onClick={scrollRight} px={6} variant="ghost">
-            <svg fill="none" height="25" viewBox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
-              <path d="M27 12.5L0.75 24.1913V0.808657L27 12.5Z" fill="#FFD110"/>
-            </svg>
-          </Button>
-        </HStack>
+        <Container>
+          <HStack justifyContent="center" mt={12} spaceX={8} >
+            <Button onClick={scrollLeft} px={6} variant="ghost">
+              <svg fill="none" height="25" viewBox="0 0 27 25"  width="27" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12.5L26.25 0.808657V24.1913L0 12.5Z" fill="#FFD110"/>
+              </svg>
+            </Button>
+              <Box ref={carouselRef} maxW="100%" overflowX="hidden" w="100%">
+                <Flex gap="20px" >
+                  <Box h="150px" minW="250px" bg="grey" />
+                  <Box h="150px" minW="250px" bg="grey" />
+                  <Box h="150px" minW="250px" bg="grey" />
+                  <Box h="150px" minW="250px" bg="grey" />
+                  <Box h="150px" minW="250px" bg="grey" />
+                  <Box h="150px" minW="250px" bg="grey" />
+                  <Box h="150px" minW="250px" bg="grey" />
+                  <Box h="150px" minW="250px" bg="grey" />
+                </Flex>
+              </Box>
+            <Button onClick={scrollRight} px={6} variant="ghost">
+              <svg fill="none" height="25" viewBox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
+                <path d="M27 12.5L0.75 24.1913V0.808657L27 12.5Z" fill="#FFD110"/>
+              </svg>
+            </Button>
+          </HStack>
+        </Container>
       </Box>
       <ContactForm
         contactHeading={'Contact Us'}
