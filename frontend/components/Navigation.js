@@ -37,11 +37,11 @@ const Navigation = ({ setSidebar }) => {
 					</Link>
 					<NavMenu>
 						<ul>
+							<Link href="/why-choose-us" style={{ textDecoration: 'none'}}>
+								<NavItem active={router.pathname === '/why-choose-us' ? true : false}>Why Choose Us</NavItem>
+							</Link>
 							<Link href="/work" style={{ textDecoration: 'none'}}>
 								<NavItem active={router.pathname === '/work' ? true : false}>Work</NavItem>
-							</Link>
-							<Link href="/services" style={{ textDecoration: 'none'}}>
-								<NavItem active={router.pathname === '/services' ? true : false}>Services</NavItem>
 							</Link>
 							<Link href="/gear" style={{ textDecoration: 'none'}}>
 								<NavItem active={router.pathname === '/gear' ? true : false}>Gear</NavItem>

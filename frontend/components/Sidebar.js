@@ -2,8 +2,8 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import styled, { css } from 'styled-components'
 import respondTo from '../components/Breakpoints'
+import { FaQuestionCircle } from "react-icons/fa";
 
-// Components
 import { Flex } from './Containers'
 import { P2 } from './Typography'
 import { colors, shadows } from './theme'
@@ -33,6 +33,16 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                     </Flex>
                 </SidebarOption>
             </Link>
+            <Link href="/why-choose-us" style={{ textDecoration: 'none'}}>
+                <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/why-choose-us' ? true : false}>
+                    <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
+                        <div style={{marginLeft: '3rem', marginRight: '4rem'}}>
+                            <FaQuestionCircle size={18} />
+                        </div>
+                        <P2>Why Choose Us</P2>
+                    </Flex>
+                </SidebarOption>
+            </Link>
             <Link href="/work" style={{ textDecoration: 'none'}}>
                 <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/work' ? true : false}>
                     <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
@@ -41,17 +51,6 @@ const Sidebar = ({ sidebar, setSidebar }) => {
                             <path d="M0 4v24h32v-24h-32zM6 26h-4v-4h4v4zM6 18h-4v-4h4v4zM6 10h-4v-4h4v4zM24 26h-16v-20h16v20zM30 26h-4v-4h4v4zM30 18h-4v-4h4v4zM30 10h-4v-4h4v4zM12 10v12l8-6z"></path>
                         </svg>
                         <P2>Work</P2>
-                    </Flex>
-                </SidebarOption>
-            </Link>
-            <Link href="/services" style={{ textDecoration: 'none'}}>
-                <SidebarOption onClick={() => setSidebar(false)} active={router.pathname === '/services' ? true : false}>
-                    <Flex justify={'flex-start'} align={'center'} style={{ height: '100%' }}>
-                        <svg style={{marginLeft: '3rem', marginRight: '4rem'}} version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
-                            <title>Services</title>
-                            <path d="M30 8h-8v-2c0-1.1-0.9-2-2-2h-8c-1.1 0-2 0.9-2 2v2h-8c-1.1 0-2 0.9-2 2v18c0 1.1 0.9 2 2 2h28c1.1 0 2-0.9 2-2v-18c0-1.1-0.9-2-2-2zM12 6.004c0.001-0.001 0.002-0.003 0.004-0.004h7.993c0.001 0.001 0.003 0.002 0.004 0.004v1.996h-8v-1.996zM30 16h-4v3c0 0.55-0.45 1-1 1h-2c-0.55 0-1-0.45-1-1v-3h-12v3c0 0.55-0.45 1-1 1h-2c-0.55 0-1-0.45-1-1v-3h-4v-2h28v2z"></path>
-                        </svg>
-                        <P2>Services</P2>
                     </Flex>
                 </SidebarOption>
             </Link>
