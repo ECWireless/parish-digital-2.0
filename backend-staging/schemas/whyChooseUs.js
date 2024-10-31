@@ -278,6 +278,199 @@ export default {
             hotspot: true
         }
     },
+    {
+        name: 'awardsHeading',
+        title: 'Awards Heading',
+        type: 'string'
+    },
+    {
+        name: 'awardsAward1Image',
+        title: 'Awards Award 1 Image',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'awardsAward1Link',
+        title: 'Awards Award 1 Link',
+        type: 'string'
+    },
+    {
+        name: 'awardsAward2Image',
+        title: 'Awards Award 2 Image',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'awardsAward2Link',
+        title: 'Awards Award 2 Link',
+        type: 'string'
+    },
+    {
+        name: 'awardsAward3Image',
+        title: 'Awards Award 3 Image',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'awardsAward3Link',
+        title: 'Awards Award 3 Link',
+        type: 'string'
+    },
+    {
+        name: 'awardsAward4Image',
+        title: 'Awards Award 4 Image',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'awardsAward4Link',
+        title: 'Awards Award 4 Link',
+        type: 'string'
+    },
+    {
+        name: 'processHeading',
+        title: 'Process Heading',
+        type: 'string'
+    },
+    {
+        name: 'processParagraph',
+        title: 'Process Paragraph',
+        type: 'string'
+    },
+    {
+        name: 'processStep1Heading',
+        title: 'Process Step 1 Heading',
+        type: 'string'
+    },
+    {
+        name: 'processStep1Paragraph',
+        title: 'Process Step 1 Paragraph',
+        type: 'string'
+    },
+    {
+        name: 'processStep1Icon',
+        title: 'Process Step 1 Icon',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'processStep2Heading',
+        title: 'Process Step 2 Heading',
+        type: 'string'
+    },
+    {
+        name: 'processStep2Paragraph',
+        title: 'Process Step 2 Paragraph',
+        type: 'string'
+    },
+    {
+        name: 'processStep2Icon',
+        title: 'Process Step 2 Icon',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'processStep3Heading',
+        title: 'Process Step 3 Heading',
+        type: 'string'
+    },
+    {
+        name: 'processStep3Paragraph',
+        title: 'Process Step 3 Paragraph',
+        type: 'string'
+    },
+    {
+        name: 'processStep3Icon',
+        title: 'Process Step 3 Icon',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'processStep4Heading',
+        title: 'Process Step 4 Heading',
+        type: 'string'
+    },
+    {
+        name: 'processStep4Paragraph',
+        title: 'Process Step 4 Paragraph',
+        type: 'string'
+    },
+    {
+        name: 'processStep4Icon',
+        title: 'Process Step 4 Icon',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'processStep5Heading',
+        title: 'Process Step 5 Heading',
+        type: 'string'
+    },
+    {
+        name: 'processStep5Paragraph',
+        title: 'Process Step 5 Paragraph',
+        type: 'string'
+    },
+    {
+        name: 'processStep5Icon',
+        title: 'Process Step 5 Icon',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'commitmentHeading',
+        title: 'Commitment Heading',
+        type: 'string'
+    },
+    {
+        name: 'commitmentBody',
+        title: 'Commitment Body',
+        type: 'blockContent',
+    },
+    {
+        name: 'commitmentImage',
+        title: 'Commitment Image',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
+    {
+        name: 'setsUsApartHeading',
+        title: 'Sets Us Apart Heading',
+        type: 'string'
+    },
+    {
+        name: 'setsUsApartBody',
+        title: 'Sets Us Apart Body',
+        type: 'blockContent',
+    },
+    {
+        name: 'setsUsApartImage',
+        title: 'Sets Us Apart Image',
+        type: 'image',
+        options: {
+            hotspot: true
+        }
+    },
   ],
 
   preview: {
