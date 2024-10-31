@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Router from 'next/router';
 import Head from 'next/head'
 import styled, { css } from 'styled-components'
+import { Provider } from "components/ui/provider"
 import { GTMPageView } from '../utils/gtm';
 import '../styles.css'
 
@@ -53,9 +54,11 @@ export default function App({ Component, pageProps }) {
 				<link rel="canonical" href="https://parishdigital.com/"></link>
 			</Head>
 			
-			<Layout setSidebar={setSidebar} sidebar={sidebar}>
-				<Component {...pageProps} />
-			</Layout>
+			<Provider>
+				<Layout setSidebar={setSidebar} sidebar={sidebar}>
+					<Component {...pageProps} />
+				</Layout>
+			</Provider>
 		</>
 	)
 }

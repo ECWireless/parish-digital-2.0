@@ -19,11 +19,11 @@ const Footer = () => {
 						<Flex direction={'column'}>
 							<FooterHeading color={colors.white} uppercase>Sitemap</FooterHeading>
 							<Spacer size={'xs'} />
+							<ParagraphLink href="/why-choose-us">
+								Why Choose Us
+							</ParagraphLink>
 							<ParagraphLink href="/work">
 								work
-							</ParagraphLink>
-							<ParagraphLink href="/services">
-								services
 							</ParagraphLink>
 							<ParagraphLink href="/gear">
 								gear
