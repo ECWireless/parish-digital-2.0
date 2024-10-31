@@ -4,6 +4,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import client from 'client'
 import { useRef } from 'react';
 import { PortableText } from '@portabletext/react'
+import Fade from 'react-reveal/Fade';
 
 import ContactForm from 'components/Contact/ContactForm'
 import { Container } from 'components/Containers';
@@ -14,7 +15,7 @@ const ptComponentsBlack = {
   types: {
     block: ({ value }) => {
       return (
-        <P4 color="black">
+        <P4 color="black" style={{ marginTop: "20px" }}>
           {value.children.map((child) => {
             return (
               <span
@@ -40,7 +41,7 @@ const ptComponentsWhite = {
             return (
               <P4
                 key={child._key}
-                style={{ marginTop: "20px"}}
+                style={{ marginTop: "20px" }}
               >
                 {child.text}
               </P4>
@@ -134,7 +135,7 @@ const WhyChooseUs = ({
       if (scrollLeft + clientWidth >= scrollWidth - 10) {
         carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
       } else {
-        carouselRef.current.scrollBy({ left: 225, behavior: "smooth" });
+        carouselRef.current.scrollBy({ left: 220, behavior: "smooth" });
       }
     }
   };
@@ -149,7 +150,7 @@ const WhyChooseUs = ({
           behavior: "smooth",
         });
       } else {
-        carouselRef.current.scrollBy({ left: -225, behavior: "smooth" });
+        carouselRef.current.scrollBy({ left: -220, behavior: "smooth" });
       }
     }
   };
@@ -162,14 +163,16 @@ const WhyChooseUs = ({
       <Box my={{ base: 16, xs: 20, md: 28 }}>
         <Container>
           <Flex direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 16, xs: 20 }} minH="70vh">
-            <Image src={urlFor(introPhoto)} alt="Why Choose Us GIF" minH={{ base: '250px', sm: '500px', lg: '100%' }} w={{ base: '100%', lg: '50%' }}/>
+            <Image src={urlFor(introPhoto)} alt="Why Choose Us GIF" minH={{ base: '250px', sm: '500px', lg: '100%' }} w={{ base: '100%', lg: '50%' }} />
             <VStack alignItems="start" spaceY={{ base: 2, xs: 4, md: 6 }} w={{ base: '100%', lg: '50%' }}>
               <H1 color="black">{introHeading}</H1>
               <Spacer />
-              <PortableText
-                components={ptComponentsBlack}
-                value={introBody}
-              />
+              <Fade ssrFadeout>
+                <PortableText
+                  components={ptComponentsBlack}
+                  value={introBody}
+                />
+              </Fade>
             </VStack>
           </Flex>
         </Container>
@@ -183,25 +186,32 @@ const WhyChooseUs = ({
         <Container>
           <HStack justifyContent="center" mt={12} spaceX={8} >
             <Button onClick={scrollLeft} px={{ base: 0, sm: 6 }} variant="ghost">
-              <svg fill="none" height="25" viewBox="0 0 27 25"  width="27" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 12.5L26.25 0.808657V24.1913L0 12.5Z" fill="#FFD110"/>
+              <svg fill="none" height="25" viewBox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12.5L26.25 0.808657V24.1913L0 12.5Z" fill="#FFD110" />
               </svg>
             </Button>
-              <Box ref={carouselRef} maxW="100%" overflowX="hidden" w="100%">
-                <Flex gap="20px" >
-                  <Image alt="brand logo 1" objectFit="contain" src={urlFor(introBrands1)} h="125px" minW="200px" maxW="200px" />
-                  <Image alt="brand logo 2" objectFit="contain" src={urlFor(introBrands2)} h="125px" minW="200px" maxW="200px" />
-                  <Image alt="brand logo 3" objectFit="contain" src={urlFor(introBrands3)} h="125px" minW="200px" maxW="200px" />
-                  <Image alt="brand logo 4" objectFit="contain" src={urlFor(introBrands4)} h="125px" minW="200px" maxW="200px" />
-                  <Image alt="brand logo 5" objectFit="contain" src={urlFor(introBrands5)} h="125px" minW="200px" maxW="200px" />
-                  <Image alt="brand logo 6" objectFit="contain" src={urlFor(introBrands6)} h="125px" minW="200px" maxW="200px" />
-                  <Image alt="brand logo 7" objectFit="contain" src={urlFor(introBrands7)} h="125px" minW="200px" maxW="200px" />
-                  <Image alt="brand logo 8" objectFit="contain" src={urlFor(introBrands8)} h="125px" minW="200px" maxW="200px" />
-                </Flex>
-              </Box>
+            <Flex
+              css={{
+                '&::-webkit-scrollbar': {
+                  display: 'none',
+                },
+              }}
+              gap="20px" ref={carouselRef}
+              maxW="100%"
+              overflowX="scroll"
+              >
+              <Image alt="brand logo 1" objectFit="contain" src={urlFor(introBrands1)} h="125px" minW="200px" maxW="200px" />
+              <Image alt="brand logo 2" objectFit="contain" src={urlFor(introBrands2)} h="125px" minW="200px" maxW="200px" />
+              <Image alt="brand logo 3" objectFit="contain" src={urlFor(introBrands3)} h="125px" minW="200px" maxW="200px" />
+              <Image alt="brand logo 4" objectFit="contain" src={urlFor(introBrands4)} h="125px" minW="200px" maxW="200px" />
+              <Image alt="brand logo 5" objectFit="contain" src={urlFor(introBrands5)} h="125px" minW="200px" maxW="200px" />
+              <Image alt="brand logo 6" objectFit="contain" src={urlFor(introBrands6)} h="125px" minW="200px" maxW="200px" />
+              <Image alt="brand logo 7" objectFit="contain" src={urlFor(introBrands7)} h="125px" minW="200px" maxW="200px" />
+              <Image alt="brand logo 8" objectFit="contain" src={urlFor(introBrands8)} h="125px" minW="200px" maxW="200px" />
+            </Flex>
             <Button onClick={scrollRight} px={{ base: 0, sm: 6 }} variant="ghost">
               <svg fill="none" height="25" viewBox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
-                <path d="M27 12.5L0.75 24.1913V0.808657L27 12.5Z" fill="#FFD110"/>
+                <path d="M27 12.5L0.75 24.1913V0.808657L27 12.5Z" fill="#FFD110" />
               </svg>
             </Button>
           </HStack>
@@ -356,43 +366,65 @@ const WhyChooseUs = ({
           <Box bgColor="#232323" color="white" mt={{ base: 16, xs: 20, md: 28 }} p={20}>
             <VStack spaceY={8}>
               <H3>{processHeading}</H3>
-              <P4>{processParagraph}</P4>
+							<Fade bottom ssrFadeout>
+                <P4>{processParagraph}</P4>
+              </Fade>
             </VStack>
 
             <VStack alignItems="start" mt={{ base: 16, xs: 20, md: 28 }} spaceY={10}>
               <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
                 <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep1Icon)} />
                 <VStack alignItems="start" spaceY={2}>
-                  <P4 uppercase weight={700}>{processStep1Heading}</P4>
-                  <P4>{processStep1Paragraph}</P4>
+                  <Fade bottom ssrFadeout>
+                    <P4 uppercase weight={700}>{processStep1Heading}</P4>
+                  </Fade>
+                  <Fade bottom delay={100} ssrFadeout>
+                    <P4>{processStep1Paragraph}</P4>
+                  </Fade>
                 </VStack>
               </Stack>
               <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
                 <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep2Icon)} />
                 <VStack alignItems="start" spaceY={2}>
-                  <P4 uppercase weight={700}>{processStep2Heading}</P4>
-                  <P4>{processStep2Paragraph}</P4>
+                  <Fade bottom delay={200} ssrFadeout>
+                    <P4 uppercase weight={700}>{processStep2Heading}</P4>
+                  </Fade>
+                  <Fade bottom delay={300} ssrFadeout>
+                    <P4>{processStep2Paragraph}</P4>
+                  </Fade>
                 </VStack>
               </Stack>
               <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
                 <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep3Icon)} />
                 <VStack alignItems="start" spaceY={2}>
-                  <P4 uppercase weight={700}>{processStep3Heading}</P4>
-                  <P4>{processStep3Paragraph}</P4>
+                  <Fade bottom delay={400} ssrFadeout>
+                    <P4 uppercase weight={700}>{processStep3Heading}</P4>
+                  </Fade>
+                  <Fade bottom delay={500} ssrFadeout>
+                    <P4>{processStep3Paragraph}</P4>
+                  </Fade>
                 </VStack>
               </Stack>
               <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
                 <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep4Icon)} />
                 <VStack alignItems="start" spaceY={2}>
-                  <P4 uppercase weight={700}>{processStep4Heading}</P4>
-                  <P4>{processStep4Paragraph}</P4>
+                  <Fade bottom delay={600} ssrFadeout>
+                    <P4 uppercase weight={700}>{processStep4Heading}</P4>
+                  </Fade>
+                  <Fade bottom delay={700} ssrFadeout>
+                    <P4>{processStep4Paragraph}</P4>
+                  </Fade>
                 </VStack>
               </Stack>
               <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
                 <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep5Icon)} />
                 <VStack alignItems="start" spaceY={2}>
-                  <P4 uppercase weight={700}>{processStep5Heading}</P4>
-                  <P4>{processStep5Paragraph}</P4>
+                  <Fade bottom delay={800} ssrFadeout>
+                    <P4 uppercase weight={700}>{processStep5Heading}</P4>
+                  </Fade>
+                  <Fade bottom delay={900} ssrFadeout>
+                    <P4>{processStep5Paragraph}</P4>
+                  </Fade>
                 </VStack>
               </Stack>
             </VStack>
@@ -412,10 +444,12 @@ const WhyChooseUs = ({
               <VStack p={{ base: 10, sm: 20 }} position="relative">
                 <H3>{commitmentHeading}</H3>
                 <Box mt={{ base: 0, sm: 10 }}>
-                  <PortableText
-                    components={ptComponentsWhite}
-                    value={commitmentBody}
-                  />
+                  <Fade bottom ssrFadeout>
+                    <PortableText
+                      components={ptComponentsWhite}
+                      value={commitmentBody}
+                    />
+                  </Fade>
                 </Box>
               </VStack>
             </Box>
@@ -432,10 +466,12 @@ const WhyChooseUs = ({
               <VStack p={{ base: 10, sm: 20 }} position="relative">
                 <H3>{setsUsApartHeading}</H3>
                 <Box mt={{ base: 0, sm: 10 }}>
-                  <PortableText
-                    components={ptComponentsWhite}
-                    value={setsUsApartBody}
-                  />
+                  <Fade bottom delay={400} ssrFadeout>
+                    <PortableText
+                      components={ptComponentsWhite}
+                      value={setsUsApartBody}
+                    />
+                  </Fade>
                 </Box>
               </VStack>
             </Box>
@@ -446,13 +482,13 @@ const WhyChooseUs = ({
       <ContactForm
         contactHeading={'Contact Us'}
         contactParagraph={'We can help bring your next project to life'}
-      />
+      /> 
     </>
   )
 }
 
 
-function urlFor (source) {
+function urlFor(source) {
   return imageUrlBuilder(client).image(source)
 }
 
