@@ -57,14 +57,7 @@ const WhyChooseUs = ({
   introHeading,
   introBody,
   introPhoto,
-  introBrands1,
-  introBrands2,
-  introBrands3,
-  introBrands4,
-  introBrands5,
-  introBrands6,
-  introBrands7,
-  introBrands8,
+  introBrands,
   testimonialsHeading1,
   testimonialsHeading2,
   testimonialsTestimonial1,
@@ -91,8 +84,6 @@ const WhyChooseUs = ({
   testimonialsLogo11,
   testimonialsTestimonial12,
   testimonialsLogo12,
-  testimonialsTestimonial13,
-  testimonialsLogo13,
   awardsHeading,
   awardsAward1Image,
   awardsAward1Link,
@@ -199,15 +190,18 @@ const WhyChooseUs = ({
               gap="20px" ref={carouselRef}
               maxW="100%"
               overflowX="scroll"
-              >
-              <Image alt="brand logo 1" objectFit="contain" src={urlFor(introBrands1)} h="125px" minW="200px" maxW="200px" />
-              <Image alt="brand logo 2" objectFit="contain" src={urlFor(introBrands2)} h="125px" minW="200px" maxW="200px" />
-              <Image alt="brand logo 3" objectFit="contain" src={urlFor(introBrands3)} h="125px" minW="200px" maxW="200px" />
-              <Image alt="brand logo 4" objectFit="contain" src={urlFor(introBrands4)} h="125px" minW="200px" maxW="200px" />
-              <Image alt="brand logo 5" objectFit="contain" src={urlFor(introBrands5)} h="125px" minW="200px" maxW="200px" />
-              <Image alt="brand logo 6" objectFit="contain" src={urlFor(introBrands6)} h="125px" minW="200px" maxW="200px" />
-              <Image alt="brand logo 7" objectFit="contain" src={urlFor(introBrands7)} h="125px" minW="200px" maxW="200px" />
-              <Image alt="brand logo 8" objectFit="contain" src={urlFor(introBrands8)} h="125px" minW="200px" maxW="200px" />
+            >
+              {introBrands.map((brand, index) => (
+                <Image
+                  alt={`brand logo ${index}`}
+                  h="125px"
+                  key={`brand-logo-${index}`}
+                  maxW="200px"
+                  minW="200px"
+                  objectFit="contain"
+                  src={urlFor(brand)}
+                />
+              ))}
             </Flex>
             <Button onClick={scrollRight} px={{ base: 0, sm: 6 }} variant="ghost">
               <svg fill="none" height="25" viewBox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
@@ -328,13 +322,6 @@ const WhyChooseUs = ({
                 />
                 <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo12)} />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
-                <PortableText
-                  components={ptComponentsBlack}
-                  value={testimonialsTestimonial13}
-                />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo13)} />
-              </Stack>
             </VStack>
           </Box>
         </Container>
@@ -444,12 +431,10 @@ const WhyChooseUs = ({
               <VStack p={{ base: 10, sm: 20 }} position="relative">
                 <H3>{commitmentHeading}</H3>
                 <Box mt={{ base: 0, sm: 10 }}>
-                  <Fade bottom ssrFadeout>
-                    <PortableText
-                      components={ptComponentsWhite}
-                      value={commitmentBody}
-                    />
-                  </Fade>
+                  <PortableText
+                    components={ptComponentsWhite}
+                    value={commitmentBody}
+                  />
                 </Box>
               </VStack>
             </Box>
@@ -466,12 +451,10 @@ const WhyChooseUs = ({
               <VStack p={{ base: 10, sm: 20 }} position="relative">
                 <H3>{setsUsApartHeading}</H3>
                 <Box mt={{ base: 0, sm: 10 }}>
-                  <Fade bottom delay={400} ssrFadeout>
-                    <PortableText
-                      components={ptComponentsWhite}
-                      value={setsUsApartBody}
-                    />
-                  </Fade>
+                  <PortableText
+                    components={ptComponentsWhite}
+                    value={setsUsApartBody}
+                  />
                 </Box>
               </VStack>
             </Box>
@@ -496,14 +479,7 @@ const query = groq`*[_type == "whyChooseUs" && slug.current == "v1"][0]{
   introHeading,
   introBody,
   introPhoto,
-  introBrands1,
-  introBrands2,
-  introBrands3,
-  introBrands4,
-  introBrands5,
-  introBrands6,
-  introBrands7,
-  introBrands8,
+  introBrands,
   testimonialsHeading1,
   testimonialsHeading2,
   testimonialsTestimonial1,
@@ -530,8 +506,6 @@ const query = groq`*[_type == "whyChooseUs" && slug.current == "v1"][0]{
   testimonialsLogo11,
   testimonialsTestimonial12,
   testimonialsLogo12,
-  testimonialsTestimonial13,
-  testimonialsLogo13,
   awardsHeading,
   awardsAward1Image,
   awardsAward1Link,
