@@ -36,68 +36,17 @@ export default {
         }
     },
     {
-        name: 'introBrands1',
-        title: 'Intro Brands 1',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-    },
-    {
-        name: 'introBrands2',
-        title: 'Intro Brands 2',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-    },
-    {
-        name: 'introBrands3',
-        title: 'Intro Brands 3',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-    },
-    {
-        name: 'introBrands4',
-        title: 'Intro Brands 4',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-    },
-    {
-        name: 'introBrands5',
-        title: 'Intro Brands 5',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-    },
-    {
-        name: 'introBrands6',
-        title: 'Intro Brands 6',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-    },
-    {
-        name: 'introBrands7',
-        title: 'Intro Brands 7',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-    },
-    {
-        name: 'introBrands8',
-        title: 'Intro Brands 8',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
+        name: 'introBrands',
+        title: 'Intro Brands',
+        type: 'array',
+        of: [
+            {
+                type: 'image',
+                options: {
+                    hotspot: true
+                }
+            }
+        ]
     },
     {
         name: 'testimonialsHeading1',
@@ -260,19 +209,6 @@ export default {
     {
         name: 'testimonialsLogo12',
         title: 'Testimonials Logo 12',
-        type: 'image',
-        options: {
-            hotspot: true
-        }
-    },
-    {
-        name: 'testimonialsTestimonial13',
-        title: 'Testimonials Testimonial 13',
-        type: 'blockContent',
-    },
-    {
-        name: 'testimonialsLogo13',
-        title: 'Testimonials Logo 13',
         type: 'image',
         options: {
             hotspot: true
