@@ -423,7 +423,7 @@ const WhyChooseUs = ({
               bgPos="center"
               bgSize="cover"
               color="white"
-              h={{ base: '400px', lg: '500px' }}
+              h={{ base: '400px', lg: '500px', xl: '650px' }}
               position="relative"
               w="100%"
             >
@@ -443,7 +443,7 @@ const WhyChooseUs = ({
               bgPos="center"
               bgSize="cover"
               color="white"
-              h={{ base: '600', xs: '500px' }}
+              h={{ base: '600px', xs: '500px', xl: '650px' }}
               position="relative"
               w="100%"
             >
