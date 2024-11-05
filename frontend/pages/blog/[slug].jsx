@@ -3,6 +3,7 @@ import { PortableText } from '@portabletext/react'
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import client from 'client'
+import { VStack } from '@chakra-ui/react';
 import { colors, shadows } from 'components/theme';
 import Image from 'next/image';
 import Link from 'next/link'
@@ -55,7 +56,7 @@ const Post = ({ post }) => {
     topOfPageVideo,
     body = [],
     bottomOfPageVideo,
-  } = post
+  } = post;
 
   return (
     <article>
@@ -116,10 +117,12 @@ const Post = ({ post }) => {
                 />
               </LazyIframe>
             </VideoContainer>}
-            <PortableText
-              value={body}
-              components={ptComponents}
-            />
+            <VStack alignItems="start">
+              <PortableText
+                value={body}
+                components={ptComponents}
+              />
+            </VStack>
 
             {bottomOfPageVideo && <VideoContainer>
               <LazyIframe>

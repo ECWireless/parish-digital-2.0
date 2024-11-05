@@ -12,11 +12,13 @@ import category from './category'
 import post from './post'
 import author from './author'
 import navigation from './navigation'
+import whyChooseUs from './whyChooseUs'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default [
   home,
   about,
+  whyChooseUs,
   service,
   work,
   gear,

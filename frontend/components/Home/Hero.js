@@ -1,6 +1,6 @@
 // import Fade from 'react-reveal/Fade';
 import styled, { css } from 'styled-components'
-import { buildFileUrl, getFileAsset } from '@sanity/asset-utils';
+import { getFileAsset } from '@sanity/asset-utils';
 import { useMemo } from 'react';
 import respondTo from '../Breakpoints'
 
