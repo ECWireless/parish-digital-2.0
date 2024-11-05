@@ -27,13 +27,18 @@ export default {
         title: 'Intro Body',
         type: 'blockContent',
       },
+      // {
+      //     name: 'introPhoto',
+      //     title: 'Intro Photo',
+      //     type: 'image',
+      //     options: {
+      //         hotspot: true
+      //     }
+        // },
       {
-          name: 'introPhoto',
-          title: 'Intro Photo',
-          type: 'image',
-          options: {
-              hotspot: true
-          }
+          name: 'introVideo',
+          title: 'Intro Video',
+          type: 'file'
       },
       {
           name: 'introBrands',

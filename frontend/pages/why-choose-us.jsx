@@ -2,9 +2,10 @@ import Head from 'next/head';
 import groq from 'groq'
 import imageUrlBuilder from '@sanity/image-url'
 import client from 'client'
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { PortableText } from '@portabletext/react'
 import Fade from 'react-reveal/Fade';
+import { getFileAsset } from '@sanity/asset-utils';
 
 import ContactForm from 'components/Contact/ContactForm'
 import { Container } from 'components/Containers';
@@ -56,7 +57,7 @@ const ptComponentsWhite = {
 const WhyChooseUs = ({
   introHeading,
   introBody,
-  introPhoto,
+  introVideo,
   introBrands,
   testimonialsHeading1,
   testimonialsHeading2,
@@ -119,6 +120,9 @@ const WhyChooseUs = ({
 }) => {
   const carouselRef = useRef(null);
 
+
+  const introVideoUrl = useMemo(() => getFileAsset(introVideo, { projectId: process.env.BACKEND_SANITY_PROJECT_ID, dataset: 'production' }).url, [introVideo])
+
   const scrollRight = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
@@ -154,7 +158,12 @@ const WhyChooseUs = ({
       <Box my={{ base: 16, xs: 20, md: 28 }}>
         <Container>
           <Flex direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 16, xs: 20 }} minH="70vh">
-            <Image src={urlFor(introPhoto)} alt="Why Choose Us GIF" minH={{ base: '250px', sm: '500px', lg: '100%' }} w={{ base: '100%', lg: '50%' }} />
+            {/* <Image src={urlFor(introPhoto)} alt="Why Choose Us GIF" minH={{ base: '250px', sm: '500px', lg: '100%' }} w={{ base: '100%', lg: '50%' }} /> */}
+            <Box minH={{ base: '250px', sm: '500px', lg: '100%' }} w={{ base: '100%', lg: '50%' }}>
+              <video autoPlay loop muted playsInline style={{ height: '100%', width: '100%' }}>
+                <source src={introVideoUrl} type="video/mp4" />
+              </video>
+            </Box>
             <VStack alignItems="start" spaceY={{ base: 2, xs: 4, md: 6 }} w={{ base: '100%', lg: '50%' }}>
               <H1 color="black">{introHeading}</H1>
               <Spacer />
@@ -478,7 +487,7 @@ function urlFor(source) {
 const query = groq`*[_type == "whyChooseUs" && slug.current == "v1"][0]{
   introHeading,
   introBody,
-  introPhoto,
+  introVideo,
   introBrands,
   testimonialsHeading1,
   testimonialsHeading2,
