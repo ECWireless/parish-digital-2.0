@@ -34,7 +34,7 @@ export default {
     //     options: {
     //         hotspot: true
     //     }
-      // },
+    // },
     
     {
         name: 'introVideo',

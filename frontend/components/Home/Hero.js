@@ -95,6 +95,7 @@ const HeroVideo = styled.video`
   width: auto;
   position: absolute;
   top: 0;
+  object-fit: cover;
 
   animation-name: fade;
   animation-duration: 2s;
