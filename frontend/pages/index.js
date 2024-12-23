@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import groq from 'groq'
-import imageUrlBuilder from '@sanity/image-url'
-import Head from 'next/head'
+import groq from 'groq';
+import imageUrlBuilder from '@sanity/image-url';
+import Head from 'next/head';
 
-import client from 'client'
+import client from 'client';
 
-import Hero from 'components/Home/Hero'
-import Description from 'components/Home/Description'
-import Examples from 'components/Home/Examples'
-import Services from 'components/Home/Services'
-import Trusted from 'components/Home/Trusted'
-import ContactForm from 'components/Contact/ContactForm'
-import Map from 'components/Map'
-import Modal from 'components/Modal'
-import respondTo from 'components/Breakpoints'
+import Hero from 'components/Home/Hero';
+import Description from 'components/Home/Description';
+import Examples from 'components/Home/Examples';
+import Services from 'components/Home/Services';
+import Trusted from 'components/Home/Trusted';
+import ContactForm from 'components/Contact/ContactForm';
+import Map from 'components/Map';
+import Modal from 'components/Modal';
+import respondTo from 'components/Breakpoints';
 import { LazyIframe } from 'components/LazyIframe';
 
 const Index = ({
@@ -52,7 +52,7 @@ const Index = ({
   locationParagraph1,
   locationParagraph2,
 }) => {
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -109,15 +109,20 @@ const Index = ({
       />
       <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
         <LazyIframe>
-          <StyledIFrame src={`https://player.vimeo.com/video/${heroDemoReelLink}?h=dbf0d01a15&title=0&byline=0&portrait=0`} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen />
+          <StyledIFrame
+            src={`https://player.vimeo.com/video/${heroDemoReelLink}?h=dbf0d01a15&title=0&byline=0&portrait=0`}
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+          />
         </LazyIframe>
       </Modal>
     </>
-  )
-}
+  );
+};
 
-function urlFor (source) {
-  return imageUrlBuilder(client).image(source)
+function urlFor(source) {
+  return imageUrlBuilder(client).image(source);
 }
 
 const query = groq`*[_type == "home" && slug.current == "v1"][0]{
@@ -153,11 +158,11 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
   locationHeading,
   locationParagraph1,
   locationParagraph2,
-}`
+}`;
 
 export async function getStaticProps() {
-  const props = await client.fetch(query)
-  return { props, revalidate: 10 }
+  const props = await client.fetch(query);
+  return { props, revalidate: 10 };
 }
 
 export default Index;
