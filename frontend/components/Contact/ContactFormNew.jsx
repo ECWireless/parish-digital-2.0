@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import respondTo from '../Breakpoints';
@@ -21,6 +21,11 @@ const ContactFormNew = ({ contactHeading }) => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [showRecaptchaError, setShowRecaptchaError] = useState(false);
+
+  useEffect(() => {
+    setShowRecaptchaError(false);
+  }, [notRobot]);
 
   function onSetName(e) {
     setName(e.target.value);
@@ -38,6 +43,7 @@ const ContactFormNew = ({ contactHeading }) => {
       setLoading(true);
 
       if (!notRobot) {
+        setShowRecaptchaError(true);
         throw new Error('Please verify that you are not a robot.');
       }
 
@@ -144,6 +150,11 @@ const ContactFormNew = ({ contactHeading }) => {
                 sitekey={process.env.RECAPTCHA_API_KEY}
                 size="compact"
               />
+              {showRecaptchaError && (
+                <P4 color={colors.red} marginTop={10}>
+                  Please verify that you are not a robot.
+                </P4>
+              )}
             </Box3>
             <Box3 marginTop={40}>
               <Flex justify={'flex-end'}>
