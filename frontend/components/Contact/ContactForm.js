@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Fade from 'react-reveal/Fade';
 import styled, { css } from 'styled-components';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -10,7 +10,7 @@ import { Button4 } from '../Buttons';
 import { Card1 } from '../Cards';
 import { Flex } from '../Containers';
 import { Form, Label, Input, TextArea } from '../Forms';
-import { H4 } from '../Typography';
+import { H4, P4 } from '../Typography';
 import { Line } from '../Lines';
 import Spinner from '../Spinner';
 import Snackbar from '../Snackbar';
@@ -23,6 +23,11 @@ const ContactForm = ({ contactHeading }) => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [showRecaptchaError, setShowRecaptchaError] = useState(false);
+
+  useEffect(() => {
+    setShowRecaptchaError(false);
+  }, [notRobot]);
 
   function onSetName(e) {
     setName(e.target.value);
@@ -40,6 +45,7 @@ const ContactForm = ({ contactHeading }) => {
       setLoading(true);
 
       if (!notRobot) {
+        setShowRecaptchaError(true);
         throw new Error('Please verify that you are not a robot.');
       }
 
@@ -174,6 +180,11 @@ const ContactForm = ({ contactHeading }) => {
               sitekey={process.env.RECAPTCHA_API_KEY}
               size="compact"
             />
+            {showRecaptchaError && (
+              <P4 color={colors.red} marginTop={10}>
+                Please verify that you are not a robot.
+              </P4>
+            )}
             <Box3 marginTop={20}>
               <Flex justify={'flex-end'}>
                 <Button4
