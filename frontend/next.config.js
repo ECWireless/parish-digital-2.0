@@ -8,18 +8,19 @@ const nextConfig = {
     MAGIC_PUBLISHABLE_KEY: process.env.MAGIC_PUBLISHABLE_KEY,
     MAGIC_SECRET_KEY: process.env.MAGIC_SECRET_KEY,
     ENCRYPTION_SECRET: process.env.ENCRYPTION_SECRET,
+    RECAPTCHA_API_KEY: process.env.RECAPTCHA_API_KEY,
   },
   compiler: {
     // ssr and displayName are configured by default
     styledComponents: true,
   },
   experimental: {
-    optimizePackageImports: ["@chakra-ui/react"],
+    optimizePackageImports: ['@chakra-ui/react'],
   },
   images: {
     domains: ['upcity-marketplace.s3.amazonaws.com', 'cdn.sanity.io'],
-    formats: ['image/avif', 'image/webp']
-  }
+    formats: ['image/avif', 'image/webp'],
+  },
 };
 
 module.exports = nextConfig;
