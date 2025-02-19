@@ -6,7 +6,8 @@ import client from 'client'
 import { VStack } from '@chakra-ui/react';
 import { colors, shadows } from 'components/theme';
 import Image from 'next/image';
-import Link from 'next/link'
+import Link from 'next/link';
+import Head from 'next/head';
 
 import { urlFor } from 'lib/helpers';
 
@@ -59,83 +60,88 @@ const Post = ({ post }) => {
   } = post;
 
   return (
-    <article>
-      <Container>
-        <Flex mt={'48px'}>
-          <StyledLink href="/blog">
-            <Image src="/icons/arrow.svg" height={20} width={20} />
-            <P4>View more posts</P4>
-          </StyledLink>
-        </Flex>
-        <Flex align={'center'} mt={'12px'} respondFlip>
-          {mainImage && (
-            <StyledCoverPhoto
-              src={urlFor(mainImage).url()}
-              alt={`${title} cover photo`}
-              height={300}
-              width={300}
-            />
-          )}
-          <Flex justify={'center'} width={'100%'} p={'20px'}>
-            <div>
-              <H3>{title}</H3>
-              <Flex mt={'8px'}>
-                <P5>Published on {new Date(publishedAt).toLocaleDateString(undefined, {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                })}
-              </P5>
-              </Flex>
-              <Flex align={'center'} gap={'8px'} mt={'20px'} mb={'8px'}>
-                {authorImage && (
-                  <StyledAuthorImage
-                    src={urlFor(authorImage).url()}
-                    alt={`${name}'s picture`}
-                    height={30}
-                    width={30}
-                  />
-                )}
-                <P4>By {name}</P4>
-              </Flex>
-              {/* {categories && (
-                <ul>
-                  Posted in
-                  {categories.map(category => <li key={category}>{category}</li>)}
-                </ul>
-              )} */}
-            </div>
+    <>
+      <Head>
+        <title>{title} | Parish Digital Video Production</title>
+      </Head>
+      <article>
+        <Container>
+          <Flex mt={'48px'}>
+            <StyledLink href="/blog">
+              <Image alt="arrow button" src="/icons/arrow.svg" height={20} width={20} />
+              <P4>View more posts</P4>
+            </StyledLink>
           </Flex>
-        </Flex>
-        <StyledContentBackground>
-          <StyledContentContainer>
-            {topOfPageVideo && <VideoContainer>
-              <LazyIframe>
-                <Video
-                  src={topOfPageVideo}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                />
-              </LazyIframe>
-            </VideoContainer>}
-            <VStack alignItems="start">
-              <PortableText
-                value={body}
-                components={ptComponents}
+          <Flex align={'center'} mt={'12px'} respondFlip>
+            {mainImage && (
+              <StyledCoverPhoto
+                src={urlFor(mainImage).url()}
+                alt={`${title} cover photo`}
+                height={300}
+                width={300}
               />
-            </VStack>
-
-            {bottomOfPageVideo && <VideoContainer>
-              <LazyIframe>
-                <Video
-                  src={bottomOfPageVideo}
-                  frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+            )}
+            <Flex justify={'center'} width={'100%'} p={'20px'}>
+              <div>
+                <H3 as="h1">{title}</H3>
+                <Flex mt={'8px'}>
+                  <P5>Published on {new Date(publishedAt).toLocaleDateString(undefined, {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </P5>
+                </Flex>
+                <Flex align={'center'} gap={'8px'} mt={'20px'} mb={'8px'}>
+                  {authorImage && (
+                    <StyledAuthorImage
+                      src={urlFor(authorImage).url()}
+                      alt={`${name}'s picture`}
+                      height={30}
+                      width={30}
+                    />
+                  )}
+                  <P4>By {name}</P4>
+                </Flex>
+                {/* {categories && (
+                  <ul>
+                    Posted in
+                    {categories.map(category => <li key={category}>{category}</li>)}
+                  </ul>
+                )} */}
+              </div>
+            </Flex>
+          </Flex>
+          <StyledContentBackground>
+            <StyledContentContainer>
+              {topOfPageVideo && <VideoContainer>
+                <LazyIframe>
+                  <Video
+                    src={topOfPageVideo}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
+              </VideoContainer>}
+              <VStack alignItems="start">
+                <PortableText
+                  value={body}
+                  components={ptComponents}
                 />
-              </LazyIframe>
-            </VideoContainer>}
-          </StyledContentContainer>
-        </StyledContentBackground>
-      </Container>
-    </article>
+              </VStack>
+
+              {bottomOfPageVideo && <VideoContainer>
+                <LazyIframe>
+                  <Video
+                    src={bottomOfPageVideo}
+                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
+                  />
+                </LazyIframe>
+              </VideoContainer>}
+            </StyledContentContainer>
+          </StyledContentBackground>
+        </Container>
+      </article>
+    </>
   )
 }
 

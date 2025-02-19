@@ -21,7 +21,7 @@ const Story = ({
           <Flex align={'center'} justify={'flex-start'} direction={'column'}>
             <StyledTextContainer>
               <Box3 marginBottom={25}>
-                <H4 style={{fontWeight: 900}} uppercase>
+                <H4 as="h1" style={{fontWeight: 900}} uppercase>
                   {storyHeading}
                 </H4>
               </Box3>
