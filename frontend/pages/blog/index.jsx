@@ -45,7 +45,7 @@ const Blog = ({
   return (
     <>
       <Head>
-          <title>Blog | Parish Digital Video Production</title>
+        <title>Blog | Parish Digital Video Production</title>
       </Head>
       <Container>
         <Box3 marginTop={75} marginBottom={50}>
@@ -53,7 +53,7 @@ const Blog = ({
             <Fade ssrFadeout>
               <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
             </Fade>
-            <H2 uppercase center>
+            <H2 as="h1" uppercase center>
               BLOG
             </H2>
             <Fade ssrFadeout>
