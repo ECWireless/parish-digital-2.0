@@ -1,13 +1,13 @@
 // import Fade from 'react-reveal/Fade';
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 import { getFileAsset } from '@sanity/asset-utils';
 import { useMemo } from 'react';
-import respondTo from '../Breakpoints'
+import respondTo from '../Breakpoints';
 
-import { colors } from '../theme'
-import { Box3 } from '../Boxes'
-import { Button1 } from '../Buttons'
-import { Flex } from '../Containers'
+import { colors } from '../theme';
+import { Box3 } from '../Boxes';
+import { Button1 } from '../Buttons';
+import { Flex } from '../Containers';
 // import { CustomLink } from '../Links'
 
 const Hero = ({
@@ -17,7 +17,14 @@ const Hero = ({
   heroSubheading2,
   setModalOpen,
 }) => {
-  const heroVideoUrl = useMemo(() => getFileAsset(heroVideo, { projectId: process.env.BACKEND_SANITY_PROJECT_ID, dataset: 'production' }).url, [heroVideo])
+  const heroVideoUrl = useMemo(
+    () =>
+      getFileAsset(heroVideo, {
+        projectId: process.env.BACKEND_SANITY_PROJECT_ID,
+        dataset: 'production',
+      }).url,
+    [heroVideo],
+  );
 
   return (
     <WebHero>
@@ -27,14 +34,25 @@ const Hero = ({
       </HeroVideo>
       <HeroContainer>
         <TexContainer>
-            <H4 style={{ textShadow: '0 3px 6px rgba(0,0,0,1)' }} color={colors.white} center>
-              {heroSubheading2}
-            </H4>
-            <Box3 marginTop={50}>
-              <H1 style={{ textShadow: '0 10px 20px rgba(0,0,0,1)' }} color={colors.white} center uppercase>
-                {heroHeading}
-              </H1>
-            </Box3>
+          <H4
+            as="h2"
+            style={{ textShadow: '0 3px 6px rgba(0,0,0,1)' }}
+            color={colors.white}
+            center
+          >
+            {heroSubheading2}
+          </H4>
+          <Box3 marginTop={50}>
+            <H1
+              as="h1"
+              style={{ textShadow: '0 10px 20px rgba(0,0,0,1)' }}
+              color={colors.white}
+              center
+              uppercase
+            >
+              {heroHeading}
+            </H1>
+          </Box3>
           {/* <Fade delay={200} bottom ssrFadeout>
             <Box3 marginTop={50}>
               <H4 style={{ textShadow: '0 5px 20px rgba(0,0,0,1)' }} color={colors.white} center>
@@ -42,38 +60,36 @@ const Hero = ({
               </H4>
             </Box3>
           </Fade> */}
-          <div style={{ marginTop: '4rem'}}>
+          <div style={{ marginTop: '4rem' }}>
             <Flex align={'center'} justify={'center'}>
               {/* <CustomLink
                 href={heroDemoReelLink}
                 target='_blank' rel='noopener noreferrer'
                 title='Vimeo Portfolio'
               > */}
-                <Button1 onClick={() => setModalOpen(true)}>
-                  Demo Reel
-                </Button1>
+              <Button1 onClick={() => setModalOpen(true)}>Demo Reel</Button1>
               {/* </CustomLink> */}
             </Flex>
           </div>
         </TexContainer>
       </HeroContainer>
     </WebHero>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
 
-const WebHero =  styled.div`
-    width: 100%;
-    height: 45rem;
-    position: relative;
-    overflow: hidden;
+const WebHero = styled.div`
+  width: 100%;
+  height: 45rem;
+  position: relative;
+  overflow: hidden;
 
-    ${respondTo.xs`
+  ${respondTo.xs`
         height: 45rem;
     `}
 
-    ${respondTo.sm`
+  ${respondTo.sm`
         height: 560px;
     `}
 
@@ -88,7 +104,7 @@ const WebHero =  styled.div`
     ${respondTo.xl`
         height: 90rem;
     `}
-`
+`;
 
 const HeroVideo = styled.video`
   height: 100%;
@@ -115,7 +131,7 @@ const HeroVideo = styled.video`
     width: 100%;
     height: auto;
   `}
-`
+`;
 
 const HeroContainer = styled(Flex)`
   position: relative;
@@ -124,7 +140,7 @@ const HeroContainer = styled(Flex)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-`
+`;
 
 const TexContainer = styled.div`
   margin-top: 10rem;
@@ -148,21 +164,21 @@ const TexContainer = styled.div`
   ${respondTo.xl`
     margin-top: 48rem;
   `}
-`
+`;
 
 // Custom Typography
 export const H1 = styled.h4`
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 35px;
-    letter-spacing: 4px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 4px;
 
-    ${respondTo.xs`
+  ${respondTo.xs`
         line-height: 40px;
         font-size: 4rem;
     `}
 
-    ${respondTo.sm`
+  ${respondTo.sm`
         font-size: 5.5rem;
         line-height: 40px;
     `}
@@ -175,19 +191,23 @@ export const H1 = styled.h4`
         font-size: 7.5rem;
     `}
 
-    ${props => props.center && css`
-        text-align: center;
+    ${props =>
+    props.center &&
+    css`
+      text-align: center;
     `}
 
-    ${props => props.uppercase && css`
-        text-transform: uppercase;
+    ${props =>
+    props.uppercase &&
+    css`
+      text-transform: uppercase;
     `}
 
 
     ${props => css`
-        color: ${props.color}
-    `}
-`
+    color: ${props.color};
+  `}
+`;
 
 export const H4 = styled.h1`
   font-size: 2rem;
@@ -195,16 +215,20 @@ export const H4 = styled.h1`
   line-height: 30px;
   letter-spacing: 1px;
 
-  ${props => props.center && css`
-    text-align: center;
-  `}
+  ${props =>
+    props.center &&
+    css`
+      text-align: center;
+    `}
 
-  ${props => props.uppercase && css`
-    text-transform: uppercase;
-  `}
+  ${props =>
+    props.uppercase &&
+    css`
+      text-transform: uppercase;
+    `}
 
 
   ${props => css`
-    color: ${props.color}
+    color: ${props.color};
   `}
-`
+`;
