@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import groq from 'groq'
-import client from 'client'
+import Head from 'next/head';
+import groq from 'groq';
+import client from 'client';
 
-import Examples from 'components/Work/Examples'
+import Examples from 'components/Work/Examples';
 
 const Work = ({
   heading,
@@ -42,8 +42,8 @@ const Work = ({
         example12Link={example12Link}
       />
     </>
-  )
-}
+  );
+};
 
 const query = groq`*[_type == "work" && slug.current == "v1"][0]{
     heading,
@@ -60,11 +60,11 @@ const query = groq`*[_type == "work" && slug.current == "v1"][0]{
     example10Link,
     example11Link,
     example12Link,
-}`
+}`;
 
 export async function getStaticProps() {
-  const props = await client.fetch(query)
-  return { props, revalidate: 10 }
+  const props = await client.fetch(query);
+  return { props, revalidate: 3600 };
 }
 
-export default Work
+export default Work;

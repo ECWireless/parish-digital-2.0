@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import groq from 'groq'
-import client from 'client'
+import Head from 'next/head';
+import groq from 'groq';
+import client from 'client';
 
 // import Banner from '../components/Contact/Banner'
-import ContactFormNew from 'components/Contact/ContactFormNew'
+import ContactFormNew from 'components/Contact/ContactFormNew';
 
 const Contact = ({
   // bannerHeading,
@@ -29,8 +29,8 @@ const Contact = ({
         contactParagraph={contactParagraph}
       />
     </>
-  )
-}
+  );
+};
 
 const query = groq`*[_type == "contact" && slug.current == "v1"][0]{
   bannerHeading,
@@ -39,11 +39,11 @@ const query = groq`*[_type == "contact" && slug.current == "v1"][0]{
   contactParagraph,
   ownerNumber,
   ownerEmail,
-}`
+}`;
 
 export async function getStaticProps() {
-  const props = await client.fetch(query)
-  return { props, revalidate: 10 }
+  const props = await client.fetch(query);
+  return { props, revalidate: 3600 };
 }
 
-export default Contact
+export default Contact;

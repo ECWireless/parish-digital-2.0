@@ -162,7 +162,7 @@ const query = groq`*[_type == "home" && slug.current == "v1"][0]{
 
 export async function getStaticProps() {
   const props = await client.fetch(query);
-  return { props, revalidate: 10 };
+  return { props, revalidate: 3600 };
 }
 
 export default Index;

@@ -1,12 +1,12 @@
-import Head from 'next/head'
-import groq from 'groq'
-import imageUrlBuilder from '@sanity/image-url'
-import client from 'client'
+import Head from 'next/head';
+import groq from 'groq';
+import imageUrlBuilder from '@sanity/image-url';
+import client from 'client';
 
 // import Banner from 'components/About/Banner'
-import Story from 'components/About/Story'
-import Reviews from 'components/About/Reviews'
-import Crew from 'components/About/Crew'
+import Story from 'components/About/Story';
+import Reviews from 'components/About/Reviews';
+import Crew from 'components/About/Crew';
 
 const About = ({
   // bannerHeading,
@@ -130,11 +130,11 @@ const About = ({
         crew6Photo={urlFor(crew6Photo).auto('format')}
       />
     </>
-  )
-}
+  );
+};
 
-function urlFor (source) {
-  return imageUrlBuilder(client).image(source)
+function urlFor(source) {
+  return imageUrlBuilder(client).image(source);
 }
 
 const query = groq`*[_type == "about" && slug.current == "v1"][0]{
@@ -191,11 +191,11 @@ const query = groq`*[_type == "about" && slug.current == "v1"][0]{
   crew6Paragraph1,
   crew6Paragraph2,
   crew6Photo,
-}`
+}`;
 
 export async function getStaticProps() {
-  const props = await client.fetch(query)
-  return { props, revalidate: 10 }
+  const props = await client.fetch(query);
+  return { props, revalidate: 3600 };
 }
 
-export default About
+export default About;

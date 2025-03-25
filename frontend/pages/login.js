@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import { useState } from 'react'
-import groq from 'groq'
-import imageUrlBuilder from '@sanity/image-url'
-import client from '../client'
+import Head from 'next/head';
+import { useState } from 'react';
+import groq from 'groq';
+import imageUrlBuilder from '@sanity/image-url';
+import client from '../client';
 
 import useAuth from '../hooks/useAuth';
 
 // Components
-import AuthFalse from '../components/Login/AuthFalse'
-import AuthTrue from '../components/Login/AuthTrue'
+import AuthFalse from '../components/Login/AuthFalse';
+import AuthTrue from '../components/Login/AuthTrue';
 
 const Login = ({
   loginBackgroundPhoto,
@@ -25,16 +25,17 @@ const Login = ({
   loginMariaTimesheetLink,
 }) => {
   const { user, loading } = useAuth();
-  const [loggedIn, setLoggedIn] = useState(false)
-  
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <>
       <Head>
         <title>Employee Page | Parish Digital Video Production</title>
       </Head>
-      {!loggedIn 
-        ? <AuthFalse loggedIn={setLoggedIn} /> 
-        : <AuthTrue
+      {!loggedIn ? (
+        <AuthFalse loggedIn={setLoggedIn} />
+      ) : (
+        <AuthTrue
           user={user}
           loading={loading}
           setLoggedIn={setLoggedIn}
@@ -51,13 +52,13 @@ const Login = ({
           loginMariaSubmitHoursLink={loginMariaSubmitHoursLink}
           loginMariaTimesheetLink={loginMariaTimesheetLink}
         />
-      }
+      )}
     </>
-  )
-}
+  );
+};
 
-function urlFor (source) {
-  return imageUrlBuilder(client).image(source)
+function urlFor(source) {
+  return imageUrlBuilder(client).image(source);
 }
 
 const query = groq`*[_type == "login" && slug.current == "v1"][0]{
@@ -73,11 +74,11 @@ const query = groq`*[_type == "login" && slug.current == "v1"][0]{
   loginCalebTimesheetLink,
   loginMariaSubmitHoursLink,
   loginMariaTimesheetLink,
-}`
+}`;
 
 export async function getStaticProps() {
-  const props = await client.fetch(query)
-  return { props, revalidate: 10 }
+  const props = await client.fetch(query);
+  return { props, revalidate: 3600 };
 }
 
-export default Login
+export default Login;
