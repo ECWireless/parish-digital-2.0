@@ -1,34 +1,46 @@
 import Head from 'next/head';
-import groq from 'groq'
-import imageUrlBuilder from '@sanity/image-url'
-import client from 'client'
+import groq from 'groq';
+import imageUrlBuilder from '@sanity/image-url';
+import client from 'client';
 import { useMemo, useRef } from 'react';
-import { PortableText } from '@portabletext/react'
+import { PortableText } from '@portabletext/react';
 import Fade from 'react-reveal/Fade';
 import { getFileAsset } from '@sanity/asset-utils';
 
-import ContactForm from 'components/Contact/ContactForm'
+import ContactForm from 'components/Contact/ContactForm';
 import { Container } from 'components/Containers';
-import { Box, Button, Flex, Image, HStack, Link, Spacer, VStack, Stack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Image,
+  HStack,
+  Link,
+  Spacer,
+  VStack,
+  Stack,
+} from '@chakra-ui/react';
 import { H1, H3, H4, P4 } from 'components/Typography';
 
 const ptComponentsBlack = {
   types: {
     block: ({ value }) => {
       return (
-        <P4 color="black" style={{ marginTop: "20px" }}>
-          {value.children.map((child) => {
+        <P4 color="black" style={{ marginTop: '20px' }}>
+          {value.children.map(child => {
             return (
               <span
                 key={child._key}
-                style={{ fontWeight: child.marks.includes('strong') ? 700 : 400 }}
+                style={{
+                  fontWeight: child.marks.includes('strong') ? 700 : 400,
+                }}
               >
                 {child.text}
               </span>
             );
           })}
         </P4>
-      )
+      );
     },
   },
 };
@@ -38,18 +50,15 @@ const ptComponentsWhite = {
     block: ({ value }) => {
       return (
         <VStack color="white" textAlign="center">
-          {value.children.map((child) => {
+          {value.children.map(child => {
             return (
-              <P4
-                key={child._key}
-                style={{ marginTop: "20px" }}
-              >
+              <P4 key={child._key} style={{ marginTop: '20px' }}>
                 {child.text}
               </P4>
             );
           })}
         </VStack>
-      )
+      );
     },
   },
 };
@@ -120,17 +129,23 @@ const WhyChooseUs = ({
 }) => {
   const carouselRef = useRef(null);
 
-
-  const introVideoUrl = useMemo(() => getFileAsset(introVideo, { projectId: process.env.BACKEND_SANITY_PROJECT_ID, dataset: 'production' }).url, [introVideo])
+  const introVideoUrl = useMemo(
+    () =>
+      getFileAsset(introVideo, {
+        projectId: process.env.BACKEND_SANITY_PROJECT_ID,
+        dataset: 'production',
+      }).url,
+    [introVideo],
+  );
 
   const scrollRight = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
 
       if (scrollLeft + clientWidth >= scrollWidth - 10) {
-        carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        carouselRef.current.scrollBy({ left: 220, behavior: "smooth" });
+        carouselRef.current.scrollBy({ left: 220, behavior: 'smooth' });
       }
     }
   };
@@ -142,10 +157,10 @@ const WhyChooseUs = ({
       if (scrollLeft <= 10) {
         carouselRef.current.scrollTo({
           left: carouselRef.current.scrollWidth,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       } else {
-        carouselRef.current.scrollBy({ left: -220, behavior: "smooth" });
+        carouselRef.current.scrollBy({ left: -220, behavior: 'smooth' });
       }
     }
   };
@@ -157,14 +172,31 @@ const WhyChooseUs = ({
       </Head>
       <Box my={{ base: 16, xs: 20, md: 28 }}>
         <Container>
-          <Flex direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 16, xs: 20 }} minH="70vh">
+          <Flex
+            direction={{ base: 'column-reverse', lg: 'row' }}
+            gap={{ base: 16, xs: 20 }}
+            minH="70vh"
+          >
             {/* <Image src={urlFor(introPhoto)} alt="Why Choose Us GIF" minH={{ base: '250px', sm: '500px', lg: '100%' }} w={{ base: '100%', lg: '50%' }} /> */}
-            <Box minH={{ base: '250px', sm: '500px', lg: '100%' }} w={{ base: '100%', lg: '50%' }}>
-              <video autoPlay loop muted playsInline style={{ height: '100%', width: '100%' }}>
+            <Box
+              minH={{ base: '250px', sm: '500px', lg: '100%' }}
+              w={{ base: '100%', lg: '50%' }}
+            >
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ height: '100%', width: '100%' }}
+              >
                 <source src={introVideoUrl} type="video/mp4" />
               </video>
             </Box>
-            <VStack alignItems="start" spaceY={{ base: 2, xs: 4, md: 6 }} w={{ base: '100%', lg: '50%' }}>
+            <VStack
+              alignItems="start"
+              spaceY={{ base: 2, xs: 4, md: 6 }}
+              w={{ base: '100%', lg: '50%' }}
+            >
               <H1 color="black">{introHeading}</H1>
               <Spacer />
               <Fade ssrFadeout>
@@ -184,10 +216,23 @@ const WhyChooseUs = ({
         </Container>
 
         <Container>
-          <HStack justifyContent="center" mt={12} spaceX={8} >
-            <Button onClick={scrollLeft} px={{ base: 0, sm: 6 }} variant="ghost">
-              <svg fill="none" height="25" viewBox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 12.5L26.25 0.808657V24.1913L0 12.5Z" fill="#FFD110" />
+          <HStack justifyContent="center" mt={12} spaceX={8}>
+            <Button
+              onClick={scrollLeft}
+              px={{ base: 0, sm: 6 }}
+              variant="ghost"
+            >
+              <svg
+                fill="none"
+                height="25"
+                viewBox="0 0 27 25"
+                width="27"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 12.5L26.25 0.808657V24.1913L0 12.5Z"
+                  fill="#FFD110"
+                />
               </svg>
             </Button>
             <Flex
@@ -196,7 +241,8 @@ const WhyChooseUs = ({
                   display: 'none',
                 },
               }}
-              gap="20px" ref={carouselRef}
+              gap="20px"
+              ref={carouselRef}
               maxW="100%"
               overflowX="scroll"
             >
@@ -212,9 +258,22 @@ const WhyChooseUs = ({
                 />
               ))}
             </Flex>
-            <Button onClick={scrollRight} px={{ base: 0, sm: 6 }} variant="ghost">
-              <svg fill="none" height="25" viewBox="0 0 27 25" width="27" xmlns="http://www.w3.org/2000/svg">
-                <path d="M27 12.5L0.75 24.1913V0.808657L27 12.5Z" fill="#FFD110" />
+            <Button
+              onClick={scrollRight}
+              px={{ base: 0, sm: 6 }}
+              variant="ghost"
+            >
+              <svg
+                fill="none"
+                height="25"
+                viewBox="0 0 27 25"
+                width="27"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M27 12.5L0.75 24.1913V0.808657L27 12.5Z"
+                  fill="#FFD110"
+                />
               </svg>
             </Button>
           </HStack>
@@ -223,11 +282,20 @@ const WhyChooseUs = ({
 
       <Box bgColor="#E0E0E0" py={{ base: 16, xs: 20, md: 28 }}>
         <Container>
-          <VStack >
-            <H4 color="black" weight={700}>{testimonialsHeading1}</H4>
-            <H4 color="black" weight={700}>{testimonialsHeading2}</H4>
+          <VStack>
+            <H4 color="black" weight={700}>
+              {testimonialsHeading1}
+            </H4>
+            <H4 color="black" weight={700}>
+              {testimonialsHeading2}
+            </H4>
           </VStack>
-          <Box bgColor="white" border="3px solid #707070" mt={10} p={{ base: 8, sm: 20 }}>
+          <Box
+            bgColor="white"
+            border="3px solid #707070"
+            mt={10}
+            p={{ base: 8, sm: 20 }}
+          >
             <VStack
               css={{
                 '&::-webkit-scrollbar': {
@@ -238,7 +306,7 @@ const WhyChooseUs = ({
                   width: '10px',
                 },
                 '&::-webkit-scrollbar-thumb': {
-                  background: "#FFD110",
+                  background: '#FFD110',
                 },
               }}
               maxH={{ base: '400px', lg: '500px' }}
@@ -247,89 +315,197 @@ const WhyChooseUs = ({
               pr={{ base: 4, sm: 20 }}
               spaceY={10}
             >
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial1}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo1)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo1)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial2}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo2)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo2)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial3}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo3)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo3)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial4}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo4)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo4)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial5}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo5)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo5)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial6}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo6)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo6)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial7}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo7)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo7)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial8}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo8)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo8)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial9}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo9)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo9)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial10}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo10)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo10)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial11}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo11)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo11)}
+                />
               </Stack>
-              <Stack alignItems="center" direction={{ base: 'column-reverse', lg: 'row' }} gap={{ base: 10, lg: 20 }}>
+              <Stack
+                alignItems="center"
+                direction={{ base: 'column-reverse', lg: 'row' }}
+                gap={{ base: 10, lg: 20 }}
+              >
                 <PortableText
                   components={ptComponentsBlack}
                   value={testimonialsTestimonial12}
                 />
-                <Image h={{ base: '50px', lg: '125px' }} minW={{ base: '100px', lg: '300px' }} objectFit="contain" src={urlFor(testimonialsLogo12)} />
+                <Image
+                  h={{ base: '50px', lg: '125px' }}
+                  minW={{ base: '100px', lg: '300px' }}
+                  objectFit="contain"
+                  src={urlFor(testimonialsLogo12)}
+                />
               </Stack>
             </VStack>
           </Box>
@@ -344,79 +520,199 @@ const WhyChooseUs = ({
         </Container>
 
         <Container>
-          <Stack alignItems="center" direction={{ base: 'column', md: 'row' }} justifyContent="center" mt={12} spaceX={{ base: 0, md: 8 }} spaceY={{ base: 4, md: 0 }}>
-            <Link href={awardsAward1Link} rel="noopener noreferrer" target="_blank">
-              <Image alt="award logo 1" h="125px" maxW="200px" minW="200px" objectFit="contain" src={urlFor(awardsAward1Image)} />
+          <Stack
+            alignItems="center"
+            direction={{ base: 'column', md: 'row' }}
+            justifyContent="center"
+            mt={12}
+            spaceX={{ base: 0, md: 8 }}
+            spaceY={{ base: 4, md: 0 }}
+          >
+            <Link
+              href={awardsAward1Link}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                alt="award logo 1"
+                h="125px"
+                maxW="200px"
+                minW="200px"
+                objectFit="contain"
+                src={urlFor(awardsAward1Image)}
+              />
             </Link>
-            <Link href={awardsAward2Link} rel="noopener noreferrer" target="_blank">
-              <Image alt="award logo 2" h="125px" maxW="200px" minW="200px" objectFit="contain" src={urlFor(awardsAward2Image)} />
+            <Link
+              href={awardsAward2Link}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                alt="award logo 2"
+                h="125px"
+                maxW="200px"
+                minW="200px"
+                objectFit="contain"
+                src={urlFor(awardsAward2Image)}
+              />
             </Link>
-            <Link href={awardsAward3Link} rel="noopener noreferrer" target="_blank">
-              <Image alt="award logo 3" h="125px" maxW="200px" minW="200px" objectFit="contain" src={urlFor(awardsAward3Image)} />
+            <Link
+              href={awardsAward3Link}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                alt="award logo 3"
+                h="125px"
+                maxW="200px"
+                minW="200px"
+                objectFit="contain"
+                src={urlFor(awardsAward3Image)}
+              />
             </Link>
-            <Link href={awardsAward4Link} rel="noopener noreferrer" target="_blank">
-              <Image alt="award logo 4" h="125px" maxW="200px" minW="200px" objectFit="contain" src={urlFor(awardsAward4Image)} />
+            <Link
+              href={awardsAward4Link}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                alt="award logo 4"
+                h="125px"
+                maxW="200px"
+                minW="200px"
+                objectFit="contain"
+                src={urlFor(awardsAward4Image)}
+              />
             </Link>
           </Stack>
 
-          <Box bgColor="#232323" color="white" mt={{ base: 16, xs: 20, md: 28 }} p={20}>
+          <Box
+            bgColor="#232323"
+            color="white"
+            mt={{ base: 16, xs: 20, md: 28 }}
+            p={20}
+          >
             <VStack spaceY={8}>
               <H3>{processHeading}</H3>
-							<Fade bottom ssrFadeout>
+              <Fade bottom ssrFadeout>
                 <P4>{processParagraph}</P4>
               </Fade>
             </VStack>
 
-            <VStack alignItems="start" mt={{ base: 16, xs: 20, md: 28 }} spaceY={10}>
-              <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
-                <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep1Icon)} />
+            <VStack
+              alignItems="start"
+              mt={{ base: 16, xs: 20, md: 28 }}
+              spaceY={10}
+            >
+              <Stack
+                direction={{ base: 'column', md: 'row' }}
+                justifyContent="start"
+                spaceX={{ base: 0, md: 20 }}
+                spaceY={{ base: 10, md: 0 }}
+              >
+                <Image
+                  h="100px"
+                  minW="100px"
+                  objectFit="contain"
+                  src={urlFor(processStep1Icon)}
+                />
                 <VStack alignItems="start" spaceY={2}>
                   <Fade bottom ssrFadeout>
-                    <P4 uppercase weight={700}>{processStep1Heading}</P4>
+                    <P4 uppercase weight={700}>
+                      {processStep1Heading}
+                    </P4>
                   </Fade>
                   <Fade bottom delay={100} ssrFadeout>
                     <P4>{processStep1Paragraph}</P4>
                   </Fade>
                 </VStack>
               </Stack>
-              <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
-                <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep2Icon)} />
+              <Stack
+                direction={{ base: 'column', md: 'row' }}
+                justifyContent="start"
+                spaceX={{ base: 0, md: 20 }}
+                spaceY={{ base: 10, md: 0 }}
+              >
+                <Image
+                  h="100px"
+                  minW="100px"
+                  objectFit="contain"
+                  src={urlFor(processStep2Icon)}
+                />
                 <VStack alignItems="start" spaceY={2}>
                   <Fade bottom delay={200} ssrFadeout>
-                    <P4 uppercase weight={700}>{processStep2Heading}</P4>
+                    <P4 uppercase weight={700}>
+                      {processStep2Heading}
+                    </P4>
                   </Fade>
                   <Fade bottom delay={300} ssrFadeout>
                     <P4>{processStep2Paragraph}</P4>
                   </Fade>
                 </VStack>
               </Stack>
-              <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
-                <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep3Icon)} />
+              <Stack
+                direction={{ base: 'column', md: 'row' }}
+                justifyContent="start"
+                spaceX={{ base: 0, md: 20 }}
+                spaceY={{ base: 10, md: 0 }}
+              >
+                <Image
+                  h="100px"
+                  minW="100px"
+                  objectFit="contain"
+                  src={urlFor(processStep3Icon)}
+                />
                 <VStack alignItems="start" spaceY={2}>
                   <Fade bottom delay={400} ssrFadeout>
-                    <P4 uppercase weight={700}>{processStep3Heading}</P4>
+                    <P4 uppercase weight={700}>
+                      {processStep3Heading}
+                    </P4>
                   </Fade>
                   <Fade bottom delay={500} ssrFadeout>
                     <P4>{processStep3Paragraph}</P4>
                   </Fade>
                 </VStack>
               </Stack>
-              <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
-                <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep4Icon)} />
+              <Stack
+                direction={{ base: 'column', md: 'row' }}
+                justifyContent="start"
+                spaceX={{ base: 0, md: 20 }}
+                spaceY={{ base: 10, md: 0 }}
+              >
+                <Image
+                  h="100px"
+                  minW="100px"
+                  objectFit="contain"
+                  src={urlFor(processStep4Icon)}
+                />
                 <VStack alignItems="start" spaceY={2}>
                   <Fade bottom delay={600} ssrFadeout>
-                    <P4 uppercase weight={700}>{processStep4Heading}</P4>
+                    <P4 uppercase weight={700}>
+                      {processStep4Heading}
+                    </P4>
                   </Fade>
                   <Fade bottom delay={700} ssrFadeout>
                     <P4>{processStep4Paragraph}</P4>
                   </Fade>
                 </VStack>
               </Stack>
-              <Stack direction={{ base: 'column', md: 'row' }} justifyContent="start" spaceX={{ base: 0, md: 20 }} spaceY={{ base: 10, md: 0 }}>
-                <Image h="100px" minW="100px" objectFit="contain" src={urlFor(processStep5Icon)} />
+              <Stack
+                direction={{ base: 'column', md: 'row' }}
+                justifyContent="start"
+                spaceX={{ base: 0, md: 20 }}
+                spaceY={{ base: 10, md: 0 }}
+              >
+                <Image
+                  h="100px"
+                  minW="100px"
+                  objectFit="contain"
+                  src={urlFor(processStep5Icon)}
+                />
                 <VStack alignItems="start" spaceY={2}>
                   <Fade bottom delay={800} ssrFadeout>
-                    <P4 uppercase weight={700}>{processStep5Heading}</P4>
+                    <P4 uppercase weight={700}>
+                      {processStep5Heading}
+                    </P4>
                   </Fade>
                   <Fade bottom delay={900} ssrFadeout>
                     <P4>{processStep5Paragraph}</P4>
@@ -436,7 +732,12 @@ const WhyChooseUs = ({
               position="relative"
               w="100%"
             >
-              <Box bgColor="rgba(0, 0, 0, 0.6)" h="100%" position="absolute" w="100%" />
+              <Box
+                bgColor="rgba(0, 0, 0, 0.6)"
+                h="100%"
+                position="absolute"
+                w="100%"
+              />
               <VStack p={{ base: 10, sm: 20 }} position="relative">
                 <H3>{commitmentHeading}</H3>
                 <Box mt={{ base: 0, sm: 10 }}>
@@ -456,7 +757,12 @@ const WhyChooseUs = ({
               position="relative"
               w="100%"
             >
-              <Box bgColor="rgba(0, 0, 0, 0.6)" h="100%" position="absolute" w="100%" />
+              <Box
+                bgColor="rgba(0, 0, 0, 0.6)"
+                h="100%"
+                position="absolute"
+                w="100%"
+              />
               <VStack p={{ base: 10, sm: 20 }} position="relative">
                 <H3>{setsUsApartHeading}</H3>
                 <Box mt={{ base: 0, sm: 10 }}>
@@ -474,14 +780,13 @@ const WhyChooseUs = ({
       <ContactForm
         contactHeading={'Contact Us'}
         contactParagraph={'We can help bring your next project to life'}
-      /> 
+      />
     </>
-  )
-}
-
+  );
+};
 
 function urlFor(source) {
-  return imageUrlBuilder(client).image(source)
+  return imageUrlBuilder(client).image(source);
 }
 
 const query = groq`*[_type == "whyChooseUs" && slug.current == "v1"][0]{
@@ -547,11 +852,11 @@ const query = groq`*[_type == "whyChooseUs" && slug.current == "v1"][0]{
   setsUsApartHeading,
   setsUsApartBody,
   setsUsApartImage,
-}`
+}`;
 
 export async function getStaticProps() {
-  const props = await client.fetch(query)
-  return { props, revalidate: 10 }
+  const props = await client.fetch(query);
+  return { props, revalidate: 3600 };
 }
 
-export default WhyChooseUs
+export default WhyChooseUs;
