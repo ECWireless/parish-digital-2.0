@@ -1,8 +1,8 @@
-import groq from 'groq'
-import { PortableText } from '@portabletext/react'
+import groq from 'groq';
+import { PortableText } from '@portabletext/react';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import client from 'client'
+import client from 'client';
 import { VStack } from '@chakra-ui/react';
 import { colors, shadows } from 'components/theme';
 import Image from 'next/image';
@@ -11,9 +11,9 @@ import Head from 'next/head';
 
 import { urlFor } from 'lib/helpers';
 
-import respondTo from 'components/Breakpoints'
+import respondTo from 'components/Breakpoints';
 import { Container, Flex } from 'components/Containers';
-import { H3, P4, P5 } from 'components/Typography'
+import { H3, P4, P5 } from 'components/Typography';
 import Spinner from 'components/Spinner';
 import { LazyIframe } from 'components/LazyIframe';
 
@@ -21,7 +21,7 @@ const ptComponents = {
   types: {
     image: ({ value }) => {
       if (!value?.asset?._ref) {
-        return null
+        return null;
       }
       return (
         <StyledContentImage
@@ -31,10 +31,10 @@ const ptComponents = {
           height={value.asset.metadata.dimensions.height}
           with={value.asset.metadata.dimensions.width}
         />
-      )
-    }
-  }
-}
+      );
+    },
+  },
+};
 
 const Post = ({ post }) => {
   const router = useRouter();
@@ -44,7 +44,7 @@ const Post = ({ post }) => {
       <StyledSpinnerContainer>
         <Spinner />
       </StyledSpinnerContainer>
-    )
+    );
   }
 
   const {
@@ -68,7 +68,12 @@ const Post = ({ post }) => {
         <Container>
           <Flex mt={'48px'}>
             <StyledLink href="/blog">
-              <Image alt="arrow button" src="/icons/arrow.svg" height={20} width={20} />
+              <Image
+                alt="arrow button"
+                src="/icons/arrow.svg"
+                height={20}
+                width={20}
+              />
               <P4>View more posts</P4>
             </StyledLink>
           </Flex>
@@ -85,12 +90,14 @@ const Post = ({ post }) => {
               <div>
                 <H3 as="h1">{title}</H3>
                 <Flex mt={'8px'}>
-                  <P5>Published on {new Date(publishedAt).toLocaleDateString(undefined, {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </P5>
+                  <P5>
+                    Published on{' '}
+                    {new Date(publishedAt).toLocaleDateString(undefined, {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </P5>
                 </Flex>
                 <Flex align={'center'} gap={'8px'} mt={'20px'} mb={'8px'}>
                   {authorImage && (
@@ -114,36 +121,41 @@ const Post = ({ post }) => {
           </Flex>
           <StyledContentBackground>
             <StyledContentContainer>
-              {topOfPageVideo && <VideoContainer>
-                <LazyIframe>
-                  <Video
-                    src={topOfPageVideo}
-                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                  />
-                </LazyIframe>
-              </VideoContainer>}
+              {topOfPageVideo && (
+                <VideoContainer>
+                  <LazyIframe>
+                    <Video
+                      src={topOfPageVideo}
+                      frameborder={0}
+                      allow={'autoplay; fullscreen'}
+                      allowfullscreen
+                    />
+                  </LazyIframe>
+                </VideoContainer>
+              )}
               <VStack alignItems="start">
-                <PortableText
-                  value={body}
-                  components={ptComponents}
-                />
+                <PortableText value={body} components={ptComponents} />
               </VStack>
 
-              {bottomOfPageVideo && <VideoContainer>
-                <LazyIframe>
-                  <Video
-                    src={bottomOfPageVideo}
-                    frameborder={0} allow={'autoplay; fullscreen'} allowfullscreen
-                  />
-                </LazyIframe>
-              </VideoContainer>}
+              {bottomOfPageVideo && (
+                <VideoContainer>
+                  <LazyIframe>
+                    <Video
+                      src={bottomOfPageVideo}
+                      frameborder={0}
+                      allow={'autoplay; fullscreen'}
+                      allowfullscreen
+                    />
+                  </LazyIframe>
+                </VideoContainer>
+              )}
             </StyledContentContainer>
           </StyledContentBackground>
         </Container>
       </article>
     </>
-  )
-}
+  );
+};
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
@@ -155,35 +167,35 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   topOfPageVideo,
   body,
   bottomOfPageVideo
-}`
+}`;
 export async function getStaticPaths() {
   const paths = await client.fetch(
-    groq`*[_type == "post" && defined(slug.current)][].slug.current`
-  )
+    groq`*[_type == "post" && defined(slug.current)][].slug.current`,
+  );
 
   return {
-    paths: paths.map((slug) => ({params: {slug}})),
+    paths: paths.map(slug => ({ params: { slug } })),
     fallback: true,
-  }
+  };
 }
 
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
-  const { slug = "" } = context.params
-  const post = await client.fetch(query, { slug })
+  const { slug = '' } = context.params;
+  const post = await client.fetch(query, { slug });
 
   if (!post) {
     return {
       notFound: true,
-    }
+    };
   }
 
   return {
     props: {
-      post
+      post,
     },
-    revalidate: 10,
-  }
+    revalidate: 3600,
+  };
 }
 export default Post;
 
@@ -241,7 +253,6 @@ const StyledContentImage = styled(Image)`
   width: 100%;
 `;
 
-
 const StyledContentBackground = styled.div`
   background: transparent;
 
@@ -254,7 +265,7 @@ const StyledContentContainer = styled.div`
   background: ${colors.grey};
   font-size: 1.4rem;
   line-height: 20px;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   margin: 40px auto;
   padding: 20px;
   width: 100%;
@@ -300,11 +311,10 @@ const VideoContainer = styled.div`
     width: 88rem;
     height: 50rem;
   `}
-`
+`;
 
 const Video = styled.iframe`
   box-shadow: ${shadows.card};
   height: 100%;
   width: 100%;
-`
-
+`;

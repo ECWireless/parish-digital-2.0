@@ -1,46 +1,43 @@
-import groq from 'groq'
+import groq from 'groq';
 import { useCallback, useState } from 'react';
 import Fade from 'react-reveal/Fade';
-import Link from 'next/link'
-import client from 'client'
-import styled, { css } from 'styled-components'
+import Link from 'next/link';
+import client from 'client';
+import styled, { css } from 'styled-components';
 import Image from 'next/image';
 import Head from 'next/head';
 import FuzzySearch from 'fuzzy-search';
 
 import { shortenString, urlFor } from 'lib/helpers';
 
-import { Box3 } from 'components/Boxes'
-import respondTo from 'components/Breakpoints'
-import { Card1 } from 'components/Cards'
+import { Box3 } from 'components/Boxes';
+import respondTo from 'components/Breakpoints';
+import { Card1 } from 'components/Cards';
 import { Container, Flex } from 'components/Containers';
-import { Line } from 'components/Lines'
-import { colors } from 'components/theme'
-import { H2, H4, P6 } from 'components/Typography'
+import { Line } from 'components/Lines';
+import { colors } from 'components/theme';
+import { H2, H4, P6 } from 'components/Typography';
 
-const Blog = ({
-  posts
-}) => {
+const Blog = ({ posts }) => {
   const [searchText, setSearchText] = useState('');
   const [results, setResults] = useState(posts);
 
-  const onSearchChange = useCallback((e) => {
-    setSearchText(e.target.value);
-    if (e.target.value === '') {
-      setResults(posts);
-    } else {
-      const searcher = new FuzzySearch(
-        posts,
-        ['title'],
-        {
+  const onSearchChange = useCallback(
+    e => {
+      setSearchText(e.target.value);
+      if (e.target.value === '') {
+        setResults(posts);
+      } else {
+        const searcher = new FuzzySearch(posts, ['title'], {
           sort: true,
-        },
-      );
+        });
 
-      const searchResults = searcher.search(e.target.value);
-      setResults(searchResults);
-    }
-  }, [posts]);
+        const searchResults = searcher.search(e.target.value);
+        setResults(searchResults);
+      }
+    },
+    [posts],
+  );
 
   return (
     <>
@@ -51,59 +48,76 @@ const Blog = ({
         <Box3 marginTop={75} marginBottom={50}>
           <Flex align={'center'} justify={'space-between'}>
             <Fade ssrFadeout>
-              <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+              <CustomLine
+                style={{ margin: 0 }}
+                height={5}
+                width={250}
+                color={colors.yellow}
+              />
             </Fade>
             <H2 as="h1" uppercase center>
               BLOG
             </H2>
             <Fade ssrFadeout>
-              <CustomLine style={{margin: 0}} height={5} width={250} color={colors.yellow} />
+              <CustomLine
+                style={{ margin: 0 }}
+                height={5}
+                width={250}
+                color={colors.yellow}
+              />
             </Fade>
           </Flex>
         </Box3>
         <SearchLabel htmlFor={'search'}>
           <Image src="/icons/search.svg" height={16} width={16} />
-          <input type={'text'} id={'search'} onChange={onSearchChange} placeholder={'Search'} value={searchText} />
+          <input
+            type={'text'}
+            id={'search'}
+            onChange={onSearchChange}
+            placeholder={'Search'}
+            value={searchText}
+          />
         </SearchLabel>
         <StyledArticlesContainer>
-          {results.length > 0 && results.map(
-            ({ _id, slug, ...rest }) =>
-              slug && (
-                <ArticleCard key={_id} post={rest} slug={slug} />
-              )
-          )}
+          {results.length > 0 &&
+            results.map(
+              ({ _id, slug, ...rest }) =>
+                slug && <ArticleCard key={_id} post={rest} slug={slug} />,
+            )}
         </StyledArticlesContainer>
-        </Container>
-      </>
-  )
-}
+      </Container>
+    </>
+  );
+};
 
 export async function getStaticProps() {
   const posts = await client.fetch(groq`
     *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
-  `)
+  `);
   return {
     props: {
       posts: posts.filter(p => p._id.includes('drafts.') === false),
     },
-    revalidate: 10
-  }
+    revalidate: 3600,
+  };
 }
 
 export default Blog;
 
-const CustomLine =  styled(Line)`
-	border-radius: 5px;
-    
-	${props => props.width && css`
-		width: ${props.width * .25}px;
+const CustomLine = styled(Line)`
+  border-radius: 5px;
 
-		${respondTo.sm`
-      width: ${props.width * .5}px;
+  ${props =>
+    props.width &&
+    css`
+      width: ${props.width * 0.25}px;
+
+      ${respondTo.sm`
+      width: ${props.width * 0.5}px;
 		`}
 
-		${respondTo.md`
-      width: ${props.width * .6}px;
+      ${respondTo.md`
+      width: ${props.width * 0.6}px;
 		`}
 
 		${respondTo.lg`
@@ -113,7 +127,7 @@ const CustomLine =  styled(Line)`
 		${respondTo.xl`
       width: ${props.width * 1.8}px;
 		`}
-	`}
+    `}
 `;
 
 const StyledArticlesContainer = styled.ul`
@@ -143,7 +157,7 @@ const StyledBlogCard = styled(Card1)`
   `}
 
   &:hover {
-    box-shadow: 5px 3px 25px -3px rgba(0,0,0,.1);
+    box-shadow: 5px 3px 25px -3px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -166,15 +180,16 @@ const SearchLabel = styled.label`
   }
 `;
 
-const ArticleCard = ({
-  post,
-  slug,
-}) => {
+const ArticleCard = ({ post, slug }) => {
   const { title = '', publishedAt = '', mainImage = '' } = post;
 
   return (
     <li>
-      <Link href="/blog/[slug]" as={`/blog/${slug.current}`} style={{ textDecoration: 'none' }}>
+      <Link
+        href="/blog/[slug]"
+        as={`/blog/${slug.current}`}
+        style={{ textDecoration: 'none' }}
+      >
         <StyledBlogCard>
           {mainImage && (
             <StyledCoverPhoto
@@ -187,7 +202,8 @@ const ArticleCard = ({
           <StyledDetailsContainer>
             <H4 color={colors.black}>{shortenString(title, 50)}</H4>
             <P6 color={colors.black}>
-              Published on {new Date(publishedAt).toLocaleDateString(undefined, {
+              Published on{' '}
+              {new Date(publishedAt).toLocaleDateString(undefined, {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
@@ -197,8 +213,8 @@ const ArticleCard = ({
         </StyledBlogCard>
       </Link>
     </li>
-  )
-}
+  );
+};
 
 const StyledCoverPhoto = styled(Image)`
   height: 200px;
