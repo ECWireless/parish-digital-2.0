@@ -29,8 +29,11 @@ const Hero = ({
   return (
     <WebHero>
       {/* <HeroPhoto style={{ backgroundImage: `url(${heroImage})`}} /> */}
-      <HeroVideo autoPlay loop muted playsInline>
-        <source src={heroVideoUrl} type="video/mp4" />
+      <HeroVideo autoPlay preload="metadata" loop muted playsInline>
+        <source
+          src="https://customer-uuy58xbeetbjowtx.cloudflarestream.com/8baab05ba6af63e6f7dae0a61c699f5a/downloads/default.mp4"
+          type="video/mp4"
+        />
       </HeroVideo>
       <HeroContainer>
         <TexContainer>
